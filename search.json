@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "rubric.html",
+    "href": "rubric.html",
+    "title": "Assessment Rubric",
+    "section": "",
+    "text": "Criterion\nExcellent (A)\nProficient (B)\nDeveloping (C)\nNeeds Work (D/F)\n\n\n\n\nMethod outline\nClear, correct, concise\nMostly correct; minor gaps\nSeveral inaccuracies\nMajor inaccuracies / missing\n\n\nParametric equivalent / none\nCorrect and well-justified\nMostly correct\nVague or partially incorrect\nIncorrect / missing\n\n\nHypotheses\nCorrect, contextual, precise\nGenerally correct\nVague or mis-specified\nIncorrect / missing\n\n\nTest statistic / p-value\nAccurate, names distribution, interpretable\nMinor omissions\nConfusing / partially incorrect\nIncorrect / missing\n\n\nR function + runnable example\nCorrect function(s); code runs; well explained\nCorrect function(s); code runs\nCode runs with issues\nCode doesn’t run / missing\n\n\nCompleted example & interpretation\nThorough, contextual, interprets assumptions\nGood interpretation; minor gaps\nMinimal interpretation\nNo interpretation\n\n\nWriting & organization\nClear, structured, professional\nGenerally clear\nDisorganized\nUnclear / poor\n\n\n\nGrading guide:\n- A = Excellent across all\n- B = Mostly Proficient+\n- C = Several Developing\n- D/F = Multiple Needs Work"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Latest Entry",
+    "section": "",
+    "text": "Welcome! This page always shows the most recent weekly journal entry.\nUse the “Weeks” menu in the navbar to find previous entries.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll Weeks\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "journal/index.html",
+    "href": "journal/index.html",
+    "title": "All Weeks",
+    "section": "",
+    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek-01\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "journal/week-template.html",
+    "href": "journal/week-template.html",
+    "title": "Week NN: ",
+    "section": "",
+    "text": "Week structure: Copy this file to week-02.qmd, week-03.qmd, etc.\nKeep one method per page."
+  },
+  {
+    "objectID": "journal/week-template.html#method",
+    "href": "journal/week-template.html#method",
+    "title": "Week NN: ",
+    "section": "Method",
+    "text": "Method\nBriefly name and define the method."
+  },
+  {
+    "objectID": "journal/week-template.html#parametric-equivalent-or-proof-that-there-is-none",
+    "href": "journal/week-template.html#parametric-equivalent-or-proof-that-there-is-none",
+    "title": "Week NN: ",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nState the parametric counterpart (e.g., t-test for Wilcoxon) or justify none exists."
+  },
+  {
+    "objectID": "journal/week-template.html#hypotheses",
+    "href": "journal/week-template.html#hypotheses",
+    "title": "Week NN: ",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\):\n\n\\(H_A\\):"
+  },
+  {
+    "objectID": "journal/week-template.html#test-statistic-andor-p-value",
+    "href": "journal/week-template.html#test-statistic-andor-p-value",
+    "title": "Week NN: ",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest statistic definition (if applicable)\n\nWhat distribution/approximation is used?\n\nHow is the p-value obtained?"
+  },
+  {
+    "objectID": "journal/week-template.html#r-function",
+    "href": "journal/week-template.html#r-function",
+    "title": "Week NN: ",
+    "section": "R function",
+    "text": "R function\nName the primary R function(s) (e.g., wilcox.test, kruskal.test, friedman.test), with key arguments.\n\n# Minimal runnable example (replace with your own)\nset.seed(1)\nx &lt;- rnorm(30, mean = 0, sd = 1)\ny &lt;- rnorm(30, mean = 0.5, sd = 1)\nt.test(x, y, var.equal = TRUE)\n\n\n    Two Sample t-test\n\ndata:  x and y\nt = -2.4722, df = 58, p-value = 0.01638\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -0.9959007 -0.1047322\nsample estimates:\n mean of x  mean of y \n0.08245817 0.63277458"
+  },
+  {
+    "objectID": "checklist.html",
+    "href": "checklist.html",
+    "title": "Weekly Checklist",
+    "section": "",
+    "text": "Use this checklist for each journal entry:\n\nDefined method and when to use it\n\nParametric equivalent (or none) stated\n\nHypotheses \\(H_0\\) and \\(H_A\\) written in context\n\nTest statistic / p-value explained\n\nR function(s) and example included\n\nHomework example + contextual interpretation\n\nWriting is clear and professional"
+  }
+]
