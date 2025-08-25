@@ -1,0 +1,3 @@
+# Shared front matter for all files in journal/
+date-format: "YYYY-MM-DD"
+page-layout: article

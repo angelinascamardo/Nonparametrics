@@ -1,0 +1,13 @@
+---
+title: "Weekly Checklist"
+---
+
+Use this checklist for each journal entry:
+
+- [ ] Defined method and when to use it  
+- [ ] Parametric equivalent (or none) stated  
+- [ ] Hypotheses $H_0$ and $H_A$ written in context  
+- [ ] Test statistic / p-value explained  
+- [ ] R function(s) and example included  
+- [ ] Homework example + contextual interpretation  
+- [ ] Writing is clear and professional

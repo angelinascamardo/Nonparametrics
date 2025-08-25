@@ -1,0 +1,13 @@
+---
+title: "Latest Entry"
+listing:
+  contents: journal
+  sort: "date desc"
+  type: default
+  max-items: 1         # show ONLY the most recent entry
+  categories: false
+page-layout: article
+---
+
+Welcome! This page always shows the most recent weekly journal entry.  
+Use the “Weeks” menu in the navbar to find previous entries.

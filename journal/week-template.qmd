@@ -1,0 +1,43 @@
+---
+title: "Week NN: <Topic or Chapter>"
+date: 2025-09-01
+# Optional: set your name (or leave blank if you prefer anonymity on the page)
+# author: "Your Name"
+format:
+  html:
+    toc: true
+---
+
+> **Week structure**: Copy this file to `week-02.qmd`, `week-03.qmd`, etc.  
+> Keep one method per page.
+
+## Method
+Briefly name and define the method.
+
+## Parametric equivalent (or proof that there is none)
+State the parametric counterpart (e.g., t-test for Wilcoxon) or justify none exists.
+
+## Hypotheses
+- $H_0$:  
+- $H_A$:  
+
+## Test Statistic and/or p-value
+- Test statistic definition (if applicable)  
+- What distribution/approximation is used?  
+- How is the p-value obtained?
+
+## R function
+Name the primary R function(s) (e.g., `wilcox.test`, `kruskal.test`, `friedman.test`), with key arguments.
+
+```{r}
+#| label: demo-chunk
+#| message: false
+#| warning: false
+
+# Minimal runnable example (replace with your own)
+set.seed(1)
+x <- rnorm(30, mean = 0, sd = 1)
+y <- rnorm(30, mean = 0.5, sd = 1)
+t.test(x, y, var.equal = TRUE)
+```
+

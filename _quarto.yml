@@ -1,0 +1,45 @@
+project:
+  type: website
+
+website:
+  # Let the student pick the title later; fallback is minimal
+  title: "My Methods Journal"
+  navbar:
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Weeks"
+        menu:
+          # This auto-lists every file in the journal/ folder as dropdown items
+          - contents: journal
+      - text: "Rubric"
+        file: rubric.qmd
+      - text: "Checklist"
+        file: checklist.qmd
+  page-navigation: true
+
+format:
+  html:
+    theme:
+      light: default
+    css: styles.scss
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-tools: false
+    smooth-scroll: true
+    margin-header: false
+    df-print: paged
+    anchor-sections: true
+    highlight-style: github
+
+# Make R chunks run & keep builds snappy
+execute:
+  echo: true
+  warning: false
+  message: false
+  cache: true
+  freeze: auto
+
+# Math ready if she needs it
+filters: []

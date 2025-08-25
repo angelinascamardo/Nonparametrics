@@ -1,0 +1,64 @@
+/* ===========================
+   Minimal Blue Theme Overrides
+   How to customize:
+   - Ask ChatGPT: “Change link color to #1a73e8 and make headings bolder”
+   - Paste this file back and it will update your site.
+   =========================== */
+
+/* Body & text */
+:root {
+  /* Core palette (adjust these) */
+  --c-bg:        #ffffff;
+  --c-text:      #0f172a;  /* slate-900 */
+  --c-muted:     #475569;  /* slate-600 */
+
+  /* Blues (adjust these) */
+  --c-primary:   #1d4ed8;  /* blue-700 */
+  --c-primary-2: #2563eb;  /* blue-600 */
+  --c-primary-3: #3b82f6;  /* blue-500 */
+
+  /* Accents */
+  --c-link:      var(--c-primary-2);
+  --c-link-hover:#0ea5e9;  /* sky-500 */
+}
+
+/* Global */
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.55;
+}
+
+/* Links */
+a, a:visited {
+  color: var(--c-link);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+}
+a:hover {
+  color: var(--c-link-hover);
+  border-bottom-color: rgba(14, 165, 233, 0.35);
+}
+
+/* Headings */
+h1, h2, h3, .navbar-brand {
+  color: var(--c-primary);
+  letter-spacing: 0.2px;
+}
+h1 { font-weight: 700; }
+h2, h3 { font-weight: 600; }
+
+/* Navbar */
+.navbar, .navbar-dark, .navbar-light {
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+}
+
+/* Code blocks */
+pre code {
+  font-size: 0.95rem;
+}
+
+/* Callouts */
+.callout {
+  border-left-color: var(--c-primary-3);
+}

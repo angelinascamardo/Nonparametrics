@@ -1,0 +1,20 @@
+---
+title: "Assessment Rubric"
+##i got this from chatgpt lol
+---
+
+| Criterion | Excellent (A) | Proficient (B) | Developing (C) | Needs Work (D/F) |
+|-----------|---------------|----------------|----------------|------------------|
+| Method outline | Clear, correct, concise | Mostly correct; minor gaps | Several inaccuracies | Major inaccuracies / missing |
+| Parametric equivalent / none | Correct and well-justified | Mostly correct | Vague or partially incorrect | Incorrect / missing |
+| Hypotheses | Correct, contextual, precise | Generally correct | Vague or mis-specified | Incorrect / missing |
+| Test statistic / p-value | Accurate, names distribution, interpretable | Minor omissions | Confusing / partially incorrect | Incorrect / missing |
+| R function + runnable example | Correct function(s); code runs; well explained | Correct function(s); code runs | Code runs with issues | Code doesn’t run / missing |
+| Completed example & interpretation | Thorough, contextual, interprets assumptions | Good interpretation; minor gaps | Minimal interpretation | No interpretation |
+| Writing & organization | Clear, structured, professional | Generally clear | Disorganized | Unclear / poor |
+
+**Grading guide:**  
+- A = Excellent across all  
+- B = Mostly Proficient+  
+- C = Several Developing  
+- D/F = Multiple Needs Work
