@@ -2,15 +2,15 @@
   {
     "listing": "/index.html",
     "items": [
+      "/journal/week-01+02.html",
       "/journal/index.html",
-      "/journal/week-01.html",
       "/journal/week-template.html"
     ]
   },
   {
     "listing": "/journal/index.html",
     "items": [
-      "/journal/week-01.html",
+      "/journal/week-01+02.html",
       "/journal/week-template.html"
     ]
   }
