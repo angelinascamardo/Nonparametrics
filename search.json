@@ -11,7 +11,14 @@
     "href": "index.html",
     "title": "Latest Entry",
     "section": "",
-    "text": "Welcome! This page always shows the most recent weekly journal entry.\nUse the “Weeks” menu in the navbar to find previous entries.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek-01 + week-02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Welcome! This page always shows the most recent weekly journal entry.\nUse the “Weeks” menu in the navbar to find previous entries.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll Weeks\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "journal/index.html",
+    "href": "journal/index.html",
+    "title": "All Weeks",
+    "section": "",
+    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 03: Chapter 3.1-3.2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-14\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 01-02: Chapters 1-2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-13\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "journal/week-template.html",
@@ -56,32 +63,144 @@
     "text": "R function\nName the primary R function(s) (e.g., wilcox.test, kruskal.test, friedman.test), with key arguments.\n\n# Minimal runnable example (replace with your own)\nset.seed(1)\nx &lt;- rnorm(30, mean = 0, sd = 1)\ny &lt;- rnorm(30, mean = 0.5, sd = 1)\nt.test(x, y, var.equal = TRUE)\n\n\n    Two Sample t-test\n\ndata:  x and y\nt = -2.4722, df = 58, p-value = 0.01638\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -0.9959007 -0.1047322\nsample estimates:\n mean of x  mean of y \n0.08245817 0.63277458"
   },
   {
-    "objectID": "journal/week-01+02.html#chapter-1-summary",
-    "href": "journal/week-01+02.html#chapter-1-summary",
-    "title": "week-01 + week-02",
+    "objectID": "journal/week-01-02.html#chapter-1-summary",
+    "href": "journal/week-01-02.html#chapter-1-summary",
+    "title": "Week 01-02: Chapters 1-2",
     "section": "Chapter 1 Summary",
     "text": "Chapter 1 Summary\nIn chapter 1, we discuss counting rules. I recognized these rules as the rules for combinations, like n choose k. These rules allow us to determine the number of distinguishable arrangements of objects into a row. This can be calculated even if there are one or multiple identical objects present in a group. The total number of possible outcomes of each trial in an experiment can also be determined using counting rules.\nNext, we looked at defining and describing experiments and events. We used probabilities to describe events associated with experiments. The probability that an event occurs or does not occur was discussed, along with the probability that an event occurred given that another event occurred, also known as the conditional probability. It was also essential to learn how to identify whether or not two events were independent of each other, which was done by determining if P(AB) = P(A)P(B), where A and B are events.\nWe then moved onto learning about random variables. Distributions like the discrete uniform distribution and the hypergeometric distribution rely on the probability function of X, where X is a random variable. Distribution functions allow us to view all the properties of a random variable since it shows us all the possible probabilities associated with a random variable. We then use quantiles to describe the overall behavior of a distribution function.\nExpected values are used to calculate many different test statistics/statistical values. They are used to calculate the mean, interquartile range (IQR), standard deviation, variance, covariance, and correlation coefficient of random variables.\nTo conclude chapter 1, the following distributions were defined using probability functions/theorems: normal distribution and chi-squared distribution. Since I have learned and used those distributions in previous courses, I did not focus on this section."
   },
   {
-    "objectID": "journal/week-01+02.html#chapter-2-notes",
-    "href": "journal/week-01+02.html#chapter-2-notes",
-    "title": "week-01 + week-02",
+    "objectID": "journal/week-01-02.html#chapter-2-notes",
+    "href": "journal/week-01-02.html#chapter-2-notes",
+    "title": "Week 01-02: Chapters 1-2",
     "section": "Chapter 2 Notes",
     "text": "Chapter 2 Notes"
   },
   {
-    "objectID": "journal/week-01+02.html#chapter-2-summary",
-    "href": "journal/week-01+02.html#chapter-2-summary",
-    "title": "week-01 + week-02",
+    "objectID": "journal/week-01-02.html#chapter-2-summary",
+    "href": "journal/week-01-02.html#chapter-2-summary",
+    "title": "Week 01-02: Chapters 1-2",
     "section": "Chapter 2 Summary",
     "text": "Chapter 2 Summary\nIn chapter 2, we shifted focus from counting rules and random variables to sampling, estimation, and hypothesis testing. We began by defining populations and samples. A sample can be random, where each observation is independent and identically distributed, or it can be biased. We also reviewed the following different types of measurement scales: nominal, ordinal, interval, and ratio. We saw how order statistics can be applied when analyzing ordered data.\nNext, we explored estimation methods. The empirical distribution function (EDF) was introduced as a way to approximate the population distribution based on observed data. We then used concepts like sample mean, variance, and quantiles as point estimators of population parameters. We also learned about interval estimation, confidence coefficients, and unbiased estimators. The bootstrap method was also introduced as a resampling approach to approximate population quantities without requiring prior knowledge of the distribution. In survival analysis, the empirical survival function and the Kaplan-Meier estimator were discussed as nonparametric methods for estimating lifetime distributions.\nWe then studied hypothesis testing. This included defining null and alternative hypotheses, test statistics, and decision rules. Errors in hypothesis testing were categorized into Type I and Type II errors, with significance level (\\(\\alpha\\)), power, and p-values helping us evaluate tests. We also discussed test properties such as unbiasedness, consistency, and efficiency. We also learned that the power function plays an important role in comparing tests.\nFinally, we compared parametric and nonparametric methods. Parametric methods depend on knowing the population distribution. This is unlike nonparametric methods, which are more flexible and robust to distributional assumptions. Nonparametric tests can be applied to nominal, ordinal, interval, and ratio data."
   },
   {
-    "objectID": "journal/index.html",
-    "href": "journal/index.html",
-    "title": "All Weeks",
-    "section": "",
-    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nweek-01 + week-02\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
+    "objectID": "journal/week03.html#method",
+    "href": "journal/week03.html#method",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Method",
+    "text": "Method\nThe binomial test is used when a sample contains the outcomes of \\(n\\) independent trials. Each outcome can either be present in “class 1” or “class 2”, but cannot be present in both."
+  },
+  {
+    "objectID": "journal/week03.html#assumptions",
+    "href": "journal/week03.html#assumptions",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Assumptions",
+    "text": "Assumptions\nThe \\(n\\) trials in the experiment must be independent. Each trial has a probability \\(p\\) which results in the outcome “class 1”, where \\(p\\) is the same for all \\(n\\) trials."
+  },
+  {
+    "objectID": "journal/week03.html#parametric-equivalent-or-proof-that-there-is-none",
+    "href": "journal/week03.html#parametric-equivalent-or-proof-that-there-is-none",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nSince the binomial test assumes the data follows a binomial distribution, there is no parametric equivalent. The book states that the binomial test is often considered the most powerful test, and therefore it is claimed to be both parametric and nonparametric."
+  },
+  {
+    "objectID": "journal/week03.html#hypotheses",
+    "href": "journal/week03.html#hypotheses",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\): \\(p = p^*\\) for two-tailed, \\(p \\geq p^*\\) for left-tailed, \\(p \\leq p^*\\) for right-tailed\n\\(H_A\\): \\(p \\neq p^*\\) for two tailed, \\(p &lt; p^*\\) for left-tailed, \\(p &gt; p^*\\) for right-tailed\n\nwhere \\(p^*\\) is some specified probability and \\(0 \\leq p^* \\leq 1\\)."
+  },
+  {
+    "objectID": "journal/week03.html#rejection-region",
+    "href": "journal/week03.html#rejection-region",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Rejection Region",
+    "text": "Rejection Region\nTwo-tailed:\n\nUsing Table A3 (from back of book) - find the values for \\(t_1\\) and \\(t_2\\) such that: \\[\nP(\\Upsilon \\leq t_1) = \\alpha_1\n\\] \\[\nP(\\Upsilon \\leq t_2) = 1 - \\alpha_2\n\\] where \\(\\Upsilon\\) is the binomial random variable with parameters \\(p*\\) and \\(n\\), \\(\\alpha_1\\) is the size of the lower tail, and \\(\\alpha_2\\) is the size of the upper tail.\nReject \\(H_0\\) if \\(T \\leq t_1\\) or if \\(T &gt; t_2\\).\n\nLeft-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t\\) such that: \\[\nP(\\Upsilon \\leq t) = \\alpha\n\\]\nReject \\(H_0\\) if \\(T \\leq t\\).\n\nRight-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t\\) such that: \\[\nP(\\Upsilon \\leq t) = 1 - \\alpha\n\\]\nReject \\(H_0\\) if \\(T &gt; t\\)."
+  },
+  {
+    "objectID": "journal/week03.html#test-statistic-andor-p-value",
+    "href": "journal/week03.html#test-statistic-andor-p-value",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T = O_1\\), where \\(T\\) is the number of times the outcome is “class 1”, and \\(O_1\\) is the number of observations in “class 1”.\nNull distribution is used. The null distribution of \\(T\\) is the binomial distribution with parameters \\(p = p*\\) and \\(n=\\) the sample size. Normal approximation is used for other values of \\(n\\) and \\(p\\) (i.e. \\(n&gt;20\\) & select \\(p\\) values).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of the probabilities that \\(\\Upsilon \\leq\\) or \\(\\geq\\) the observed value of \\(T\\)\nLeft-tailed: p-value is the probability that $$ observed value of \\(T\\)\nRight-tailed: p-value is the probability that \\(\\Upsilon \\geq\\) observed value of \\(T\\)"
+  },
+  {
+    "objectID": "journal/week03.html#r-function",
+    "href": "journal/week03.html#r-function",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "R function",
+    "text": "R function\nR function for binomial test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/binom.test):\nbinom.test(x, n, p = 0.5, alternative = c(“two.sided”, “less”, “greater”), conf.level = 0.95)\nwhere \\(x\\) = number of successes, or a vector of length 2 giving the numbers of successes and failures, respectively; \\(n\\) = number of trials; and \\(p\\) = hypothesized probability of success. Alternative denotes whether the test is two-tailed, left-tailed, or right-tailed. Conf.level is the confidence level, usually 95%."
+  },
+  {
+    "objectID": "journal/week03.html#completed-homework-problem",
+    "href": "journal/week03.html#completed-homework-problem",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\n\nIt is known that 20% of a certain species of insect exhibit a particular characteristic A. Eighteen insects of that species are obtained from an unusual environment, and none of these have characteristic A. Is it reasonable to assume that insects from that environment have the same probability of 0.20 that the species in general has? Use a two-tailed test.\n\n\nbinom.test(0, 18, p = 0.2,\n           alternative = c(\"two.sided\"),\n           conf.level = 0.95)\n\n\n    Exact binomial test\n\ndata:  0 and 18\nnumber of successes = 0, number of trials = 18, p-value = 0.03429\nalternative hypothesis: true probability of success is not equal to 0.2\n95 percent confidence interval:\n 0.000000 0.185302\nsample estimates:\nprobability of success \n                     0 \n\n\nHypotheses\n\n\\(H_0:\\) \\(p = p^*\\), where \\(p^* = 0.20\\)\n\\(H_1:\\) \\(p \\ne p^*\\)\n\nTest Statistic and p-Value\n\n\\(T = 0\\)\n\\(p = 0.03429\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nReject \\(H_0\\).\nThere is sufficient evidence to suggest that the proportion of insects from the unusual environment with characteristic A is significantly different than 0.20."
+  },
+  {
+    "objectID": "journal/week03.html#section-1",
+    "href": "journal/week03.html#section-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "3.2",
+    "text": "3.2"
+  },
+  {
+    "objectID": "journal/week03.html#method-1",
+    "href": "journal/week03.html#method-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Method",
+    "text": "Method\nThe quantile test is a variation of the binomial test. It is used to test hypotheses that concern the quantiles of a random variable."
+  },
+  {
+    "objectID": "journal/week03.html#assumptions-1",
+    "href": "journal/week03.html#assumptions-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Assumptions",
+    "text": "Assumptions\nThe \\(X_i\\)s (i.e. \\(X_1, X_2, ..., X_n\\)) are a random sample (independent and identically distributed random variables). The measurement scale of the \\(X_i\\)s must be at least ordinal."
+  },
+  {
+    "objectID": "journal/week03.html#parametric-equivalent-or-proof-that-there-is-none-1",
+    "href": "journal/week03.html#parametric-equivalent-or-proof-that-there-is-none-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nI obtained this information from these notes taken on this textbook: https://people.stat.sc.edu/hitchcock/notes518fall13sec32filledin.pdf\nThe quantile test about the median is testing the same thing as the t-test is about the mean. The quantile test is more efficient than the t-test when the population distribution is double exponential, or has heavy tails. Also, when considering the fact that the one sample t-test requires the data to be normal, the quantile test is more applicable and therefore preferred when it comes to nonparametric ordering statistics. However, the one sample t-test can be considered as the parametric equivalent to the nonparametric quantile test."
+  },
+  {
+    "objectID": "journal/week03.html#hypotheses-1",
+    "href": "journal/week03.html#hypotheses-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\): The \\(p^*\\)th population quantile is \\(x^*\\) (two-tailed) | The \\(p^*\\)th population quantile is no greater than \\(x*\\) (left-tailed) | The \\(p^*\\)th population quantile is at least as great as \\(x^*\\) (right-tailed)\n\\(H_A\\): \\(x^*\\) is not the The \\(p^*\\)th population quantile (two-tailed) | The \\(p^*\\) population quantile is greater than \\(x^*\\) (left-tailed) | The \\(p^*\\) population quantile is less than \\(x^*\\) (right-tailed)\n\nIn other words,\n\n\\(H_0\\): \\(P(X \\leq x^*) \\geq p^*\\) and \\(P(X &lt; x^*) \\leq p^*\\) (two-tailed) | \\(P(X \\leq x^*) \\geq p^*\\) (left-tailed) | \\(P(X &lt; x^*) \\leq p^*\\) (right-tailed)\n\\(H_1\\): \\(P(X \\leq x^*) &lt; p^*\\) (left-tailed) | \\(P(X &lt; x^*) &gt; p^*\\) (right-tailed) | (two-tailed is either or)\n\nwhere \\(x^*\\) and \\(p^*\\) are some specified numbers and \\(0 &lt; p^* &lt; 1\\)."
+  },
+  {
+    "objectID": "journal/week03.html#rejection-region-1",
+    "href": "journal/week03.html#rejection-region-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Rejection Region",
+    "text": "Rejection Region\nTwo-tailed:\n\nUsing Table A3 (from back of book) - find the values for \\(t_1\\) and \\(t_2\\) such that: \\[\nP(\\Upsilon \\leq t_1) = \\alpha_1\n\\] \\[\nP(\\Upsilon \\leq t_2) = 1 - \\alpha_2\n\\] where \\(\\Upsilon\\) has the binomial distribution with parameters \\(p^*\\) and \\(n\\), \\(\\alpha_1\\) is the size of the lower tail, and \\(\\alpha_2\\) is the size of the upper tail. The level of significance is \\(\\alpha_1 + \\alpha_2\\).\nReject \\(H_0\\) if \\(T_1 \\leq t_1\\) or if \\(T_2 &gt; t_2\\).\n\nLeft-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t_1\\) such that: \\[\nP(\\Upsilon \\leq t_1) = \\alpha\n\\]\nReject \\(H_0\\) if \\(T_1 \\leq t_1\\).\n\nRight-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t_2\\) such that: \\[\nP(\\Upsilon \\leq t_2) = 1 - \\alpha\n\\] OR \\[\nP(\\Upsilon &gt; t_2) = \\alpha\n\\]\nReject \\(H_0\\) if \\(T_2 &gt; t_2\\)."
+  },
+  {
+    "objectID": "journal/week03.html#test-statistic-andor-p-value-1",
+    "href": "journal/week03.html#test-statistic-andor-p-value-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T_1\\) and \\(T_2\\), where \\(T_1\\) is the number of observations \\(\\leq x^*\\) and \\(T_2\\) is the number of observations \\(&lt; x^*\\). Then, \\(T_1 = T_2\\) if none of the numbers in the data set exactly equal \\(x^*\\); otherwise, \\(T_1 &gt; T_2\\).\nNull distribution is used. The null distribution of \\(T_1\\) and \\(T_2\\) is the binomial distribution with parameters \\(p = p^*\\) and \\(n=\\) the sample size. Normal approximation is used for other values of \\(n\\) and \\(p\\) (i.e. \\(n&gt;20\\) & select \\(p\\) values).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of the probabilities that \\(\\Upsilon \\leq\\) or \\(\\geq\\) the observed value of \\(T_1\\) or \\(\\geq\\) the observed value of \\(T_2\\)\nLeft-tailed: p-value is the probability that \\(\\Upsilon \\leq\\) observed value of \\(T_1\\)\nRight-tailed: p-value is the probability that \\(\\Upsilon \\geq\\) observed value of \\(T_2\\)"
+  },
+  {
+    "objectID": "journal/week03.html#r-function-1",
+    "href": "journal/week03.html#r-function-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "R function",
+    "text": "R function\nR function for quantile test (obtained from https://people.stat.sc.edu/hitchcock/Rexamples518section3_2.txt):\nNote: R has no built in quantile test function, so I am using this function created by a professor that made notes similar to the textbook I am learning from.\n\nquantile.test&lt;-function(x,xstar=0,quantile=.5,alternative=\"two.sided\"){\n  n&lt;-length(x)\n  p&lt;-quantile\n  T1&lt;-sum(x&lt;=xstar)\n  T2&lt;-sum(x&lt; xstar)\n  if (alternative==\"quantile.less\") {\n    p.value&lt;-1-pbinom(T2-1,n,p)}\n  if (alternative==\"quantile.greater\"){\n    p.value&lt;-pbinom(T1,n,p)}\n  if (alternative==\"two.sided\"){\n    p.value&lt;-2*min(1-pbinom(T2-1,n,p),pbinom(T1,n,p))}\n  list(xstar=xstar,alternative=alternative,T1=T1,T2=T2,p.value=p.value)}"
+  },
+  {
+    "objectID": "journal/week03.html#completed-homework-problem-1",
+    "href": "journal/week03.html#completed-homework-problem-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\nA good example for the quantile test is found here: https://people.stat.sc.edu/hitchcock/notes518fall13sec32filledin.pdf\n\nThe sergeant recalls that in the “good old days” the upper quartile for time required to complete the obstacle course was 42 minutes. He suspects that the new recruits are not as fit as the recruits in the good old days, so he times them on the obstacle course. He finds that out of 38 recruits, only ten of them complete the course within the 42 minute time period. Use the quantile test to test the hypothesis that the upper quartile is 42 minutes against the appropriate one-sided alternative.\n\n\n#make a fake data set just to be able to use this function\nx &lt;- c(rep(42,10), rep(43,28))\n\nquantile.test(x, xstar=42, quantile=0.75, alternative=\"quantile.greater\")\n\n$xstar\n[1] 42\n\n$alternative\n[1] \"quantile.greater\"\n\n$T1\n[1] 10\n\n$T2\n[1] 0\n\n$p.value\n[1] 4.165498e-10\n\n\nHypotheses\n\n\\(H_0:\\) \\(P(X \\leq x^*) \\geq p^*\\), where \\(x^* = 42\\) and \\(p^* = 0.75\\) for the upper quartile\n\\(H_1:\\) \\(P(X \\leq x^*) &lt; p^*\\)\n\nTest Statistic and p-Value\n\n\\(T_1 = 10\\)\n\\(T_2 = 0\\)\n\\(p = 4.165498e-10\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nReject \\(H_0\\).\nThere is sufficient evidence to suggest that the upper quartile of completion time for the obstacle course is greater than 42 minutes."
   },
   {
     "objectID": "checklist.html",

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-09-14">
+
+<title>Week 03: Chapter 3.1-3.2 – My Methods Journal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">My Methods Journal</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../journal/index.html"> 
+<span class="menu-text">Weeks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../rubric.html"> 
+<span class="menu-text">Rubric</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../checklist.html"> 
+<span class="menu-text">Checklist</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">3.1</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none" id="toc-parametric-equivalent-or-proof-that-there-is-none" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
+  <li><a href="#rejection-region" id="toc-rejection-region" class="nav-link" data-scroll-target="#rejection-region">Rejection Region</a></li>
+  <li><a href="#test-statistic-andor-p-value" id="toc-test-statistic-andor-p-value" class="nav-link" data-scroll-target="#test-statistic-andor-p-value">Test Statistic and/or p-value</a></li>
+  <li><a href="#r-function" id="toc-r-function" class="nav-link" data-scroll-target="#r-function">R function</a></li>
+  <li><a href="#completed-homework-problem" id="toc-completed-homework-problem" class="nav-link" data-scroll-target="#completed-homework-problem">Completed Homework Problem</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">3.2</a></li>
+  <li><a href="#method-1" id="toc-method-1" class="nav-link" data-scroll-target="#method-1">Method</a></li>
+  <li><a href="#assumptions-1" id="toc-assumptions-1" class="nav-link" data-scroll-target="#assumptions-1">Assumptions</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none-1" id="toc-parametric-equivalent-or-proof-that-there-is-none-1" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none-1">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#hypotheses-1" id="toc-hypotheses-1" class="nav-link" data-scroll-target="#hypotheses-1">Hypotheses</a></li>
+  <li><a href="#rejection-region-1" id="toc-rejection-region-1" class="nav-link" data-scroll-target="#rejection-region-1">Rejection Region</a></li>
+  <li><a href="#test-statistic-andor-p-value-1" id="toc-test-statistic-andor-p-value-1" class="nav-link" data-scroll-target="#test-statistic-andor-p-value-1">Test Statistic and/or p-value</a></li>
+  <li><a href="#r-function-1" id="toc-r-function-1" class="nav-link" data-scroll-target="#r-function-1">R function</a></li>
+  <li><a href="#completed-homework-problem-1" id="toc-completed-homework-problem-1" class="nav-link" data-scroll-target="#completed-homework-problem-1">Completed Homework Problem</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 03: Chapter 3.1-3.2</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2025-09-14</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">3.1</h2>
+</section>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">Method</h2>
+<p>The binomial test is used when a sample contains the outcomes of <span class="math inline">\(n\)</span> independent trials. Each outcome can either be present in “class 1” or “class 2”, but cannot be present in both.</p>
+</section>
+<section id="assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
+<p>The <span class="math inline">\(n\)</span> trials in the experiment must be independent. Each trial has a probability <span class="math inline">\(p\)</span> which results in the outcome “class 1”, where <span class="math inline">\(p\)</span> is the same for all <span class="math inline">\(n\)</span> trials.</p>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</h2>
+<p>Since the binomial test assumes the data follows a binomial distribution, there is no parametric equivalent. The book states that the binomial test is often considered the most powerful test, and therefore it is claimed to be both parametric and nonparametric.</p>
+</section>
+<section id="hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses">Hypotheses</h2>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(p = p^*\)</span> for two-tailed, <span class="math inline">\(p \geq p^*\)</span> for left-tailed, <span class="math inline">\(p \leq p^*\)</span> for right-tailed</li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(p \neq p^*\)</span> for two tailed, <span class="math inline">\(p &lt; p^*\)</span> for left-tailed, <span class="math inline">\(p &gt; p^*\)</span> for right-tailed</li>
+</ul>
+<p>where <span class="math inline">\(p^*\)</span> is some specified probability and <span class="math inline">\(0 \leq p^* \leq 1\)</span>.</p>
+</section>
+<section id="rejection-region" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-region">Rejection Region</h2>
+<p>Two-tailed:</p>
+<ul>
+<li>Using Table A3 (from back of book) - find the values for <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span> such that: <span class="math display">\[
+P(\Upsilon \leq t_1) = \alpha_1
+\]</span> <span class="math display">\[
+P(\Upsilon \leq t_2) = 1 - \alpha_2
+\]</span> where <span class="math inline">\(\Upsilon\)</span> is the binomial random variable with parameters <span class="math inline">\(p*\)</span> and <span class="math inline">\(n\)</span>, <span class="math inline">\(\alpha_1\)</span> is the size of the lower tail, and <span class="math inline">\(\alpha_2\)</span> is the size of the upper tail.</li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T \leq t_1\)</span> or if <span class="math inline">\(T &gt; t_2\)</span>.</li>
+</ul>
+<p>Left-tailed:</p>
+<ul>
+<li>Using Table A3 (from back of book) - find the value for <span class="math inline">\(t\)</span> such that: <span class="math display">\[
+P(\Upsilon \leq t) = \alpha
+\]</span></li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T \leq t\)</span>.</li>
+</ul>
+<p>Right-tailed:</p>
+<ul>
+<li>Using Table A3 (from back of book) - find the value for <span class="math inline">\(t\)</span> such that: <span class="math display">\[
+P(\Upsilon \leq t) = 1 - \alpha
+\]</span></li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T &gt; t\)</span>.</li>
+</ul>
+</section>
+<section id="test-statistic-andor-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="test-statistic-andor-p-value">Test Statistic and/or p-value</h2>
+<ul>
+<li>Test Statistic: <span class="math inline">\(T = O_1\)</span>, where <span class="math inline">\(T\)</span> is the number of times the outcome is “class 1”, and <span class="math inline">\(O_1\)</span> is the number of observations in “class 1”.</li>
+<li>Null distribution is used. The null distribution of <span class="math inline">\(T\)</span> is the binomial distribution with parameters <span class="math inline">\(p = p*\)</span> and <span class="math inline">\(n=\)</span> the sample size. Normal approximation is used for other values of <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> (i.e.&nbsp;<span class="math inline">\(n&gt;20\)</span> &amp; select <span class="math inline">\(p\)</span> values).</li>
+<li>The p-value is obtained differently for the different forms:
+<ul>
+<li>Two-tailed: p-value is twice the smaller of the probabilities that <span class="math inline">\(\Upsilon \leq\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T\)</span></li>
+<li>Left-tailed: p-value is the probability that $$ observed value of <span class="math inline">\(T\)</span></li>
+<li>Right-tailed: p-value is the probability that <span class="math inline">\(\Upsilon \geq\)</span> observed value of <span class="math inline">\(T\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="r-function" class="level2">
+<h2 class="anchored" data-anchor-id="r-function">R function</h2>
+<p>R function for binomial test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/binom.test):</p>
+<p>binom.test(x, n, p = 0.5, alternative = c(“two.sided”, “less”, “greater”), conf.level = 0.95)</p>
+<p>where <span class="math inline">\(x\)</span> = number of successes, or a vector of length 2 giving the numbers of successes and failures, respectively; <span class="math inline">\(n\)</span> = number of trials; and <span class="math inline">\(p\)</span> = hypothesized probability of success. Alternative denotes whether the test is two-tailed, left-tailed, or right-tailed. Conf.level is the confidence level, usually 95%.</p>
+</section>
+<section id="completed-homework-problem" class="level2">
+<h2 class="anchored" data-anchor-id="completed-homework-problem">Completed Homework Problem</h2>
+<ol type="1">
+<li>It is known that 20% of a certain species of insect exhibit a particular characteristic A. Eighteen insects of that species are obtained from an unusual environment, and none of these have characteristic A. Is it reasonable to assume that insects from that environment have the same probability of 0.20 that the species in general has? Use a two-tailed test.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="dv">0</span>, <span class="dv">18</span>, <span class="at">p =</span> <span class="fl">0.2</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">alternative =</span> <span class="fu">c</span>(<span class="st">"two.sided"</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">conf.level =</span> <span class="fl">0.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Exact binomial test
+
+data:  0 and 18
+number of successes = 0, number of trials = 18, p-value = 0.03429
+alternative hypothesis: true probability of success is not equal to 0.2
+95 percent confidence interval:
+ 0.000000 0.185302
+sample estimates:
+probability of success 
+                     0 </code></pre>
+</div>
+</div>
+<p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0:\)</span> <span class="math inline">\(p = p^*\)</span>, where <span class="math inline">\(p^* = 0.20\)</span></li>
+<li><span class="math inline">\(H_1:\)</span> <span class="math inline">\(p \ne p^*\)</span></li>
+</ul>
+<p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><span class="math inline">\(T = 0\)</span></li>
+<li><span class="math inline">\(p = 0.03429\)</span></li>
+</ul>
+<p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span>.</li>
+</ul>
+<p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li><p>Reject <span class="math inline">\(H_0\)</span>.</p></li>
+<li><p>There is sufficient evidence to suggest that the proportion of insects from the unusual environment with characteristic A is significantly different than 0.20.</p></li>
+</ul>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">3.2</h2>
+</section>
+<section id="method-1" class="level2">
+<h2 class="anchored" data-anchor-id="method-1">Method</h2>
+<p>The quantile test is a variation of the binomial test. It is used to test hypotheses that concern the quantiles of a random variable.</p>
+</section>
+<section id="assumptions-1" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-1">Assumptions</h2>
+<p>The <span class="math inline">\(X_i\)</span>s (i.e.&nbsp;<span class="math inline">\(X_1, X_2, ..., X_n\)</span>) are a random sample (independent and identically distributed random variables). The measurement scale of the <span class="math inline">\(X_i\)</span>s must be at least ordinal.</p>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none-1" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none-1">Parametric equivalent (or proof that there is none)</h2>
+<p>I obtained this information from these notes taken on this textbook: https://people.stat.sc.edu/hitchcock/notes518fall13sec32filledin.pdf</p>
+<p>The quantile test about the median is testing the same thing as the t-test is about the mean. The quantile test is more efficient than the t-test when the population distribution is double exponential, or has heavy tails. Also, when considering the fact that the one sample t-test requires the data to be normal, the quantile test is more applicable and therefore preferred when it comes to nonparametric ordering statistics. However, the one sample t-test can be considered as the parametric equivalent to the nonparametric quantile test.</p>
+</section>
+<section id="hypotheses-1" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses-1">Hypotheses</h2>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: The <span class="math inline">\(p^*\)</span>th population quantile is <span class="math inline">\(x^*\)</span> (two-tailed) | The <span class="math inline">\(p^*\)</span>th population quantile is no greater than <span class="math inline">\(x*\)</span> (left-tailed) | The <span class="math inline">\(p^*\)</span>th population quantile is at least as great as <span class="math inline">\(x^*\)</span> (right-tailed)</li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(x^*\)</span> is not the The <span class="math inline">\(p^*\)</span>th population quantile (two-tailed) | The <span class="math inline">\(p^*\)</span> population quantile is greater than <span class="math inline">\(x^*\)</span> (left-tailed) | The <span class="math inline">\(p^*\)</span> population quantile is less than <span class="math inline">\(x^*\)</span> (right-tailed)</li>
+</ul>
+<p>In other words,</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(P(X \leq x^*) \geq p^*\)</span> and <span class="math inline">\(P(X &lt; x^*) \leq p^*\)</span> (two-tailed) | <span class="math inline">\(P(X \leq x^*) \geq p^*\)</span> (left-tailed) | <span class="math inline">\(P(X &lt; x^*) \leq p^*\)</span> (right-tailed)</li>
+<li><span class="math inline">\(H_1\)</span>: <span class="math inline">\(P(X \leq x^*) &lt; p^*\)</span> (left-tailed) | <span class="math inline">\(P(X &lt; x^*) &gt; p^*\)</span> (right-tailed) | (two-tailed is either or)</li>
+</ul>
+<p>where <span class="math inline">\(x^*\)</span> and <span class="math inline">\(p^*\)</span> are some specified numbers and <span class="math inline">\(0 &lt; p^* &lt; 1\)</span>.</p>
+</section>
+<section id="rejection-region-1" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-region-1">Rejection Region</h2>
+<p>Two-tailed:</p>
+<ul>
+<li>Using Table A3 (from back of book) - find the values for <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span> such that: <span class="math display">\[
+P(\Upsilon \leq t_1) = \alpha_1
+\]</span> <span class="math display">\[
+P(\Upsilon \leq t_2) = 1 - \alpha_2
+\]</span> where <span class="math inline">\(\Upsilon\)</span> has the binomial distribution with parameters <span class="math inline">\(p^*\)</span> and <span class="math inline">\(n\)</span>, <span class="math inline">\(\alpha_1\)</span> is the size of the lower tail, and <span class="math inline">\(\alpha_2\)</span> is the size of the upper tail. The level of significance is <span class="math inline">\(\alpha_1 + \alpha_2\)</span>.</li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T_1 \leq t_1\)</span> or if <span class="math inline">\(T_2 &gt; t_2\)</span>.</li>
+</ul>
+<p>Left-tailed:</p>
+<ul>
+<li>Using Table A3 (from back of book) - find the value for <span class="math inline">\(t_1\)</span> such that: <span class="math display">\[
+P(\Upsilon \leq t_1) = \alpha
+\]</span></li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T_1 \leq t_1\)</span>.</li>
+</ul>
+<p>Right-tailed:</p>
+<ul>
+<li>Using Table A3 (from back of book) - find the value for <span class="math inline">\(t_2\)</span> such that: <span class="math display">\[
+P(\Upsilon \leq t_2) = 1 - \alpha
+\]</span> OR <span class="math display">\[
+P(\Upsilon &gt; t_2) = \alpha
+\]</span></li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T_2 &gt; t_2\)</span>.</li>
+</ul>
+</section>
+<section id="test-statistic-andor-p-value-1" class="level2">
+<h2 class="anchored" data-anchor-id="test-statistic-andor-p-value-1">Test Statistic and/or p-value</h2>
+<ul>
+<li>Test Statistic: <span class="math inline">\(T_1\)</span> and <span class="math inline">\(T_2\)</span>, where <span class="math inline">\(T_1\)</span> is the number of observations <span class="math inline">\(\leq x^*\)</span> and <span class="math inline">\(T_2\)</span> is the number of observations <span class="math inline">\(&lt; x^*\)</span>. Then, <span class="math inline">\(T_1 = T_2\)</span> if none of the numbers in the data set exactly equal <span class="math inline">\(x^*\)</span>; otherwise, <span class="math inline">\(T_1 &gt; T_2\)</span>.</li>
+<li>Null distribution is used. The null distribution of <span class="math inline">\(T_1\)</span> and <span class="math inline">\(T_2\)</span> is the binomial distribution with parameters <span class="math inline">\(p = p^*\)</span> and <span class="math inline">\(n=\)</span> the sample size. Normal approximation is used for other values of <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> (i.e.&nbsp;<span class="math inline">\(n&gt;20\)</span> &amp; select <span class="math inline">\(p\)</span> values).</li>
+<li>The p-value is obtained differently for the different forms:
+<ul>
+<li>Two-tailed: p-value is twice the smaller of the probabilities that <span class="math inline">\(\Upsilon \leq\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T_1\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T_2\)</span></li>
+<li>Left-tailed: p-value is the probability that <span class="math inline">\(\Upsilon \leq\)</span> observed value of <span class="math inline">\(T_1\)</span></li>
+<li>Right-tailed: p-value is the probability that <span class="math inline">\(\Upsilon \geq\)</span> observed value of <span class="math inline">\(T_2\)</span></li>
+</ul></li>
+</ul>
+</section>
+<section id="r-function-1" class="level2">
+<h2 class="anchored" data-anchor-id="r-function-1">R function</h2>
+<p>R function for quantile test (obtained from https://people.stat.sc.edu/hitchcock/Rexamples518section3_2.txt):</p>
+<p>Note: R has no built in quantile test function, so I am using this function created by a professor that made notes similar to the textbook I am learning from.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>quantile.test<span class="ot">&lt;-</span><span class="cf">function</span>(x,<span class="at">xstar=</span><span class="dv">0</span>,<span class="at">quantile=</span>.<span class="dv">5</span>,<span class="at">alternative=</span><span class="st">"two.sided"</span>){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  n<span class="ot">&lt;-</span><span class="fu">length</span>(x)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  p<span class="ot">&lt;-</span>quantile</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  T1<span class="ot">&lt;-</span><span class="fu">sum</span>(x<span class="sc">&lt;=</span>xstar)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  T2<span class="ot">&lt;-</span><span class="fu">sum</span>(x<span class="sc">&lt;</span> xstar)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (alternative<span class="sc">==</span><span class="st">"quantile.less"</span>) {</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    p.value<span class="ot">&lt;-</span><span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(T2<span class="dv">-1</span>,n,p)}</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (alternative<span class="sc">==</span><span class="st">"quantile.greater"</span>){</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    p.value<span class="ot">&lt;-</span><span class="fu">pbinom</span>(T1,n,p)}</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (alternative<span class="sc">==</span><span class="st">"two.sided"</span>){</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    p.value<span class="ot">&lt;-</span><span class="dv">2</span><span class="sc">*</span><span class="fu">min</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(T2<span class="dv">-1</span>,n,p),<span class="fu">pbinom</span>(T1,n,p))}</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">xstar=</span>xstar,<span class="at">alternative=</span>alternative,<span class="at">T1=</span>T1,<span class="at">T2=</span>T2,<span class="at">p.value=</span>p.value)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="completed-homework-problem-1" class="level2">
+<h2 class="anchored" data-anchor-id="completed-homework-problem-1">Completed Homework Problem</h2>
+<p>A good example for the quantile test is found here: https://people.stat.sc.edu/hitchcock/notes518fall13sec32filledin.pdf</p>
+<ol start="7" type="1">
+<li>The sergeant recalls that in the “good old days” the upper quartile for time required to complete the obstacle course was 42 minutes. He suspects that the new recruits are not as fit as the recruits in the good old days, so he times them on the obstacle course. He finds that out of 38 recruits, only ten of them complete the course within the 42 minute time period. Use the quantile test to test the hypothesis that the upper quartile is 42 minutes against the appropriate one-sided alternative.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make a fake data set just to be able to use this function</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">42</span>,<span class="dv">10</span>), <span class="fu">rep</span>(<span class="dv">43</span>,<span class="dv">28</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile.test</span>(x, <span class="at">xstar=</span><span class="dv">42</span>, <span class="at">quantile=</span><span class="fl">0.75</span>, <span class="at">alternative=</span><span class="st">"quantile.greater"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$xstar
+[1] 42
+
+$alternative
+[1] "quantile.greater"
+
+$T1
+[1] 10
+
+$T2
+[1] 0
+
+$p.value
+[1] 4.165498e-10</code></pre>
+</div>
+</div>
+<p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0:\)</span> <span class="math inline">\(P(X \leq x^*) \geq p^*\)</span>, where <span class="math inline">\(x^* = 42\)</span> and <span class="math inline">\(p^* = 0.75\)</span> for the upper quartile</li>
+<li><span class="math inline">\(H_1:\)</span> <span class="math inline">\(P(X \leq x^*) &lt; p^*\)</span></li>
+</ul>
+<p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><span class="math inline">\(T_1 = 10\)</span></li>
+<li><span class="math inline">\(T_2 = 0\)</span></li>
+<li><span class="math inline">\(p = 4.165498e-10\)</span></li>
+</ul>
+<p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span>.</li>
+</ul>
+<p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li><p>Reject <span class="math inline">\(H_0\)</span>.</p></li>
+<li><p>There is sufficient evidence to suggest that the upper quartile of completion time for the obstacle course is greater than 42 minutes.</p></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ams270\.github\.io\/Nonparametrics\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
