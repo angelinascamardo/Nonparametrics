@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-09-16">
 
-<title>All Weeks – Nonparamtric Methods Journal</title>
+<title>Week 04: Chapter 3.3-3.5 – Nonparamtric Methods Journal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,35 +101,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -152,7 +156,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../journal/index.html" aria-current="page"> 
+    <a class="nav-link" href="../journal/index.html"> 
 <span class="menu-text">Weeks</span></a>
   </li>  
   <li class="nav-item">
@@ -174,15 +178,39 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">3.3</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
+  <li><a href="#completed-homework-problem" id="toc-completed-homework-problem" class="nav-link" data-scroll-target="#completed-homework-problem">Completed Homework Problem</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">3.4</a></li>
+  <li><a href="#method-1" id="toc-method-1" class="nav-link" data-scroll-target="#method-1">Method</a></li>
+  <li><a href="#assumptions-1" id="toc-assumptions-1" class="nav-link" data-scroll-target="#assumptions-1">Assumptions</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none" id="toc-parametric-equivalent-or-proof-that-there-is-none" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
+  <li><a href="#rejection-region" id="toc-rejection-region" class="nav-link" data-scroll-target="#rejection-region">Rejection Region</a></li>
+  <li><a href="#test-statistic-andor-p-value" id="toc-test-statistic-andor-p-value" class="nav-link" data-scroll-target="#test-statistic-andor-p-value">Test Statistic and/or p-value</a></li>
+  <li><a href="#r-function" id="toc-r-function" class="nav-link" data-scroll-target="#r-function">R function</a></li>
+  <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">Confidence Interval</a></li>
+  <li><a href="#data-1" id="toc-data-1" class="nav-link" data-scroll-target="#data-1">Data</a></li>
+  <li><a href="#assumptions-2" id="toc-assumptions-2" class="nav-link" data-scroll-target="#assumptions-2">Assumptions</a></li>
+  <li><a href="#approach-1" id="toc-approach-1" class="nav-link" data-scroll-target="#approach-1">Approach</a></li>
+  <li><a href="#completed-homework-problem-1" id="toc-completed-homework-problem-1" class="nav-link" data-scroll-target="#completed-homework-problem-1">Completed Homework Problem</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">All Weeks</h1>
+<h1 class="title">Week 04: Chapter 3.3-3.5</h1>
 </div>
 
 
@@ -190,6 +218,12 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2025-09-16</p>
+    </div>
+  </div>
   
     
   </div>
@@ -199,121 +233,163 @@ window.Quarto = {
 </header>
 
 
-<p>Browse all journal entries here.</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">3.3</h2>
+</section>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">Method</h2>
+<p>Tolerance limits are different from confidence intervals in that they provide an interval within which at least a proportion <span class="math inline">\(q\)</span> of the population lies, within probability <span class="math inline">\(1-\alpha\)</span> or more that the stated interval does indeed “contain” the proportion <span class="math inline">\(q\)</span> of the population.</p>
+<p>With a sample size of <span class="math inline">\(n\)</span>, there is a probability that at least <span class="math inline">\(1-\alpha\)</span> that at least <span class="math inline">\(q\)</span> [or <span class="math inline">\((100)(q)%\)</span>] of the population is between <span class="math inline">\(X^{(r)}\)</span> and <span class="math inline">\(X^{(n+1-m)}\)</span> inclusive. For one-sided tolerance regions let either <span class="math inline">\(r\)</span> or <span class="math inline">\(m = 0\)</span>, where <span class="math inline">\(X^{(r)}\)</span> and <span class="math inline">\(X^{(n+1)}\)</span> are considered to be <span class="math inline">\(-\infty\)</span> and <span class="math inline">\(+\infty\)</span> respectively, and then proceed with methods.</p>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data consists of a random sample <span class="math inline">\(X_1, X_2, ..., X_n\)</span> from a larger population. A confidence coefficient is chosen, <span class="math inline">\(1-\alpha\)</span> and a pair of integers <span class="math inline">\(r\)</span> and <span class="math inline">\(m\)</span> are chosen as well.</p>
+<p>Important Note! We try to make the statement: “The probability is <span class="math inline">\(1-\alpha\)</span> that the random interval from <span class="math inline">\(X^{(r)}\)</span> to <span class="math inline">\(X^{(n+1-m)}\)</span> inclusive contains a proportion <span class="math inline">\(q\)</span> or more of the population.”</p>
+</section>
+<section id="assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
+<ol type="1">
+<li>The <span class="math inline">\(X_1, X_2, ..., X_n\)</span> are a random sample.</li>
+<li>The measurement scale is at least ordinal.</li>
+</ol>
+</section>
+<section id="approach" class="level2">
+<h2 class="anchored" data-anchor-id="approach">Approach</h2>
+<p>Approach A (to find <span class="math inline">\(n\)</span>):</p>
+<ul>
+<li>Used when we want to determine the required sample size <span class="math inline">\(n\)</span> after selecting a desired population proportion <span class="math inline">\(q\)</span></li>
+<li>If <span class="math inline">\(r+m = 1\)</span>, or if either <span class="math inline">\(r\)</span> or <span class="math inline">\(m = 0\)</span> as a one-sided tolerance limit, read <span class="math inline">\(n\)</span> directly from Table A5 to find the appropriate values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(q\)</span>.</li>
+<li>If <span class="math inline">\(r+m=2\)</span>, read <span class="math inline">\(n\)</span> from Table A6 for the appropriate values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(q\)</span>.</li>
+<li>If Table A5 and A6 are not appropriate, use the approximation:</li>
+</ul>
+<p><span class="math display">\[
+n \cong \frac 14 x_{1-\alpha} \frac {1+q} {1-q} + \frac 12 (r+m-1)
+\]</span> where <span class="math inline">\(x_{1-\alpha}\)</span> is the <span class="math inline">\((1-\alpha)\)</span> quantile of a chi-squared random variable with <span class="math inline">\(2(r+m)\)</span> degrees of freedom, obtained from Table A2.</p>
+<p>Approach B (to find <span class="math inline">\(q\)</span>):</p>
+<ul>
+<li>Used when we want to determine the population proportion <span class="math inline">\(q\)</span> for a given sample size <span class="math inline">\(n\)</span></li>
+<li>For a given sample size <span class="math inline">\(n\)</span> and selected values of <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(r\)</span>, and <span class="math inline">\(m\)</span>, the approximate value of <span class="math inline">\(q\)</span>, the proportion of the population, is given by:</li>
+</ul>
+<p><span class="math display">\[
+q = \frac {4n-2(r+m-1)-x_{1-\alpha}} {4n-2(r+m-1)+x_{1-\alpha}}
+\]</span></p>
+</section>
+<section id="completed-homework-problem" class="level2">
+<h2 class="anchored" data-anchor-id="completed-homework-problem">Completed Homework Problem</h2>
+<ol start="7" type="1">
+<li>A fitness gym has measured the percentage of fat on 86 of its members.</li>
+</ol>
+<ol type="a">
+<li>At least what percent of its members have fat percentage between the smallest and largest of the percentages measured on the 86 members of the sample, with 95% certainty? With 90% certainty?</li>
+<li>At least what percent of its members have fat percentage between <span class="math inline">\(X^{(2)}\)</span> and <span class="math inline">\(X^{(85)}\)</span> with 95% certainty? With 90% certainty?</li>
+</ol>
+<p>Part a:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># part (a): [X(1), X(86)]</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>p95 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.05</span><span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">86</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>p90 <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.10</span><span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">86</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>p95</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.03423437</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p90</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.02641899</code></pre>
+</div>
+</div>
+<p>With 95% confidence, we can say at least 3.42% of the population lies between the smallest and largest observed fat percentages. With 90% confidence, we can say at least 2.64% of the population lies between the smallest and largest observed fat percentages.</p>
+<p>Part b:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># part (b): [X(2), X(85)]</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>p95 <span class="ot">&lt;-</span> <span class="fu">qbeta</span>(<span class="fl">0.05</span>, <span class="dv">84</span>, <span class="dv">3</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>p90 <span class="ot">&lt;-</span> <span class="fu">qbeta</span>(<span class="fl">0.10</span>, <span class="dv">84</span>, <span class="dv">3</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>p95</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9286002</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p90</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9392982</code></pre>
+</div>
+</div>
+<p>With 95% confidence, at least 92.86% of the population have fat percentage between <span class="math inline">\(X^{(2)}\)</span> and <span class="math inline">\(X^{(85)}\)</span>. With 90% confidence, at least 93.93% of the population have fat percentage between <span class="math inline">\(X^{(2)}\)</span> and <span class="math inline">\(X^{(85)}\)</span>.</p>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">3.4</h2>
+</section>
+<section id="method-1" class="level2">
+<h2 class="anchored" data-anchor-id="method-1">Method</h2>
+</section>
+<section id="assumptions-1" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-1">Assumptions</h2>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</h2>
+</section>
+<section id="hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses">Hypotheses</h2>
+<ul>
+<li><span class="math inline">\(H_0\)</span>:</li>
+<li><span class="math inline">\(H_A\)</span>:</li>
+</ul>
+</section>
+<section id="rejection-region" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-region">Rejection Region</h2>
+</section>
+<section id="test-statistic-andor-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="test-statistic-andor-p-value">Test Statistic and/or p-value</h2>
+<ul>
+<li>Test Statistic:</li>
+<li>distribution is used.</li>
+<li>The p-value</li>
+</ul>
+</section>
+<section id="r-function" class="level2">
+<h2 class="anchored" data-anchor-id="r-function">R function</h2>
+<p>R function for test (obtained from</p>
+</section>
+<section id="confidence-interval" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval">Confidence Interval</h2>
+</section>
+<section id="data-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-1">Data</h2>
+</section>
+<section id="assumptions-2" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-2">Assumptions</h2>
+</section>
+<section id="approach-1" class="level2">
+<h2 class="anchored" data-anchor-id="approach-1">Approach</h2>
+<p>Approach A:</p>
+<p>Approach B:</p>
+</section>
+<section id="completed-homework-problem-1" class="level2">
+<h2 class="anchored" data-anchor-id="completed-homework-problem-1">Completed Homework Problem</h2>
+<p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0:\)</span></li>
+<li><span class="math inline">\(H_1:\)</span></li>
+</ul>
+<p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><span class="math inline">\(T = 0\)</span></li>
+<li><span class="math inline">\(p = 0.03429\)</span></li>
+</ul>
+<p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span>.</li>
+</ul>
+<p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li><p>Reject <span class="math inline">\(H_0\)</span>.</p></li>
+<li><p>There is sufficient evidence to suggest that the proportion of insects from the unusual environment with characteristic A is significantly different than 0.20.</p></li>
+</ul>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1757998800000" data-listing-file-modified-sort="1758075926121" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="608">
-<div class="thumbnail">
-<p><a href="../journal/week04.html" class="no-external"></a></p><a href="../journal/week04.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week04.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week04.html" class="no-external">Week 04: Chapter 3.3-3.5</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week04.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week04.html" class="no-external">Tolerance limits are different from confidence intervals in that they provide an interval within which at least a proportion <span class="math inline">\(q\)</span> of the population lies, within probability <span class="math inline">…</span><span class="math inline"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week04.html" class="no-external">
-<div class="listing-date">
-2025-09-16
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1757998800000" data-listing-file-modified-sort="1758072721494" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1788">
-<div class="thumbnail">
-<p><a href="../journal/week03.html" class="no-external"></a></p><a href="../journal/week03.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week03.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week03.html" class="no-external">Week 03: Chapter 3.1-3.2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week03.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week03.html" class="no-external">The binomial test is used when a sample contains the outcomes of <span class="math inline">\(n\)</span> independent trials. Each outcome can either be present in “class 1” or “class 2”, but cannot be…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week03.html" class="no-external">
-<div class="listing-date">
-2025-09-16
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1757739600000" data-listing-file-modified-sort="1757906937863" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2199">
-<div class="thumbnail">
-<p><a href="../journal/week-01-02.html" class="no-external"></a></p><a href="../journal/week-01-02.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week-01-02.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week-01-02.html" class="no-external">Week 01-02: Chapters 1-2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week-01-02.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week-01-02.html" class="no-external"><span class="math display">\[
-\binom{n}{n_1, n_2, \ldots, n_r} = \frac{n!}{n_1! n_2! \cdots n_r!}
-\]</span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week-01-02.html" class="no-external">
-<div class="listing-date">
-2025-09-13
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1756702800000" data-listing-file-modified-sort="1756089253703" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
-<div class="thumbnail">
-<p><a href="../journal/week-template.html" class="no-external"></a></p><a href="../journal/week-template.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week-template.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week-template.html" class="no-external">Week NN: <topic or="" chapter=""></topic></a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week-template.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week-template.html" class="no-external"><strong>Week structure</strong>: Copy this file to <code>week-02.qmd</code>, <code>week-03.qmd</code>, etc.<br>
-Keep one method per page.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week-template.html" class="no-external">
-<div class="listing-date">
-2025-09-01
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

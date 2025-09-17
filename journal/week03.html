@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-09-14">
+<meta name="dcterms.date" content="2025-09-16">
 
 <title>Week 03: Chapter 3.1-3.2 – Nonparamtric Methods Journal</title>
 <style>
@@ -191,15 +191,23 @@ window.Quarto = {
   <li><a href="#rejection-region" id="toc-rejection-region" class="nav-link" data-scroll-target="#rejection-region">Rejection Region</a></li>
   <li><a href="#test-statistic-andor-p-value" id="toc-test-statistic-andor-p-value" class="nav-link" data-scroll-target="#test-statistic-andor-p-value">Test Statistic and/or p-value</a></li>
   <li><a href="#r-function" id="toc-r-function" class="nav-link" data-scroll-target="#r-function">R function</a></li>
+  <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">Confidence Interval</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#assumptions-1" id="toc-assumptions-1" class="nav-link" data-scroll-target="#assumptions-1">Assumptions</a></li>
+  <li><a href="#approach" id="toc-approach" class="nav-link" data-scroll-target="#approach">Approach</a></li>
   <li><a href="#completed-homework-problem" id="toc-completed-homework-problem" class="nav-link" data-scroll-target="#completed-homework-problem">Completed Homework Problem</a></li>
   <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">3.2</a></li>
   <li><a href="#method-1" id="toc-method-1" class="nav-link" data-scroll-target="#method-1">Method</a></li>
-  <li><a href="#assumptions-1" id="toc-assumptions-1" class="nav-link" data-scroll-target="#assumptions-1">Assumptions</a></li>
+  <li><a href="#assumptions-2" id="toc-assumptions-2" class="nav-link" data-scroll-target="#assumptions-2">Assumptions</a></li>
   <li><a href="#parametric-equivalent-or-proof-that-there-is-none-1" id="toc-parametric-equivalent-or-proof-that-there-is-none-1" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none-1">Parametric equivalent (or proof that there is none)</a></li>
   <li><a href="#hypotheses-1" id="toc-hypotheses-1" class="nav-link" data-scroll-target="#hypotheses-1">Hypotheses</a></li>
   <li><a href="#rejection-region-1" id="toc-rejection-region-1" class="nav-link" data-scroll-target="#rejection-region-1">Rejection Region</a></li>
   <li><a href="#test-statistic-andor-p-value-1" id="toc-test-statistic-andor-p-value-1" class="nav-link" data-scroll-target="#test-statistic-andor-p-value-1">Test Statistic and/or p-value</a></li>
   <li><a href="#r-function-1" id="toc-r-function-1" class="nav-link" data-scroll-target="#r-function-1">R function</a></li>
+  <li><a href="#confidence-interval-1" id="toc-confidence-interval-1" class="nav-link" data-scroll-target="#confidence-interval-1">Confidence Interval</a></li>
+  <li><a href="#data-1" id="toc-data-1" class="nav-link" data-scroll-target="#data-1">Data</a></li>
+  <li><a href="#assumptions-3" id="toc-assumptions-3" class="nav-link" data-scroll-target="#assumptions-3">Assumptions</a></li>
+  <li><a href="#approach-1" id="toc-approach-1" class="nav-link" data-scroll-target="#approach-1">Approach</a></li>
   <li><a href="#completed-homework-problem-1" id="toc-completed-homework-problem-1" class="nav-link" data-scroll-target="#completed-homework-problem-1">Completed Homework Problem</a></li>
   </ul>
 </nav>
@@ -220,7 +228,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-09-14</p>
+      <p class="date">2025-09-16</p>
     </div>
   </div>
   
@@ -260,23 +268,23 @@ window.Quarto = {
 <p>Two-tailed:</p>
 <ul>
 <li>Using Table A3 (from back of book) - find the values for <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span> such that: <span class="math display">\[
-P(\Upsilon \leq t_1) = \alpha_1
+P(Y \leq t_1) = \alpha_1
 \]</span> <span class="math display">\[
-P(\Upsilon \leq t_2) = 1 - \alpha_2
-\]</span> where <span class="math inline">\(\Upsilon\)</span> is the binomial random variable with parameters <span class="math inline">\(p*\)</span> and <span class="math inline">\(n\)</span>, <span class="math inline">\(\alpha_1\)</span> is the size of the lower tail, and <span class="math inline">\(\alpha_2\)</span> is the size of the upper tail.</li>
+P(Y \leq t_2) = 1 - \alpha_2
+\]</span> where <span class="math inline">\(Y\)</span> is the binomial random variable with parameters <span class="math inline">\(p*\)</span> and <span class="math inline">\(n\)</span>, <span class="math inline">\(\alpha_1\)</span> is the size of the lower tail, and <span class="math inline">\(\alpha_2\)</span> is the size of the upper tail.</li>
 <li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T \leq t_1\)</span> or if <span class="math inline">\(T &gt; t_2\)</span>.</li>
 </ul>
 <p>Left-tailed:</p>
 <ul>
 <li>Using Table A3 (from back of book) - find the value for <span class="math inline">\(t\)</span> such that: <span class="math display">\[
-P(\Upsilon \leq t) = \alpha
+P(Y \leq t) = \alpha
 \]</span></li>
 <li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T \leq t\)</span>.</li>
 </ul>
 <p>Right-tailed:</p>
 <ul>
 <li>Using Table A3 (from back of book) - find the value for <span class="math inline">\(t\)</span> such that: <span class="math display">\[
-P(\Upsilon \leq t) = 1 - \alpha
+P(Y \leq t) = 1 - \alpha
 \]</span></li>
 <li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T &gt; t\)</span>.</li>
 </ul>
@@ -288,9 +296,9 @@ P(\Upsilon \leq t) = 1 - \alpha
 <li>Null distribution is used. The null distribution of <span class="math inline">\(T\)</span> is the binomial distribution with parameters <span class="math inline">\(p = p*\)</span> and <span class="math inline">\(n=\)</span> the sample size. Normal approximation is used for other values of <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> (i.e.&nbsp;<span class="math inline">\(n&gt;20\)</span> &amp; select <span class="math inline">\(p\)</span> values).</li>
 <li>The p-value is obtained differently for the different forms:
 <ul>
-<li>Two-tailed: p-value is twice the smaller of the probabilities that <span class="math inline">\(\Upsilon \leq\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T\)</span></li>
-<li>Left-tailed: p-value is the probability that $$ observed value of <span class="math inline">\(T\)</span></li>
-<li>Right-tailed: p-value is the probability that <span class="math inline">\(\Upsilon \geq\)</span> observed value of <span class="math inline">\(T\)</span></li>
+<li>Two-tailed: p-value is twice the smaller of the probabilities that <span class="math inline">\(Y \leq\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T\)</span></li>
+<li>Left-tailed: p-value is the probability that $Y $ observed value of <span class="math inline">\(T\)</span></li>
+<li>Right-tailed: p-value is the probability that <span class="math inline">\(Y \geq\)</span> observed value of <span class="math inline">\(T\)</span></li>
 </ul></li>
 </ul>
 </section>
@@ -299,6 +307,36 @@ P(\Upsilon \leq t) = 1 - \alpha
 <p>R function for binomial test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/binom.test):</p>
 <p>binom.test(x, n, p = 0.5, alternative = c(“two.sided”, “less”, “greater”), conf.level = 0.95)</p>
 <p>where <span class="math inline">\(x\)</span> = number of successes, or a vector of length 2 giving the numbers of successes and failures, respectively; <span class="math inline">\(n\)</span> = number of trials; and <span class="math inline">\(p\)</span> = hypothesized probability of success. Alternative denotes whether the test is two-tailed, left-tailed, or right-tailed. Conf.level is the confidence level, usually 95%.</p>
+</section>
+<section id="confidence-interval" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval">Confidence Interval</h2>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>A sample of observations on <span class="math inline">\(n\)</span> independent trials is examined and the number <span class="math inline">\(Y\)</span> of times the specified event occurs is noted.</p>
+</section>
+<section id="assumptions-1" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-1">Assumptions</h2>
+<ol type="1">
+<li>The <span class="math inline">\(n\)</span> trials are mutually independent.</li>
+<li>The probability <span class="math inline">\(p\)</span> of the specified event occurring remains constant from one trial to the next.</li>
+</ol>
+</section>
+<section id="approach" class="level2">
+<h2 class="anchored" data-anchor-id="approach">Approach</h2>
+<p>Approach A:</p>
+<ul>
+<li>For <span class="math inline">\(n \leq 30\)</span> and confidence coefficients of 0.90, 0.95, or 0.99, use Table A4.</li>
+</ul>
+<p>Approach B:</p>
+<ul>
+<li>For <span class="math inline">\(n &gt; 30\)</span> or confidence coefficients not covered in Table A4, use the normal approximation: <span class="math display">\[
+L = \frac Yn -z_{1-\alpha/2} \sqrt{Y(n-Y)/n^3}
+\]</span> and <span class="math display">\[
+U = \frac Yn +z_{1-\alpha/2} \sqrt{Y(n-Y)/n^3}
+\]</span></li>
+</ul>
+<p>where <span class="math inline">\(z_{1-\alpha/2}\)</span> is the quantile of a normally distributed random variable obtained from Table A1. The confidence coefficient is approximately <span class="math inline">\(1-\alpha\)</span>.</p>
 </section>
 <section id="completed-homework-problem" class="level2">
 <h2 class="anchored" data-anchor-id="completed-homework-problem">Completed Homework Problem</h2>
@@ -350,8 +388,8 @@ probability of success
 <h2 class="anchored" data-anchor-id="method-1">Method</h2>
 <p>The quantile test is a variation of the binomial test. It is used to test hypotheses that concern the quantiles of a random variable.</p>
 </section>
-<section id="assumptions-1" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-1">Assumptions</h2>
+<section id="assumptions-2" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-2">Assumptions</h2>
 <p>The <span class="math inline">\(X_i\)</span>s (i.e.&nbsp;<span class="math inline">\(X_1, X_2, ..., X_n\)</span>) are a random sample (independent and identically distributed random variables). The measurement scale of the <span class="math inline">\(X_i\)</span>s must be at least ordinal.</p>
 </section>
 <section id="parametric-equivalent-or-proof-that-there-is-none-1" class="level2">
@@ -377,25 +415,25 @@ probability of success
 <p>Two-tailed:</p>
 <ul>
 <li>Using Table A3 (from back of book) - find the values for <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span> such that: <span class="math display">\[
-P(\Upsilon \leq t_1) = \alpha_1
+P(Y \leq t_1) = \alpha_1
 \]</span> <span class="math display">\[
-P(\Upsilon \leq t_2) = 1 - \alpha_2
-\]</span> where <span class="math inline">\(\Upsilon\)</span> has the binomial distribution with parameters <span class="math inline">\(p^*\)</span> and <span class="math inline">\(n\)</span>, <span class="math inline">\(\alpha_1\)</span> is the size of the lower tail, and <span class="math inline">\(\alpha_2\)</span> is the size of the upper tail. The level of significance is <span class="math inline">\(\alpha_1 + \alpha_2\)</span>.</li>
+P(Y \leq t_2) = 1 - \alpha_2
+\]</span> where <span class="math inline">\(Y\)</span> has the binomial distribution with parameters <span class="math inline">\(p^*\)</span> and <span class="math inline">\(n\)</span>, <span class="math inline">\(\alpha_1\)</span> is the size of the lower tail, and <span class="math inline">\(\alpha_2\)</span> is the size of the upper tail. The level of significance is <span class="math inline">\(\alpha_1 + \alpha_2\)</span>.</li>
 <li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T_1 \leq t_1\)</span> or if <span class="math inline">\(T_2 &gt; t_2\)</span>.</li>
 </ul>
 <p>Left-tailed:</p>
 <ul>
 <li>Using Table A3 (from back of book) - find the value for <span class="math inline">\(t_1\)</span> such that: <span class="math display">\[
-P(\Upsilon \leq t_1) = \alpha
+P(Y \leq t_1) = \alpha
 \]</span></li>
 <li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T_1 \leq t_1\)</span>.</li>
 </ul>
 <p>Right-tailed:</p>
 <ul>
 <li>Using Table A3 (from back of book) - find the value for <span class="math inline">\(t_2\)</span> such that: <span class="math display">\[
-P(\Upsilon \leq t_2) = 1 - \alpha
+P(Y \leq t_2) = 1 - \alpha
 \]</span> OR <span class="math display">\[
-P(\Upsilon &gt; t_2) = \alpha
+P(Y &gt; t_2) = \alpha
 \]</span></li>
 <li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T_2 &gt; t_2\)</span>.</li>
 </ul>
@@ -407,9 +445,9 @@ P(\Upsilon &gt; t_2) = \alpha
 <li>Null distribution is used. The null distribution of <span class="math inline">\(T_1\)</span> and <span class="math inline">\(T_2\)</span> is the binomial distribution with parameters <span class="math inline">\(p = p^*\)</span> and <span class="math inline">\(n=\)</span> the sample size. Normal approximation is used for other values of <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> (i.e.&nbsp;<span class="math inline">\(n&gt;20\)</span> &amp; select <span class="math inline">\(p\)</span> values).</li>
 <li>The p-value is obtained differently for the different forms:
 <ul>
-<li>Two-tailed: p-value is twice the smaller of the probabilities that <span class="math inline">\(\Upsilon \leq\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T_1\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T_2\)</span></li>
-<li>Left-tailed: p-value is the probability that <span class="math inline">\(\Upsilon \leq\)</span> observed value of <span class="math inline">\(T_1\)</span></li>
-<li>Right-tailed: p-value is the probability that <span class="math inline">\(\Upsilon \geq\)</span> observed value of <span class="math inline">\(T_2\)</span></li>
+<li>Two-tailed: p-value is twice the smaller of the probabilities that <span class="math inline">\(Y \leq\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T_1\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T_2\)</span></li>
+<li>Left-tailed: p-value is the probability that <span class="math inline">\(Y \leq\)</span> observed value of <span class="math inline">\(T_1\)</span></li>
+<li>Right-tailed: p-value is the probability that <span class="math inline">\(Y \geq\)</span> observed value of <span class="math inline">\(T_2\)</span></li>
 </ul></li>
 </ul>
 </section>
@@ -431,6 +469,45 @@ P(\Upsilon &gt; t_2) = \alpha
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    p.value<span class="ot">&lt;-</span><span class="dv">2</span><span class="sc">*</span><span class="fu">min</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(T2<span class="dv">-1</span>,n,p),<span class="fu">pbinom</span>(T1,n,p))}</span>
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">xstar=</span>xstar,<span class="at">alternative=</span>alternative,<span class="at">T1=</span>T1,<span class="at">T2=</span>T2,<span class="at">p.value=</span>p.value)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="confidence-interval-1" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval-1">Confidence Interval</h2>
+</section>
+<section id="data-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-1">Data</h2>
+<p>The data consists of observations <span class="math inline">\(X_1, X_2, ..., X_n\)</span> which are independent and identically distributed random variables. <span class="math inline">\(X^{(1)} \leq X^{(2)} \leq ... \leq X^{(r)} \leq ... \leq X^{(n)}\)</span> represents the ordered sample, where <span class="math inline">\(1 \leq r &lt; s \leq n\)</span>. We want to find the CI for an unknown <span class="math inline">\(p^*\)</span>th quantile, where <span class="math inline">\(p^*\)</span> is some specified number between 0 and 1.</p>
+</section>
+<section id="assumptions-3" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-3">Assumptions</h2>
+<ol type="1">
+<li>The sample <span class="math inline">\(X_1, X_2, ..., X_n\)</span> is a random sample</li>
+<li>The measurement scale of the <span class="math inline">\(X_i\)</span>s is at least ordinal</li>
+</ol>
+</section>
+<section id="approach-1" class="level2">
+<h2 class="anchored" data-anchor-id="approach-1">Approach</h2>
+<p>Approach A:</p>
+<ul>
+<li>For <span class="math inline">\(n \leq 20\)</span>, Table A3 can be used to find <span class="math inline">\(s\)</span> and <span class="math inline">\(r\)</span>. Specific instructions on finding <span class="math inline">\(s\)</span> and <span class="math inline">\(r\)</span> can be found on pg 143 of textbook.</li>
+</ul>
+<p>Approach B:</p>
+<ul>
+<li>For <span class="math inline">\(n &gt; 20\)</span>, use the approximation based on the central limit theorem. Compute: <span class="math display">\[
+r^* = np^* -z_{\alpha/2} \sqrt{np^*(1-p^*)}
+\]</span> and <span class="math display">\[
+s^* = np^* -z_{1-\alpha/2} \sqrt{np^*(1-p^*)}
+\]</span></li>
+</ul>
+<p>where <span class="math inline">\(z_{1-\alpha/2}\)</span> is obtained from Table A1. The confidence coefficient is approximately <span class="math inline">\(1-\alpha\)</span>.</p>
+<p>One-sided confidence intervals are of the form: <span class="math display">\[
+P(X^{(r)} \leq x_{p^*}) = 1 - \alpha_1
+\]</span> and, if the distribution is continuous: <span class="math display">\[
+P(x_{p^*} \leq X^{(s)}) = 1 - \alpha_2
+\]</span> or, if not continous: <span class="math display">\[
+P(X^{(r)} \leq x_{p^*}) \geq 1 - \alpha_1
+\]</span> and <span class="math display">\[
+P(x_{p^*} \leq X^{(s)}) \geq 1 - \alpha_2
+\]</span></p>
 </section>
 <section id="completed-homework-problem-1" class="level2">
 <h2 class="anchored" data-anchor-id="completed-homework-problem-1">Completed Homework Problem</h2>

@@ -14,11 +14,151 @@
     "text": "Welcome! This page always shows the most recent weekly journal entry.\nUse the “Weeks” menu in the navigation bar to find previous entries.\nThis website will hold nonparametric statistics information, including summaries, nonparametric method outlines, and completed practice problems obtained from the following textbook:\nConover, W. J. (1999). Practical Nonparametric Statistics (3rd ed.). Wiley.\nThis website was created by Angelina Scamardo under the supervision of her professor, Dr. Samantha Seals.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAll Weeks\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "journal/index.html",
-    "href": "journal/index.html",
-    "title": "All Weeks",
-    "section": "",
-    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 03: Chapter 3.1-3.2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-14\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 01-02: Chapters 1-2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-13\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
+    "objectID": "journal/week04.html#method",
+    "href": "journal/week04.html#method",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Method",
+    "text": "Method\nTolerance limits are different from confidence intervals in that they provide an interval within which at least a proportion \\(q\\) of the population lies, within probability \\(1-\\alpha\\) or more that the stated interval does indeed “contain” the proportion \\(q\\) of the population.\nWith a sample size of \\(n\\), there is a probability that at least \\(1-\\alpha\\) that at least \\(q\\) [or \\((100)(q)%\\)] of the population is between \\(X^{(r)}\\) and \\(X^{(n+1-m)}\\) inclusive. For one-sided tolerance regions let either \\(r\\) or \\(m = 0\\), where \\(X^{(r)}\\) and \\(X^{(n+1)}\\) are considered to be \\(-\\infty\\) and \\(+\\infty\\) respectively, and then proceed with methods."
+  },
+  {
+    "objectID": "journal/week04.html#data",
+    "href": "journal/week04.html#data",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Data",
+    "text": "Data\nThe data consists of a random sample \\(X_1, X_2, ..., X_n\\) from a larger population. A confidence coefficient is chosen, \\(1-\\alpha\\) and a pair of integers \\(r\\) and \\(m\\) are chosen as well.\nImportant Note! We try to make the statement: “The probability is \\(1-\\alpha\\) that the random interval from \\(X^{(r)}\\) to \\(X^{(n+1-m)}\\) inclusive contains a proportion \\(q\\) or more of the population.”"
+  },
+  {
+    "objectID": "journal/week04.html#assumptions",
+    "href": "journal/week04.html#assumptions",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nThe \\(X_1, X_2, ..., X_n\\) are a random sample.\nThe measurement scale is at least ordinal."
+  },
+  {
+    "objectID": "journal/week04.html#approach",
+    "href": "journal/week04.html#approach",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Approach",
+    "text": "Approach\nApproach A (to find \\(n\\)):\n\nUsed when we want to determine the required sample size \\(n\\) after selecting a desired population proportion \\(q\\)\nIf \\(r+m = 1\\), or if either \\(r\\) or \\(m = 0\\) as a one-sided tolerance limit, read \\(n\\) directly from Table A5 to find the appropriate values of \\(\\alpha\\) and \\(q\\).\nIf \\(r+m=2\\), read \\(n\\) from Table A6 for the appropriate values of \\(\\alpha\\) and \\(q\\).\nIf Table A5 and A6 are not appropriate, use the approximation:\n\n\\[\nn \\cong \\frac 14 x_{1-\\alpha} \\frac {1+q} {1-q} + \\frac 12 (r+m-1)\n\\] where \\(x_{1-\\alpha}\\) is the \\((1-\\alpha)\\) quantile of a chi-squared random variable with \\(2(r+m)\\) degrees of freedom, obtained from Table A2.\nApproach B (to find \\(q\\)):\n\nUsed when we want to determine the population proportion \\(q\\) for a given sample size \\(n\\)\nFor a given sample size \\(n\\) and selected values of \\(\\alpha\\), \\(r\\), and \\(m\\), the approximate value of \\(q\\), the proportion of the population, is given by:\n\n\\[\nq = \\frac {4n-2(r+m-1)-x_{1-\\alpha}} {4n-2(r+m-1)+x_{1-\\alpha}}\n\\]"
+  },
+  {
+    "objectID": "journal/week04.html#completed-homework-problem",
+    "href": "journal/week04.html#completed-homework-problem",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\n\nA fitness gym has measured the percentage of fat on 86 of its members.\n\n\nAt least what percent of its members have fat percentage between the smallest and largest of the percentages measured on the 86 members of the sample, with 95% certainty? With 90% certainty?\nAt least what percent of its members have fat percentage between \\(X^{(2)}\\) and \\(X^{(85)}\\) with 95% certainty? With 90% certainty?\n\nPart a:\n\n# part (a): [X(1), X(86)]\np95 &lt;- 1 - 0.05^(1/86)\np90 &lt;- 1 - 0.10^(1/86)\n\np95\n\n[1] 0.03423437\n\np90\n\n[1] 0.02641899\n\n\nWith 95% confidence, we can say at least 3.42% of the population lies between the smallest and largest observed fat percentages. With 90% confidence, we can say at least 2.64% of the population lies between the smallest and largest observed fat percentages.\nPart b:\n\n# part (b): [X(2), X(85)]\np95 &lt;- qbeta(0.05, 84, 3)\np90 &lt;- qbeta(0.10, 84, 3)\n\np95\n\n[1] 0.9286002\n\np90\n\n[1] 0.9392982\n\n\nWith 95% confidence, at least 92.86% of the population have fat percentage between \\(X^{(2)}\\) and \\(X^{(85)}\\). With 90% confidence, at least 93.93% of the population have fat percentage between \\(X^{(2)}\\) and \\(X^{(85)}\\)."
+  },
+  {
+    "objectID": "journal/week04.html#section-1",
+    "href": "journal/week04.html#section-1",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "3.4",
+    "text": "3.4"
+  },
+  {
+    "objectID": "journal/week04.html#method-1",
+    "href": "journal/week04.html#method-1",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Method",
+    "text": "Method"
+  },
+  {
+    "objectID": "journal/week04.html#assumptions-1",
+    "href": "journal/week04.html#assumptions-1",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Assumptions",
+    "text": "Assumptions"
+  },
+  {
+    "objectID": "journal/week04.html#parametric-equivalent-or-proof-that-there-is-none",
+    "href": "journal/week04.html#parametric-equivalent-or-proof-that-there-is-none",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)"
+  },
+  {
+    "objectID": "journal/week04.html#hypotheses",
+    "href": "journal/week04.html#hypotheses",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\):\n\\(H_A\\):"
+  },
+  {
+    "objectID": "journal/week04.html#rejection-region",
+    "href": "journal/week04.html#rejection-region",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Rejection Region",
+    "text": "Rejection Region"
+  },
+  {
+    "objectID": "journal/week04.html#test-statistic-andor-p-value",
+    "href": "journal/week04.html#test-statistic-andor-p-value",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic:\ndistribution is used.\nThe p-value"
+  },
+  {
+    "objectID": "journal/week04.html#r-function",
+    "href": "journal/week04.html#r-function",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "R function",
+    "text": "R function\nR function for test (obtained from"
+  },
+  {
+    "objectID": "journal/week04.html#confidence-interval",
+    "href": "journal/week04.html#confidence-interval",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval"
+  },
+  {
+    "objectID": "journal/week04.html#data-1",
+    "href": "journal/week04.html#data-1",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Data",
+    "text": "Data"
+  },
+  {
+    "objectID": "journal/week04.html#assumptions-2",
+    "href": "journal/week04.html#assumptions-2",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Assumptions",
+    "text": "Assumptions"
+  },
+  {
+    "objectID": "journal/week04.html#approach-1",
+    "href": "journal/week04.html#approach-1",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Approach",
+    "text": "Approach\nApproach A:\nApproach B:"
+  },
+  {
+    "objectID": "journal/week04.html#completed-homework-problem-1",
+    "href": "journal/week04.html#completed-homework-problem-1",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\nHypotheses\n\n\\(H_0:\\)\n\\(H_1:\\)\n\nTest Statistic and p-Value\n\n\\(T = 0\\)\n\\(p = 0.03429\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nReject \\(H_0\\).\nThere is sufficient evidence to suggest that the proportion of insects from the unusual environment with characteristic A is significantly different than 0.20."
+  },
+  {
+    "objectID": "journal/week-01-02.html#chapter-1-summary",
+    "href": "journal/week-01-02.html#chapter-1-summary",
+    "title": "Week 01-02: Chapters 1-2",
+    "section": "Chapter 1 Summary",
+    "text": "Chapter 1 Summary\nIn chapter 1, we discuss counting rules. I recognized these rules as the rules for combinations, like n choose k. These rules allow us to determine the number of distinguishable arrangements of objects into a row. This can be calculated even if there are one or multiple identical objects present in a group. The total number of possible outcomes of each trial in an experiment can also be determined using counting rules.\nNext, we looked at defining and describing experiments and events. We used probabilities to describe events associated with experiments. The probability that an event occurs or does not occur was discussed, along with the probability that an event occurred given that another event occurred, also known as the conditional probability. It was also essential to learn how to identify whether or not two events were independent of each other, which was done by determining if P(AB) = P(A)P(B), where A and B are events.\nWe then moved onto learning about random variables. Distributions like the discrete uniform distribution and the hypergeometric distribution rely on the probability function of X, where X is a random variable. Distribution functions allow us to view all the properties of a random variable since it shows us all the possible probabilities associated with a random variable. We then use quantiles to describe the overall behavior of a distribution function.\nExpected values are used to calculate many different test statistics/statistical values. They are used to calculate the mean, interquartile range (IQR), standard deviation, variance, covariance, and correlation coefficient of random variables.\nTo conclude chapter 1, the following distributions were defined using probability functions/theorems: normal distribution and chi-squared distribution. Since I have learned and used those distributions in previous courses, I did not focus on this section."
+  },
+  {
+    "objectID": "journal/week-01-02.html#chapter-2-notes",
+    "href": "journal/week-01-02.html#chapter-2-notes",
+    "title": "Week 01-02: Chapters 1-2",
+    "section": "Chapter 2 Notes",
+    "text": "Chapter 2 Notes"
+  },
+  {
+    "objectID": "journal/week-01-02.html#chapter-2-summary",
+    "href": "journal/week-01-02.html#chapter-2-summary",
+    "title": "Week 01-02: Chapters 1-2",
+    "section": "Chapter 2 Summary",
+    "text": "Chapter 2 Summary\nIn chapter 2, we shifted focus from counting rules and random variables to sampling, estimation, and hypothesis testing. We began by defining populations and samples. A sample can be random, where each observation is independent and identically distributed, or it can be biased. We also reviewed the following different types of measurement scales: nominal, ordinal, interval, and ratio. We saw how order statistics can be applied when analyzing ordered data.\nNext, we explored estimation methods. The empirical distribution function (EDF) was introduced as a way to approximate the population distribution based on observed data. We then used concepts like sample mean, variance, and quantiles as point estimators of population parameters. We also learned about interval estimation, confidence coefficients, and unbiased estimators. The bootstrap method was also introduced as a resampling approach to approximate population quantities without requiring prior knowledge of the distribution. In survival analysis, the empirical survival function and the Kaplan-Meier estimator were discussed as nonparametric methods for estimating lifetime distributions.\nWe then studied hypothesis testing. This included defining null and alternative hypotheses, test statistics, and decision rules. Errors in hypothesis testing were categorized into Type I and Type II errors, with significance level (\\(\\alpha\\)), power, and p-values helping us evaluate tests. We also discussed test properties such as unbiasedness, consistency, and efficiency. We also learned that the power function plays an important role in comparing tests.\nFinally, we compared parametric and nonparametric methods. Parametric methods depend on knowing the population distribution. This is unlike nonparametric methods, which are more flexible and robust to distributional assumptions. Nonparametric tests can be applied to nominal, ordinal, interval, and ratio data."
   },
   {
     "objectID": "journal/week-template.html",
@@ -63,25 +203,11 @@
     "text": "R function\nName the primary R function(s) (e.g., wilcox.test, kruskal.test, friedman.test), with key arguments.\n\n# Minimal runnable example (replace with your own)\nset.seed(1)\nx &lt;- rnorm(30, mean = 0, sd = 1)\ny &lt;- rnorm(30, mean = 0.5, sd = 1)\nt.test(x, y, var.equal = TRUE)\n\n\n    Two Sample t-test\n\ndata:  x and y\nt = -2.4722, df = 58, p-value = 0.01638\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -0.9959007 -0.1047322\nsample estimates:\n mean of x  mean of y \n0.08245817 0.63277458"
   },
   {
-    "objectID": "journal/week-01-02.html#chapter-1-summary",
-    "href": "journal/week-01-02.html#chapter-1-summary",
-    "title": "Week 01-02: Chapters 1-2",
-    "section": "Chapter 1 Summary",
-    "text": "Chapter 1 Summary\nIn chapter 1, we discuss counting rules. I recognized these rules as the rules for combinations, like n choose k. These rules allow us to determine the number of distinguishable arrangements of objects into a row. This can be calculated even if there are one or multiple identical objects present in a group. The total number of possible outcomes of each trial in an experiment can also be determined using counting rules.\nNext, we looked at defining and describing experiments and events. We used probabilities to describe events associated with experiments. The probability that an event occurs or does not occur was discussed, along with the probability that an event occurred given that another event occurred, also known as the conditional probability. It was also essential to learn how to identify whether or not two events were independent of each other, which was done by determining if P(AB) = P(A)P(B), where A and B are events.\nWe then moved onto learning about random variables. Distributions like the discrete uniform distribution and the hypergeometric distribution rely on the probability function of X, where X is a random variable. Distribution functions allow us to view all the properties of a random variable since it shows us all the possible probabilities associated with a random variable. We then use quantiles to describe the overall behavior of a distribution function.\nExpected values are used to calculate many different test statistics/statistical values. They are used to calculate the mean, interquartile range (IQR), standard deviation, variance, covariance, and correlation coefficient of random variables.\nTo conclude chapter 1, the following distributions were defined using probability functions/theorems: normal distribution and chi-squared distribution. Since I have learned and used those distributions in previous courses, I did not focus on this section."
-  },
-  {
-    "objectID": "journal/week-01-02.html#chapter-2-notes",
-    "href": "journal/week-01-02.html#chapter-2-notes",
-    "title": "Week 01-02: Chapters 1-2",
-    "section": "Chapter 2 Notes",
-    "text": "Chapter 2 Notes"
-  },
-  {
-    "objectID": "journal/week-01-02.html#chapter-2-summary",
-    "href": "journal/week-01-02.html#chapter-2-summary",
-    "title": "Week 01-02: Chapters 1-2",
-    "section": "Chapter 2 Summary",
-    "text": "Chapter 2 Summary\nIn chapter 2, we shifted focus from counting rules and random variables to sampling, estimation, and hypothesis testing. We began by defining populations and samples. A sample can be random, where each observation is independent and identically distributed, or it can be biased. We also reviewed the following different types of measurement scales: nominal, ordinal, interval, and ratio. We saw how order statistics can be applied when analyzing ordered data.\nNext, we explored estimation methods. The empirical distribution function (EDF) was introduced as a way to approximate the population distribution based on observed data. We then used concepts like sample mean, variance, and quantiles as point estimators of population parameters. We also learned about interval estimation, confidence coefficients, and unbiased estimators. The bootstrap method was also introduced as a resampling approach to approximate population quantities without requiring prior knowledge of the distribution. In survival analysis, the empirical survival function and the Kaplan-Meier estimator were discussed as nonparametric methods for estimating lifetime distributions.\nWe then studied hypothesis testing. This included defining null and alternative hypotheses, test statistics, and decision rules. Errors in hypothesis testing were categorized into Type I and Type II errors, with significance level (\\(\\alpha\\)), power, and p-values helping us evaluate tests. We also discussed test properties such as unbiasedness, consistency, and efficiency. We also learned that the power function plays an important role in comparing tests.\nFinally, we compared parametric and nonparametric methods. Parametric methods depend on knowing the population distribution. This is unlike nonparametric methods, which are more flexible and robust to distributional assumptions. Nonparametric tests can be applied to nominal, ordinal, interval, and ratio data."
+    "objectID": "journal/index.html",
+    "href": "journal/index.html",
+    "title": "All Weeks",
+    "section": "",
+    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 04: Chapter 3.3-3.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-16\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 03: Chapter 3.1-3.2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-16\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 01-02: Chapters 1-2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-13\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "journal/week03.html#method",
@@ -116,14 +242,14 @@
     "href": "journal/week03.html#rejection-region",
     "title": "Week 03: Chapter 3.1-3.2",
     "section": "Rejection Region",
-    "text": "Rejection Region\nTwo-tailed:\n\nUsing Table A3 (from back of book) - find the values for \\(t_1\\) and \\(t_2\\) such that: \\[\nP(\\Upsilon \\leq t_1) = \\alpha_1\n\\] \\[\nP(\\Upsilon \\leq t_2) = 1 - \\alpha_2\n\\] where \\(\\Upsilon\\) is the binomial random variable with parameters \\(p*\\) and \\(n\\), \\(\\alpha_1\\) is the size of the lower tail, and \\(\\alpha_2\\) is the size of the upper tail.\nReject \\(H_0\\) if \\(T \\leq t_1\\) or if \\(T &gt; t_2\\).\n\nLeft-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t\\) such that: \\[\nP(\\Upsilon \\leq t) = \\alpha\n\\]\nReject \\(H_0\\) if \\(T \\leq t\\).\n\nRight-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t\\) such that: \\[\nP(\\Upsilon \\leq t) = 1 - \\alpha\n\\]\nReject \\(H_0\\) if \\(T &gt; t\\)."
+    "text": "Rejection Region\nTwo-tailed:\n\nUsing Table A3 (from back of book) - find the values for \\(t_1\\) and \\(t_2\\) such that: \\[\nP(Y \\leq t_1) = \\alpha_1\n\\] \\[\nP(Y \\leq t_2) = 1 - \\alpha_2\n\\] where \\(Y\\) is the binomial random variable with parameters \\(p*\\) and \\(n\\), \\(\\alpha_1\\) is the size of the lower tail, and \\(\\alpha_2\\) is the size of the upper tail.\nReject \\(H_0\\) if \\(T \\leq t_1\\) or if \\(T &gt; t_2\\).\n\nLeft-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t\\) such that: \\[\nP(Y \\leq t) = \\alpha\n\\]\nReject \\(H_0\\) if \\(T \\leq t\\).\n\nRight-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t\\) such that: \\[\nP(Y \\leq t) = 1 - \\alpha\n\\]\nReject \\(H_0\\) if \\(T &gt; t\\)."
   },
   {
     "objectID": "journal/week03.html#test-statistic-andor-p-value",
     "href": "journal/week03.html#test-statistic-andor-p-value",
     "title": "Week 03: Chapter 3.1-3.2",
     "section": "Test Statistic and/or p-value",
-    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T = O_1\\), where \\(T\\) is the number of times the outcome is “class 1”, and \\(O_1\\) is the number of observations in “class 1”.\nNull distribution is used. The null distribution of \\(T\\) is the binomial distribution with parameters \\(p = p*\\) and \\(n=\\) the sample size. Normal approximation is used for other values of \\(n\\) and \\(p\\) (i.e. \\(n&gt;20\\) & select \\(p\\) values).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of the probabilities that \\(\\Upsilon \\leq\\) or \\(\\geq\\) the observed value of \\(T\\)\nLeft-tailed: p-value is the probability that $$ observed value of \\(T\\)\nRight-tailed: p-value is the probability that \\(\\Upsilon \\geq\\) observed value of \\(T\\)"
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T = O_1\\), where \\(T\\) is the number of times the outcome is “class 1”, and \\(O_1\\) is the number of observations in “class 1”.\nNull distribution is used. The null distribution of \\(T\\) is the binomial distribution with parameters \\(p = p*\\) and \\(n=\\) the sample size. Normal approximation is used for other values of \\(n\\) and \\(p\\) (i.e. \\(n&gt;20\\) & select \\(p\\) values).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of the probabilities that \\(Y \\leq\\) or \\(\\geq\\) the observed value of \\(T\\)\nLeft-tailed: p-value is the probability that $Y $ observed value of \\(T\\)\nRight-tailed: p-value is the probability that \\(Y \\geq\\) observed value of \\(T\\)"
   },
   {
     "objectID": "journal/week03.html#r-function",
@@ -131,6 +257,34 @@
     "title": "Week 03: Chapter 3.1-3.2",
     "section": "R function",
     "text": "R function\nR function for binomial test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/binom.test):\nbinom.test(x, n, p = 0.5, alternative = c(“two.sided”, “less”, “greater”), conf.level = 0.95)\nwhere \\(x\\) = number of successes, or a vector of length 2 giving the numbers of successes and failures, respectively; \\(n\\) = number of trials; and \\(p\\) = hypothesized probability of success. Alternative denotes whether the test is two-tailed, left-tailed, or right-tailed. Conf.level is the confidence level, usually 95%."
+  },
+  {
+    "objectID": "journal/week03.html#confidence-interval",
+    "href": "journal/week03.html#confidence-interval",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval"
+  },
+  {
+    "objectID": "journal/week03.html#data",
+    "href": "journal/week03.html#data",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Data",
+    "text": "Data\nA sample of observations on \\(n\\) independent trials is examined and the number \\(Y\\) of times the specified event occurs is noted."
+  },
+  {
+    "objectID": "journal/week03.html#assumptions-1",
+    "href": "journal/week03.html#assumptions-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nThe \\(n\\) trials are mutually independent.\nThe probability \\(p\\) of the specified event occurring remains constant from one trial to the next."
+  },
+  {
+    "objectID": "journal/week03.html#approach",
+    "href": "journal/week03.html#approach",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Approach",
+    "text": "Approach\nApproach A:\n\nFor \\(n \\leq 30\\) and confidence coefficients of 0.90, 0.95, or 0.99, use Table A4.\n\nApproach B:\n\nFor \\(n &gt; 30\\) or confidence coefficients not covered in Table A4, use the normal approximation: \\[\nL = \\frac Yn -z_{1-\\alpha/2} \\sqrt{Y(n-Y)/n^3}\n\\] and \\[\nU = \\frac Yn +z_{1-\\alpha/2} \\sqrt{Y(n-Y)/n^3}\n\\]\n\nwhere \\(z_{1-\\alpha/2}\\) is the quantile of a normally distributed random variable obtained from Table A1. The confidence coefficient is approximately \\(1-\\alpha\\)."
   },
   {
     "objectID": "journal/week03.html#completed-homework-problem",
@@ -154,8 +308,8 @@
     "text": "Method\nThe quantile test is a variation of the binomial test. It is used to test hypotheses that concern the quantiles of a random variable."
   },
   {
-    "objectID": "journal/week03.html#assumptions-1",
-    "href": "journal/week03.html#assumptions-1",
+    "objectID": "journal/week03.html#assumptions-2",
+    "href": "journal/week03.html#assumptions-2",
     "title": "Week 03: Chapter 3.1-3.2",
     "section": "Assumptions",
     "text": "Assumptions\nThe \\(X_i\\)s (i.e. \\(X_1, X_2, ..., X_n\\)) are a random sample (independent and identically distributed random variables). The measurement scale of the \\(X_i\\)s must be at least ordinal."
@@ -179,14 +333,14 @@
     "href": "journal/week03.html#rejection-region-1",
     "title": "Week 03: Chapter 3.1-3.2",
     "section": "Rejection Region",
-    "text": "Rejection Region\nTwo-tailed:\n\nUsing Table A3 (from back of book) - find the values for \\(t_1\\) and \\(t_2\\) such that: \\[\nP(\\Upsilon \\leq t_1) = \\alpha_1\n\\] \\[\nP(\\Upsilon \\leq t_2) = 1 - \\alpha_2\n\\] where \\(\\Upsilon\\) has the binomial distribution with parameters \\(p^*\\) and \\(n\\), \\(\\alpha_1\\) is the size of the lower tail, and \\(\\alpha_2\\) is the size of the upper tail. The level of significance is \\(\\alpha_1 + \\alpha_2\\).\nReject \\(H_0\\) if \\(T_1 \\leq t_1\\) or if \\(T_2 &gt; t_2\\).\n\nLeft-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t_1\\) such that: \\[\nP(\\Upsilon \\leq t_1) = \\alpha\n\\]\nReject \\(H_0\\) if \\(T_1 \\leq t_1\\).\n\nRight-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t_2\\) such that: \\[\nP(\\Upsilon \\leq t_2) = 1 - \\alpha\n\\] OR \\[\nP(\\Upsilon &gt; t_2) = \\alpha\n\\]\nReject \\(H_0\\) if \\(T_2 &gt; t_2\\)."
+    "text": "Rejection Region\nTwo-tailed:\n\nUsing Table A3 (from back of book) - find the values for \\(t_1\\) and \\(t_2\\) such that: \\[\nP(Y \\leq t_1) = \\alpha_1\n\\] \\[\nP(Y \\leq t_2) = 1 - \\alpha_2\n\\] where \\(Y\\) has the binomial distribution with parameters \\(p^*\\) and \\(n\\), \\(\\alpha_1\\) is the size of the lower tail, and \\(\\alpha_2\\) is the size of the upper tail. The level of significance is \\(\\alpha_1 + \\alpha_2\\).\nReject \\(H_0\\) if \\(T_1 \\leq t_1\\) or if \\(T_2 &gt; t_2\\).\n\nLeft-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t_1\\) such that: \\[\nP(Y \\leq t_1) = \\alpha\n\\]\nReject \\(H_0\\) if \\(T_1 \\leq t_1\\).\n\nRight-tailed:\n\nUsing Table A3 (from back of book) - find the value for \\(t_2\\) such that: \\[\nP(Y \\leq t_2) = 1 - \\alpha\n\\] OR \\[\nP(Y &gt; t_2) = \\alpha\n\\]\nReject \\(H_0\\) if \\(T_2 &gt; t_2\\)."
   },
   {
     "objectID": "journal/week03.html#test-statistic-andor-p-value-1",
     "href": "journal/week03.html#test-statistic-andor-p-value-1",
     "title": "Week 03: Chapter 3.1-3.2",
     "section": "Test Statistic and/or p-value",
-    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T_1\\) and \\(T_2\\), where \\(T_1\\) is the number of observations \\(\\leq x^*\\) and \\(T_2\\) is the number of observations \\(&lt; x^*\\). Then, \\(T_1 = T_2\\) if none of the numbers in the data set exactly equal \\(x^*\\); otherwise, \\(T_1 &gt; T_2\\).\nNull distribution is used. The null distribution of \\(T_1\\) and \\(T_2\\) is the binomial distribution with parameters \\(p = p^*\\) and \\(n=\\) the sample size. Normal approximation is used for other values of \\(n\\) and \\(p\\) (i.e. \\(n&gt;20\\) & select \\(p\\) values).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of the probabilities that \\(\\Upsilon \\leq\\) or \\(\\geq\\) the observed value of \\(T_1\\) or \\(\\geq\\) the observed value of \\(T_2\\)\nLeft-tailed: p-value is the probability that \\(\\Upsilon \\leq\\) observed value of \\(T_1\\)\nRight-tailed: p-value is the probability that \\(\\Upsilon \\geq\\) observed value of \\(T_2\\)"
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T_1\\) and \\(T_2\\), where \\(T_1\\) is the number of observations \\(\\leq x^*\\) and \\(T_2\\) is the number of observations \\(&lt; x^*\\). Then, \\(T_1 = T_2\\) if none of the numbers in the data set exactly equal \\(x^*\\); otherwise, \\(T_1 &gt; T_2\\).\nNull distribution is used. The null distribution of \\(T_1\\) and \\(T_2\\) is the binomial distribution with parameters \\(p = p^*\\) and \\(n=\\) the sample size. Normal approximation is used for other values of \\(n\\) and \\(p\\) (i.e. \\(n&gt;20\\) & select \\(p\\) values).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of the probabilities that \\(Y \\leq\\) or \\(\\geq\\) the observed value of \\(T_1\\) or \\(\\geq\\) the observed value of \\(T_2\\)\nLeft-tailed: p-value is the probability that \\(Y \\leq\\) observed value of \\(T_1\\)\nRight-tailed: p-value is the probability that \\(Y \\geq\\) observed value of \\(T_2\\)"
   },
   {
     "objectID": "journal/week03.html#r-function-1",
@@ -194,6 +348,34 @@
     "title": "Week 03: Chapter 3.1-3.2",
     "section": "R function",
     "text": "R function\nR function for quantile test (obtained from https://people.stat.sc.edu/hitchcock/Rexamples518section3_2.txt):\nNote: R has no built in quantile test function, so I am using this function created by a professor that made notes similar to the textbook I am learning from.\n\nquantile.test&lt;-function(x,xstar=0,quantile=.5,alternative=\"two.sided\"){\n  n&lt;-length(x)\n  p&lt;-quantile\n  T1&lt;-sum(x&lt;=xstar)\n  T2&lt;-sum(x&lt; xstar)\n  if (alternative==\"quantile.less\") {\n    p.value&lt;-1-pbinom(T2-1,n,p)}\n  if (alternative==\"quantile.greater\"){\n    p.value&lt;-pbinom(T1,n,p)}\n  if (alternative==\"two.sided\"){\n    p.value&lt;-2*min(1-pbinom(T2-1,n,p),pbinom(T1,n,p))}\n  list(xstar=xstar,alternative=alternative,T1=T1,T2=T2,p.value=p.value)}"
+  },
+  {
+    "objectID": "journal/week03.html#confidence-interval-1",
+    "href": "journal/week03.html#confidence-interval-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval"
+  },
+  {
+    "objectID": "journal/week03.html#data-1",
+    "href": "journal/week03.html#data-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Data",
+    "text": "Data\nThe data consists of observations \\(X_1, X_2, ..., X_n\\) which are independent and identically distributed random variables. \\(X^{(1)} \\leq X^{(2)} \\leq ... \\leq X^{(r)} \\leq ... \\leq X^{(n)}\\) represents the ordered sample, where \\(1 \\leq r &lt; s \\leq n\\). We want to find the CI for an unknown \\(p^*\\)th quantile, where \\(p^*\\) is some specified number between 0 and 1."
+  },
+  {
+    "objectID": "journal/week03.html#assumptions-3",
+    "href": "journal/week03.html#assumptions-3",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nThe sample \\(X_1, X_2, ..., X_n\\) is a random sample\nThe measurement scale of the \\(X_i\\)s is at least ordinal"
+  },
+  {
+    "objectID": "journal/week03.html#approach-1",
+    "href": "journal/week03.html#approach-1",
+    "title": "Week 03: Chapter 3.1-3.2",
+    "section": "Approach",
+    "text": "Approach\nApproach A:\n\nFor \\(n \\leq 20\\), Table A3 can be used to find \\(s\\) and \\(r\\). Specific instructions on finding \\(s\\) and \\(r\\) can be found on pg 143 of textbook.\n\nApproach B:\n\nFor \\(n &gt; 20\\), use the approximation based on the central limit theorem. Compute: \\[\nr^* = np^* -z_{\\alpha/2} \\sqrt{np^*(1-p^*)}\n\\] and \\[\ns^* = np^* -z_{1-\\alpha/2} \\sqrt{np^*(1-p^*)}\n\\]\n\nwhere \\(z_{1-\\alpha/2}\\) is obtained from Table A1. The confidence coefficient is approximately \\(1-\\alpha\\).\nOne-sided confidence intervals are of the form: \\[\nP(X^{(r)} \\leq x_{p^*}) = 1 - \\alpha_1\n\\] and, if the distribution is continuous: \\[\nP(x_{p^*} \\leq X^{(s)}) = 1 - \\alpha_2\n\\] or, if not continous: \\[\nP(X^{(r)} \\leq x_{p^*}) \\geq 1 - \\alpha_1\n\\] and \\[\nP(x_{p^*} \\leq X^{(s)}) \\geq 1 - \\alpha_2\n\\]"
   },
   {
     "objectID": "journal/week03.html#completed-homework-problem-1",
