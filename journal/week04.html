@@ -317,7 +317,7 @@ q = \frac {4n-2(r+m-1)-x_{1-\alpha}} {4n-2(r+m-1)+x_{1-\alpha}}
 </section>
 <section id="method-1" class="level2">
 <h2 class="anchored" data-anchor-id="method-1">Method</h2>
-<p>The sign test is the more simple version of the binomial test with <span class="math inline">\(p^* = 1/2 = 1 - p^*\)</span>. The sign test is useful when trying to find out whether one random variable in a pair <span class="math inline">\((X, Y)\)</span> is larger than the other random variable in the pair. The data will consist of observations on a bivariate random sample <span class="math inline">\((X_1, Y_1), (X_2, Y_2), ... , (X_n, Y_n)\)</span> where there are <span class="math inline">\(n'\)</span> pairs of observations. With each pair, a comparison is made, and the comparison is then classified as either “+” (if <span class="math inline">\(X_i &lt; Y_i\)</span>) or “-” (if <span class="math inline">\(X_i &gt; Y_i\)</span>) or “0” (if <span class="math inline">\(X_i = Y_i\)</span>).</p>
+<p>The sign test is the more simple version of the binomial test with <span class="math inline">\(p^* = 1/2 = 1 - p^*\)</span>. The sign test is useful when trying to find out whether one random variable in a pair <span class="math inline">\((X, Y)\)</span> is larger than the other random variable in the pair. The data will consist of observations on a bivariate random sample <span class="math inline">\((X_1, Y_1), (X_2, Y_2), ... , (X_n, Y_n)\)</span> where there are <span class="math inline">\(n'\)</span> pairs of observations. With each pair, a comparison is made, and the comparison is then classified as either “+” (plus, if <span class="math inline">\(X_i &lt; Y_i\)</span>) or “-” (minus, if <span class="math inline">\(X_i &gt; Y_i\)</span>) or “0” (tie, if <span class="math inline">\(X_i = Y_i\)</span>).</p>
 </section>
 <section id="assumptions-1" class="level2">
 <h2 class="anchored" data-anchor-id="assumptions-1">Assumptions</h2>
@@ -340,7 +340,24 @@ q = \frac {4n-2(r+m-1)-x_{1-\alpha}} {4n-2(r+m-1)+x_{1-\alpha}}
 <li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(P(+) = P(-)\)</span> (two-tailed) | <span class="math inline">\(P(+) \geq P(-)\)</span> (left-tailed) | <span class="math inline">\(P(+) \leq P(-)\)</span> (right-tailed)</li>
 <li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(P(+) \neq P(-)\)</span> (two-tailed) | <span class="math inline">\(P(+) &lt; P(-)\)</span> (left-tailed) | <span class="math inline">\(P(+) &gt; P(-)\)</span> (right-tailed)</li>
 </ul>
-<p>In terms of null distribution, it could be interpreted in the following ways: - Two-tailed: - <span class="math inline">\(H_0\)</span>: <span class="math inline">\(E(X_i) = E(Y_i)\)</span> for all i (for means) | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i = M\)</span> of <span class="math inline">\(Y_i\)</span> for all i (for medians) - <span class="math inline">\(H_A\)</span>: <span class="math inline">\(E(X_i) \neq E(Y_i)\)</span> for all i | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i \neq M\)</span> of <span class="math inline">\(Y_i\)</span> for all i - Left-tailed: - <span class="math inline">\(H_0\)</span>: <span class="math inline">\(E(X_i) \leq E(Y_i)\)</span> for all i (for means) | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i \leq M\)</span> of <span class="math inline">\(Y_i\)</span> for all i (for medians) - <span class="math inline">\(H_A\)</span>: <span class="math inline">\(E(X_i) &gt; E(Y_i)\)</span> for all i | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i &gt; M\)</span> of <span class="math inline">\(Y_i\)</span> for all i - Right-tailed: - <span class="math inline">\(H_0\)</span>: <span class="math inline">\(E(X_i) \geq E(Y_i)\)</span> for all i (for means) | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i \geq M\)</span> of <span class="math inline">\(Y_i\)</span> for all i (for medians) - <span class="math inline">\(H_A\)</span>: <span class="math inline">\(E(X_i) &lt; E(Y_i)\)</span> for all i | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i &lt; M\)</span> of <span class="math inline">\(Y_i\)</span> for all i</p>
+<p>In terms of null distribution, it could be interpreted in the following ways:</p>
+<ul>
+<li><p>Two-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(E(X_i) = E(Y_i)\)</span> for all i (for means) | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i = M\)</span> of <span class="math inline">\(Y_i\)</span> for all i (for medians)</li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(E(X_i) \neq E(Y_i)\)</span> for all i | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i \neq M\)</span> of <span class="math inline">\(Y_i\)</span> for all i</li>
+</ul></li>
+<li><p>Left-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(E(X_i) \leq E(Y_i)\)</span> for all i (for means) | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i \leq M\)</span> of <span class="math inline">\(Y_i\)</span> for all i (for medians)</li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(E(X_i) &gt; E(Y_i)\)</span> for all i | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i &gt; M\)</span> of <span class="math inline">\(Y_i\)</span> for all i</li>
+</ul></li>
+<li><p>Right-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(E(X_i) \geq E(Y_i)\)</span> for all i (for means) | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i \geq M\)</span> of <span class="math inline">\(Y_i\)</span> for all i (for medians)</li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(E(X_i) &lt; E(Y_i)\)</span> for all i | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i &lt; M\)</span> of <span class="math inline">\(Y_i\)</span> for all i</li>
+</ul></li>
+</ul>
 </section>
 <section id="rejection-region" class="level2">
 <h2 class="anchored" data-anchor-id="rejection-region">Rejection Region</h2>
@@ -378,7 +395,7 @@ t = \frac{1}{2} (n + z_{\alpha} \sqrt{n})
 <li>The p-value is obtained differently for the different forms:
 <ul>
 <li>Two-tailed: p-value is twice the smaller of the probabilities that <span class="math inline">\(Y \leq\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T\)</span> (found from Table A3 for <span class="math inline">\(n \leq 20\)</span>, Table A1 if <span class="math inline">\(n &gt; 20\)</span>)</li>
-<li>Left-tailed: p-value is the probability that $Y $ observed value of <span class="math inline">\(T\)</span></li>
+<li>Left-tailed: p-value is the probability that <span class="math inline">\(Y \leq\)</span> observed value of <span class="math inline">\(T\)</span></li>
 <li>Right-tailed: p-value is the probability that <span class="math inline">\(Y \geq\)</span> observed value of <span class="math inline">\(T\)</span></li>
 </ul></li>
 </ul>
