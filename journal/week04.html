@@ -197,10 +197,6 @@ window.Quarto = {
   <li><a href="#rejection-region" id="toc-rejection-region" class="nav-link" data-scroll-target="#rejection-region">Rejection Region</a></li>
   <li><a href="#test-statistic-andor-p-value" id="toc-test-statistic-andor-p-value" class="nav-link" data-scroll-target="#test-statistic-andor-p-value">Test Statistic and/or p-value</a></li>
   <li><a href="#r-function" id="toc-r-function" class="nav-link" data-scroll-target="#r-function">R function</a></li>
-  <li><a href="#confidence-interval" id="toc-confidence-interval" class="nav-link" data-scroll-target="#confidence-interval">Confidence Interval</a></li>
-  <li><a href="#data-1" id="toc-data-1" class="nav-link" data-scroll-target="#data-1">Data</a></li>
-  <li><a href="#assumptions-2" id="toc-assumptions-2" class="nav-link" data-scroll-target="#assumptions-2">Assumptions</a></li>
-  <li><a href="#approach-1" id="toc-approach-1" class="nav-link" data-scroll-target="#approach-1">Approach</a></li>
   <li><a href="#completed-homework-problem-1" id="toc-completed-homework-problem-1" class="nav-link" data-scroll-target="#completed-homework-problem-1">Completed Homework Problem</a></li>
   </ul>
 </nav>
@@ -321,48 +317,75 @@ q = \frac {4n-2(r+m-1)-x_{1-\alpha}} {4n-2(r+m-1)+x_{1-\alpha}}
 </section>
 <section id="method-1" class="level2">
 <h2 class="anchored" data-anchor-id="method-1">Method</h2>
+<p>The sign test is the more simple version of the binomial test with <span class="math inline">\(p^* = 1/2 = 1 - p^*\)</span>. The sign test is useful when trying to find out whether one random variable in a pair <span class="math inline">\((X, Y)\)</span> is larger than the other random variable in the pair. The data will consist of observations on a bivariate random sample <span class="math inline">\((X_1, Y_1), (X_2, Y_2), ... , (X_n, Y_n)\)</span> where there are <span class="math inline">\(n'\)</span> pairs of observations. With each pair, a comparison is made, and the comparison is then classified as either “+” (if <span class="math inline">\(X_i &lt; Y_i\)</span>) or “-” (if <span class="math inline">\(X_i &gt; Y_i\)</span>) or “0” (if <span class="math inline">\(X_i = Y_i\)</span>).</p>
 </section>
 <section id="assumptions-1" class="level2">
 <h2 class="anchored" data-anchor-id="assumptions-1">Assumptions</h2>
+<ol type="1">
+<li>The bivariate random variables <span class="math inline">\((X_i, Y_i), i = 1, 2, ..., n'\)</span> are mutually independent.</li>
+<li>The measurement scale is at least ordinal within each pair (i.e.&nbsp;each can be classified as plus, minus, or tie).</li>
+<li>Pairs are internally consistent (i.e.&nbsp;if <span class="math inline">\(P(+) &gt; P(-)\)</span> for one pair, it is for all pairs).</li>
+</ol>
 </section>
 <section id="parametric-equivalent-or-proof-that-there-is-none" class="level2">
 <h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</h2>
+<ul>
+<li>The Wilcoxon signed rank test is the parametric equivalent if we assume the difference <span class="math inline">\(Y_i - X_i\)</span> are random variables with a symmetric distribution function (i.e.&nbsp;the distribution function of a random variable <span class="math inline">\(Z\)</span> is symmetric about some point <span class="math inline">\(c\)</span> if <span class="math inline">\(P(Z \leq c - x) = P(Z \geq c + x)\)</span> for all <span class="math inline">\(x\)</span>).</li>
+<li>The paired <span class="math inline">\(t\)</span>-test is the parametric equivalent if the differences <span class="math inline">\(Y_i - X_i\)</span> are independent and identically distributed normal random variables.</li>
+</ul>
 </section>
 <section id="hypotheses" class="level2">
 <h2 class="anchored" data-anchor-id="hypotheses">Hypotheses</h2>
 <ul>
-<li><span class="math inline">\(H_0\)</span>:</li>
-<li><span class="math inline">\(H_A\)</span>:</li>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(P(+) = P(-)\)</span> (two-tailed) | <span class="math inline">\(P(+) \geq P(-)\)</span> (left-tailed) | <span class="math inline">\(P(+) \leq P(-)\)</span> (right-tailed)</li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(P(+) \neq P(-)\)</span> (two-tailed) | <span class="math inline">\(P(+) &lt; P(-)\)</span> (left-tailed) | <span class="math inline">\(P(+) &gt; P(-)\)</span> (right-tailed)</li>
 </ul>
+<p>In terms of null distribution, it could be interpreted in the following ways: - Two-tailed: - <span class="math inline">\(H_0\)</span>: <span class="math inline">\(E(X_i) = E(Y_i)\)</span> for all i (for means) | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i = M\)</span> of <span class="math inline">\(Y_i\)</span> for all i (for medians) - <span class="math inline">\(H_A\)</span>: <span class="math inline">\(E(X_i) \neq E(Y_i)\)</span> for all i | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i \neq M\)</span> of <span class="math inline">\(Y_i\)</span> for all i - Left-tailed: - <span class="math inline">\(H_0\)</span>: <span class="math inline">\(E(X_i) \leq E(Y_i)\)</span> for all i (for means) | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i \leq M\)</span> of <span class="math inline">\(Y_i\)</span> for all i (for medians) - <span class="math inline">\(H_A\)</span>: <span class="math inline">\(E(X_i) &gt; E(Y_i)\)</span> for all i | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i &gt; M\)</span> of <span class="math inline">\(Y_i\)</span> for all i - Right-tailed: - <span class="math inline">\(H_0\)</span>: <span class="math inline">\(E(X_i) \geq E(Y_i)\)</span> for all i (for means) | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i \geq M\)</span> of <span class="math inline">\(Y_i\)</span> for all i (for medians) - <span class="math inline">\(H_A\)</span>: <span class="math inline">\(E(X_i) &lt; E(Y_i)\)</span> for all i | <span class="math inline">\(M\)</span> of <span class="math inline">\(X_i &lt; M\)</span> of <span class="math inline">\(Y_i\)</span> for all i</p>
 </section>
 <section id="rejection-region" class="level2">
 <h2 class="anchored" data-anchor-id="rejection-region">Rejection Region</h2>
+<p>Two-tailed:</p>
+<ul>
+<li>For <span class="math inline">\(n \leq 20\)</span>, use Table A3 with <span class="math inline">\(n\)</span> and <span class="math inline">\(p=1/2\)</span>; find about <span class="math inline">\(\alpha/2\)</span> and call it <span class="math inline">\(\alpha_1\)</span>. The value of <span class="math inline">\(y\)</span> corresponding to <span class="math inline">\(\alpha_1\)</span> is <span class="math inline">\(t\)</span>.</li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T \leq t\)</span> or if <span class="math inline">\(T \geq n - t\)</span> at a level of significance of <span class="math inline">\(2\alpha_1\)</span></li>
+<li>For <span class="math inline">\(n &gt; 20\)</span>, use the normal approximation to get: <span class="math display">\[
+t = \frac{1}{2} (n + z_{\alpha/2} \sqrt{n})
+\]</span> where <span class="math inline">\(z_{\alpha/2}\)</span> is obtained from Table A1. And, if <span class="math inline">\(\alpha = 0.05\)</span> and <span class="math inline">\(z_{\alpha/2} = (-1.96)\)</span>, then: <span class="math display">\[
+t = \frac{n}{2} - \sqrt{n}
+\]</span></li>
+</ul>
+<p>Left-tailed:</p>
+<ul>
+<li>Note: small values of <span class="math inline">\(T\)</span> indicate that a minus is more probable than a plus (agreeing with <span class="math inline">\(H_1\)</span>)</li>
+<li>For <span class="math inline">\(n \leq 20\)</span>, use Table A3 with <span class="math inline">\(n\)</span> and <span class="math inline">\(p=1/2\)</span>; find about <span class="math inline">\(\alpha\)</span> and call it <span class="math inline">\(\alpha_1\)</span>. The value of <span class="math inline">\(y\)</span> corresponding to <span class="math inline">\(\alpha_1\)</span> is <span class="math inline">\(t\)</span>.</li>
+<li>For <span class="math inline">\(n &gt; 20\)</span>, <span class="math inline">\(t\)</span> is found using this approximation: <span class="math display">\[
+t = \frac{1}{2} (n + z_{\alpha} \sqrt{n})
+\]</span></li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T \leq t\)</span> at a significance level of <span class="math inline">\(\alpha_1\)</span> or <span class="math inline">\(\alpha\)</span>.</li>
+</ul>
+<p>Right-tailed:</p>
+<ul>
+<li>Note: big values of <span class="math inline">\(T\)</span> indicate that a plus is more probable than a minus (agreeing with <span class="math inline">\(H_1\)</span>)</li>
+<li>For <span class="math inline">\(n \leq 20\)</span>, use Table A3 with <span class="math inline">\(n\)</span> and <span class="math inline">\(p=1/2\)</span>; find about <span class="math inline">\(\alpha\)</span> and call it <span class="math inline">\(\alpha_1\)</span>. The value of <span class="math inline">\(y\)</span> corresponding to <span class="math inline">\(\alpha_1\)</span> is <span class="math inline">\(t\)</span>. (same as left-tailed test)</li>
+<li>For <span class="math inline">\(n &gt; 20\)</span>, <span class="math inline">\(t\)</span> is found using the same approximation as the left-tailed test.</li>
+</ul>
 </section>
 <section id="test-statistic-andor-p-value" class="level2">
 <h2 class="anchored" data-anchor-id="test-statistic-andor-p-value">Test Statistic and/or p-value</h2>
 <ul>
-<li>Test Statistic:</li>
-<li>distribution is used.</li>
-<li>The p-value</li>
+<li>Test Statistic: <span class="math inline">\(T\)</span> is the number of “plus” pairs (i.e.&nbsp;<span class="math inline">\(T=\)</span> number of pairs <span class="math inline">\((X_i, Y_i)\)</span> where <span class="math inline">\(X_i &lt; Y_i\)</span>).</li>
+<li>The null distribution of <span class="math inline">\(T\)</span> is the binomial distribution with <span class="math inline">\(p = 1/2\)</span> and <span class="math inline">\(n=\)</span> number of noted pairs (i.e.&nbsp;disregard all tied pairs <span class="math inline">\(X=Y\)</span> and let <span class="math inline">\(n=\)</span> total number of pluses and minuses). Normal approximation is used for <span class="math inline">\(n&gt;20\)</span>.</li>
+<li>The p-value is obtained differently for the different forms:
+<ul>
+<li>Two-tailed: p-value is twice the smaller of the probabilities that <span class="math inline">\(Y \leq\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T\)</span> (found from Table A3 for <span class="math inline">\(n \leq 20\)</span>, Table A1 if <span class="math inline">\(n &gt; 20\)</span>)</li>
+<li>Left-tailed: p-value is the probability that $Y $ observed value of <span class="math inline">\(T\)</span></li>
+<li>Right-tailed: p-value is the probability that <span class="math inline">\(Y \geq\)</span> observed value of <span class="math inline">\(T\)</span></li>
+</ul></li>
 </ul>
 </section>
 <section id="r-function" class="level2">
 <h2 class="anchored" data-anchor-id="r-function">R function</h2>
 <p>R function for test (obtained from</p>
-</section>
-<section id="confidence-interval" class="level2">
-<h2 class="anchored" data-anchor-id="confidence-interval">Confidence Interval</h2>
-</section>
-<section id="data-1" class="level2">
-<h2 class="anchored" data-anchor-id="data-1">Data</h2>
-</section>
-<section id="assumptions-2" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-2">Assumptions</h2>
-</section>
-<section id="approach-1" class="level2">
-<h2 class="anchored" data-anchor-id="approach-1">Approach</h2>
-<p>Approach A:</p>
-<p>Approach B:</p>
 </section>
 <section id="completed-homework-problem-1" class="level2">
 <h2 class="anchored" data-anchor-id="completed-homework-problem-1">Completed Homework Problem</h2>

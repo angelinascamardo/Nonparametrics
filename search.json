@@ -60,42 +60,42 @@
     "href": "journal/week04.html#method-1",
     "title": "Week 04: Chapter 3.3-3.5",
     "section": "Method",
-    "text": "Method"
+    "text": "Method\nThe sign test is the more simple version of the binomial test with \\(p^* = 1/2 = 1 - p^*\\). The sign test is useful when trying to find out whether one random variable in a pair \\((X, Y)\\) is larger than the other random variable in the pair. The data will consist of observations on a bivariate random sample \\((X_1, Y_1), (X_2, Y_2), ... , (X_n, Y_n)\\) where there are \\(n'\\) pairs of observations. With each pair, a comparison is made, and the comparison is then classified as either “+” (if \\(X_i &lt; Y_i\\)) or “-” (if \\(X_i &gt; Y_i\\)) or “0” (if \\(X_i = Y_i\\))."
   },
   {
     "objectID": "journal/week04.html#assumptions-1",
     "href": "journal/week04.html#assumptions-1",
     "title": "Week 04: Chapter 3.3-3.5",
     "section": "Assumptions",
-    "text": "Assumptions"
+    "text": "Assumptions\n\nThe bivariate random variables \\((X_i, Y_i), i = 1, 2, ..., n'\\) are mutually independent.\nThe measurement scale is at least ordinal within each pair (i.e. each can be classified as plus, minus, or tie).\nPairs are internally consistent (i.e. if \\(P(+) &gt; P(-)\\) for one pair, it is for all pairs)."
   },
   {
     "objectID": "journal/week04.html#parametric-equivalent-or-proof-that-there-is-none",
     "href": "journal/week04.html#parametric-equivalent-or-proof-that-there-is-none",
     "title": "Week 04: Chapter 3.3-3.5",
     "section": "Parametric equivalent (or proof that there is none)",
-    "text": "Parametric equivalent (or proof that there is none)"
+    "text": "Parametric equivalent (or proof that there is none)\n\nThe Wilcoxon signed rank test is the parametric equivalent if we assume the difference \\(Y_i - X_i\\) are random variables with a symmetric distribution function (i.e. the distribution function of a random variable \\(Z\\) is symmetric about some point \\(c\\) if \\(P(Z \\leq c - x) = P(Z \\geq c + x)\\) for all \\(x\\)).\nThe paired \\(t\\)-test is the parametric equivalent if the differences \\(Y_i - X_i\\) are independent and identically distributed normal random variables."
   },
   {
     "objectID": "journal/week04.html#hypotheses",
     "href": "journal/week04.html#hypotheses",
     "title": "Week 04: Chapter 3.3-3.5",
     "section": "Hypotheses",
-    "text": "Hypotheses\n\n\\(H_0\\):\n\\(H_A\\):"
+    "text": "Hypotheses\n\n\\(H_0\\): \\(P(+) = P(-)\\) (two-tailed) | \\(P(+) \\geq P(-)\\) (left-tailed) | \\(P(+) \\leq P(-)\\) (right-tailed)\n\\(H_A\\): \\(P(+) \\neq P(-)\\) (two-tailed) | \\(P(+) &lt; P(-)\\) (left-tailed) | \\(P(+) &gt; P(-)\\) (right-tailed)\n\nIn terms of null distribution, it could be interpreted in the following ways: - Two-tailed: - \\(H_0\\): \\(E(X_i) = E(Y_i)\\) for all i (for means) | \\(M\\) of \\(X_i = M\\) of \\(Y_i\\) for all i (for medians) - \\(H_A\\): \\(E(X_i) \\neq E(Y_i)\\) for all i | \\(M\\) of \\(X_i \\neq M\\) of \\(Y_i\\) for all i - Left-tailed: - \\(H_0\\): \\(E(X_i) \\leq E(Y_i)\\) for all i (for means) | \\(M\\) of \\(X_i \\leq M\\) of \\(Y_i\\) for all i (for medians) - \\(H_A\\): \\(E(X_i) &gt; E(Y_i)\\) for all i | \\(M\\) of \\(X_i &gt; M\\) of \\(Y_i\\) for all i - Right-tailed: - \\(H_0\\): \\(E(X_i) \\geq E(Y_i)\\) for all i (for means) | \\(M\\) of \\(X_i \\geq M\\) of \\(Y_i\\) for all i (for medians) - \\(H_A\\): \\(E(X_i) &lt; E(Y_i)\\) for all i | \\(M\\) of \\(X_i &lt; M\\) of \\(Y_i\\) for all i"
   },
   {
     "objectID": "journal/week04.html#rejection-region",
     "href": "journal/week04.html#rejection-region",
     "title": "Week 04: Chapter 3.3-3.5",
     "section": "Rejection Region",
-    "text": "Rejection Region"
+    "text": "Rejection Region\nTwo-tailed:\n\nFor \\(n \\leq 20\\), use Table A3 with \\(n\\) and \\(p=1/2\\); find about \\(\\alpha/2\\) and call it \\(\\alpha_1\\). The value of \\(y\\) corresponding to \\(\\alpha_1\\) is \\(t\\).\nReject \\(H_0\\) if \\(T \\leq t\\) or if \\(T \\geq n - t\\) at a level of significance of \\(2\\alpha_1\\)\nFor \\(n &gt; 20\\), use the normal approximation to get: \\[\nt = \\frac{1}{2} (n + z_{\\alpha/2} \\sqrt{n})\n\\] where \\(z_{\\alpha/2}\\) is obtained from Table A1. And, if \\(\\alpha = 0.05\\) and \\(z_{\\alpha/2} = (-1.96)\\), then: \\[\nt = \\frac{n}{2} - \\sqrt{n}\n\\]\n\nLeft-tailed:\n\nNote: small values of \\(T\\) indicate that a minus is more probable than a plus (agreeing with \\(H_1\\))\nFor \\(n \\leq 20\\), use Table A3 with \\(n\\) and \\(p=1/2\\); find about \\(\\alpha\\) and call it \\(\\alpha_1\\). The value of \\(y\\) corresponding to \\(\\alpha_1\\) is \\(t\\).\nFor \\(n &gt; 20\\), \\(t\\) is found using this approximation: \\[\nt = \\frac{1}{2} (n + z_{\\alpha} \\sqrt{n})\n\\]\nReject \\(H_0\\) if \\(T \\leq t\\) at a significance level of \\(\\alpha_1\\) or \\(\\alpha\\).\n\nRight-tailed:\n\nNote: big values of \\(T\\) indicate that a plus is more probable than a minus (agreeing with \\(H_1\\))\nFor \\(n \\leq 20\\), use Table A3 with \\(n\\) and \\(p=1/2\\); find about \\(\\alpha\\) and call it \\(\\alpha_1\\). The value of \\(y\\) corresponding to \\(\\alpha_1\\) is \\(t\\). (same as left-tailed test)\nFor \\(n &gt; 20\\), \\(t\\) is found using the same approximation as the left-tailed test."
   },
   {
     "objectID": "journal/week04.html#test-statistic-andor-p-value",
     "href": "journal/week04.html#test-statistic-andor-p-value",
     "title": "Week 04: Chapter 3.3-3.5",
     "section": "Test Statistic and/or p-value",
-    "text": "Test Statistic and/or p-value\n\nTest Statistic:\ndistribution is used.\nThe p-value"
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T\\) is the number of “plus” pairs (i.e. \\(T=\\) number of pairs \\((X_i, Y_i)\\) where \\(X_i &lt; Y_i\\)).\nThe null distribution of \\(T\\) is the binomial distribution with \\(p = 1/2\\) and \\(n=\\) number of noted pairs (i.e. disregard all tied pairs \\(X=Y\\) and let \\(n=\\) total number of pluses and minuses). Normal approximation is used for \\(n&gt;20\\).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of the probabilities that \\(Y \\leq\\) or \\(\\geq\\) the observed value of \\(T\\) (found from Table A3 for \\(n \\leq 20\\), Table A1 if \\(n &gt; 20\\))\nLeft-tailed: p-value is the probability that $Y $ observed value of \\(T\\)\nRight-tailed: p-value is the probability that \\(Y \\geq\\) observed value of \\(T\\)"
   },
   {
     "objectID": "journal/week04.html#r-function",
@@ -103,34 +103,6 @@
     "title": "Week 04: Chapter 3.3-3.5",
     "section": "R function",
     "text": "R function\nR function for test (obtained from"
-  },
-  {
-    "objectID": "journal/week04.html#confidence-interval",
-    "href": "journal/week04.html#confidence-interval",
-    "title": "Week 04: Chapter 3.3-3.5",
-    "section": "Confidence Interval",
-    "text": "Confidence Interval"
-  },
-  {
-    "objectID": "journal/week04.html#data-1",
-    "href": "journal/week04.html#data-1",
-    "title": "Week 04: Chapter 3.3-3.5",
-    "section": "Data",
-    "text": "Data"
-  },
-  {
-    "objectID": "journal/week04.html#assumptions-2",
-    "href": "journal/week04.html#assumptions-2",
-    "title": "Week 04: Chapter 3.3-3.5",
-    "section": "Assumptions",
-    "text": "Assumptions"
-  },
-  {
-    "objectID": "journal/week04.html#approach-1",
-    "href": "journal/week04.html#approach-1",
-    "title": "Week 04: Chapter 3.3-3.5",
-    "section": "Approach",
-    "text": "Approach\nApproach A:\nApproach B:"
   },
   {
     "objectID": "journal/week04.html#completed-homework-problem-1",
