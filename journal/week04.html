@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-09-16">
+<meta name="dcterms.date" content="2025-09-21">
 
 <title>Week 04: Chapter 3.3-3.5 – Nonparamtric Methods Journal</title>
 <style>
@@ -198,6 +198,23 @@ window.Quarto = {
   <li><a href="#test-statistic-andor-p-value" id="toc-test-statistic-andor-p-value" class="nav-link" data-scroll-target="#test-statistic-andor-p-value">Test Statistic and/or p-value</a></li>
   <li><a href="#r-function" id="toc-r-function" class="nav-link" data-scroll-target="#r-function">R function</a></li>
   <li><a href="#completed-homework-problem-1" id="toc-completed-homework-problem-1" class="nav-link" data-scroll-target="#completed-homework-problem-1">Completed Homework Problem</a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2">3.5</a></li>
+  <li><a href="#method-2" id="toc-method-2" class="nav-link" data-scroll-target="#method-2">Method</a></li>
+  <li><a href="#assumptions-2" id="toc-assumptions-2" class="nav-link" data-scroll-target="#assumptions-2">Assumptions</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none-1" id="toc-parametric-equivalent-or-proof-that-there-is-none-1" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none-1">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#hypotheses-1" id="toc-hypotheses-1" class="nav-link" data-scroll-target="#hypotheses-1">Hypotheses</a></li>
+  <li><a href="#rejection-region-1" id="toc-rejection-region-1" class="nav-link" data-scroll-target="#rejection-region-1">Rejection Region</a></li>
+  <li><a href="#test-statistic-andor-p-value-1" id="toc-test-statistic-andor-p-value-1" class="nav-link" data-scroll-target="#test-statistic-andor-p-value-1">Test Statistic and/or p-value</a></li>
+  <li><a href="#r-function-1" id="toc-r-function-1" class="nav-link" data-scroll-target="#r-function-1">R function</a></li>
+  <li><a href="#completed-homework-problem-2" id="toc-completed-homework-problem-2" class="nav-link" data-scroll-target="#completed-homework-problem-2">Completed Homework Problem</a></li>
+  <li><a href="#method-3" id="toc-method-3" class="nav-link" data-scroll-target="#method-3">Method</a></li>
+  <li><a href="#assumptions-3" id="toc-assumptions-3" class="nav-link" data-scroll-target="#assumptions-3">Assumptions</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none-2" id="toc-parametric-equivalent-or-proof-that-there-is-none-2" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none-2">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#hypotheses-2" id="toc-hypotheses-2" class="nav-link" data-scroll-target="#hypotheses-2">Hypotheses</a></li>
+  <li><a href="#rejection-region-2" id="toc-rejection-region-2" class="nav-link" data-scroll-target="#rejection-region-2">Rejection Region</a></li>
+  <li><a href="#test-statistic-andor-p-value-2" id="toc-test-statistic-andor-p-value-2" class="nav-link" data-scroll-target="#test-statistic-andor-p-value-2">Test Statistic and/or p-value</a></li>
+  <li><a href="#r-function-2" id="toc-r-function-2" class="nav-link" data-scroll-target="#r-function-2">R function</a></li>
+  <li><a href="#completed-homework-problem-3" id="toc-completed-homework-problem-3" class="nav-link" data-scroll-target="#completed-homework-problem-3">Completed Homework Problem</a></li>
   </ul>
 </nav>
     </div>
@@ -217,7 +234,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-09-16</p>
+      <p class="date">2025-09-21</p>
     </div>
   </div>
   
@@ -402,19 +419,235 @@ t = \frac{1}{2} (n + z_{\alpha} \sqrt{n})
 </section>
 <section id="r-function" class="level2">
 <h2 class="anchored" data-anchor-id="r-function">R function</h2>
-<p>R function for test (obtained from</p>
+<p>R function for sign test (obtained from https://people.stat.sc.edu/hitchcock/Rexamples518section3_4.txt)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sign.test<span class="ot">&lt;-</span><span class="cf">function</span>(<span class="at">x=</span><span class="dv">0</span>,<span class="at">y=</span><span class="cn">NULL</span>,<span class="at">alternative=</span><span class="st">"two.sided"</span>){</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  n<span class="ot">&lt;-</span><span class="fu">sum</span>((x<span class="sc">-</span>y)<span class="sc">!=</span><span class="dv">0</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  T<span class="ot">&lt;-</span><span class="fu">sum</span>(x<span class="sc">&lt;</span>y)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (alternative<span class="sc">==</span><span class="st">"less"</span>) {</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    p.value<span class="ot">&lt;-</span><span class="fu">pbinom</span>(T,n,<span class="fl">0.5</span>)}</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (alternative<span class="sc">==</span><span class="st">"greater"</span>){</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    p.value<span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(T<span class="dv">-1</span>,n,<span class="fl">0.5</span>)}</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (alternative<span class="sc">==</span><span class="st">"two.sided"</span>){</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    p.value<span class="ot">&lt;-</span><span class="dv">2</span><span class="sc">*</span><span class="fu">min</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(T<span class="dv">-1</span>,n,<span class="fl">0.5</span>),<span class="fu">pbinom</span>(T,n,<span class="fl">0.5</span>))}</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">n=</span>n,<span class="at">alternative=</span>alternative,<span class="at">T=</span>T,<span class="at">p.value=</span>p.value)}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="completed-homework-problem-1" class="level2">
 <h2 class="anchored" data-anchor-id="completed-homework-problem-1">Completed Homework Problem</h2>
+<ol start="2" type="1">
+<li>Six students went on a diet in an attempt to lose weight, with the following results: (given in code below). Is the diet an effective means of losing weight?</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create a data set w/ the paired data given</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>weight_before <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">174</span>, <span class="dv">191</span>, <span class="dv">188</span>, <span class="dv">182</span>, <span class="dv">201</span>, <span class="dv">188</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>weight_after <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">165</span>, <span class="dv">186</span>, <span class="dv">183</span>, <span class="dv">178</span>, <span class="dv">203</span>, <span class="dv">181</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sign.test</span>(<span class="at">x=</span>weight_before, <span class="at">y=</span>weight_after, <span class="at">alternative=</span><span class="st">"less"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$n
+[1] 6
+
+$alternative
+[1] "less"
+
+$T
+[1] 1
+
+$p.value
+[1] 0.109375</code></pre>
+</div>
+</div>
 <p><strong>Hypotheses</strong></p>
 <ul>
-<li><span class="math inline">\(H_0:\)</span></li>
-<li><span class="math inline">\(H_1:\)</span></li>
+<li><span class="math inline">\(H_0:\)</span> <span class="math inline">\(P(+) \geq P(-)\)</span>, where <span class="math inline">\(P(+) = P\)</span>(weight_before &lt; weight_after) and <span class="math inline">\(P(-) = P\)</span>(weight_before &gt; weight_after)</li>
+<li><span class="math inline">\(H_1:\)</span> <span class="math inline">\(P(+) &lt; P(-)\)</span></li>
 </ul>
 <p><strong>Test Statistic and <em>p</em>-Value</strong></p>
 <ul>
-<li><span class="math inline">\(T = 0\)</span></li>
-<li><span class="math inline">\(p = 0.03429\)</span></li>
+<li><span class="math inline">\(T = 1\)</span></li>
+<li><span class="math inline">\(p = 0.109375\)</span></li>
+</ul>
+<p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span>.</li>
+</ul>
+<p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li><p>Fail to reject <span class="math inline">\(H_0\)</span>.</p></li>
+<li><p>There is not sufficient evidence to suggest that the diet is an effective means of losing weight.</p></li>
+</ul>
+</section>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2">3.5</h2>
+</section>
+<section id="method-2" class="level2">
+<h2 class="anchored" data-anchor-id="method-2">Method</h2>
+<p>The McNemar test aims to answer the question: “Can we detect a difference between the probability of (0,1) and the probability of (1,0)?” This is a different version of the sign test where the data is on a nominal measurement scale with categories “0” and “1”. The data will consist of observations on <span class="math inline">\(n'\)</span> independent bivariate random variables <span class="math inline">\((X_i, Y_i), i = 1, 2, ..., n'\)</span>.</p>
+<p>The data is usually organized into a contingency table, where <span class="math inline">\(a\)</span> = the number of pairs where <span class="math inline">\(X_i = 0\)</span> and <span class="math inline">\(Y_i = 0\)</span>; <span class="math inline">\(b\)</span> = the number of pairs where <span class="math inline">\(X_i = 0\)</span> and <span class="math inline">\(Y_i = 1\)</span>; <span class="math inline">\(c\)</span> = the number of pairs where <span class="math inline">\(X_i = 1\)</span> and <span class="math inline">\(Y_i = 0\)</span>; and <span class="math inline">\(d\)</span> = the number of pairs where <span class="math inline">\(X_i = 1\)</span> and <span class="math inline">\(Y_i = 1\)</span>.</p>
+</section>
+<section id="assumptions-2" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-2">Assumptions</h2>
+<ol type="1">
+<li>The pairs <span class="math inline">\((X_i, Y_i)\)</span> are mutually independent.</li>
+<li>The measurement scale is nominal with two categories “0” and “1” for all <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Y_i\)</span></li>
+<li>The difference <span class="math inline">\(P(X_i = 0, Y_i = 1) - P(X_i = 1, Y_i = 0)\)</span> is negative/zero/positive for all <span class="math inline">\(i\)</span></li>
+</ol>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none-1" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none-1">Parametric equivalent (or proof that there is none)</h2>
+<p>The McNemar test is equivalent to the paired sample t-tests but for dichotomous dependent variables, as opposed to for continuous dependent variables by the paired sample tests (via https://real-statistics.com/non-parametric-tests/mcnemars-test/).</p>
+</section>
+<section id="hypotheses-1" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses-1">Hypotheses</h2>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(P(X_i = 0, Y_i = 1) = P(X_i = 1, Y_i = 0)\)</span> for all <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(P(X_i = 0, Y_i = 1) \neq P(X_i = 1, Y_i = 0)\)</span> for all <span class="math inline">\(i\)</span></li>
+</ul>
+<p>These hypotheses can also be interpreted like this, if we add <span class="math inline">\(P(X_i = 0, Y_i = 0)\)</span> to both sides:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(P(X_i = 0) = P(Y_i = 0)\)</span> for all <span class="math inline">\(i\)</span> | <span class="math inline">\(P(X_i = 1) = P(Y_i = 1)\)</span> for all <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(P(X_i = 0) \neq P(Y_i = 0)\)</span> for all <span class="math inline">\(i\)</span> | <span class="math inline">\(P(X_i = 1) \neq P(Y_i = 1)\)</span> for all <span class="math inline">\(i\)</span></li>
+</ul>
+</section>
+<section id="rejection-region-1" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-region-1">Rejection Region</h2>
+<ul>
+<li>Let <span class="math inline">\(n=b+c\)</span>. If <span class="math inline">\(n \leq 20\)</span>, use Table A3. Enter table with <span class="math inline">\(p=1/2\)</span> and <span class="math inline">\(n=b+c\)</span> to find approximately <span class="math inline">\(\alpha/2\)</span> (called <span class="math inline">\(\alpha_1\)</span>). The corresponding value of <span class="math inline">\(y\)</span> is <span class="math inline">\(t\)</span>. Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T_2 \leq t\)</span> or if <span class="math inline">\(T_2 \geq n - t\)</span> at a significance level of <span class="math inline">\(2\alpha_1\)</span>.</li>
+<li>If <span class="math inline">\(n&gt;20\)</span>, use <span class="math inline">\(T_1\)</span> and Table A2. Reject <span class="math inline">\(H_0\)</span> at a level of significance <span class="math inline">\(\alpha\)</span> if <span class="math inline">\(T_1\)</span> exceeds the <span class="math inline">\((1-\alpha)\)</span> quantile of a chi-squared random variable with 1 degree of freedom.</li>
+</ul>
+</section>
+<section id="test-statistic-andor-p-value-1" class="level2">
+<h2 class="anchored" data-anchor-id="test-statistic-andor-p-value-1">Test Statistic and/or p-value</h2>
+<ul>
+<li>Test Statistic:
+<ul>
+<li>For <span class="math inline">\(b+c &gt; 20\)</span>: <span class="math inline">\(T_1 = \frac{(b-c)^2}{b+c}\)</span></li>
+<li>For <span class="math inline">\(b+c \leq 20\)</span>: <span class="math inline">\(T_2 = b\)</span></li>
+</ul></li>
+<li>The null distribution of <span class="math inline">\(T_1\)</span> is approximately the chi-squared distribution with 1 degree of freedom when <span class="math inline">\((b+c)\)</span> is large. The exact distribution of <span class="math inline">\(T_2\)</span> is the binomial distribution with <span class="math inline">\(p=1/2\)</span> and <span class="math inline">\(n=b+c\)</span>.</li>
+<li>For <span class="math inline">\(n \leq 20\)</span>, the p-value is twice the probability of <span class="math inline">\(T_2 \leq\)</span> <span class="math inline">\(\geq\)</span> the observed value (whichever is smaller). For <span class="math inline">\(n&gt;20\)</span>, the p-value is the probability of <span class="math inline">\(T_1\)</span> exceeding the observed value (as found in Table A2 for the chi-squared distribution with 1 degree of freedom).</li>
+</ul>
+</section>
+<section id="r-function-1" class="level2">
+<h2 class="anchored" data-anchor-id="r-function-1">R function</h2>
+<p>R function for McNemar test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/mcnemar.test)</p>
+<p>mcnemar.test(x, y = NULL, correct = TRUE)</p>
+<p>where x is either a two-dimensional contingency table in matrix form or a factor object, y is a factor object (it will be ignored if x is a matrix), and correct indicates whether or not to apply continuity correction when computing the test statistic.</p>
+</section>
+<section id="completed-homework-problem-2" class="level2">
+<h2 class="anchored" data-anchor-id="completed-homework-problem-2">Completed Homework Problem</h2>
+<ol type="1">
+<li>One hundred thirty-five citizens were selected at random and were asked to state their opinion regarding the U.S. foreign policy. Forty-three were opposed to the U.S. foreign policy. After several weeks, during which they received an informative newsletter, they were again asked their opinion, 37 were opposed, and 30 of the 37 were persons who originally were not opposed to the U.S. foreign policy. Is the change in numbers of people opposed to the U.S. foreign policy significant?</li>
+</ol>
+<p>Corresponding contingency table: | Before &nbsp;After | Opposed | Not Opposed | |—————-|———|————-| | Opposed | 7 | 36 | | Not Opposed | 30 | 62 |</p>
+<p>From this table, let’s make a matrix of these values to enter into the McNemar test function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>foreign_policy <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">36</span>,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                           <span class="dv">30</span>, <span class="dv">62</span>),</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mcnemar.test</span>(foreign_policy, <span class="at">correct =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    McNemar's Chi-squared test with continuity correction
+
+data:  foreign_policy
+McNemar's chi-squared = 0.37879, df = 1, p-value = 0.5383</code></pre>
+</div>
+</div>
+<p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(P(X_i = 0, Y_i = 1) = P(X_i = 1, Y_i = 0)\)</span> for all <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(P(X_i = 0, Y_i = 1) \neq P(X_i = 1, Y_i = 0)\)</span> for all <span class="math inline">\(i\)</span></li>
+</ul>
+<p>where <span class="math inline">\(X_i\)</span> represents the before opposed for person <span class="math inline">\(i\)</span> (“1” = opposed, “0” = not opposed), and <span class="math inline">\(Y_i\)</span> represents after opposed for person <span class="math inline">\(i\)</span> (“1” = opposed, “0” = not opposed).</p>
+<p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><span class="math inline">\(\chi^2 = 0.37879\)</span></li>
+<li><span class="math inline">\(p = 0.5383\)</span></li>
+</ul>
+<p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span>.</li>
+</ul>
+<p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li><p>Fail to reject <span class="math inline">\(H_0\)</span>.</p></li>
+<li><p>There is not sufficient evidence to suggest that the change in numbers of people opposed to the U.S. foreign policy is significant.</p></li>
+</ul>
+</section>
+<section id="method-3" class="level2">
+<h2 class="anchored" data-anchor-id="method-3">Method</h2>
+<p>The Cox and Stuart test for trend involves pairing the later numbers with the earlier numbers and performing a sign test on the pairs. A trend is present if one member of each pair has a tendency to be higher/lower than the other member. A trend is not present if the sequence of numbers actually represents observations on independent and identically distributed random variables (i.e.&nbsp;no tendency for one member to exceed the other one). It can also be used to detect any specified type of nonrandom pattern (i.e.&nbsp;sine wave, periodic pattern).</p>
+<p>NOTE: A sequence of numbers is said to have a trend if the later numbers in the sequence tend to be greater than the earlier numbers (upward trend) or less than the earlier numbers (downward trend).</p>
+<p>The data will consist of observations on a sequence of random variables <span class="math inline">\(X_1, X_2, ..., X_{n'}\)</span>, arranged in a particular order. Group the random variables into pairs <span class="math inline">\((X_1, X_{1+c}), (X_2, X_{2+c}), ..., (X_{n'-c}, X_{n'})\)</span>, where <span class="math inline">\(c = n'/2\)</span> if <span class="math inline">\(n'\)</span> is even, otherwise <span class="math inline">\(c=(n'+1)/2\)</span>. Replace each pair <span class="math inline">\((X_i, X_{i+c})\)</span> with a “+” if <span class="math inline">\(X_i &lt; X_{i+c}\)</span> or a “-” if <span class="math inline">\(X_i &gt; X_{i+c}\)</span>. Eliminate ties. The number of untied pairs is called <span class="math inline">\(n\)</span>.</p>
+</section>
+<section id="assumptions-3" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-3">Assumptions</h2>
+<ol type="1">
+<li>The random variables <span class="math inline">\(X_1, X_2, ..., X_{n'}\)</span> are mutually independent</li>
+<li>The measurement scale of the <span class="math inline">\(X_i\)</span>s is at least ordinal</li>
+<li>Either the <span class="math inline">\(X_i\)</span>s are identically distributed or there is a trend; meaning that the random variables are more likely to be greater than instead of less than the earlier random variables (or vice versa).</li>
+</ol>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none-2" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none-2">Parametric equivalent (or proof that there is none)</h2>
+<p>There is no direct parametric equivalent that I am able to find.</p>
+</section>
+<section id="hypotheses-2" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses-2">Hypotheses</h2>
+<p>The hypotheses are the same as the sign test. The null hypothesis is that no trend is present. A right-tailed test is used to detect an upward trend, and a left-tailed test is used to detect a downward trend. The two-tailed test is used if the alternative hypothesis is that any type of trend (upward or downward) exists.</p>
+</section>
+<section id="rejection-region-2" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-region-2">Rejection Region</h2>
+<p>The rejection region is the same as the sign test.</p>
+</section>
+<section id="test-statistic-andor-p-value-2" class="level2">
+<h2 class="anchored" data-anchor-id="test-statistic-andor-p-value-2">Test Statistic and/or p-value</h2>
+<ul>
+<li>Test Statistic: <span class="math inline">\(T\)</span> = total number of +’s</li>
+<li>The null distribution of <span class="math inline">\(T\)</span> is approximately the binomial distribution with <span class="math inline">\(p=1/2\)</span> and <span class="math inline">\(n=\)</span> number of untied pairs, where <span class="math inline">\(X_i \neq X_{i+c}\)</span>.</li>
+<li>The p-value is calculated exactly as in the sign test.</li>
+</ul>
+</section>
+<section id="r-function-2" class="level2">
+<h2 class="anchored" data-anchor-id="r-function-2">R function</h2>
+<p>R function for Cox-Stuart test (obtained from https://www.rdocumentation.org/packages/randtests/versions/1.0.1/topics/cox.stuart.test)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">##load in library first</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(randtests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>cox.stuart.test(x, alternative)</p>
+<p>where x is a numeric vector containing the data, and alternative is the alternative hypothesis (“two.sided” is default, can also use “left.sided” or “right.sided”).</p>
+</section>
+<section id="completed-homework-problem-3" class="level2">
+<h2 class="anchored" data-anchor-id="completed-homework-problem-3">Completed Homework Problem</h2>
+<ol start="3" type="1">
+<li>In a certain city the mortality rate per 100,000 citizens due to automobile accidents for each of the last 15 years was (see below). Is there any basis for the statement that the mortality rate is increasing?</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mortality_rate <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">17.3</span>, <span class="fl">17.9</span>, <span class="fl">18.4</span>, <span class="fl">18.1</span>, <span class="fl">18.3</span>, <span class="fl">19.6</span>, <span class="fl">18.6</span>, <span class="fl">19.2</span>, <span class="fl">17.7</span>, <span class="fl">20.0</span>, <span class="fl">19.0</span>, <span class="fl">18.8</span>, <span class="fl">19.3</span>, <span class="fl">20.2</span>, <span class="fl">19.9</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cox.stuart.test</span>(mortality_rate, <span class="st">"right.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Cox Stuart test
+
+data:  mortality_rate
+statistic = 7, n = 7, p-value = 0.007812
+alternative hypothesis: increasing trend</code></pre>
+</div>
+</div>
+<p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0:\)</span> no trend is present</li>
+<li><span class="math inline">\(H_1:\)</span> an upward/increasing trend is present</li>
+</ul>
+<p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><span class="math inline">\(T = 7\)</span></li>
+<li><span class="math inline">\(p = 0.007812\)</span></li>
 </ul>
 <p><strong>Rejection Region</strong></p>
 <ul>
@@ -423,7 +656,7 @@ t = \frac{1}{2} (n + z_{\alpha} \sqrt{n})
 <p><strong>Conclusion/Interpretation</strong></p>
 <ul>
 <li><p>Reject <span class="math inline">\(H_0\)</span>.</p></li>
-<li><p>There is sufficient evidence to suggest that the proportion of insects from the unusual environment with characteristic A is significantly different than 0.20.</p></li>
+<li><p>There is sufficient evidence to suggest that the mortality rate is increasing.</p></li>
 </ul>
 
 

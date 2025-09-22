@@ -102,14 +102,133 @@
     "href": "journal/week04.html#r-function",
     "title": "Week 04: Chapter 3.3-3.5",
     "section": "R function",
-    "text": "R function\nR function for test (obtained from"
+    "text": "R function\nR function for sign test (obtained from https://people.stat.sc.edu/hitchcock/Rexamples518section3_4.txt)\n\nsign.test&lt;-function(x=0,y=NULL,alternative=\"two.sided\"){\n  n&lt;-sum((x-y)!=0)\n  T&lt;-sum(x&lt;y)\n  if (alternative==\"less\") {\n    p.value&lt;-pbinom(T,n,0.5)}\n  if (alternative==\"greater\"){\n    p.value&lt;- 1-pbinom(T-1,n,0.5)}\n  if (alternative==\"two.sided\"){\n    p.value&lt;-2*min(1-pbinom(T-1,n,0.5),pbinom(T,n,0.5))}\n  list(n=n,alternative=alternative,T=T,p.value=p.value)}"
   },
   {
     "objectID": "journal/week04.html#completed-homework-problem-1",
     "href": "journal/week04.html#completed-homework-problem-1",
     "title": "Week 04: Chapter 3.3-3.5",
     "section": "Completed Homework Problem",
-    "text": "Completed Homework Problem\nHypotheses\n\n\\(H_0:\\)\n\\(H_1:\\)\n\nTest Statistic and p-Value\n\n\\(T = 0\\)\n\\(p = 0.03429\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nReject \\(H_0\\).\nThere is sufficient evidence to suggest that the proportion of insects from the unusual environment with characteristic A is significantly different than 0.20."
+    "text": "Completed Homework Problem\n\nSix students went on a diet in an attempt to lose weight, with the following results: (given in code below). Is the diet an effective means of losing weight?\n\n\n#create a data set w/ the paired data given\nweight_before &lt;- c(174, 191, 188, 182, 201, 188)\nweight_after &lt;- c(165, 186, 183, 178, 203, 181)\n\nsign.test(x=weight_before, y=weight_after, alternative=\"less\")\n\n$n\n[1] 6\n\n$alternative\n[1] \"less\"\n\n$T\n[1] 1\n\n$p.value\n[1] 0.109375\n\n\nHypotheses\n\n\\(H_0:\\) \\(P(+) \\geq P(-)\\), where \\(P(+) = P\\)(weight_before &lt; weight_after) and \\(P(-) = P\\)(weight_before &gt; weight_after)\n\\(H_1:\\) \\(P(+) &lt; P(-)\\)\n\nTest Statistic and p-Value\n\n\\(T = 1\\)\n\\(p = 0.109375\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nFail to reject \\(H_0\\).\nThere is not sufficient evidence to suggest that the diet is an effective means of losing weight."
+  },
+  {
+    "objectID": "journal/week04.html#section-2",
+    "href": "journal/week04.html#section-2",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "3.5",
+    "text": "3.5"
+  },
+  {
+    "objectID": "journal/week04.html#method-2",
+    "href": "journal/week04.html#method-2",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Method",
+    "text": "Method\nThe McNemar test aims to answer the question: “Can we detect a difference between the probability of (0,1) and the probability of (1,0)?” This is a different version of the sign test where the data is on a nominal measurement scale with categories “0” and “1”. The data will consist of observations on \\(n'\\) independent bivariate random variables \\((X_i, Y_i), i = 1, 2, ..., n'\\).\nThe data is usually organized into a contingency table, where \\(a\\) = the number of pairs where \\(X_i = 0\\) and \\(Y_i = 0\\); \\(b\\) = the number of pairs where \\(X_i = 0\\) and \\(Y_i = 1\\); \\(c\\) = the number of pairs where \\(X_i = 1\\) and \\(Y_i = 0\\); and \\(d\\) = the number of pairs where \\(X_i = 1\\) and \\(Y_i = 1\\)."
+  },
+  {
+    "objectID": "journal/week04.html#assumptions-2",
+    "href": "journal/week04.html#assumptions-2",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nThe pairs \\((X_i, Y_i)\\) are mutually independent.\nThe measurement scale is nominal with two categories “0” and “1” for all \\(X_i\\) and \\(Y_i\\)\nThe difference \\(P(X_i = 0, Y_i = 1) - P(X_i = 1, Y_i = 0)\\) is negative/zero/positive for all \\(i\\)"
+  },
+  {
+    "objectID": "journal/week04.html#parametric-equivalent-or-proof-that-there-is-none-1",
+    "href": "journal/week04.html#parametric-equivalent-or-proof-that-there-is-none-1",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nThe McNemar test is equivalent to the paired sample t-tests but for dichotomous dependent variables, as opposed to for continuous dependent variables by the paired sample tests (via https://real-statistics.com/non-parametric-tests/mcnemars-test/)."
+  },
+  {
+    "objectID": "journal/week04.html#hypotheses-1",
+    "href": "journal/week04.html#hypotheses-1",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\): \\(P(X_i = 0, Y_i = 1) = P(X_i = 1, Y_i = 0)\\) for all \\(i\\)\n\\(H_A\\): \\(P(X_i = 0, Y_i = 1) \\neq P(X_i = 1, Y_i = 0)\\) for all \\(i\\)\n\nThese hypotheses can also be interpreted like this, if we add \\(P(X_i = 0, Y_i = 0)\\) to both sides:\n\n\\(H_0\\): \\(P(X_i = 0) = P(Y_i = 0)\\) for all \\(i\\) | \\(P(X_i = 1) = P(Y_i = 1)\\) for all \\(i\\)\n\\(H_A\\): \\(P(X_i = 0) \\neq P(Y_i = 0)\\) for all \\(i\\) | \\(P(X_i = 1) \\neq P(Y_i = 1)\\) for all \\(i\\)"
+  },
+  {
+    "objectID": "journal/week04.html#rejection-region-1",
+    "href": "journal/week04.html#rejection-region-1",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Rejection Region",
+    "text": "Rejection Region\n\nLet \\(n=b+c\\). If \\(n \\leq 20\\), use Table A3. Enter table with \\(p=1/2\\) and \\(n=b+c\\) to find approximately \\(\\alpha/2\\) (called \\(\\alpha_1\\)). The corresponding value of \\(y\\) is \\(t\\). Reject \\(H_0\\) if \\(T_2 \\leq t\\) or if \\(T_2 \\geq n - t\\) at a significance level of \\(2\\alpha_1\\).\nIf \\(n&gt;20\\), use \\(T_1\\) and Table A2. Reject \\(H_0\\) at a level of significance \\(\\alpha\\) if \\(T_1\\) exceeds the \\((1-\\alpha)\\) quantile of a chi-squared random variable with 1 degree of freedom."
+  },
+  {
+    "objectID": "journal/week04.html#test-statistic-andor-p-value-1",
+    "href": "journal/week04.html#test-statistic-andor-p-value-1",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic:\n\nFor \\(b+c &gt; 20\\): \\(T_1 = \\frac{(b-c)^2}{b+c}\\)\nFor \\(b+c \\leq 20\\): \\(T_2 = b\\)\n\nThe null distribution of \\(T_1\\) is approximately the chi-squared distribution with 1 degree of freedom when \\((b+c)\\) is large. The exact distribution of \\(T_2\\) is the binomial distribution with \\(p=1/2\\) and \\(n=b+c\\).\nFor \\(n \\leq 20\\), the p-value is twice the probability of \\(T_2 \\leq\\) \\(\\geq\\) the observed value (whichever is smaller). For \\(n&gt;20\\), the p-value is the probability of \\(T_1\\) exceeding the observed value (as found in Table A2 for the chi-squared distribution with 1 degree of freedom)."
+  },
+  {
+    "objectID": "journal/week04.html#r-function-1",
+    "href": "journal/week04.html#r-function-1",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "R function",
+    "text": "R function\nR function for McNemar test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/mcnemar.test)\nmcnemar.test(x, y = NULL, correct = TRUE)\nwhere x is either a two-dimensional contingency table in matrix form or a factor object, y is a factor object (it will be ignored if x is a matrix), and correct indicates whether or not to apply continuity correction when computing the test statistic."
+  },
+  {
+    "objectID": "journal/week04.html#completed-homework-problem-2",
+    "href": "journal/week04.html#completed-homework-problem-2",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\n\nOne hundred thirty-five citizens were selected at random and were asked to state their opinion regarding the U.S. foreign policy. Forty-three were opposed to the U.S. foreign policy. After several weeks, during which they received an informative newsletter, they were again asked their opinion, 37 were opposed, and 30 of the 37 were persons who originally were not opposed to the U.S. foreign policy. Is the change in numbers of people opposed to the U.S. foreign policy significant?\n\nCorresponding contingency table: | Before  After | Opposed | Not Opposed | |—————-|———|————-| | Opposed | 7 | 36 | | Not Opposed | 30 | 62 |\nFrom this table, let’s make a matrix of these values to enter into the McNemar test function.\n\nforeign_policy &lt;- matrix(c(7, 36,\n                           30, 62),\n                         nrow = 2,\n                         byrow = TRUE)\n\nmcnemar.test(foreign_policy, correct = TRUE)\n\n\n    McNemar's Chi-squared test with continuity correction\n\ndata:  foreign_policy\nMcNemar's chi-squared = 0.37879, df = 1, p-value = 0.5383\n\n\nHypotheses\n\n\\(H_0\\): \\(P(X_i = 0, Y_i = 1) = P(X_i = 1, Y_i = 0)\\) for all \\(i\\)\n\\(H_A\\): \\(P(X_i = 0, Y_i = 1) \\neq P(X_i = 1, Y_i = 0)\\) for all \\(i\\)\n\nwhere \\(X_i\\) represents the before opposed for person \\(i\\) (“1” = opposed, “0” = not opposed), and \\(Y_i\\) represents after opposed for person \\(i\\) (“1” = opposed, “0” = not opposed).\nTest Statistic and p-Value\n\n\\(\\chi^2 = 0.37879\\)\n\\(p = 0.5383\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nFail to reject \\(H_0\\).\nThere is not sufficient evidence to suggest that the change in numbers of people opposed to the U.S. foreign policy is significant."
+  },
+  {
+    "objectID": "journal/week04.html#method-3",
+    "href": "journal/week04.html#method-3",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Method",
+    "text": "Method\nThe Cox and Stuart test for trend involves pairing the later numbers with the earlier numbers and performing a sign test on the pairs. A trend is present if one member of each pair has a tendency to be higher/lower than the other member. A trend is not present if the sequence of numbers actually represents observations on independent and identically distributed random variables (i.e. no tendency for one member to exceed the other one). It can also be used to detect any specified type of nonrandom pattern (i.e. sine wave, periodic pattern).\nNOTE: A sequence of numbers is said to have a trend if the later numbers in the sequence tend to be greater than the earlier numbers (upward trend) or less than the earlier numbers (downward trend).\nThe data will consist of observations on a sequence of random variables \\(X_1, X_2, ..., X_{n'}\\), arranged in a particular order. Group the random variables into pairs \\((X_1, X_{1+c}), (X_2, X_{2+c}), ..., (X_{n'-c}, X_{n'})\\), where \\(c = n'/2\\) if \\(n'\\) is even, otherwise \\(c=(n'+1)/2\\). Replace each pair \\((X_i, X_{i+c})\\) with a “+” if \\(X_i &lt; X_{i+c}\\) or a “-” if \\(X_i &gt; X_{i+c}\\). Eliminate ties. The number of untied pairs is called \\(n\\)."
+  },
+  {
+    "objectID": "journal/week04.html#assumptions-3",
+    "href": "journal/week04.html#assumptions-3",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nThe random variables \\(X_1, X_2, ..., X_{n'}\\) are mutually independent\nThe measurement scale of the \\(X_i\\)s is at least ordinal\nEither the \\(X_i\\)s are identically distributed or there is a trend; meaning that the random variables are more likely to be greater than instead of less than the earlier random variables (or vice versa)."
+  },
+  {
+    "objectID": "journal/week04.html#parametric-equivalent-or-proof-that-there-is-none-2",
+    "href": "journal/week04.html#parametric-equivalent-or-proof-that-there-is-none-2",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nThere is no direct parametric equivalent that I am able to find."
+  },
+  {
+    "objectID": "journal/week04.html#hypotheses-2",
+    "href": "journal/week04.html#hypotheses-2",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nThe hypotheses are the same as the sign test. The null hypothesis is that no trend is present. A right-tailed test is used to detect an upward trend, and a left-tailed test is used to detect a downward trend. The two-tailed test is used if the alternative hypothesis is that any type of trend (upward or downward) exists."
+  },
+  {
+    "objectID": "journal/week04.html#rejection-region-2",
+    "href": "journal/week04.html#rejection-region-2",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Rejection Region",
+    "text": "Rejection Region\nThe rejection region is the same as the sign test."
+  },
+  {
+    "objectID": "journal/week04.html#test-statistic-andor-p-value-2",
+    "href": "journal/week04.html#test-statistic-andor-p-value-2",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T\\) = total number of +’s\nThe null distribution of \\(T\\) is approximately the binomial distribution with \\(p=1/2\\) and \\(n=\\) number of untied pairs, where \\(X_i \\neq X_{i+c}\\).\nThe p-value is calculated exactly as in the sign test."
+  },
+  {
+    "objectID": "journal/week04.html#r-function-2",
+    "href": "journal/week04.html#r-function-2",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "R function",
+    "text": "R function\nR function for Cox-Stuart test (obtained from https://www.rdocumentation.org/packages/randtests/versions/1.0.1/topics/cox.stuart.test)\n\n##load in library first\nlibrary(randtests)\n\ncox.stuart.test(x, alternative)\nwhere x is a numeric vector containing the data, and alternative is the alternative hypothesis (“two.sided” is default, can also use “left.sided” or “right.sided”)."
+  },
+  {
+    "objectID": "journal/week04.html#completed-homework-problem-3",
+    "href": "journal/week04.html#completed-homework-problem-3",
+    "title": "Week 04: Chapter 3.3-3.5",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\n\nIn a certain city the mortality rate per 100,000 citizens due to automobile accidents for each of the last 15 years was (see below). Is there any basis for the statement that the mortality rate is increasing?\n\n\nmortality_rate &lt;- c(17.3, 17.9, 18.4, 18.1, 18.3, 19.6, 18.6, 19.2, 17.7, 20.0, 19.0, 18.8, 19.3, 20.2, 19.9)\ncox.stuart.test(mortality_rate, \"right.sided\")\n\n\n    Cox Stuart test\n\ndata:  mortality_rate\nstatistic = 7, n = 7, p-value = 0.007812\nalternative hypothesis: increasing trend\n\n\nHypotheses\n\n\\(H_0:\\) no trend is present\n\\(H_1:\\) an upward/increasing trend is present\n\nTest Statistic and p-Value\n\n\\(T = 7\\)\n\\(p = 0.007812\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nReject \\(H_0\\).\nThere is sufficient evidence to suggest that the mortality rate is increasing."
   },
   {
     "objectID": "journal/week-01-02.html#chapter-1-summary",
@@ -179,7 +298,7 @@
     "href": "journal/index.html",
     "title": "All Weeks",
     "section": "",
-    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 04: Chapter 3.3-3.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-16\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 03: Chapter 3.1-3.2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-14\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 01-02: Chapters 1-2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-13\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
+    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 04: Chapter 3.3-3.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-21\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 03: Chapter 3.1-3.2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-14\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 01-02: Chapters 1-2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-13\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "journal/week03.html#method",
