@@ -235,7 +235,7 @@
     "href": "journal/index.html",
     "title": "All Weeks",
     "section": "",
-    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 05: Chapter 3.3-3.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-25\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 04: Chapter 3.3-3.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-21\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 03: Chapter 3.1-3.2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-14\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 01-02: Chapters 1-2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-13\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
+    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 05: Chapter 4.3-4.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-25\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 04: Chapter 3.3-3.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-21\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 03: Chapter 3.1-3.2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-14\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 01-02: Chapters 1-2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-13\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "journal/week-template.html",
@@ -301,186 +301,382 @@
     "text": "Chapter 2 Summary\nIn chapter 2, we shifted focus from counting rules and random variables to sampling, estimation, and hypothesis testing. We began by defining populations and samples. A sample can be random, where each observation is independent and identically distributed, or it can be biased. We also reviewed the following different types of measurement scales: nominal, ordinal, interval, and ratio. We saw how order statistics can be applied when analyzing ordered data.\nNext, we explored estimation methods. The empirical distribution function (EDF) was introduced as a way to approximate the population distribution based on observed data. We then used concepts like sample mean, variance, and quantiles as point estimators of population parameters. We also learned about interval estimation, confidence coefficients, and unbiased estimators. The bootstrap method was also introduced as a resampling approach to approximate population quantities without requiring prior knowledge of the distribution. In survival analysis, the empirical survival function and the Kaplan-Meier estimator were discussed as nonparametric methods for estimating lifetime distributions.\nWe then studied hypothesis testing. This included defining null and alternative hypotheses, test statistics, and decision rules. Errors in hypothesis testing were categorized into Type I and Type II errors, with significance level (\\(\\alpha\\)), power, and p-values helping us evaluate tests. We also discussed test properties such as unbiasedness, consistency, and efficiency. We also learned that the power function plays an important role in comparing tests.\nFinally, we compared parametric and nonparametric methods. Parametric methods depend on knowing the population distribution. This is unlike nonparametric methods, which are more flexible and robust to distributional assumptions. Nonparametric tests can be applied to nominal, ordinal, interval, and ratio data."
   },
   {
-    "objectID": "journal/week05.html#method",
-    "href": "journal/week05.html#method",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "Method",
-    "text": "Method\nThe Chi-squared Test for difference in probabilities with a 2x2 contingency table is used to test if the probability of an event is the same for both populations that the random samples are drawn from.\nA random sample of \\(n_1\\) observations is drawn from one population (or before a treatment is applied) and each observation is classified into either class 1 or 2, the total number of classes being \\(O_{11}\\) and \\(O_{12}\\), where \\(O_{11} + O_{12} = n_1\\). A second random sample of \\(n_2\\) observations is drawn from a second population (or the first population after some treatment is applied) and the number of observations in class 1 or class 2 is \\(O_{21}\\) and \\(O_{22}\\), where \\(O_{21} + O_{22} = n_2\\). This data can be arranged into a 2x2 contingency table with the total number of observations denoted as \\(N\\)."
+    "objectID": "journal/week05.html#method-1",
+    "href": "journal/week05.html#method-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Method 1",
+    "text": "Method 1\nThe Chi-squared Test for difference in probabilities with a 2x2 contingency table is used to test if the probability of an event is the same for both populations that the random samples are drawn from.\nA random sample of \\(n_1\\) observations is drawn from one population (or before a treatment is applied) and each observation is classified into either class 1 or 2, the total number of classes being \\(O_{11}\\) and \\(O_{12}\\), where \\(O_{11} + O_{12} = n_1\\). A second random sample of \\(n_2\\) observations is drawn from a second population (or the first population after some treatment is applied) and the number of observations in class 1 or class 2 is \\(O_{21}\\) and \\(O_{22}\\), where \\(O_{21} + O_{22} = n_2\\). This data can be arranged into a 2x2 contingency table with the total number of observations denoted as \\(N\\)."
   },
   {
     "objectID": "journal/week05.html#assumptions",
     "href": "journal/week05.html#assumptions",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "Assumptions",
     "text": "Assumptions\n\nEach sample is a random sample\nThe two samples are mutually independent\nEach observation may be categorized either into class 1 or class 2"
   },
   {
     "objectID": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none",
     "href": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "Parametric equivalent (or proof that there is none)",
     "text": "Parametric equivalent (or proof that there is none)\nThe book does not specifically mention a parametric equivalent. However, a quick search on Google allowed me to find the two-proportion Z-test, which seems to be fairly similar to the two-tailed version of this test. More information on this test can be found through this link: https://en.wikipedia.org/wiki/Two-proportion_Z-test."
   },
   {
     "objectID": "journal/week05.html#hypotheses",
     "href": "journal/week05.html#hypotheses",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "Hypotheses",
     "text": "Hypotheses\n\n\\(H_0\\): \\(p_1 = p_2\\) (two-tailed) | \\(p_1 \\geq p_2\\) (left-tailed) | \\(p_1 \\leq p_2\\) (right-tailed)\n\\(H_A\\): \\(p_1 \\neq p_2\\) (two-tailed) | \\(p_1 &lt; p_2\\) (left-tailed) | \\(p_1 &gt; p_2\\) (right-tailed)\n\nwhere \\(p_1\\) is the probability that a randomly selected element will be in class 1 (in population 1) and \\(p_2\\) in population 2. Note: \\(p_1\\) and \\(p_2\\) do not have to be known explicitly."
   },
   {
     "objectID": "journal/week05.html#rejection-region",
     "href": "journal/week05.html#rejection-region",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "Rejection Region",
-    "text": "Rejection Region\nTwo-tailed: - Reject \\(H_0\\) at the approximate level \\(\\alpha\\) if \\(T_1 &lt;\\) the \\(\\alpha/2\\) quantile of a standard normal random variable \\(Z\\), or if \\(T_1 &gt; 1 - \\alpha/2\\) quantile of \\(Z\\) (\\(Z\\) is given in Table A1).\nLeft-tailed: - Reject \\(H_0\\) at the approximate level of \\(\\alpha\\) if \\(T_1 &lt; \\alpha\\) quantile of \\(Z\\) found in Table A1.\nRight-tailed: - Reject \\(H_0\\) at the approximate level of \\(\\alpha\\) if \\(T_1 &gt; 1 - \\alpha\\) quantile of \\(Z\\) found in Table A1."
+    "text": "Rejection Region\nTwo-tailed:\n\nReject \\(H_0\\) at the approximate level \\(\\alpha\\) if \\(T_1 &lt;\\) the \\(\\alpha/2\\) quantile of a standard normal random variable \\(Z\\), or if \\(T_1 &gt; 1 - \\alpha/2\\) quantile of \\(Z\\) (\\(Z\\) is given in Table A1).\n\nLeft-tailed:\n\nReject \\(H_0\\) at the approximate level of \\(\\alpha\\) if \\(T_1 &lt; \\alpha\\) quantile of \\(Z\\) found in Table A1.\n\nRight-tailed:\n\nReject \\(H_0\\) at the approximate level of \\(\\alpha\\) if \\(T_1 &gt; 1 - \\alpha\\) quantile of \\(Z\\) found in Table A1."
   },
   {
     "objectID": "journal/week05.html#test-statistic-andor-p-value",
     "href": "journal/week05.html#test-statistic-andor-p-value",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "Test Statistic and/or p-value",
     "text": "Test Statistic and/or p-value\n\nTest Statistic: If any column total is zero, \\(T_1 = 0\\). Otherwise: \\[\nT_1 = \\frac {\\sqrt{N}(O_{11}O_{22}-O_{12}O_{21})}{\\sqrt{n_1 n_2 C_1 C_2}}\n\\] Note: for two-tailed hypotheses, \\(T_1^2\\) is often used over \\(T_1\\) as the test statistic. Then the rejection region is the upper tail of the chi-squared distribution with 1 degree of freedom (given in Table A2).\nThe null distribution of \\(T_1\\) is hard to calculate exactly due to all the different combinations of the contingency table. Thus, large sample approximation is used, which is the standard normal distribution (refer to Table A1).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of the probabilities that \\(Z \\leq\\) or \\(\\geq\\) the observed value of \\(T_1\\) (observed from Table A1)\nLeft-tailed: p-value is the probability that \\(Z &lt;\\) observed value of \\(T_1\\)\nRight-tailed: p-value is the probability that \\(Z &gt;\\) observed value of \\(T_1\\)"
   },
   {
     "objectID": "journal/week05.html#r-function",
     "href": "journal/week05.html#r-function",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "R function",
-    "text": "R function\nR function for sign test (obtained from https://people.stat.sc.edu/hitchcock/Rexamples518section3_4.txt)"
-  },
-  {
-    "objectID": "journal/week05.html#completed-homework-problem",
-    "href": "journal/week05.html#completed-homework-problem",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "Completed Homework Problem",
-    "text": "Completed Homework Problem"
-  },
-  {
-    "objectID": "journal/week05.html#section-1",
-    "href": "journal/week05.html#section-1",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "4.2",
-    "text": "4.2"
-  },
-  {
-    "objectID": "journal/week05.html#method-1",
-    "href": "journal/week05.html#method-1",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "Method",
-    "text": "Method\nFisher’s Exact Test"
-  },
-  {
-    "objectID": "journal/week05.html#assumptions-1",
-    "href": "journal/week05.html#assumptions-1",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "Assumptions",
-    "text": "Assumptions"
-  },
-  {
-    "objectID": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-1",
-    "href": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-1",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "Parametric equivalent (or proof that there is none)",
-    "text": "Parametric equivalent (or proof that there is none)"
-  },
-  {
-    "objectID": "journal/week05.html#hypotheses-1",
-    "href": "journal/week05.html#hypotheses-1",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "Hypotheses",
-    "text": "Hypotheses\n\n\\(H_0\\): \\(P(+) = P(-)\\) (two-tailed) | \\(P(+) \\geq P(-)\\) (left-tailed) | \\(P(+) \\leq P(-)\\) (right-tailed)\n\\(H_A\\): \\(P(+) \\neq P(-)\\) (two-tailed) | \\(P(+) &lt; P(-)\\) (left-tailed) | \\(P(+) &gt; P(-)\\) (right-tailed)"
-  },
-  {
-    "objectID": "journal/week05.html#rejection-region-1",
-    "href": "journal/week05.html#rejection-region-1",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "Rejection Region",
-    "text": "Rejection Region\nTwo-tailed:\nLeft-tailed:\nRight-tailed:"
-  },
-  {
-    "objectID": "journal/week05.html#test-statistic-andor-p-value-1",
-    "href": "journal/week05.html#test-statistic-andor-p-value-1",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "Test Statistic and/or p-value",
-    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T\\) is the number of “plus” pairs (i.e. \\(T=\\) number of pairs \\((X_i, Y_i)\\) where \\(X_i &lt; Y_i\\)).\nThe null distribution of \\(T\\) is the binomial distribution with \\(p = 1/2\\) and \\(n=\\) number of noted pairs (i.e. disregard all tied pairs \\(X=Y\\) and let \\(n=\\) total number of pluses and minuses). Normal approximation is used for \\(n&gt;20\\).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of the probabilities that \\(Y \\leq\\) or \\(\\geq\\) the observed value of \\(T\\) (found from Table A3 for \\(n \\leq 20\\), Table A1 if \\(n &gt; 20\\))\nLeft-tailed: p-value is the probability that \\(Y \\leq\\) observed value of \\(T\\)\nRight-tailed: p-value is the probability that \\(Y \\geq\\) observed value of \\(T\\)"
-  },
-  {
-    "objectID": "journal/week05.html#r-function-1",
-    "href": "journal/week05.html#r-function-1",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "R function",
-    "text": "R function\nR function for sign test (obtained from https://people.stat.sc.edu/hitchcock/Rexamples518section3_4.txt)"
-  },
-  {
-    "objectID": "journal/week05.html#completed-homework-problem-1",
-    "href": "journal/week05.html#completed-homework-problem-1",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "Completed Homework Problem",
-    "text": "Completed Homework Problem"
-  },
-  {
-    "objectID": "journal/week05.html#section-2",
-    "href": "journal/week05.html#section-2",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "4.3",
-    "text": "4.3"
+    "text": "R function\nR function for chi-squared test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/chisq.test)\nchisq.test(x, y = NULL, correct = TRUE, p = rep(1/length(x), length(x)), rescale.p = FALSE, simulate.p.value = FALSE, B = 2000)"
   },
   {
     "objectID": "journal/week05.html#method-2",
     "href": "journal/week05.html#method-2",
-    "title": "Week 05: Chapter 3.3-3.5",
-    "section": "Method",
-    "text": "Method"
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Method 2",
+    "text": "Method 2\nFisher’s Exact Test is also used with contingency tables, but only those with random row totals, random column totals, or both. The \\(N\\) observations in the data are summarized in a 2x2 contingency table usually. This is similar to the Chi-squared test for difference in probabilities, except both of the row totals, \\(r\\) and \\(N-r\\), and both column totals, \\(c\\) and \\(N-c\\), are predetermined/fixed."
+  },
+  {
+    "objectID": "journal/week05.html#assumptions-1",
+    "href": "journal/week05.html#assumptions-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nEach observation is classified into exactly one cell.\nThe row and column totals are fixed, not random."
+  },
+  {
+    "objectID": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-1",
+    "href": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nSimilarly to the Chi-squared test for differnce of probabilities, the book does not specifically mention a parametric equivalent. The two-proportion Z-test is fairly similar to the two-tailed version of this test. More information on this test can be found through this link: https://en.wikipedia.org/wiki/Two-proportion_Z-test."
+  },
+  {
+    "objectID": "journal/week05.html#hypotheses-1",
+    "href": "journal/week05.html#hypotheses-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\): \\(p_1 = p_2\\) (two-tailed) | \\(p_1 \\geq p_2\\) (left-tailed) | \\(p_1 \\leq p_2\\) (right-tailed)\n\\(H_A\\): \\(p_1 \\neq p_2\\) (two-tailed) | \\(p_1 &lt; p_2\\) (left-tailed) | \\(p_1 &gt; p_2\\) (right-tailed)\n\nwhere \\(p_1\\) is the probability of an observation in row 1 being classified into column 1, and \\(p_2\\) is the probability of an observation in row 2 being classified into column 1."
+  },
+  {
+    "objectID": "journal/week05.html#rejection-region-1",
+    "href": "journal/week05.html#rejection-region-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Rejection Region",
+    "text": "Rejection Region\nTwo-tailed:\n\nReject \\(H_0\\) at the level of significance \\(\\alpha\\) if the p-value is \\(\\leq \\alpha\\).\n\nLeft-tailed:\n\nReject \\(H_0\\) at the level of significance \\(\\alpha\\) if \\(P(T_2 \\leq t_{obs}) \\leq \\alpha\\)\n\nRight-tailed:\n\nReject \\(H_0\\) at the level of significance \\(\\alpha\\) if \\(P(T_2 \\geq t_{obs}) \\leq \\alpha\\)"
+  },
+  {
+    "objectID": "journal/week05.html#test-statistic-andor-p-value-1",
+    "href": "journal/week05.html#test-statistic-andor-p-value-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T_2\\) is the number of observations in the cell row 1, column 1.\nThe exact distribution of \\(T_2\\) when \\(H_0\\) is true is given by the hypergeometric distribution: \\[\nP(T_2 = x) =\n\\frac{\\binom{r}{x} \\binom{N-r}{c-x}}{\\binom{N}{c}}\n\\quad x = 0, 1, \\ldots, \\min(r,c)\n\\] = 0 for all other values of x. For large sample approximation, use this equation, which is the standard normal distribution given in Table A1: \\[\nT_3 = \\frac{x - \\frac{rc}{N}}{\\sqrt{\\frac{rc(N-r)(N-c)}{N^2 (N-1)}}}\n\\]\nLet \\(t_{obs}\\) be the observed value of \\(T_2\\). The p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of \\(P(T_2 \\leq t_{obs})\\) or \\(P(T_2 \\geq t_{obs})\\)\nLeft-tailed: p-value is \\(P(T_2 \\leq t_{obs})\\)\nRight-tailed: p-value is \\(P(T_2 \\geq t_{obs})\\)"
+  },
+  {
+    "objectID": "journal/week05.html#r-function-1",
+    "href": "journal/week05.html#r-function-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "R function",
+    "text": "R function\nR function for Fisher’s exact test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/fisher.test)\nfisher.test(x, y = NULL, workspace = 200000, hybrid = FALSE, hybridPars = c(expect = 5, percent = 80, Emin = 1), control = list(), or = 1, alternative = “two.sided”, conf.int = TRUE, conf.level = 0.95, simulate.p.value = FALSE, B = 2000)"
+  },
+  {
+    "objectID": "journal/week05.html#method-3",
+    "href": "journal/week05.html#method-3",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Method 3",
+    "text": "Method 3\nThe Mantel-Haenszel test is very similar to the Fisher’s Exact test for 2x2 contingency tables. The Mantel-Haenszel tests association between two binary variables while controlling for a third (stratification variable). A good example of this would be treatment vs. outcome, stratified by age group or study site. The data is summarized in several 2x2 contingency tables, each with nonrandom row and column totals. The number of tables is \\(k \\geq 2\\), and the \\(i\\)th table is represented with the following table:\n\nlibrary(gt)\n\ndf &lt;- data.frame(\n  Row = c(\"Row 1\", \"Row 2\", \"Col Total\"),\n  `Col 1` = c(\"`$x_{i}$`\", \"`$c_{i} - x_{i}$`\", \"`$c_{i}$`\"),\n  `Col 2` = c(\"`$r_{i} - x_{i}$`\", \"`$N_{i} - r_{i} - c_{i} + x_{i}$`\", \"`$N_{i} - c_{i}$`\"),\n  `Row Total` = c(\"`$r_{i}$`\", \"`$N_{i} - r_{i}$`\", \"`$N_{i}$`\")\n)\n\ndf %&gt;%\n  gt() %&gt;%\n  fmt_markdown(columns = everything())\n\n\n\n\n\n\n\nRow\nCol.1\nCol.2\nRow.Total\n\n\n\n\nRow 1\n$x_{i}$\n$r_{i} - x_{i}$\n$r_{i}$\n\n\nRow 2\n$c_{i} - x_{i}$\n$N_{i} - r_{i} - c_{i} + x_{i}$\n$N_{i} - r_{i}$\n\n\nCol Total\n$c_{i}$\n$N_{i} - c_{i}$\n$N_{i}$"
   },
   {
     "objectID": "journal/week05.html#assumptions-2",
     "href": "journal/week05.html#assumptions-2",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "Assumptions",
-    "text": "Assumptions"
+    "text": "Assumptions\nThese are the same assumptions as the Fisher’s exact test: 1. Each observation is classified into exactly one cell. 2. The row and column totals are fixed, not random."
   },
   {
     "objectID": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-2",
     "href": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-2",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "Parametric equivalent (or proof that there is none)",
-    "text": "Parametric equivalent (or proof that there is none)"
+    "text": "Parametric equivalent (or proof that there is none)\nThe parametric equivalent is a logistic regression with stratum fixed effects."
   },
   {
     "objectID": "journal/week05.html#hypotheses-2",
     "href": "journal/week05.html#hypotheses-2",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "Hypotheses",
-    "text": "Hypotheses\n\n\\(H_0\\): \\(P(+) = P(-)\\) (two-tailed) | \\(P(+) \\geq P(-)\\) (left-tailed) | \\(P(+) \\leq P(-)\\) (right-tailed)\n\\(H_A\\): \\(P(+) \\neq P(-)\\) (two-tailed) | \\(P(+) &lt; P(-)\\) (left-tailed) | \\(P(+) &gt; P(-)\\) (right-tailed)"
+    "text": "Hypotheses\nTwo-tailed:\n\n\\(H_0\\): \\(p_{1i} = p_{2i}\\) for all \\(i = 1, ..., k\\)\n\\(H_A\\): Either \\(p_{1i} &gt; p_{2i}\\) for some \\(i\\), or \\(p_{1i} &lt; p_{2i}\\) for some \\(i\\), but not both\n\nLeft-tailed:\n\n\\(H_0\\): \\(p_{1i} \\geq p_{2i}\\) for all \\(i = 1, ..., k\\)\n\\(H_A\\): \\(p_{1i} \\leq p_{2i}\\) for all \\(i\\), and \\(p_{1i} &lt; p_{2i}\\) for some \\(i\\)\n\nRight-tailed:\n\n\\(H_0\\): \\(p_{1i} \\leq p_{2i}\\) for all \\(i = 1, ..., k\\)\n\\(H_A\\): \\(p_{1i} \\geq p_{2i}\\) for all \\(i\\), and \\(p_{1i} &gt; p_{2i}\\) for some \\(i\\)\n\nwhere \\(p_{1i}\\) is the probability of an observation in row 1 being classified into column 1 in the \\(i\\)th contingency table, and \\(p_{2i}\\) is the probability of an observation in row 2 being classified into column 1 in the \\(i\\)th contingency table."
   },
   {
     "objectID": "journal/week05.html#rejection-region-2",
     "href": "journal/week05.html#rejection-region-2",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "Rejection Region",
-    "text": "Rejection Region\nTwo-tailed:\nLeft-tailed:\nRight-tailed:"
+    "text": "Rejection Region\nTwo-tailed:\n\nReject \\(H_0\\) at the level of significance \\(\\alpha\\) if \\(T_4\\) exceeds \\(z_{1-\\alpha/2}\\) or if \\(T_4 &lt; z_{\\alpha/2}\\), where \\(z_p\\) represents the \\(p\\)th quantile of the standard normal distribution (Table A1).\n\nLeft-tailed:\n\nReject \\(H_0\\) at \\(\\alpha\\) if \\(T_4 &lt; z_\\alpha\\) from Table A1.\n\nRight-tailed:\n\nReject \\(H_0\\) at \\(\\alpha\\) if \\(T_4 &gt; z_{1-\\alpha}\\) from Table A1."
   },
   {
     "objectID": "journal/week05.html#test-statistic-andor-p-value-2",
     "href": "journal/week05.html#test-statistic-andor-p-value-2",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "Test Statistic and/or p-value",
-    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T\\) is the number of “plus” pairs (i.e. \\(T=\\) number of pairs \\((X_i, Y_i)\\) where \\(X_i &lt; Y_i\\)).\nThe null distribution of \\(T\\) is the binomial distribution with \\(p = 1/2\\) and \\(n=\\) number of noted pairs (i.e. disregard all tied pairs \\(X=Y\\) and let \\(n=\\) total number of pluses and minuses). Normal approximation is used for \\(n&gt;20\\).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of the probabilities that \\(Y \\leq\\) or \\(\\geq\\) the observed value of \\(T\\) (found from Table A3 for \\(n \\leq 20\\), Table A1 if \\(n &gt; 20\\))\nLeft-tailed: p-value is the probability that \\(Y \\leq\\) observed value of \\(T\\)\nRight-tailed: p-value is the probability that \\(Y \\geq\\) observed value of \\(T\\)"
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\[\nT_4 = \\frac{\\sum x_i - \\sum \\frac{r_i c_i}{N_i}}\n{\\sqrt{\\sum \\frac{r_i c_i(N_i -r_i)(N_i-c_i)}\n{N_i^2 (N_i-1)}}}\n\\]\nThe null distribution of \\(T_4\\) when \\(H_0\\) is true is given by the standard normal distribution given in Table A1. Note: exact probabilities are improved by using a continuity correction (for left-tailed: add 0.5 to numerator of \\(T_4\\) before looking up the p-value in Table A1, for right-tailed subtract 0.5 from numerator before looking up p-value).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the probability of a standard normal random variable being &lt; or &gt; observed value of \\(T_4\\) (whichever is smaller)\nLeft-tailed: p-value is the probability of a standard normal random variable &lt; observed value of \\(T_4\\)\nRight-tailed: p-value is the probability of a standard normal random variable &gt; observed value of \\(T_4\\)"
   },
   {
     "objectID": "journal/week05.html#r-function-2",
     "href": "journal/week05.html#r-function-2",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "R function",
-    "text": "R function\nR function for sign test (obtained from https://people.stat.sc.edu/hitchcock/Rexamples518section3_4.txt)"
+    "text": "R function\nR function for Mantel-Haenszel test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/mantelhaen.test)\nmantelhaen.test(x, y = NULL, z = NULL, alternative = c(“two.sided”, “less”, “greater”), correct = TRUE, exact = FALSE, conf.level = 0.95)"
+  },
+  {
+    "objectID": "journal/week05.html#completed-homework-problem",
+    "href": "journal/week05.html#completed-homework-problem",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\n\nOne hundred men and 100 women were asked to try a new toothpaste and to state whether they liked or did not like the new taste. Thirty-two men and 26 women said they did not like the new taste. Does this indicate a difference in preferences between men and women in general?\n\n\n# create the 2x2 contingency table\ntoothpaste &lt;- matrix(c(32, 68, 26, 74), \n                     nrow = 2, byrow = TRUE)\n\n# run chi-squared test\nchisq.test(toothpaste, correct = FALSE)\n\n\n    Pearson's Chi-squared test\n\ndata:  toothpaste\nX-squared = 0.87421, df = 1, p-value = 0.3498\n\n\nHypotheses\n\n\\(H_0:\\) \\(p_1 = p_2\\)\n\\(H_1:\\) \\(p_1 \\neq p_2\\)\n\nwhere \\(p_1\\) is the probability that a randomly selected element will be present in population of men, and \\(p_2\\) is the same probability but for the population of women.\nTest Statistic and p-Value\n\n\\(T_1 = 0.87421\\)\n\\(p = 0.3498\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nFail to reject \\(H_0\\).\nThere is not sufficient evidence to suggest that there is a difference in preferences between men and women in general."
+  },
+  {
+    "objectID": "journal/week05.html#section-1",
+    "href": "journal/week05.html#section-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "4.2",
+    "text": "4.2"
+  },
+  {
+    "objectID": "journal/week05.html#method-1-1",
+    "href": "journal/week05.html#method-1-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Method 1",
+    "text": "Method 1\nWe move onto the Chi-squared test for differences in probabilities involving rxc contingency tables in 4.2. There are \\(r\\) populations in all, and one random sample is drawn from each population. Let \\(n_i\\) represent the number of observations in the \\(i\\)th sample from the \\(i\\)th population for \\(1 \\leq i \\leq r\\). Each observation in each sample can be classified into one of \\(c\\) different categories.\nLet \\(O_{ij}\\) be the number of observations from the \\(i\\)th sample that fall into category \\(j\\), so: \\(n_i = O_{i1} + O_{i2} + ... + O_{ic}\\) for all \\(i\\). The data is arranged in a contingency table where the total number of observations from all samples is \\(N = n_1 + n_2+ ... + n_r\\)."
+  },
+  {
+    "objectID": "journal/week05.html#assumptions-3",
+    "href": "journal/week05.html#assumptions-3",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nEach sample is a random sample\nThe outcomes of the various samples are all mutually independent among samples\nEach observation may be categorized into exactly one of the \\(c\\) categories/classes"
+  },
+  {
+    "objectID": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-3",
+    "href": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-3",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nThe parametric equivalent is logistic regression (for binary outcomes) or multinomial logistic regression (for &gt;2 outcome categories)."
+  },
+  {
+    "objectID": "journal/week05.html#hypotheses-3",
+    "href": "journal/week05.html#hypotheses-3",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nLet the probability of a randomly selected value from the \\(i\\)th population being classified in the \\(j\\)th class be denoted by \\(p_{ij}\\), for \\(i = 1, 2, ..., r\\) and \\(j = 1, 2, ..., c\\).\n\n\\(H_0\\): All of the probabilities in the same column are equal to each other (i.e., \\(p_{1j} = p-{2j} = ... = p_{rj}\\), for all \\(j\\))\n\\(H_A\\): At least two of the probabilities in the same column are not equal to each other (i.e., \\(p_{ij} \\neq p_{kj}\\) for some pair \\(i\\) and \\(k\\))"
+  },
+  {
+    "objectID": "journal/week05.html#rejection-region-3",
+    "href": "journal/week05.html#rejection-region-3",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Rejection Region",
+    "text": "Rejection Region\n\nThe critical region of approximate size \\(\\alpha\\) corresponds to values of \\(T\\) larger than \\(x_{1-\\alpha}\\), the \\(1-\\alpha\\) quantile of a chi-squared random variable with \\((r-1)(c-1)\\) degrees of freedom obtained from Table A2.\nReject \\(H_0\\) if \\(T &gt; x_{1-\\alpha}\\)."
+  },
+  {
+    "objectID": "journal/week05.html#test-statistic-andor-p-value-3",
+    "href": "journal/week05.html#test-statistic-andor-p-value-3",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\[\nT = \\sum_{i = 1}^r  \\sum_{j=1}^c   \\frac{(O_{ij} - E_{ij})^2}{E_{ij}}\n\\] where \\(E_{ij} = \\frac {n_i C_j}{N}\\).\nThe null distribution of \\(T\\) is approximately the chi-squared distribution with \\((r-1)(c-1)\\) degrees of freedom, whose quantiles are in Table A2.\nThe p-value is the probability of a chi-squared random variable with \\((r-1)(c-1)\\) degrees of freedom exceeding the observed value of \\(T\\), which can also be found in Table A2."
+  },
+  {
+    "objectID": "journal/week05.html#r-function-3",
+    "href": "journal/week05.html#r-function-3",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "R function",
+    "text": "R function\nR function for chi-squared test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/chisq.test)\nchisq.test(x, y = NULL, correct = TRUE, p = rep(1/length(x), length(x)), rescale.p = FALSE, simulate.p.value = FALSE, B = 2000)"
+  },
+  {
+    "objectID": "journal/week05.html#method-2-1",
+    "href": "journal/week05.html#method-2-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Method 2",
+    "text": "Method 2\nThe Chi-squared test for independence is performed to see whether or not the rows and columns of an rxc contingency table represent two independent classification schemes.\nA random sample of size \\(N\\) is obtained. The observations can be classified according to two different criteria. Let \\(O_{ij\\) be the number of observations associated with row \\(i\\) and column \\(j\\) simultaneously. The total number of observations in row \\(i\\) is denoted as \\(R_i\\) and in column \\(j\\) by \\(C_j\\)."
+  },
+  {
+    "objectID": "journal/week05.html#assumptions-4",
+    "href": "journal/week05.html#assumptions-4",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nThe sample of \\(N\\) observations is a random sample. (Each observation has the same probability as every other observation of being classified in row \\(i\\) column \\(j\\), independently from the other observations)\nEach observation may be classified into exactly one of \\(r\\) different categories according to one criterion and into exactly one of \\(c\\) different categories according to a second criterion."
+  },
+  {
+    "objectID": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-4",
+    "href": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-4",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nThe parametric equivalent is log-linear models or logistic regression (in the 2×2 case)."
+  },
+  {
+    "objectID": "journal/week05.html#hypotheses-4",
+    "href": "journal/week05.html#hypotheses-4",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\): The event “an observation is in row \\(i\\)” is independent of the event “that same observation is in column \\(j\\)”, for all \\(i\\) and \\(j\\). AKA, P(row \\(i\\), column \\(j\\)) = P(row \\(i\\)) * P(column \\(j\\)), for all \\(i\\) and \\(j\\)\n\\(H_A\\): P(row \\(i\\), column \\(j\\)) \\(\\neq\\) P(row \\(i\\)) * P(column \\(j\\)), for some \\(i\\) and \\(j\\)"
+  },
+  {
+    "objectID": "journal/week05.html#rejection-region-4",
+    "href": "journal/week05.html#rejection-region-4",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Rejection Region",
+    "text": "Rejection Region\n\nReject \\(H_0\\) if \\(T &gt; x_{1-\\alpha}\\) quantile of a chi-squared random variable with \\((r-1)(c-1)\\) degrees of freedom (obtained from Table A2)."
+  },
+  {
+    "objectID": "journal/week05.html#test-statistic-andor-p-value-4",
+    "href": "journal/week05.html#test-statistic-andor-p-value-4",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\[\nT = \\sum_{i = 1}^r  \\sum_{j=1}^c   \\frac{(O_{ij} - E_{ij})^2}{E_{ij}}\n\\] where \\(E_{ij} = \\frac {n_i C_j}{N}\\). (Identical to previous method)\nThe null distribution of \\(T\\) is approximately the chi-squared distribution with \\((r-1)(c-1)\\) degrees of freedom, whose quantiles are in Table A2.\nThe p-value is the probability of a chi-squared random variable with \\((r-1)(c-1)\\) degrees of freedom exceeding the observed value of \\(T\\), which can also be found in Table A2."
+  },
+  {
+    "objectID": "journal/week05.html#r-function-4",
+    "href": "journal/week05.html#r-function-4",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "R function",
+    "text": "R function\nR function for chi-squared test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/chisq.test)\nchisq.test(x, y = NULL, correct = TRUE, p = rep(1/length(x), length(x)), rescale.p = FALSE, simulate.p.value = FALSE, B = 2000)"
+  },
+  {
+    "objectID": "journal/week05.html#method-3-1",
+    "href": "journal/week05.html#method-3-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Method 3",
+    "text": "Method 3\nThe Chi-squared test with fixed marginal totals is similar to the previous methods, except the row and column totals are determined beforehand, and therefore are fixed, not random.\nThe row and column totals are denoted by \\(n_i\\) and \\(c_j\\) to emphasize that they are not random. The total number of observations is \\(N\\)."
+  },
+  {
+    "objectID": "journal/week05.html#assumptions-5",
+    "href": "journal/week05.html#assumptions-5",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nEach observation is classified into exactly one cell\nThe observations are on a random sample\nThe row and column totals are given, not random."
+  },
+  {
+    "objectID": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-5",
+    "href": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-5",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nThere is not a parametric equivalent specifically listed because the fixed margins assumption is conditional. However, Fisher’s exact test’s underlying distribution, the hypergeometric distribution, is the exact parametric equivalent in this case. You could probably used conditional logistic regression when the margins are fixed by design."
+  },
+  {
+    "objectID": "journal/week05.html#hypotheses-5",
+    "href": "journal/week05.html#hypotheses-5",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nLet the probability of a randomly selected value from the \\(i\\)th population being classified in the \\(j\\)th class be denoted by \\(p_{ij}\\), for \\(i = 1, 2, ..., r\\) and \\(j = 1, 2, ..., c\\).\n\n\\(H_0\\): All of the probabilities in the same column are equal to each other (i.e., \\(p_{1j} = p-{2j} = ... = p_{rj}\\), for all \\(j\\))\n\\(H_A\\): At least two of the probabilities in the same column are not equal to each other (i.e., \\(p_{ij} \\neq p_{kj}\\) for some pair \\(i\\) and \\(k\\))\n\nOR\n\n\\(H_0\\): The event “an observation is in row \\(i\\)” is independent of the event “that same observation is in column \\(j\\)”, for all \\(i\\) and \\(j\\). AKA, P(row \\(i\\), column \\(j\\)) = P(row \\(i\\)) * P(column \\(j\\)), for all \\(i\\) and \\(j\\)\n\\(H_A\\): P(row \\(i\\), column \\(j\\)) \\(\\neq\\) P(row \\(i\\)) * P(column \\(j\\)), for some \\(i\\) and \\(j\\)\n\n(can be tailored to fit each problem)"
+  },
+  {
+    "objectID": "journal/week05.html#rejection-region-5",
+    "href": "journal/week05.html#rejection-region-5",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Rejection Region",
+    "text": "Rejection Region\n\nThe critical region of approximate size \\(\\alpha\\) corresponds to values of \\(T\\) larger than \\(x_{1-\\alpha}\\), the \\(1-\\alpha\\) quantile of a chi-squared random variable with \\((r-1)(c-1)\\) degrees of freedom obtained from Table A2.\nReject \\(H_0\\) if \\(T &gt; x_{1-\\alpha}\\)."
+  },
+  {
+    "objectID": "journal/week05.html#test-statistic-andor-p-value-5",
+    "href": "journal/week05.html#test-statistic-andor-p-value-5",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\[\nT = \\sum_{i = 1}^r  \\sum_{j=1}^c   \\frac{(O_{ij} - E_{ij})^2}{E_{ij}}\n\\] where \\(E_{ij} = \\frac {n_i C_j}{N}\\). (same as other methods)\nThe null distribution of \\(T\\) is approximately the chi-squared distribution with \\((r-1)(c-1)\\) degrees of freedom, whose quantiles are in Table A2.\nThe p-value is the probability of a chi-squared random variable with \\((r-1)(c-1)\\) degrees of freedom exceeding the observed value of \\(T\\), which can also be found in Table A2."
+  },
+  {
+    "objectID": "journal/week05.html#r-function-5",
+    "href": "journal/week05.html#r-function-5",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "R function",
+    "text": "R function\nR function for chi-squared test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/chisq.test)\nchisq.test(x, y = NULL, correct = TRUE, p = rep(1/length(x), length(x)), rescale.p = FALSE, simulate.p.value = FALSE, B = 2000)"
+  },
+  {
+    "objectID": "journal/week05.html#completed-homework-problem-1",
+    "href": "journal/week05.html#completed-homework-problem-1",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\n\nIn another study, all of the horses in all of the races for three days were classified by post position and by the order in which they finished. Is the horse’s position at the end of the race dependent on post position? Which test of this section is being used? (see code for contingency table)\n\nI believe the fixed marginal totals chi-squared test should be applied to this problem.\n\nhorses &lt;- matrix(c(15, 14, 15, 52, 9, 10, 9, 72), nrow = 2, ncol = 4, byrow = TRUE)\nchisq.test(horses)\n\n\n    Pearson's Chi-squared test\n\ndata:  horses\nX-squared = 6.8137, df = 3, p-value = 0.07808\n\n\nHypotheses\n\n\\(H_0:\\) Post position and finish position are independent.\n\\(H_1:\\) Post position and finish position are not independent.\n\nTest Statistic and p-Value\n\n\\(T_1 = 6.8137\\)\n\\(p = 0.07808\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nFail to reject \\(H_0\\).\nThere is not sufficient evidence to suggest that the horse’s position at the end of the race dependent on post position."
+  },
+  {
+    "objectID": "journal/week05.html#section-2",
+    "href": "journal/week05.html#section-2",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "4.3",
+    "text": "4.3"
+  },
+  {
+    "objectID": "journal/week05.html#method",
+    "href": "journal/week05.html#method",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Method",
+    "text": "Method\nThe Median Test examines whether several samples came from populations having the same median. It is basically a special application of the chi-squared test with fixed marginal totals.\nFrom the \\(c\\) populations, a random sample size \\(n_i\\) where \\(i = 1, 2,..., c\\) is obtained. Then, the combined sample median, or grand median, is determined. Let \\(O_{1i}\\) be the number of observations in the \\(i\\)th sample that exceed grand median (AKA \\(a\\) in contingency table). Let \\(O_{2i}\\) be the number of observations in the \\(i\\)th sample that are \\(\\leq\\) grand median (AKA \\(b\\) in contingency table). Arrange the frequency counts into a 2xc contingency table."
+  },
+  {
+    "objectID": "journal/week05.html#assumptions-6",
+    "href": "journal/week05.html#assumptions-6",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nEach sample is a random sample.\nThe samples are independent of each other\nThe measurement scale is at least ordinal\nIf all populations have the same median, all populations have the same probability \\(p\\) of an observation exceeding the grand median"
+  },
+  {
+    "objectID": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-6",
+    "href": "journal/week05.html#parametric-equivalent-or-proof-that-there-is-none-6",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nThe parametric equivalents for the median test are the two-sample test (for comparing 2 medians/means) and one-way ANOVA (for comparing \\(k\\) medians/means)."
+  },
+  {
+    "objectID": "journal/week05.html#hypotheses-6",
+    "href": "journal/week05.html#hypotheses-6",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\): All \\(c\\) populations have the same medians\n\\(H_A\\): At least two of the populations have different medians"
+  },
+  {
+    "objectID": "journal/week05.html#rejection-region-6",
+    "href": "journal/week05.html#rejection-region-6",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Rejection Region",
+    "text": "Rejection Region\n\nCritical region of approximate size \\(\\alpha\\) corresponds to values of \\(T &gt; x_{1-\\alpha}\\), the \\(1-\\alpha\\) quantile of a chi-squared random variable with \\((c-1)\\) degrees of freedom obtained from Table A2.\nReject \\(H_0\\) if \\(T &gt; x_{1-\\alpha}\\).\nNote: if \\(H_0\\) is rejected, pairwise multiple comparisons may be made between populations by using the median test repeatedly on 2x2 contingency tables. In each comparison, the median is found and the number above/below that median is used in the 2x2 contingency table. This does distrot the true level of significance of all tests but the first."
+  },
+  {
+    "objectID": "journal/week05.html#test-statistic-andor-p-value-6",
+    "href": "journal/week05.html#test-statistic-andor-p-value-6",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic (rearranged from previous section, note that \\(O_{2i} = n_i - O_{1i}\\) in the special case of two rows): \\[\nT = \\frac {N^2}{ab} \\sum_{i=1}^c  \\frac{(O_{1i} - \\frac{n_i a}{N})^2}{n_i}\n\\]\nIf \\(a\\) is approximately equal to \\(b\\), the following simplification can be used, and is exact if \\(a=b\\), approximate otherwise: \\[\nT = \\sum_{i = 1}^c  \\frac{(O_{1i}-O_{2i})^2}{n_i}\n\\]\nThe null distribution of \\(T\\) is approximately the chi-squared distribution with \\((c-1)\\) degrees of freedom. (difficult to tabulate the exact distribution of \\(T\\))\nThe p-value is approximately the probability of a chi-squared random variable with \\((c-1)\\) degrees of freedom exceeding the observed value of \\(T\\), which can be found in Table A2."
+  },
+  {
+    "objectID": "journal/week05.html#r-function-6",
+    "href": "journal/week05.html#r-function-6",
+    "title": "Week 05: Chapter 4.3-4.5",
+    "section": "R function",
+    "text": "R function\nR function for median test (obtained from https://www.statology.org/moods-median-test-r/)\nmedian_test(response~group, data)\nwhere response is a vector of response values, group is a vector of grouping values, and data is a data frame containing the response and group vectors."
   },
   {
     "objectID": "journal/week05.html#completed-homework-problem-2",
     "href": "journal/week05.html#completed-homework-problem-2",
-    "title": "Week 05: Chapter 3.3-3.5",
+    "title": "Week 05: Chapter 4.3-4.5",
     "section": "Completed Homework Problem",
-    "text": "Completed Homework Problem"
+    "text": "Completed Homework Problem\n\nA number of oil leases were auctioned to the highest bidder. Each lease received one or more selaed bids. Test the hypothesis that the leases that eventually became producers of oil have the same medium number of bids as the leases that never produced oil. A random sample of each type of lease is given below (see code for values).\n\n\nlibrary(coin)\n\nLoading required package: survival\n\nproducers &lt;- c(6, 3, 1, 14, 8, 9, 12, 1, 3, 2, 1, 7)   \nnonproducers &lt;- c(6, 2, 1, 1, 3, 1, 2, 4, 8, 1, 2) \n\n# put into a data frame\ndf &lt;- data.frame(\n  bids = c(producers, nonproducers),\n  group = factor(c(rep(\"Producer\", length(producers)),\n                   rep(\"Nonproducer\", length(nonproducers))))\n)\n\nmedian_test(bids ~ group, data = df, distribution = \"exact\")\n\n\n    Exact Two-Sample Brown-Mood Median Test\n\ndata:  bids by group (Nonproducer, Producer)\nZ = -1.0911, p-value = 0.4003\nalternative hypothesis: true mu is not equal to 0\n\n\nHypotheses\n\n\\(H_0\\): The two groups (producer and nonproducers) have the same median number of bids\n\\(H_A\\): At least one of the groups has a different median number of bids\n\nTest Statistic and p-Value\n\n\\(T = -1.0911\\)\n\\(p = 0.4003\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nFail to reject \\(H_0\\).\nThere is not sufficient evidence to suggest that the leases that eventually became producers of oil have the same medium number of bids as the leases that never produced oil."
   },
   {
     "objectID": "journal/week03.html#method",
