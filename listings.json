@@ -3,6 +3,7 @@
     "listing": "/index.html",
     "items": [
       "/journal/index.html",
+      "/journal/week06.html",
       "/journal/week05.html",
       "/journal/week04.html",
       "/journal/week03.html",
@@ -13,6 +14,7 @@
   {
     "listing": "/journal/index.html",
     "items": [
+      "/journal/week06.html",
       "/journal/week05.html",
       "/journal/week04.html",
       "/journal/week03.html",

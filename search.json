@@ -231,11 +231,172 @@
     "text": "Completed Homework Problem\n\nIn a certain city the mortality rate per 100,000 citizens due to automobile accidents for each of the last 15 years was (see below). Is there any basis for the statement that the mortality rate is increasing?\n\n\nmortality_rate &lt;- c(17.3, 17.9, 18.4, 18.1, 18.3, 19.6, 18.6, 19.2, 17.7, 20.0, 19.0, 18.8, 19.3, 20.2, 19.9)\ncox.stuart.test(mortality_rate, \"right.sided\")\n\n\n    Cox Stuart test\n\ndata:  mortality_rate\nstatistic = 7, n = 7, p-value = 0.007812\nalternative hypothesis: increasing trend\n\n\nHypotheses\n\n\\(H_0:\\) no trend is present\n\\(H_1:\\) an upward/increasing trend is present\n\nTest Statistic and p-Value\n\n\\(T = 7\\)\n\\(p = 0.007812\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nReject \\(H_0\\).\nThere is sufficient evidence to suggest that the mortality rate is increasing."
   },
   {
-    "objectID": "journal/index.html",
-    "href": "journal/index.html",
-    "title": "All Weeks",
-    "section": "",
-    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 05: Chapter 4.1-4.3\n\n\n\n\n\n\n\n\n\n\n\n2025-09-25\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 04: Chapter 3.3-3.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-21\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 03: Chapter 3.1-3.2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-14\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 01-02: Chapters 1-2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-13\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
+    "objectID": "journal/week06.html#method",
+    "href": "journal/week06.html#method",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Method",
+    "text": "Method\nCramer’s Contingency Coefficient is a way to find the measure of dependence by modifying the \\(T\\) value (found in previous equations in section 4.3) in a way that the result doesn’t depend as much on the number of degrees of freedom as \\(T\\) does.\n\\[\nT = \\sum_{i = 1}^r  \\sum_{j=1}^c   \\frac{(O_{ij} - E_{ij})^2}{E_{ij}}\n\\]"
+  },
+  {
+    "objectID": "journal/week06.html#approach",
+    "href": "journal/week06.html#approach",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Approach",
+    "text": "Approach\nDividing \\(T\\) by the maximum value \\(T\\) may attain. Note: large \\(T\\) values arise from contingency tables with pronounced unevenness among cell counts.\n\\[\nR_1 = \\frac{T}{N(q-1)}\n\\] where \\(N\\) is the total number of observations, \\(q\\) is either \\(r\\) or \\(c\\) (whichever is smaller) and the maximum value of \\(T = N(q-1)\\). \\(R_1\\) is close to 1 if the table indicates a strong row-column dependence and close to 0 if the numbers across each row are in the same proportions to each other as the column totals are to each other. Cramer’s coefficient can also be written as: \\[\n\\sqrt \\frac{T}{N(q-1)}\n\\]"
+  },
+  {
+    "objectID": "journal/week06.html#method-1",
+    "href": "journal/week06.html#method-1",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Method",
+    "text": "Method\nPearson’s coefficient of mean square contingency is also used."
+  },
+  {
+    "objectID": "journal/week06.html#approach-1",
+    "href": "journal/week06.html#approach-1",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Approach",
+    "text": "Approach\nGiven as:\n\\[\nR_2 = \\sqrt \\frac{T}{N + T}\n\\] Since the maximum value of \\(T = N(q-1)\\), the maximum value of \\(R_2\\) is:\n\\[\nR_2 (max)= \\sqrt \\frac{N(q-1)}{N + N(q-1)} = \\sqrt \\frac{q-1}{q}\n\\] which is close to 1 in most cases. The smallest value of \\(T\\) is 0, so:\n\\[\n0 \\leq R_2 \\leq \\sqrt\\frac{q-1}{q} &lt; 1.0\n\\]"
+  },
+  {
+    "objectID": "journal/week06.html#method-2",
+    "href": "journal/week06.html#method-2",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Method",
+    "text": "Method\nPearson’s mean-square contingency coefficient is also used as a measure of dependence."
+  },
+  {
+    "objectID": "journal/week06.html#approach-2",
+    "href": "journal/week06.html#approach-2",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Approach",
+    "text": "Approach\nGiven as:\n\\[\nR_3 = \\frac{T}{N}\n\\] for which this can be concluded from previous discussions:\n\\[\n0 \\leq R_3 \\leq q-1\n\\] Note: knowledge of \\(r\\) and \\(c\\) is necessary in order to accurately interpret the degree of independence from the value of \\(R_3\\)."
+  },
+  {
+    "objectID": "journal/week06.html#method-3",
+    "href": "journal/week06.html#method-3",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Method",
+    "text": "Method\nThe Phi coefficient preserves direction. If the type of association is of interest, we must take care to set up the table in a way so that \\(a\\) and \\(d\\) represent the number of similar classifications, while \\(b\\) and \\(c\\) represent the number of unlike classifications."
+  },
+  {
+    "objectID": "journal/week06.html#approach-3",
+    "href": "journal/week06.html#approach-3",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Approach",
+    "text": "Approach\nGiven as:\n\\[\nR_5 = \\frac{ad-bc}{\\sqrt{r_1 r_2 c_1 c_2}}\n\\] which may vary from +1, when all items are classified in the “alike” cells (both \\(c\\) and \\(b\\) equal zero), to -1, when all items are classified as “unlike” (both \\(a\\) and \\(d\\) equal zero). Phi coefficient is Cramer’s coefficient with the sign of \\((ad-bc)\\) being preserved. It is popular because it is a special case of the Pearson product moment correlation coefficient, computed by represented the classes as numbers."
+  },
+  {
+    "objectID": "journal/week06.html#hypotheses",
+    "href": "journal/week06.html#hypotheses",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nOne tailed test (only appropriate for 2x2 contingency table): Based on the phi coefficient of \\[\nR_5 = \\frac{T_1}{\\sqrt{N}}\n\\] where \\(T_1\\) is given by a previous equation 1 in section 4.1 and is approximately normally distributed. Therefore, \\(\\sqrt{N} * R_5\\) is approximately normally distributed. - \\(H_0\\): There is no positive/negative correlation - \\(H_A\\): There is a positive/negative correlation"
+  },
+  {
+    "objectID": "journal/week06.html#rejection-region",
+    "href": "journal/week06.html#rejection-region",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Rejection Region",
+    "text": "Rejection Region\nFor positive correlation:\n\nReject \\(H_0\\) if \\(\\sqrt{N} * R_5\\) exceeds \\(z_{1-\\alpha}\\) from Table A1, with a level of \\(\\alpha\\)\n\nFor negative correlation:\n\nReject \\(H_0\\) if \\(\\sqrt{N} * R_5\\) smaller than \\(z_{\\alpha}\\) from Table A1, with a level of \\(\\alpha\\)"
+  },
+  {
+    "objectID": "journal/week06.html#r-function",
+    "href": "journal/week06.html#r-function",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "R function",
+    "text": "R function\nR function for phi coefficient (obtained from https://www.rdocumentation.org/packages/psych/versions/1.0-17/topics/phi)\nphi(t, digits = 2)\nwhere t = a 1 x 4 vector or a 2 x 2 matrix, and digits = round the result to digits."
+  },
+  {
+    "objectID": "journal/week06.html#completed-homework-problem",
+    "href": "journal/week06.html#completed-homework-problem",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\n\nOne hundred married couples were interviewed, and the husband and wife were asked separately for their first choice of the next U.S. President, with the following results. (see code) Compute the following:\n\n\n\\(T\\)\nCramer’s coefficient\n\\(R_1\\)\n\\(R_2\\)\n\\(R_3\\)\n\\(R_4\\)\n\n\n# Create the contingency table\ntbl &lt;- matrix(c(12, 22, 6,\n                25, 21, 4,\n                 3,  7, 0),\n              nrow = 3, byrow = TRUE)\n\nrownames(tbl) &lt;- c(\"Husband_A\", \"Husband_B\", \"Husband_Other\")\ncolnames(tbl) &lt;- c(\"Wife_A\", \"Wife_B\", \"Wife_Other\")\n\ntbl\n\n              Wife_A Wife_B Wife_Other\nHusband_A         12     22          6\nHusband_B         25     21          4\nHusband_Other      3      7          0\n\n\n\n# Chi-square test\nchisq &lt;- chisq.test(tbl, correct = FALSE)\n\nWarning in chisq.test(tbl, correct = FALSE): Chi-squared approximation may be\nincorrect\n\nT_val &lt;- chisq$statistic\n\nN &lt;- sum(tbl)             # total observations\nr &lt;- nrow(tbl)\nc &lt;- ncol(tbl)\nq &lt;- min(r, c)            # for Cramer's V\n\nN; r; c; q\n\n[1] 100\n\n\n[1] 3\n\n\n[1] 3\n\n\n[1] 3\n\n# R1\nR1 &lt;- T_val / (N * (q - 1))\n\n# Cramer's V (square root of R1)\nV &lt;- sqrt(R1)\n\n# R2\nR2 &lt;- sqrt(T_val / (N + T_val))\n\n# R3\nR3 &lt;- T_val / N\n\n# R4 \nR4 &lt;- sqrt(T_val / (N * sqrt((r - 1) * (c - 1))))\n\nlist(T = T_val, V = V, R1 = R1, R2 = R2, R3 = R3, R4 = R4)\n\n$T\nX-squared \n     6.34 \n\n$V\nX-squared \n0.1780449 \n\n$R1\nX-squared \n   0.0317 \n\n$R2\nX-squared \n0.2441722 \n\n$R3\nX-squared \n   0.0634 \n\n$R4\nX-squared \n0.1780449"
+  },
+  {
+    "objectID": "journal/week06.html#section-1",
+    "href": "journal/week06.html#section-1",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "4.5",
+    "text": "4.5"
+  },
+  {
+    "objectID": "journal/week06.html#method-4",
+    "href": "journal/week06.html#method-4",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Method",
+    "text": "Method"
+  },
+  {
+    "objectID": "journal/week06.html#approach-4",
+    "href": "journal/week06.html#approach-4",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Approach",
+    "text": "Approach"
+  },
+  {
+    "objectID": "journal/week06.html#parametric-equivalent-or-proof-that-there-is-none",
+    "href": "journal/week06.html#parametric-equivalent-or-proof-that-there-is-none",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)"
+  },
+  {
+    "objectID": "journal/week06.html#hypotheses-1",
+    "href": "journal/week06.html#hypotheses-1",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\): \\(P(+) = P(-)\\) (two-tailed) | \\(P(+) \\geq P(-)\\) (left-tailed) | \\(P(+) \\leq P(-)\\) (right-tailed)\n\\(H_A\\): \\(P(+) \\neq P(-)\\) (two-tailed) | \\(P(+) &lt; P(-)\\) (left-tailed) | \\(P(+) &gt; P(-)\\) (right-tailed)"
+  },
+  {
+    "objectID": "journal/week06.html#rejection-region-1",
+    "href": "journal/week06.html#rejection-region-1",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Rejection Region",
+    "text": "Rejection Region"
+  },
+  {
+    "objectID": "journal/week06.html#test-statistic-andor-p-value",
+    "href": "journal/week06.html#test-statistic-andor-p-value",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: \\(T\\) is the number of “plus” pairs (i.e. \\(T=\\) number of pairs \\((X_i, Y_i)\\) where \\(X_i &lt; Y_i\\)).\nThe null distribution of \\(T\\) is the binomial distribution with \\(p = 1/2\\) and \\(n=\\) number of noted pairs (i.e. disregard all tied pairs \\(X=Y\\) and let \\(n=\\) total number of pluses and minuses). Normal approximation is used for \\(n&gt;20\\).\nThe p-value is obtained differently for the different forms:\n\nTwo-tailed: p-value is twice the smaller of the probabilities that \\(Y \\leq\\) or \\(\\geq\\) the observed value of \\(T\\) (found from Table A3 for \\(n \\leq 20\\), Table A1 if \\(n &gt; 20\\))\nLeft-tailed: p-value is the probability that \\(Y \\leq\\) observed value of \\(T\\)\nRight-tailed: p-value is the probability that \\(Y \\geq\\) observed value of \\(T\\)"
+  },
+  {
+    "objectID": "journal/week06.html#r-function-1",
+    "href": "journal/week06.html#r-function-1",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "R function",
+    "text": "R function\nR function for test (obtained from"
+  },
+  {
+    "objectID": "journal/week06.html#completed-homework-problem-1",
+    "href": "journal/week06.html#completed-homework-problem-1",
+    "title": "Week 06: Chapter 4.4-4.5",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\nHypotheses\n\n\\(H_0:\\) \\(P(+) \\geq P(-)\\), where \\(P(+) = P\\)(weight_before &lt; weight_after) and \\(P(-) = P\\)(weight_before &gt; weight_after)\n\\(H_1:\\) \\(P(+) &lt; P(-)\\)\n\nTest Statistic and p-Value\n\n\\(T = 1\\)\n\\(p = 0.109375\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nFail to reject \\(H_0\\).\nThere is not sufficient evidence to suggest that the diet is an effective means of losing weight."
+  },
+  {
+    "objectID": "journal/week-01-02.html#chapter-1-summary",
+    "href": "journal/week-01-02.html#chapter-1-summary",
+    "title": "Week 01-02: Chapters 1-2",
+    "section": "Chapter 1 Summary",
+    "text": "Chapter 1 Summary\nIn chapter 1, we discuss counting rules. I recognized these rules as the rules for combinations, like n choose k. These rules allow us to determine the number of distinguishable arrangements of objects into a row. This can be calculated even if there are one or multiple identical objects present in a group. The total number of possible outcomes of each trial in an experiment can also be determined using counting rules.\nNext, we looked at defining and describing experiments and events. We used probabilities to describe events associated with experiments. The probability that an event occurs or does not occur was discussed, along with the probability that an event occurred given that another event occurred, also known as the conditional probability. It was also essential to learn how to identify whether or not two events were independent of each other, which was done by determining if P(AB) = P(A)P(B), where A and B are events.\nWe then moved onto learning about random variables. Distributions like the discrete uniform distribution and the hypergeometric distribution rely on the probability function of X, where X is a random variable. Distribution functions allow us to view all the properties of a random variable since it shows us all the possible probabilities associated with a random variable. We then use quantiles to describe the overall behavior of a distribution function.\nExpected values are used to calculate many different test statistics/statistical values. They are used to calculate the mean, interquartile range (IQR), standard deviation, variance, covariance, and correlation coefficient of random variables.\nTo conclude chapter 1, the following distributions were defined using probability functions/theorems: normal distribution and chi-squared distribution. Since I have learned and used those distributions in previous courses, I did not focus on this section."
+  },
+  {
+    "objectID": "journal/week-01-02.html#chapter-2-notes",
+    "href": "journal/week-01-02.html#chapter-2-notes",
+    "title": "Week 01-02: Chapters 1-2",
+    "section": "Chapter 2 Notes",
+    "text": "Chapter 2 Notes"
+  },
+  {
+    "objectID": "journal/week-01-02.html#chapter-2-summary",
+    "href": "journal/week-01-02.html#chapter-2-summary",
+    "title": "Week 01-02: Chapters 1-2",
+    "section": "Chapter 2 Summary",
+    "text": "Chapter 2 Summary\nIn chapter 2, we shifted focus from counting rules and random variables to sampling, estimation, and hypothesis testing. We began by defining populations and samples. A sample can be random, where each observation is independent and identically distributed, or it can be biased. We also reviewed the following different types of measurement scales: nominal, ordinal, interval, and ratio. We saw how order statistics can be applied when analyzing ordered data.\nNext, we explored estimation methods. The empirical distribution function (EDF) was introduced as a way to approximate the population distribution based on observed data. We then used concepts like sample mean, variance, and quantiles as point estimators of population parameters. We also learned about interval estimation, confidence coefficients, and unbiased estimators. The bootstrap method was also introduced as a resampling approach to approximate population quantities without requiring prior knowledge of the distribution. In survival analysis, the empirical survival function and the Kaplan-Meier estimator were discussed as nonparametric methods for estimating lifetime distributions.\nWe then studied hypothesis testing. This included defining null and alternative hypotheses, test statistics, and decision rules. Errors in hypothesis testing were categorized into Type I and Type II errors, with significance level (\\(\\alpha\\)), power, and p-values helping us evaluate tests. We also discussed test properties such as unbiasedness, consistency, and efficiency. We also learned that the power function plays an important role in comparing tests.\nFinally, we compared parametric and nonparametric methods. Parametric methods depend on knowing the population distribution. This is unlike nonparametric methods, which are more flexible and robust to distributional assumptions. Nonparametric tests can be applied to nominal, ordinal, interval, and ratio data."
   },
   {
     "objectID": "journal/week-template.html",
@@ -280,25 +441,11 @@
     "text": "R function\nName the primary R function(s) (e.g., wilcox.test, kruskal.test, friedman.test), with key arguments.\n\n# Minimal runnable example (replace with your own)\nset.seed(1)\nx &lt;- rnorm(30, mean = 0, sd = 1)\ny &lt;- rnorm(30, mean = 0.5, sd = 1)\nt.test(x, y, var.equal = TRUE)\n\n\n    Two Sample t-test\n\ndata:  x and y\nt = -2.4722, df = 58, p-value = 0.01638\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -0.9959007 -0.1047322\nsample estimates:\n mean of x  mean of y \n0.08245817 0.63277458"
   },
   {
-    "objectID": "journal/week-01-02.html#chapter-1-summary",
-    "href": "journal/week-01-02.html#chapter-1-summary",
-    "title": "Week 01-02: Chapters 1-2",
-    "section": "Chapter 1 Summary",
-    "text": "Chapter 1 Summary\nIn chapter 1, we discuss counting rules. I recognized these rules as the rules for combinations, like n choose k. These rules allow us to determine the number of distinguishable arrangements of objects into a row. This can be calculated even if there are one or multiple identical objects present in a group. The total number of possible outcomes of each trial in an experiment can also be determined using counting rules.\nNext, we looked at defining and describing experiments and events. We used probabilities to describe events associated with experiments. The probability that an event occurs or does not occur was discussed, along with the probability that an event occurred given that another event occurred, also known as the conditional probability. It was also essential to learn how to identify whether or not two events were independent of each other, which was done by determining if P(AB) = P(A)P(B), where A and B are events.\nWe then moved onto learning about random variables. Distributions like the discrete uniform distribution and the hypergeometric distribution rely on the probability function of X, where X is a random variable. Distribution functions allow us to view all the properties of a random variable since it shows us all the possible probabilities associated with a random variable. We then use quantiles to describe the overall behavior of a distribution function.\nExpected values are used to calculate many different test statistics/statistical values. They are used to calculate the mean, interquartile range (IQR), standard deviation, variance, covariance, and correlation coefficient of random variables.\nTo conclude chapter 1, the following distributions were defined using probability functions/theorems: normal distribution and chi-squared distribution. Since I have learned and used those distributions in previous courses, I did not focus on this section."
-  },
-  {
-    "objectID": "journal/week-01-02.html#chapter-2-notes",
-    "href": "journal/week-01-02.html#chapter-2-notes",
-    "title": "Week 01-02: Chapters 1-2",
-    "section": "Chapter 2 Notes",
-    "text": "Chapter 2 Notes"
-  },
-  {
-    "objectID": "journal/week-01-02.html#chapter-2-summary",
-    "href": "journal/week-01-02.html#chapter-2-summary",
-    "title": "Week 01-02: Chapters 1-2",
-    "section": "Chapter 2 Summary",
-    "text": "Chapter 2 Summary\nIn chapter 2, we shifted focus from counting rules and random variables to sampling, estimation, and hypothesis testing. We began by defining populations and samples. A sample can be random, where each observation is independent and identically distributed, or it can be biased. We also reviewed the following different types of measurement scales: nominal, ordinal, interval, and ratio. We saw how order statistics can be applied when analyzing ordered data.\nNext, we explored estimation methods. The empirical distribution function (EDF) was introduced as a way to approximate the population distribution based on observed data. We then used concepts like sample mean, variance, and quantiles as point estimators of population parameters. We also learned about interval estimation, confidence coefficients, and unbiased estimators. The bootstrap method was also introduced as a resampling approach to approximate population quantities without requiring prior knowledge of the distribution. In survival analysis, the empirical survival function and the Kaplan-Meier estimator were discussed as nonparametric methods for estimating lifetime distributions.\nWe then studied hypothesis testing. This included defining null and alternative hypotheses, test statistics, and decision rules. Errors in hypothesis testing were categorized into Type I and Type II errors, with significance level (\\(\\alpha\\)), power, and p-values helping us evaluate tests. We also discussed test properties such as unbiasedness, consistency, and efficiency. We also learned that the power function plays an important role in comparing tests.\nFinally, we compared parametric and nonparametric methods. Parametric methods depend on knowing the population distribution. This is unlike nonparametric methods, which are more flexible and robust to distributional assumptions. Nonparametric tests can be applied to nominal, ordinal, interval, and ratio data."
+    "objectID": "journal/index.html",
+    "href": "journal/index.html",
+    "title": "All Weeks",
+    "section": "",
+    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 06: Chapter 4.4-4.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-30\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 05: Chapter 4.1-4.3\n\n\n\n\n\n\n\n\n\n\n\n2025-09-25\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 04: Chapter 3.3-3.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-21\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 03: Chapter 3.1-3.2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-14\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 01-02: Chapters 1-2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-13\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "journal/week05.html#method-1",
