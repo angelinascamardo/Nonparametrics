@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-09-30">
+<meta name="dcterms.date" content="2025-10-07">
 
 <title>Week 06: Chapter 4.4-4.5 – Nonparamtric Methods Journal</title>
 <style>
@@ -198,7 +198,7 @@ window.Quarto = {
   <li><a href="#completed-homework-problem" id="toc-completed-homework-problem" class="nav-link" data-scroll-target="#completed-homework-problem">Completed Homework Problem</a></li>
   <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">4.5</a></li>
   <li><a href="#method-4" id="toc-method-4" class="nav-link" data-scroll-target="#method-4">Method</a></li>
-  <li><a href="#approach-4" id="toc-approach-4" class="nav-link" data-scroll-target="#approach-4">Approach</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
   <li><a href="#parametric-equivalent-or-proof-that-there-is-none" id="toc-parametric-equivalent-or-proof-that-there-is-none" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</a></li>
   <li><a href="#hypotheses-1" id="toc-hypotheses-1" class="nav-link" data-scroll-target="#hypotheses-1">Hypotheses</a></li>
   <li><a href="#rejection-region-1" id="toc-rejection-region-1" class="nav-link" data-scroll-target="#rejection-region-1">Rejection Region</a></li>
@@ -224,7 +224,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-09-30</p>
+      <p class="date">2025-10-07</p>
     </div>
   </div>
   
@@ -426,9 +426,14 @@ X-squared
 </section>
 <section id="method-4" class="level2">
 <h2 class="anchored" data-anchor-id="method-4">Method</h2>
+<p>The Chi-Squared test for goodness-of-fit is designed to compare the sample obtained with the hypothesized distribution (chi-squared in this case) to see if the hypothesized distribution function fits the data in the sample. The data consists of <span class="math inline">\(N\)</span> independent observations of a random variable <span class="math inline">\(X\)</span>. These <span class="math inline">\(N\)</span> observations are grouped into <span class="math inline">\(c\)</span> classes. The number of observations in each class are presented in the form of a 1xc contingency table.</p>
 </section>
-<section id="approach-4" class="level2">
-<h2 class="anchored" data-anchor-id="approach-4">Approach</h2>
+<section id="assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
+<ol type="1">
+<li>The sample is a random sample</li>
+<li>The measurement scale is at least nominal</li>
+</ol>
 </section>
 <section id="parametric-equivalent-or-proof-that-there-is-none" class="level2">
 <h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</h2>
@@ -436,41 +441,70 @@ X-squared
 <section id="hypotheses-1" class="level2">
 <h2 class="anchored" data-anchor-id="hypotheses-1">Hypotheses</h2>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(P(+) = P(-)\)</span> (two-tailed) | <span class="math inline">\(P(+) \geq P(-)\)</span> (left-tailed) | <span class="math inline">\(P(+) \leq P(-)\)</span> (right-tailed)</li>
-<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(P(+) \neq P(-)\)</span> (two-tailed) | <span class="math inline">\(P(+) &lt; P(-)\)</span> (left-tailed) | <span class="math inline">\(P(+) &gt; P(-)\)</span> (right-tailed)</li>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(P(X\)</span> is in class <span class="math inline">\(j = p_j^*\)</span> for <span class="math inline">\(j=1, 2, ..., c\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(P(X\)</span> is in class <span class="math inline">\(j \neq p_j^*\)</span> for at least one class</li>
 </ul>
 </section>
 <section id="rejection-region-1" class="level2">
 <h2 class="anchored" data-anchor-id="rejection-region-1">Rejection Region</h2>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T &gt; 1-\alpha\)</span> quantile of the chi-squared distribution with <span class="math inline">\(c-1\)</span> degrees of freedom from Table A2.</li>
+</ul>
 </section>
 <section id="test-statistic-andor-p-value" class="level2">
 <h2 class="anchored" data-anchor-id="test-statistic-andor-p-value">Test Statistic and/or p-value</h2>
 <ul>
-<li>Test Statistic: <span class="math inline">\(T\)</span> is the number of “plus” pairs (i.e.&nbsp;<span class="math inline">\(T=\)</span> number of pairs <span class="math inline">\((X_i, Y_i)\)</span> where <span class="math inline">\(X_i &lt; Y_i\)</span>).</li>
-<li>The null distribution of <span class="math inline">\(T\)</span> is the binomial distribution with <span class="math inline">\(p = 1/2\)</span> and <span class="math inline">\(n=\)</span> number of noted pairs (i.e.&nbsp;disregard all tied pairs <span class="math inline">\(X=Y\)</span> and let <span class="math inline">\(n=\)</span> total number of pluses and minuses). Normal approximation is used for <span class="math inline">\(n&gt;20\)</span>.</li>
-<li>The p-value is obtained differently for the different forms:
+<li>Test Statistic: Let <span class="math inline">\(p_j^*\)</span> be the probability of a random observation on <span class="math inline">\(X\)</span> being in class <span class="math inline">\(j\)</span>, under the assumption that the null hypothesis is true. Then</li>
+</ul>
+<p><span class="math display">\[
+E_j = p_j^*N
+\]</span> where <span class="math inline">\(j = 1, 2, ..., c\)</span> and <span class="math inline">\(E_j\)</span> represents the expected number of observations in class <span class="math inline">\(j\)</span> when <span class="math inline">\(H_0\)</span> is true. The test statistic <span class="math inline">\(T\)</span> is given by: <span class="math display">\[
+T = \sum_{j=1}^c  \frac{(O_j - E_j)^2}{E_j}
+\]</span> OR <span class="math display">\[
+T = \sum_{j=1}^c  \frac{O_j^2}{E_j} - N
+\]</span></p>
 <ul>
-<li>Two-tailed: p-value is twice the smaller of the probabilities that <span class="math inline">\(Y \leq\)</span> or <span class="math inline">\(\geq\)</span> the observed value of <span class="math inline">\(T\)</span> (found from Table A3 for <span class="math inline">\(n \leq 20\)</span>, Table A1 if <span class="math inline">\(n &gt; 20\)</span>)</li>
-<li>Left-tailed: p-value is the probability that <span class="math inline">\(Y \leq\)</span> observed value of <span class="math inline">\(T\)</span></li>
-<li>Right-tailed: p-value is the probability that <span class="math inline">\(Y \geq\)</span> observed value of <span class="math inline">\(T\)</span></li>
-</ul></li>
+<li>The chi squared distribution with <span class="math inline">\(c-1\)</span> degrees of freedom is used as an approximation since the exact distribution of <span class="math inline">\(T\)</span> is difficult to use.</li>
+<li>The p-value is approximately the probability of chi squared random variable with <span class="math inline">\(c-1\)</span> degrees of freedom exceeding the observed value of <span class="math inline">\(T\)</span> (obtained from Table A2).</li>
 </ul>
 </section>
 <section id="r-function-1" class="level2">
 <h2 class="anchored" data-anchor-id="r-function-1">R function</h2>
-<p>R function for test (obtained from</p>
+<p>R function for chi- squared test (obtained from https://rpubs.com/pg2000in/ChiSquareGoodnessFit)</p>
+<p>chisq.test(x, p)</p>
+<p>where x is a numeric vector and p is a vector of probabilities of the same length of x.</p>
 </section>
 <section id="completed-homework-problem-1" class="level2">
 <h2 class="anchored" data-anchor-id="completed-homework-problem-1">Completed Homework Problem</h2>
+<ol start="2" type="1">
+<li>A die was cast 600 times with the following results. Occurence/Frequency: 1/87, 2/96, 3/108, 4/89, 5/122, 6/98 Is the die balanced?</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Observed frequencies</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>observed <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">87</span>, <span class="dv">96</span>, <span class="dv">108</span>, <span class="dv">89</span>, <span class="dv">122</span>, <span class="dv">98</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Expected frequencies (all equal if die is fair)</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>expected <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">600</span><span class="sc">/</span><span class="dv">6</span>, <span class="dv">6</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># perform Chi-squared goodness-of-fit test</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="at">x =</span> observed, <span class="at">p =</span> <span class="fu">rep</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>, <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Chi-squared test for given probabilities
+
+data:  observed
+X-squared = 8.58, df = 5, p-value = 0.127</code></pre>
+</div>
+</div>
 <p><strong>Hypotheses</strong></p>
 <ul>
-<li><span class="math inline">\(H_0:\)</span> <span class="math inline">\(P(+) \geq P(-)\)</span>, where <span class="math inline">\(P(+) = P\)</span>(weight_before &lt; weight_after) and <span class="math inline">\(P(-) = P\)</span>(weight_before &gt; weight_after)</li>
-<li><span class="math inline">\(H_1:\)</span> <span class="math inline">\(P(+) &lt; P(-)\)</span></li>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(P(X = j) = \frac{1}{6}\)</span> for <span class="math inline">\(j=1, 2, 3, 4, 5, 6\)</span> (the die is fair)</li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(H_0\)</span>: <span class="math inline">\(P(X = j) \neq \frac{1}{6}\)</span> for at least one <span class="math inline">\(j\)</span> (the die is not fair)</li>
 </ul>
 <p><strong>Test Statistic and <em>p</em>-Value</strong></p>
 <ul>
-<li><span class="math inline">\(T = 1\)</span></li>
-<li><span class="math inline">\(p = 0.109375\)</span></li>
+<li><span class="math inline">\(T = 8.58\)</span></li>
+<li><span class="math inline">\(p = 0.127\)</span></li>
 </ul>
 <p><strong>Rejection Region</strong></p>
 <ul>
@@ -479,7 +513,7 @@ X-squared
 <p><strong>Conclusion/Interpretation</strong></p>
 <ul>
 <li><p>Fail to reject <span class="math inline">\(H_0\)</span>.</p></li>
-<li><p>There is not sufficient evidence to suggest that the diet is an effective means of losing weight.</p></li>
+<li><p>There is not sufficient evidence to suggest that the die is unfair.</p></li>
 </ul>
 
 
