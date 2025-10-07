@@ -340,7 +340,7 @@
     "href": "journal/week06.html#parametric-equivalent-or-proof-that-there-is-none",
     "title": "Week 06: Chapter 4.4-4.5",
     "section": "Parametric equivalent (or proof that there is none)",
-    "text": "Parametric equivalent (or proof that there is none)"
+    "text": "Parametric equivalent (or proof that there is none)\nThere are no direct parametric equivalents of the chi-squared goodness of fit test because it is used on categorical data and does not assume a particular distribution of the underlying variable. Parametric tests that are similar to the chi-squared test do exist for specific kinds of variables, such as the one-sample t test for continuous, categorically-grouped data."
   },
   {
     "objectID": "journal/week06.html#hypotheses-1",
