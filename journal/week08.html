@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-10-18">
 
-<title>All Weeks – Nonparamtric Methods Journal</title>
+<title>Week 08: Chapter 5.3 – Nonparamtric Methods Journal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,35 +101,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -152,7 +156,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../journal/index.html" aria-current="page"> 
+    <a class="nav-link" href="../journal/index.html"> 
 <span class="menu-text">Weeks</span></a>
   </li>  
   <li class="nav-item">
@@ -174,15 +178,36 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">5.2</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none" id="toc-parametric-equivalent-or-proof-that-there-is-none" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
+  <li><a href="#rejection-region" id="toc-rejection-region" class="nav-link" data-scroll-target="#rejection-region">Rejection Region</a></li>
+  <li><a href="#test-statistic-andor-p-value" id="toc-test-statistic-andor-p-value" class="nav-link" data-scroll-target="#test-statistic-andor-p-value">Test Statistic and/or p-value</a></li>
+  <li><a href="#r-function" id="toc-r-function" class="nav-link" data-scroll-target="#r-function">R function</a></li>
+  <li><a href="#method-1" id="toc-method-1" class="nav-link" data-scroll-target="#method-1">Method</a></li>
+  <li><a href="#assumptions-1" id="toc-assumptions-1" class="nav-link" data-scroll-target="#assumptions-1">Assumptions</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none-1" id="toc-parametric-equivalent-or-proof-that-there-is-none-1" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none-1">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#hypotheses-1" id="toc-hypotheses-1" class="nav-link" data-scroll-target="#hypotheses-1">Hypotheses</a></li>
+  <li><a href="#rejection-region-1" id="toc-rejection-region-1" class="nav-link" data-scroll-target="#rejection-region-1">Rejection Region</a></li>
+  <li><a href="#test-statistic-andor-p-value-1" id="toc-test-statistic-andor-p-value-1" class="nav-link" data-scroll-target="#test-statistic-andor-p-value-1">Test Statistic and/or p-value</a></li>
+  <li><a href="#r-function-1" id="toc-r-function-1" class="nav-link" data-scroll-target="#r-function-1">R function</a></li>
+  <li><a href="#completed-homework-problem" id="toc-completed-homework-problem" class="nav-link" data-scroll-target="#completed-homework-problem">Completed Homework Problem</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">All Weeks</h1>
+<h1 class="title">Week 08: Chapter 5.3</h1>
 </div>
 
 
@@ -190,6 +215,12 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2025-10-18</p>
+    </div>
+  </div>
   
     
   </div>
@@ -199,221 +230,225 @@ window.Quarto = {
 </header>
 
 
-<p>Browse all journal entries here.</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">5.2</h2>
+</section>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">Method</h2>
+<p>The Squared ranks test for variances is used to test for equal variances between groups. The data will consist of two random samples. The random samples of <span class="math inline">\(X_i\)</span>s and <span class="math inline">\(Y_j\)</span>s must be converted to their absolute deviation from the mean using these two formulas: <span class="math display">\[
+U_i = |X_i - \mu_1|, i = 1, ..., n
+\]</span> <span class="math display">\[
+V_J = |Y_J - \mu_2|, j = 1, ..., m
+\]</span></p>
+<p>where <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> are the means from populations 1 and 2. Ranks 1 to <span class="math inline">\(n +m\)</span> are assigned to the combined sample of Us and Vs. If tied, assign the average of the ranks to each.</p>
+</section>
+<section id="assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
+<ol type="1">
+<li>Both samples are random samples from their respective populations</li>
+<li>Independence within each sample and mutual independence among the two samples</li>
+<li>The measurement scale is at least interval</li>
+</ol>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</h2>
+<p>The parametric equivalent of the squared ranks test for equal variances is the parametric Levene test. I have previously learned the Levene test, and therefore have extensive notes on it already.</p>
+</section>
+<section id="hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses">Hypotheses</h2>
+<p>Two-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: X and Y are identically distributed, except for possibly different means</li>
+<li><span class="math inline">\(H_A\)</span>: Var(X) <span class="math inline">\(\neq\)</span> Var(Y)</li>
+</ul>
+<p>Left-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: X and Y are identically distributed, except for possibly different means</li>
+<li><span class="math inline">\(H_A\)</span>: Var(X) &lt; Var(Y)</li>
+</ul>
+<p>Right-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: X and Y are identically distributed, except for possibly different means</li>
+<li><span class="math inline">\(H_A\)</span>: Var(X) &gt; Var(Y)</li>
+</ul>
+</section>
+<section id="rejection-region" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-region">Rejection Region</h2>
+<p>Two-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T\)</span> is &gt; or &lt; its <span class="math inline">\(1-\alpha/2\)</span> quantile</li>
+</ul>
+<p>Left-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T\)</span> is &lt; its <span class="math inline">\(1-\alpha/2\)</span> quantile</li>
+</ul>
+<p>Right-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T\)</span> is &gt; its <span class="math inline">\(1-\alpha/2\)</span> quantile</li>
+</ul>
+</section>
+<section id="test-statistic-andor-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="test-statistic-andor-p-value">Test Statistic and/or p-value</h2>
+<ul>
+<li><p>Test Statistic: If there are no values of <span class="math inline">\(U\)</span> tied with values of <span class="math inline">\(V\)</span>, the sum of the squares of the ranks assigned to population 1 can be used as the test statistic: <span class="math display">\[
+T = \sum_{i=1}^n [R(U_i)]^2
+\]</span> If there are ties, subtract the mean from <span class="math inline">\(T\)</span> and divide by standard deviation to get: <span class="math display">\[
+T_1 = \frac{T-n \overline{R^2}}{[\frac{nm}{N(N-1)} \sum_{i=1}^N R_i^4 - \frac{nm}{N-1} (\overline{R^2})^2]}
+\]</span> where <span class="math inline">\(N = n+m\)</span>, <span class="math inline">\(\overline{R^2}\)</span> represents the average of the squared ranks of both samples combined: <span class="math display">\[
+\overline{R^2} = \frac{1}{N}  \sum_{i=1}^n [R(U_i)]^2 + \sum_{j=1}^m [R(V_j)]^2
+\]</span> and <span class="math inline">\(\sum R_i^4\)</span> represents the sum of the ranks raised to the 4th power: <span class="math display">\[
+\sum_{i=1}^N R_i^4 = \sum_{i=1}^n [R(U_i)]^4 + \sum_{j=1}^m [R(V_j)]^4
+\]</span></p></li>
+<li><p>Quantiles of exact null distribution of <span class="math inline">\(T\)</span> are in Table A9 for <span class="math inline">\(n\)</span> and <span class="math inline">\(m \leq 10\)</span>. For <span class="math inline">\(n\)</span> and <span class="math inline">\(m &gt; 10\)</span>, use the following approximation based on standard normal quantiles <span class="math inline">\(z_p\)</span> given in Table A_1: <span class="math display">\[
+w_p = \frac{n(N+1)(2N+1)}{6} + z_p \sqrt{\frac{mn(N+1)(2N+1)(8N+11)}{180}}
+\]</span></p></li>
+<li><p>The p-value is obtained differently for the different tests:</p>
+<ul>
+<li>Two-tailed: p-value = 2*(smaller of the one-tailed p values)</li>
+<li>Left-tailed:</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+P(Z \leq \frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}})
+\]</span></p>
+<ul>
+<li>Right-tailed:</li>
+</ul>
+<p><span class="math display">\[
+P(Z \geq \frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}})
+\]</span></p>
+</section>
+<section id="r-function" class="level2">
+<h2 class="anchored" data-anchor-id="r-function">R function</h2>
+<p>R function for squared ranks test for variance (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/var.test)</p>
+<p>var.test(x, …)</p>
+<p>S3 method for default: var.test(x, y, ratio = 1, alternative = c(“two.sided”, “less”, “greater”), conf.level = 0.95, …)</p>
+<p>S3 method for formula: var.test(formula, data, subset, na.action, …)</p>
+</section>
+<section id="method-1" class="level2">
+<h2 class="anchored" data-anchor-id="method-1">Method</h2>
+<p>The modified Squared ranks test for variances is used when there are three or more samples.</p>
+</section>
+<section id="assumptions-1" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-1">Assumptions</h2>
+<ol type="1">
+<li>Both samples are random samples from their respective populations</li>
+<li>Independence within each sample and mutual independence among the two samples</li>
+<li>The measurement scale is at least interval</li>
+</ol>
+<p>(same as squared ranks)</p>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none-1" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none-1">Parametric equivalent (or proof that there is none)</h2>
+<p>The parametric equivalent of the squared ranks test for equal variances is the parametric Levene test. I have previously learned the Levene test, and therefore have extensive notes on it already. (same as squared ranks)</p>
+</section>
+<section id="hypotheses-1" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses-1">Hypotheses</h2>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: All <span class="math inline">\(k\)</span> populations are identical, except for possibly different means</li>
+<li><span class="math inline">\(H_A\)</span>: Some of the population variances are not equal to each other</li>
+</ul>
+</section>
+<section id="rejection-region-1" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-region-1">Rejection Region</h2>
+<p>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(\chi_0^2\)</span> is greater than its <span class="math inline">\(1-\alpha\)</span> quantile from the null distribution.</p>
+</section>
+<section id="test-statistic-andor-p-value-1" class="level2">
+<h2 class="anchored" data-anchor-id="test-statistic-andor-p-value-1">Test Statistic and/or p-value</h2>
+<ul>
+<li>Test Statistic:</li>
+</ul>
+<p><span class="math display">\[
+T_2 = \frac{1}{D^2} [\sum_{j=1}^k \frac{S_j^2}{n_j} -N(\overline{S})^2]
+\]</span> where <span class="math inline">\(n_j=\)</span> number of observations in sample <span class="math inline">\(j\)</span>, <span class="math inline">\(N = n_1 + n_2 + ... + n_k\)</span>, <span class="math inline">\(S_j=\)</span> sum of squared ranks in sample <span class="math inline">\(j\)</span>, <span class="math inline">\(\overline{S} = \frac{1}{N} \sum_{j=1}^k S_j\)</span> is the average of all squared ranks, and</p>
+<p><span class="math display">\[
+D^2 = \frac{1}{N-1}[\sum_{i=1}^N R_i^4 -N(\overline{S})^2]
+\]</span> and <span class="math inline">\(\sum R_i^4\)</span> was defined previously in squared ranks.</p>
+<ul>
+<li>The chi squared distribution with <span class="math inline">\(k-1\)</span> degrees of freedom is used as an approximation to the null distribution of <span class="math inline">\(\chi_0^2\)</span>.</li>
+<li>The p-value is approximately the probability of chi squared random variable with <span class="math inline">\(k-1\)</span> degrees of freedom exceeding the observed value of <span class="math inline">\(\chi_0^2\)</span>.</li>
+</ul>
+</section>
+<section id="r-function-1" class="level2">
+<h2 class="anchored" data-anchor-id="r-function-1">R function</h2>
+<p>R function for modified squared ranks test cannot be found.</p>
+</section>
+<section id="completed-homework-problem" class="level2">
+<h2 class="anchored" data-anchor-id="completed-homework-problem">Completed Homework Problem</h2>
+<ol type="1">
+<li>A blood bank kept a record of the rate of heartbeats for several blood donors. Is the variation among the men significantly greater than the variation among the women?</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>men <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">58</span>, <span class="dv">76</span>, <span class="dv">82</span>, <span class="dv">74</span>, <span class="dv">79</span>, <span class="dv">65</span>, <span class="dv">74</span>, <span class="dv">86</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>women <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">66</span>, <span class="dv">74</span>, <span class="dv">69</span>, <span class="dv">76</span>, <span class="dv">72</span>, <span class="dv">73</span>, <span class="dv">75</span>, <span class="dv">67</span>, <span class="dv">68</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">c</span>(men, women)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(men)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">length</span>(women)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> n<span class="sc">+</span>m</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ranks with average for ties</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">rank</span>(z, <span class="at">ties.method =</span> <span class="st">"average"</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># T = sum of squared ranks for men (first n observations)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>R_u <span class="ot">&lt;-</span> r[<span class="dv">1</span><span class="sc">:</span>n]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>T <span class="ot">&lt;-</span> <span class="fu">sum</span>(R_u<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1157.25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p_val <span class="ot">&lt;-</span> <span class="cf">function</span>(T){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  num <span class="ot">&lt;-</span> T <span class="sc">-</span> n <span class="sc">*</span> ((N<span class="sc">+</span><span class="dv">1</span>) <span class="sc">*</span> (<span class="dv">2</span><span class="sc">*</span>N<span class="sc">+</span><span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">6</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  den <span class="ot">&lt;-</span> <span class="fu">sqrt</span>( m <span class="sc">*</span> n <span class="sc">*</span> (N<span class="sc">+</span><span class="dv">1</span>) <span class="sc">*</span> (<span class="dv">2</span><span class="sc">*</span>N<span class="sc">+</span><span class="dv">1</span>) <span class="sc">*</span> (<span class="dv">8</span><span class="sc">*</span>N<span class="sc">+</span><span class="dv">11</span>) <span class="sc">/</span> <span class="dv">180</span> )</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  z <span class="ot">&lt;-</span> num <span class="sc">/</span> den</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  p_right <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(z)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">T=</span>T, <span class="at">num=</span>num, <span class="at">den=</span>den, <span class="at">z=</span>z, <span class="at">p_right=</span>p_right)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">p_val</span>(T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$T
+[1] 1157.25
+
+$num
+[1] 317.25
+
+$den
+[1] 192.4682
+
+$z
+[1] 1.648324
+
+$p_right
+[1] 0.04964306</code></pre>
+</div>
+</div>
+<p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: X and Y are identically distributed, except for possibly different means, where x = men and y = women</li>
+<li><span class="math inline">\(H_A\)</span>: Var(X) &gt; Var(Y)</li>
+</ul>
+<p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><span class="math inline">\(T = 1157.25\)</span></li>
+<li><span class="math inline">\(p = 0.04964306\)</span></li>
+</ul>
+<p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span>.</li>
+</ul>
+<p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li><p>Reject <span class="math inline">\(H_0\)</span>.</p></li>
+<li><p>There is sufficient evidence to suggest that the variation among the men significantly greater than the variation among the women.</p></li>
+</ul>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1760763600000" data-listing-file-modified-sort="1760928382628" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="929">
-<div class="thumbnail">
-<p><a href="../journal/week08.html" class="no-external"></a></p><a href="../journal/week08.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week08.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week08.html" class="no-external">Week 08: Chapter 5.3</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week08.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week08.html" class="no-external">The Squared ranks test for variances is used to test for equal variances between groups. The data will consist of two random samples. The random samples of <span class="math inline">\(X_i\)</span>s and <span class="math inline">\(Y_j…</span><span class="math display"></span><span class="math display"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week08.html" class="no-external">
-<div class="listing-date">
-2025-10-18
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1760763600000" data-listing-file-modified-sort="1760812119483" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1623">
-<div class="thumbnail">
-<p><a href="../journal/week07.html" class="no-external"></a></p><a href="../journal/week07.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week07.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week07.html" class="no-external">Week 07: Chapter 5.1-5.2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week07.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week07.html" class="no-external">The Mann-Whitney test is also known as the Wilcoxon ranked sum test. It is used to compare two independent random samples. Let <span class="math inline">\(X_1, X_2, ..., X_n\)</span> denote the random…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week07.html" class="no-external">
-<div class="listing-date">
-2025-10-18
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1759813200000" data-listing-file-modified-sort="1759864770008" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1239">
-<div class="thumbnail">
-<p><a href="../journal/week06.html" class="no-external"></a></p><a href="../journal/week06.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week06.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week06.html" class="no-external">Week 06: Chapter 4.4-4.5</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week06.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week06.html" class="no-external">Cramer’s Contingency Coefficient is a way to find the measure of dependence by modifying the <span class="math inline">\(T\)</span> value (found in previous equations in section 4.3) in a way that the…<span class="math inline"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week06.html" class="no-external">
-<div class="listing-date">
-2025-10-07
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1758776400000" data-listing-file-modified-sort="1759023943310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3863">
-<div class="thumbnail">
-<p><a href="../journal/week05.html" class="no-external"></a></p><a href="../journal/week05.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week05.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week05.html" class="no-external">Week 05: Chapter 4.1-4.3</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week05.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week05.html" class="no-external">The Chi-squared Test for difference in probabilities with a 2x2 contingency table is used to test if the probability of an event is the same for both populations that the…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week05.html" class="no-external">
-<div class="listing-date">
-2025-09-25
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1758430800000" data-listing-file-modified-sort="1758515556268" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2901">
-<div class="thumbnail">
-<p><a href="../journal/week04.html" class="no-external"></a></p><a href="../journal/week04.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week04.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week04.html" class="no-external">Week 04: Chapter 3.3-3.5</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week04.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week04.html" class="no-external">Tolerance limits are different from confidence intervals in that they provide an interval within which at least a proportion <span class="math inline">\(q\)</span> of the population lies, within probability <span class="math inline">…</span><span class="math inline"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week04.html" class="no-external">
-<div class="listing-date">
-2025-09-21
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1757826000000" data-listing-file-modified-sort="1758211475860" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1786">
-<div class="thumbnail">
-<p><a href="../journal/week03.html" class="no-external"></a></p><a href="../journal/week03.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week03.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week03.html" class="no-external">Week 03: Chapter 3.1-3.2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week03.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week03.html" class="no-external">The binomial test is used when a sample contains the outcomes of <span class="math inline">\(n\)</span> independent trials. Each outcome can either be present in “class 1” or “class 2”, but cannot be…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week03.html" class="no-external">
-<div class="listing-date">
-2025-09-14
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1757739600000" data-listing-file-modified-sort="1757906937863" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2199">
-<div class="thumbnail">
-<p><a href="../journal/week-01-02.html" class="no-external"></a></p><a href="../journal/week-01-02.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week-01-02.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week-01-02.html" class="no-external">Week 01-02: Chapters 1-2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week-01-02.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week-01-02.html" class="no-external"><span class="math display">\[
-\binom{n}{n_1, n_2, \ldots, n_r} = \frac{n!}{n_1! n_2! \cdots n_r!}
-\]</span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week-01-02.html" class="no-external">
-<div class="listing-date">
-2025-09-13
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1756702800000" data-listing-file-modified-sort="1756089253703" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
-<div class="thumbnail">
-<p><a href="../journal/week-template.html" class="no-external"></a></p><a href="../journal/week-template.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week-template.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week-template.html" class="no-external">Week NN: <topic or="" chapter=""></topic></a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week-template.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week-template.html" class="no-external"><strong>Week structure</strong>: Copy this file to <code>week-02.qmd</code>, <code>week-03.qmd</code>, etc.<br>
-Keep one method per page.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week-template.html" class="no-external">
-<div class="listing-date">
-2025-09-01
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -231,6 +231,321 @@
     "text": "Completed Homework Problem\n\nIn a certain city the mortality rate per 100,000 citizens due to automobile accidents for each of the last 15 years was (see below). Is there any basis for the statement that the mortality rate is increasing?\n\n\nmortality_rate &lt;- c(17.3, 17.9, 18.4, 18.1, 18.3, 19.6, 18.6, 19.2, 17.7, 20.0, 19.0, 18.8, 19.3, 20.2, 19.9)\ncox.stuart.test(mortality_rate, \"right.sided\")\n\n\n    Cox Stuart test\n\ndata:  mortality_rate\nstatistic = 7, n = 7, p-value = 0.007812\nalternative hypothesis: increasing trend\n\n\nHypotheses\n\n\\(H_0:\\) no trend is present\n\\(H_1:\\) an upward/increasing trend is present\n\nTest Statistic and p-Value\n\n\\(T = 7\\)\n\\(p = 0.007812\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nReject \\(H_0\\).\nThere is sufficient evidence to suggest that the mortality rate is increasing."
   },
   {
+    "objectID": "journal/week07.html#method",
+    "href": "journal/week07.html#method",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Method",
+    "text": "Method\nThe Mann-Whitney test is also known as the Wilcoxon ranked sum test. It is used to compare two independent random samples. Let \\(X_1, X_2, ..., X_n\\) denote the random sample of size \\(n\\) from population 1. Let \\(Y_1, Y_2, ..., Y_m\\) denote the random sample of size \\(m\\) from population 2. Assign the ranks 1 to \\(n+m\\) to the observations from smallest to largest. Let \\(R(X_i)\\) and \\(R(Y_j)\\) be the rank assigned to \\(X_i\\) and \\(Y_j\\) for all \\(i\\) and \\(j\\). Note: \\(N = n+m\\). If several sample values are exactly equal to each other (tied) assign to each the average of the ranks that would have been assigned to them had there been no ties."
+  },
+  {
+    "objectID": "journal/week07.html#assumptions",
+    "href": "journal/week07.html#assumptions",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nBoth samples are random samples from their respective populations.\nIn addition to independence within each sample, there is mutual independence between the two samples\nThe measurement scale is at least ordinal"
+  },
+  {
+    "objectID": "journal/week07.html#parametric-equivalent-or-proof-that-there-is-none",
+    "href": "journal/week07.html#parametric-equivalent-or-proof-that-there-is-none",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nThe parametric equivalent of the Mann-Whitney test is the independent samples t-test. It is used to measure the differences/compare means of two independent samples. More can be found here: https://libguides.library.kent.edu/spss/independentttest"
+  },
+  {
+    "objectID": "journal/week07.html#hypotheses",
+    "href": "journal/week07.html#hypotheses",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nTwo-tailed:\n\n\\(H_0\\): \\(F(x) = G(x)\\) for all \\(x\\)\n\\(H_A\\): \\(F(x) \\neq G(x)\\) for some \\(x\\) OR \\(P(X &gt; Y) \\neq P(X&lt;Y)\\)\n\nLeft-tailed:\n\n\\(H_0\\): \\(F(x) = G(x)\\) for all \\(x\\)\n\\(H_A\\): \\(F(x) &gt; G(x)\\) for some \\(x\\) OR \\(E(X) &lt; E(Y)\\) OR \\(P(X &gt; Y) &lt; P(X&lt;Y)\\)\n\nRight-tailed:\n\n\\(H_0\\): \\(F(x) = G(x)\\) for all \\(x\\)\n\\(H_A\\): \\(F(x) &lt; G(x)\\) for some \\(x\\) OR \\(E(X) &gt; E(Y)\\) OR \\(P(X &gt; Y) &gt; P(X&lt;Y)\\)\n\nwhere \\(F(x)\\) and \\(G(x)\\) are the distribution functions corresponding to \\(X\\) and \\(Y\\) respectively. ## Rejection Region Two-tailed:\n\nReject \\(H_0\\) at a level of significance \\(\\alpha\\) if \\(T\\) is less than its \\(\\alpha/2\\) quantile or greater than its \\(1-\\alpha/2\\) quantile obtained from Table A7 for \\(n \\leq 20\\) and \\(m \\leq 20\\). Otherwise obtained from table A1 (even in the case of \\(T_1\\))\n\nLeft-tailed:\n\nReject \\(H_0\\) at a level of significance \\(\\alpha\\) if \\(T\\) is less than its \\(\\alpha/2\\) quantile or greater than its \\(1-\\alpha/2\\) quantile obtained from Table A7 for \\(n \\leq 20\\) and \\(m \\leq 20\\). If \\(T_1\\) is used, reject \\(H_0\\) if \\(T_1 &lt; z_\\alpha\\)\n\nRight-tailed:\n\nReject \\(H_0\\) at a level of significance \\(\\alpha\\) if \\(T\\) is less than its \\(\\alpha/2\\) quantile or greater than its \\(1-\\alpha/2\\) quantile obtained from Table A7 for \\(n \\leq 20\\) and \\(m \\leq 20\\). If \\(T_1\\) is used, reject \\(H_0\\) if \\(T_1 &gt; z_{\\alpha-1}\\)"
+  },
+  {
+    "objectID": "journal/week07.html#test-statistic-andor-p-value",
+    "href": "journal/week07.html#test-statistic-andor-p-value",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: If there are no/few ties, the sum of the ranks assigned to the sample from population 1 can be used as a test statistic. \\[\nT = \\sum_{i=1}^n R(X_i)\n\\] If there are many ties, subtract the mean from \\(T\\) and divide by the standard deviation to get:\n\n\\[\nT_1 = \\frac{T-n \\frac{N+1}{2}}{\\sqrt{\\frac{nm}{N(N-1)}  \\sum_{i=1}^N R_i^2- \\frac{nm(N+1)^2}{4(N-1)}}}\n\\] where \\(\\sum R_i^2\\) refers to the sum of the squares of all \\(N\\) of the ranks or average ranks actually used in both samples.\n\nThe approximate quantiles are found using the normal approximation in the case of no ties, and \\(n\\) or \\(m&gt;20\\). If there are many ties, then \\(T_1\\) is used instead of \\(T\\) and \\(T_1\\) is approximately a standard normal random variable whose quanitles are given in Table A1.\nThe p-value is obtained differently for each different tailed test:\n\nTwo-tailed: In the case of \\(T\\), substitute \\(T\\) or \\(T'\\) into the following equation:\n\n\n\\[\n2*P(Z \\leq \\frac{T+ \\frac{1}{2} - n \\frac{N+1}{2}}{\\sqrt{\\frac{nm(N+1)}{12}}})\n\\] where \\(Z\\) is a standard normal random variable. In the case of \\(T_1\\), the p-value is twice the smaller of \\(P(Z \\ leq T_1)\\) or \\(P(Z \\geq T_1)\\) - Left-tailed: similarly to the equation above, but without multiplying it by 2. In the case of \\(T_1\\) the p-value is approximately \\(P(Z \\leq T_1\\) obtained from Table A1. - Right-tailed: similarly to the equation above, but without multiplying it by 2. If \\(T_1\\) is used, p-value = \\(P(Z \\geq T_1) = 1-P(Z \\leq T_1)\\) obtained from Table A1."
+  },
+  {
+    "objectID": "journal/week07.html#confidence-interval",
+    "href": "journal/week07.html#confidence-interval",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval"
+  },
+  {
+    "objectID": "journal/week07.html#data",
+    "href": "journal/week07.html#data",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Data",
+    "text": "Data\nThe data consists of two random samples \\(X_1, ..., X_n\\) and \\(Y_1,...,Y_m\\) of size \\(n\\) and \\(m\\). Let \\(X\\) and \\(Y\\) denote random variables with the same distribution as the two random samples."
+  },
+  {
+    "objectID": "journal/week07.html#assumptions-1",
+    "href": "journal/week07.html#assumptions-1",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nBoth samples are random samples from their respective populations\nIndependence within each sample, and mutual independence between the two samples\nThe two population distribution functions are identical except for a possible difference in location parameters. I.e. there is a constant \\(d\\) such that \\(X\\) has the same distribution function as \\(Y+d\\)."
+  },
+  {
+    "objectID": "journal/week07.html#method-1",
+    "href": "journal/week07.html#method-1",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Method",
+    "text": "Method\nFind the \\(\\alpha/2\\) quantile \\(w_{\\alpha/2}\\) for \\(n\\) and \\(m\\) from Table A7 if \\(n\\) and \\(m\\) are large, where \\((1-\\alpha)\\) is the confidence coefficient. Then calculate \\(k\\) using: \\[\nk = w_{\\alpha/2} - n(n+1)/2\n\\] From all the possible pairs \\((X_i, Y_j)\\) find the \\(k\\) largest differences \\(X_i-Y_j\\) and the smallest differences. Ordering each sample from smallest to largest first is convenient, then form a matrix of differences using Xs as rows and Ys as columns. The largest difference is the upper limit \\(U\\) and the smallest difference is the lower limit \\(L\\). Then the confidence interval is: \\[\nP[L \\leq E(X) - E(Y) \\leq U] \\geq 1-\\alpha\n\\]"
+  },
+  {
+    "objectID": "journal/week07.html#r-function",
+    "href": "journal/week07.html#r-function",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "R function",
+    "text": "R function\nR function for Mann-Whitney/Wilcoxon rank-sum test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test)\nwilcox.test(x, y = NULL, alternative = c(“two.sided”, “less”, “greater”), mu = 0, paired = FALSE, exact = NULL, correct = TRUE, conf.int = FALSE, conf.level = 0.95, …)"
+  },
+  {
+    "objectID": "journal/week07.html#completed-homework-problem",
+    "href": "journal/week07.html#completed-homework-problem",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\n\nTest the following data to see if the mean high temperature in Des Moines is higher than the mean high temperature in Spokane, for randomly sampled days in the summer.\n\n\ndes_moines_temp &lt;- c(83, 91, 94, 89, 89, 96, 91, 92, 90)\nspokane_temp &lt;- c(78, 82, 81, 77, 79, 81, 80, 81)\n\nwilcox.test(des_moines_temp, spokane_temp,\n            alternative = \"greater\",\n            mu = 0, exact = FALSE)\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  des_moines_temp and spokane_temp\nW = 72, p-value = 0.0003033\nalternative hypothesis: true location shift is greater than 0\n\n\nHypotheses\n\n\\(H_0\\): \\(M_{x} \\leq M{y}\\) where x = Des Moines mean high temperature, and y = Spokane mean high temperature\n\\(H_A\\): \\(M_{x} &gt; M{y}\\)\n\nTest Statistic and p-Value\n\n\\(W = 72\\)\n\\(p = 0.0003033\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nReject \\(H_0\\).\nThere is sufficient evidence to suggest that the mean high temperature in Des Moines is higher than the mean high temperature in Spokane."
+  },
+  {
+    "objectID": "journal/week07.html#section-1",
+    "href": "journal/week07.html#section-1",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "5.2",
+    "text": "5.2"
+  },
+  {
+    "objectID": "journal/week07.html#method-2",
+    "href": "journal/week07.html#method-2",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Method",
+    "text": "Method\nThe Kruskall-Wallis test determines if \\(k\\) independent samples come from populations with the same distribution."
+  },
+  {
+    "objectID": "journal/week07.html#assumptions-2",
+    "href": "journal/week07.html#assumptions-2",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nAll samples are random samples from their respective populations\nIndependence within each sample and mutual independence among the various samples\nThe measurement scale is at least ordinal\nEither the \\(k\\) population distribution functions are identical, or else some of the populations tend to yield larger values than other populations do"
+  },
+  {
+    "objectID": "journal/week07.html#parametric-equivalent-or-proof-that-there-is-none-1",
+    "href": "journal/week07.html#parametric-equivalent-or-proof-that-there-is-none-1",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nThe parametric equivalent of the Kruskall-Wallis test is the one way ANOVA test. ANOVA tests for equal variance between groups and normal distribution.\nNote: I have previously learned ANOVA and Kruskall-Wallis in a Biostatistics course, so I have extensive notes already of these tests."
+  },
+  {
+    "objectID": "journal/week07.html#hypotheses-1",
+    "href": "journal/week07.html#hypotheses-1",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\): \\(M_1 = ... = M_k\\)\n\\(H_A\\): at least one \\(M_i\\) is different"
+  },
+  {
+    "objectID": "journal/week07.html#rejection-region",
+    "href": "journal/week07.html#rejection-region",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Rejection Region",
+    "text": "Rejection Region\nReject \\(H_0\\) if \\(\\chi_0^2\\) is greater than its \\(1-\\alpha\\) quantile from the null distribution."
+  },
+  {
+    "objectID": "journal/week07.html#test-statistic-andor-p-value-1",
+    "href": "journal/week07.html#test-statistic-andor-p-value-1",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: Let \\(p_j^*\\) be the probability of a random observation on \\(X\\) being in class \\(j\\), under the assumption that the null hypothesis is true. \\[\n\\chi_0^2 = \\frac{12}{n(n+1) \\sum_{i =1}^k \\frac{R_i^2}{n_i}}-3 (n+1)\n\\] where \\(R_i\\) is the sum of the ranks for group \\(i\\), \\(n_i\\) is the sample size for group \\(i\\), \\(n = \\sum_{i=1}^k n_i\\) is the total sample size, and \\(k\\) is the number of groups.\nThe chi squared distribution with \\(k-1\\) degrees of freedom is used as an approximation to the null distribution of \\(\\chi_0^2\\).\nThe p-value is approximately the probability of chi squared random variable with \\(k-1\\) degrees of freedom exceeding the observed value of \\(\\chi_0^2\\). \\[\np = P[\\chi_{k-1}^2 \\geq \\chi_0^2]\n\\]"
+  },
+  {
+    "objectID": "journal/week07.html#r-function-1",
+    "href": "journal/week07.html#r-function-1",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "R function",
+    "text": "R function\nR function for Kruskal-Wallis test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/kruskal.test)\nkruskal.test(continuous_variable ~ grouping_variable, data = dataset_name)"
+  },
+  {
+    "objectID": "journal/week07.html#completed-homework-problem-1",
+    "href": "journal/week07.html#completed-homework-problem-1",
+    "title": "Week 07: Chapter 5.1-5.2",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\n\nThe amount of iron present in the livers of white rats is measured after the animals had been fed one of five diets for a prescribed length of time. There were 10 animals randomly assigned to each of the five diets. Do the different diets appear to affect the amount of iron present in the livers?\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\niron &lt;- c(2.23, 1.14, 2.63, 1.00, 1.35, 2.01, 1.64, 1.13, 1.01, 1.70,\n          5.59, 0.96, 6.96, 1.23, 1.61, 2.94, 1.96, 3.68, 1.54, 2.59,\n          4.50, 3.92, 10.33, 8.23, 2.07, 4.90, 6.84, 6.42, 3.72, 6.00,\n          1.35, 1.06, 0.74, 0.96, 1.16, 2.08, 0.69, 0.68, 0.84, 1.34,\n          1.40, 1.51, 2.49, 1.74, 1.59, 1.36, 3.00, 4.81, 5.21, 5.12)\ndiet &lt;- c(rep(\"Diet A\", 10), rep(\"Diet B\", 10), rep(\"Diet C\", 10), rep(\"Diet D\", 10), rep(\"Diet E\", 10))\ndata &lt;- tibble(diet, iron)\nkruskal.test(iron ~ diet, data = data)\n\n\n    Kruskal-Wallis rank sum test\n\ndata:  iron by diet\nKruskal-Wallis chi-squared = 27.858, df = 4, p-value = 1.332e-05\n\n\nHypotheses\n\n\\(H_0\\): \\(M_1 = M_2 = M_3 = M_4 = M_5\\) where 1 is Diet A, 2 is Diet B, 3 is Diet C, 4 is Diet D, and 5 is Diet E.\n\\(H_A\\): at least one \\(M_i\\) is different\n\nTest Statistic and p-Value\n\n\\(\\chi_0^2 = 27.858\\)\n\\(p = 1.332e-05\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nReject \\(H_0\\).\nThere is sufficient evidence to suggest that the different diets appear to affect the amount of iron present in the livers of white rats."
+  },
+  {
+    "objectID": "journal/index.html",
+    "href": "journal/index.html",
+    "title": "All Weeks",
+    "section": "",
+    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 08: Chapter 5.3\n\n\n\n\n\n\n\n\n\n\n\n2025-10-18\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 07: Chapter 5.1-5.2\n\n\n\n\n\n\n\n\n\n\n\n2025-10-18\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 06: Chapter 4.4-4.5\n\n\n\n\n\n\n\n\n\n\n\n2025-10-07\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 05: Chapter 4.1-4.3\n\n\n\n\n\n\n\n\n\n\n\n2025-09-25\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 04: Chapter 3.3-3.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-21\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 03: Chapter 3.1-3.2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-14\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 01-02: Chapters 1-2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-13\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "journal/week-template.html",
+    "href": "journal/week-template.html",
+    "title": "Week NN: ",
+    "section": "",
+    "text": "Week structure: Copy this file to week-02.qmd, week-03.qmd, etc.\nKeep one method per page."
+  },
+  {
+    "objectID": "journal/week-template.html#method",
+    "href": "journal/week-template.html#method",
+    "title": "Week NN: ",
+    "section": "Method",
+    "text": "Method\nBriefly name and define the method."
+  },
+  {
+    "objectID": "journal/week-template.html#parametric-equivalent-or-proof-that-there-is-none",
+    "href": "journal/week-template.html#parametric-equivalent-or-proof-that-there-is-none",
+    "title": "Week NN: ",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nState the parametric counterpart (e.g., t-test for Wilcoxon) or justify none exists."
+  },
+  {
+    "objectID": "journal/week-template.html#hypotheses",
+    "href": "journal/week-template.html#hypotheses",
+    "title": "Week NN: ",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\):\n\n\\(H_A\\):"
+  },
+  {
+    "objectID": "journal/week-template.html#test-statistic-andor-p-value",
+    "href": "journal/week-template.html#test-statistic-andor-p-value",
+    "title": "Week NN: ",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest statistic definition (if applicable)\n\nWhat distribution/approximation is used?\n\nHow is the p-value obtained?"
+  },
+  {
+    "objectID": "journal/week-template.html#r-function",
+    "href": "journal/week-template.html#r-function",
+    "title": "Week NN: ",
+    "section": "R function",
+    "text": "R function\nName the primary R function(s) (e.g., wilcox.test, kruskal.test, friedman.test), with key arguments.\n\n# Minimal runnable example (replace with your own)\nset.seed(1)\nx &lt;- rnorm(30, mean = 0, sd = 1)\ny &lt;- rnorm(30, mean = 0.5, sd = 1)\nt.test(x, y, var.equal = TRUE)\n\n\n    Two Sample t-test\n\ndata:  x and y\nt = -2.4722, df = 58, p-value = 0.01638\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -0.9959007 -0.1047322\nsample estimates:\n mean of x  mean of y \n0.08245817 0.63277458"
+  },
+  {
+    "objectID": "journal/week08.html#method",
+    "href": "journal/week08.html#method",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Method",
+    "text": "Method\nThe Squared ranks test for variances is used to test for equal variances between groups. The data will consist of two random samples. The random samples of \\(X_i\\)s and \\(Y_j\\)s must be converted to their absolute deviation from the mean using these two formulas: \\[\nU_i = |X_i - \\mu_1|, i = 1, ..., n\n\\] \\[\nV_J = |Y_J - \\mu_2|, j = 1, ..., m\n\\]\nwhere \\(\\mu_1\\) and \\(\\mu_2\\) are the means from populations 1 and 2. Ranks 1 to \\(n +m\\) are assigned to the combined sample of Us and Vs. If tied, assign the average of the ranks to each."
+  },
+  {
+    "objectID": "journal/week08.html#assumptions",
+    "href": "journal/week08.html#assumptions",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nBoth samples are random samples from their respective populations\nIndependence within each sample and mutual independence among the two samples\nThe measurement scale is at least interval"
+  },
+  {
+    "objectID": "journal/week08.html#parametric-equivalent-or-proof-that-there-is-none",
+    "href": "journal/week08.html#parametric-equivalent-or-proof-that-there-is-none",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nThe parametric equivalent of the squared ranks test for equal variances is the parametric Levene test. I have previously learned the Levene test, and therefore have extensive notes on it already."
+  },
+  {
+    "objectID": "journal/week08.html#hypotheses",
+    "href": "journal/week08.html#hypotheses",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nTwo-tailed:\n\n\\(H_0\\): X and Y are identically distributed, except for possibly different means\n\\(H_A\\): Var(X) \\(\\neq\\) Var(Y)\n\nLeft-tailed:\n\n\\(H_0\\): X and Y are identically distributed, except for possibly different means\n\\(H_A\\): Var(X) &lt; Var(Y)\n\nRight-tailed:\n\n\\(H_0\\): X and Y are identically distributed, except for possibly different means\n\\(H_A\\): Var(X) &gt; Var(Y)"
+  },
+  {
+    "objectID": "journal/week08.html#rejection-region",
+    "href": "journal/week08.html#rejection-region",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Rejection Region",
+    "text": "Rejection Region\nTwo-tailed:\n\nReject \\(H_0\\) if \\(T\\) is &gt; or &lt; its \\(1-\\alpha/2\\) quantile\n\nLeft-tailed:\n\nReject \\(H_0\\) if \\(T\\) is &lt; its \\(1-\\alpha/2\\) quantile\n\nRight-tailed:\n\nReject \\(H_0\\) if \\(T\\) is &gt; its \\(1-\\alpha/2\\) quantile"
+  },
+  {
+    "objectID": "journal/week08.html#test-statistic-andor-p-value",
+    "href": "journal/week08.html#test-statistic-andor-p-value",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic: If there are no values of \\(U\\) tied with values of \\(V\\), the sum of the squares of the ranks assigned to population 1 can be used as the test statistic: \\[\nT = \\sum_{i=1}^n [R(U_i)]^2\n\\] If there are ties, subtract the mean from \\(T\\) and divide by standard deviation to get: \\[\nT_1 = \\frac{T-n \\overline{R^2}}{[\\frac{nm}{N(N-1)} \\sum_{i=1}^N R_i^4 - \\frac{nm}{N-1} (\\overline{R^2})^2]}\n\\] where \\(N = n+m\\), \\(\\overline{R^2}\\) represents the average of the squared ranks of both samples combined: \\[\n\\overline{R^2} = \\frac{1}{N}  \\sum_{i=1}^n [R(U_i)]^2 + \\sum_{j=1}^m [R(V_j)]^2\n\\] and \\(\\sum R_i^4\\) represents the sum of the ranks raised to the 4th power: \\[\n\\sum_{i=1}^N R_i^4 = \\sum_{i=1}^n [R(U_i)]^4 + \\sum_{j=1}^m [R(V_j)]^4\n\\]\nQuantiles of exact null distribution of \\(T\\) are in Table A9 for \\(n\\) and \\(m \\leq 10\\). For \\(n\\) and \\(m &gt; 10\\), use the following approximation based on standard normal quantiles \\(z_p\\) given in Table A_1: \\[\nw_p = \\frac{n(N+1)(2N+1)}{6} + z_p \\sqrt{\\frac{mn(N+1)(2N+1)(8N+11)}{180}}\n\\]\nThe p-value is obtained differently for the different tests:\n\nTwo-tailed: p-value = 2*(smaller of the one-tailed p values)\nLeft-tailed:\n\n\n\\[\nP(Z \\leq \\frac{T-n(N+1)(2N+1)/6}{\\sqrt{mn(N+1)(2N+1)(8N+11)/180}})\n\\]\n\nRight-tailed:\n\n\\[\nP(Z \\geq \\frac{T-n(N+1)(2N+1)/6}{\\sqrt{mn(N+1)(2N+1)(8N+11)/180}})\n\\]"
+  },
+  {
+    "objectID": "journal/week08.html#r-function",
+    "href": "journal/week08.html#r-function",
+    "title": "Week 08: Chapter 5.3",
+    "section": "R function",
+    "text": "R function\nR function for squared ranks test for variance (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/var.test)\nvar.test(x, …)\nS3 method for default: var.test(x, y, ratio = 1, alternative = c(“two.sided”, “less”, “greater”), conf.level = 0.95, …)\nS3 method for formula: var.test(formula, data, subset, na.action, …)"
+  },
+  {
+    "objectID": "journal/week08.html#method-1",
+    "href": "journal/week08.html#method-1",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Method",
+    "text": "Method\nThe modified Squared ranks test for variances is used when there are three or more samples."
+  },
+  {
+    "objectID": "journal/week08.html#assumptions-1",
+    "href": "journal/week08.html#assumptions-1",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nBoth samples are random samples from their respective populations\nIndependence within each sample and mutual independence among the two samples\nThe measurement scale is at least interval\n\n(same as squared ranks)"
+  },
+  {
+    "objectID": "journal/week08.html#parametric-equivalent-or-proof-that-there-is-none-1",
+    "href": "journal/week08.html#parametric-equivalent-or-proof-that-there-is-none-1",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Parametric equivalent (or proof that there is none)",
+    "text": "Parametric equivalent (or proof that there is none)\nThe parametric equivalent of the squared ranks test for equal variances is the parametric Levene test. I have previously learned the Levene test, and therefore have extensive notes on it already. (same as squared ranks)"
+  },
+  {
+    "objectID": "journal/week08.html#hypotheses-1",
+    "href": "journal/week08.html#hypotheses-1",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\\(H_0\\): All \\(k\\) populations are identical, except for possibly different means\n\\(H_A\\): Some of the population variances are not equal to each other"
+  },
+  {
+    "objectID": "journal/week08.html#rejection-region-1",
+    "href": "journal/week08.html#rejection-region-1",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Rejection Region",
+    "text": "Rejection Region\nReject \\(H_0\\) if \\(\\chi_0^2\\) is greater than its \\(1-\\alpha\\) quantile from the null distribution."
+  },
+  {
+    "objectID": "journal/week08.html#test-statistic-andor-p-value-1",
+    "href": "journal/week08.html#test-statistic-andor-p-value-1",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Test Statistic and/or p-value",
+    "text": "Test Statistic and/or p-value\n\nTest Statistic:\n\n\\[\nT_2 = \\frac{1}{D^2} [\\sum_{j=1}^k \\frac{S_j^2}{n_j} -N(\\overline{S})^2]\n\\] where \\(n_j=\\) number of observations in sample \\(j\\), \\(N = n_1 + n_2 + ... + n_k\\), \\(S_j=\\) sum of squared ranks in sample \\(j\\), \\(\\overline{S} = \\frac{1}{N} \\sum_{j=1}^k S_j\\) is the average of all squared ranks, and\n\\[\nD^2 = \\frac{1}{N-1}[\\sum_{i=1}^N R_i^4 -N(\\overline{S})^2]\n\\] and \\(\\sum R_i^4\\) was defined previously in squared ranks.\n\nThe chi squared distribution with \\(k-1\\) degrees of freedom is used as an approximation to the null distribution of \\(\\chi_0^2\\).\nThe p-value is approximately the probability of chi squared random variable with \\(k-1\\) degrees of freedom exceeding the observed value of \\(\\chi_0^2\\)."
+  },
+  {
+    "objectID": "journal/week08.html#r-function-1",
+    "href": "journal/week08.html#r-function-1",
+    "title": "Week 08: Chapter 5.3",
+    "section": "R function",
+    "text": "R function\nR function for modified squared ranks test cannot be found."
+  },
+  {
+    "objectID": "journal/week08.html#completed-homework-problem",
+    "href": "journal/week08.html#completed-homework-problem",
+    "title": "Week 08: Chapter 5.3",
+    "section": "Completed Homework Problem",
+    "text": "Completed Homework Problem\n\nA blood bank kept a record of the rate of heartbeats for several blood donors. Is the variation among the men significantly greater than the variation among the women?\n\n\nmen &lt;- c(58, 76, 82, 74, 79, 65, 74, 86)\nwomen &lt;- c(66, 74, 69, 76, 72, 73, 75, 67, 68)\n\nz = c(men, women)\n\nn &lt;- length(men)\nm &lt;- length(women)\nN &lt;- n+m\n\n# ranks with average for ties\nr &lt;- rank(z, ties.method = \"average\")\n\n# T = sum of squared ranks for men (first n observations)\nR_u &lt;- r[1:n]\nT &lt;- sum(R_u^2)\n\nT\n\n[1] 1157.25\n\np_val &lt;- function(T){\n  num &lt;- T - n * ((N+1) * (2*N+1)) / 6\n  den &lt;- sqrt( m * n * (N+1) * (2*N+1) * (8*N+11) / 180 )\n  z &lt;- num / den\n  p_right &lt;- 1 - pnorm(z)\n  list(T=T, num=num, den=den, z=z, p_right=p_right)\n}\n\np_val(T)\n\n$T\n[1] 1157.25\n\n$num\n[1] 317.25\n\n$den\n[1] 192.4682\n\n$z\n[1] 1.648324\n\n$p_right\n[1] 0.04964306\n\n\nHypotheses\n\n\\(H_0\\): X and Y are identically distributed, except for possibly different means, where x = men and y = women\n\\(H_A\\): Var(X) &gt; Var(Y)\n\nTest Statistic and p-Value\n\n\\(T = 1157.25\\)\n\\(p = 0.04964306\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nReject \\(H_0\\).\nThere is sufficient evidence to suggest that the variation among the men significantly greater than the variation among the women."
+  },
+  {
+    "objectID": "journal/week-01-02.html#chapter-1-summary",
+    "href": "journal/week-01-02.html#chapter-1-summary",
+    "title": "Week 01-02: Chapters 1-2",
+    "section": "Chapter 1 Summary",
+    "text": "Chapter 1 Summary\nIn chapter 1, we discuss counting rules. I recognized these rules as the rules for combinations, like n choose k. These rules allow us to determine the number of distinguishable arrangements of objects into a row. This can be calculated even if there are one or multiple identical objects present in a group. The total number of possible outcomes of each trial in an experiment can also be determined using counting rules.\nNext, we looked at defining and describing experiments and events. We used probabilities to describe events associated with experiments. The probability that an event occurs or does not occur was discussed, along with the probability that an event occurred given that another event occurred, also known as the conditional probability. It was also essential to learn how to identify whether or not two events were independent of each other, which was done by determining if P(AB) = P(A)P(B), where A and B are events.\nWe then moved onto learning about random variables. Distributions like the discrete uniform distribution and the hypergeometric distribution rely on the probability function of X, where X is a random variable. Distribution functions allow us to view all the properties of a random variable since it shows us all the possible probabilities associated with a random variable. We then use quantiles to describe the overall behavior of a distribution function.\nExpected values are used to calculate many different test statistics/statistical values. They are used to calculate the mean, interquartile range (IQR), standard deviation, variance, covariance, and correlation coefficient of random variables.\nTo conclude chapter 1, the following distributions were defined using probability functions/theorems: normal distribution and chi-squared distribution. Since I have learned and used those distributions in previous courses, I did not focus on this section."
+  },
+  {
+    "objectID": "journal/week-01-02.html#chapter-2-notes",
+    "href": "journal/week-01-02.html#chapter-2-notes",
+    "title": "Week 01-02: Chapters 1-2",
+    "section": "Chapter 2 Notes",
+    "text": "Chapter 2 Notes"
+  },
+  {
+    "objectID": "journal/week-01-02.html#chapter-2-summary",
+    "href": "journal/week-01-02.html#chapter-2-summary",
+    "title": "Week 01-02: Chapters 1-2",
+    "section": "Chapter 2 Summary",
+    "text": "Chapter 2 Summary\nIn chapter 2, we shifted focus from counting rules and random variables to sampling, estimation, and hypothesis testing. We began by defining populations and samples. A sample can be random, where each observation is independent and identically distributed, or it can be biased. We also reviewed the following different types of measurement scales: nominal, ordinal, interval, and ratio. We saw how order statistics can be applied when analyzing ordered data.\nNext, we explored estimation methods. The empirical distribution function (EDF) was introduced as a way to approximate the population distribution based on observed data. We then used concepts like sample mean, variance, and quantiles as point estimators of population parameters. We also learned about interval estimation, confidence coefficients, and unbiased estimators. The bootstrap method was also introduced as a resampling approach to approximate population quantities without requiring prior knowledge of the distribution. In survival analysis, the empirical survival function and the Kaplan-Meier estimator were discussed as nonparametric methods for estimating lifetime distributions.\nWe then studied hypothesis testing. This included defining null and alternative hypotheses, test statistics, and decision rules. Errors in hypothesis testing were categorized into Type I and Type II errors, with significance level (\\(\\alpha\\)), power, and p-values helping us evaluate tests. We also discussed test properties such as unbiasedness, consistency, and efficiency. We also learned that the power function plays an important role in comparing tests.\nFinally, we compared parametric and nonparametric methods. Parametric methods depend on knowing the population distribution. This is unlike nonparametric methods, which are more flexible and robust to distributional assumptions. Nonparametric tests can be applied to nominal, ordinal, interval, and ratio data."
+  },
+  {
     "objectID": "journal/week06.html#method",
     "href": "journal/week06.html#method",
     "title": "Week 06: Chapter 4.4-4.5",
@@ -376,76 +691,6 @@
     "title": "Week 06: Chapter 4.4-4.5",
     "section": "Completed Homework Problem",
     "text": "Completed Homework Problem\n\nA die was cast 600 times with the following results. Occurence/Frequency: 1/87, 2/96, 3/108, 4/89, 5/122, 6/98 Is the die balanced?\n\n\n# Observed frequencies\nobserved &lt;- c(87, 96, 108, 89, 122, 98)\n\n# Expected frequencies (all equal if die is fair)\nexpected &lt;- rep(600/6, 6)\n\n# perform Chi-squared goodness-of-fit test\nchisq.test(x = observed, p = rep(1/6, 6))\n\n\n    Chi-squared test for given probabilities\n\ndata:  observed\nX-squared = 8.58, df = 5, p-value = 0.127\n\n\nHypotheses\n\n\\(H_0\\): \\(P(X = j) = \\frac{1}{6}\\) for \\(j=1, 2, 3, 4, 5, 6\\) (the die is fair)\n\\(H_A\\): \\(H_0\\): \\(P(X = j) \\neq \\frac{1}{6}\\) for at least one \\(j\\) (the die is not fair)\n\nTest Statistic and p-Value\n\n\\(T = 8.58\\)\n\\(p = 0.127\\)\n\nRejection Region\n\nReject \\(H_0\\) if \\(p &lt; \\alpha\\); \\(\\alpha=0.05\\).\n\nConclusion/Interpretation\n\nFail to reject \\(H_0\\).\nThere is not sufficient evidence to suggest that the die is unfair."
-  },
-  {
-    "objectID": "journal/week-01-02.html#chapter-1-summary",
-    "href": "journal/week-01-02.html#chapter-1-summary",
-    "title": "Week 01-02: Chapters 1-2",
-    "section": "Chapter 1 Summary",
-    "text": "Chapter 1 Summary\nIn chapter 1, we discuss counting rules. I recognized these rules as the rules for combinations, like n choose k. These rules allow us to determine the number of distinguishable arrangements of objects into a row. This can be calculated even if there are one or multiple identical objects present in a group. The total number of possible outcomes of each trial in an experiment can also be determined using counting rules.\nNext, we looked at defining and describing experiments and events. We used probabilities to describe events associated with experiments. The probability that an event occurs or does not occur was discussed, along with the probability that an event occurred given that another event occurred, also known as the conditional probability. It was also essential to learn how to identify whether or not two events were independent of each other, which was done by determining if P(AB) = P(A)P(B), where A and B are events.\nWe then moved onto learning about random variables. Distributions like the discrete uniform distribution and the hypergeometric distribution rely on the probability function of X, where X is a random variable. Distribution functions allow us to view all the properties of a random variable since it shows us all the possible probabilities associated with a random variable. We then use quantiles to describe the overall behavior of a distribution function.\nExpected values are used to calculate many different test statistics/statistical values. They are used to calculate the mean, interquartile range (IQR), standard deviation, variance, covariance, and correlation coefficient of random variables.\nTo conclude chapter 1, the following distributions were defined using probability functions/theorems: normal distribution and chi-squared distribution. Since I have learned and used those distributions in previous courses, I did not focus on this section."
-  },
-  {
-    "objectID": "journal/week-01-02.html#chapter-2-notes",
-    "href": "journal/week-01-02.html#chapter-2-notes",
-    "title": "Week 01-02: Chapters 1-2",
-    "section": "Chapter 2 Notes",
-    "text": "Chapter 2 Notes"
-  },
-  {
-    "objectID": "journal/week-01-02.html#chapter-2-summary",
-    "href": "journal/week-01-02.html#chapter-2-summary",
-    "title": "Week 01-02: Chapters 1-2",
-    "section": "Chapter 2 Summary",
-    "text": "Chapter 2 Summary\nIn chapter 2, we shifted focus from counting rules and random variables to sampling, estimation, and hypothesis testing. We began by defining populations and samples. A sample can be random, where each observation is independent and identically distributed, or it can be biased. We also reviewed the following different types of measurement scales: nominal, ordinal, interval, and ratio. We saw how order statistics can be applied when analyzing ordered data.\nNext, we explored estimation methods. The empirical distribution function (EDF) was introduced as a way to approximate the population distribution based on observed data. We then used concepts like sample mean, variance, and quantiles as point estimators of population parameters. We also learned about interval estimation, confidence coefficients, and unbiased estimators. The bootstrap method was also introduced as a resampling approach to approximate population quantities without requiring prior knowledge of the distribution. In survival analysis, the empirical survival function and the Kaplan-Meier estimator were discussed as nonparametric methods for estimating lifetime distributions.\nWe then studied hypothesis testing. This included defining null and alternative hypotheses, test statistics, and decision rules. Errors in hypothesis testing were categorized into Type I and Type II errors, with significance level (\\(\\alpha\\)), power, and p-values helping us evaluate tests. We also discussed test properties such as unbiasedness, consistency, and efficiency. We also learned that the power function plays an important role in comparing tests.\nFinally, we compared parametric and nonparametric methods. Parametric methods depend on knowing the population distribution. This is unlike nonparametric methods, which are more flexible and robust to distributional assumptions. Nonparametric tests can be applied to nominal, ordinal, interval, and ratio data."
-  },
-  {
-    "objectID": "journal/week-template.html",
-    "href": "journal/week-template.html",
-    "title": "Week NN: ",
-    "section": "",
-    "text": "Week structure: Copy this file to week-02.qmd, week-03.qmd, etc.\nKeep one method per page."
-  },
-  {
-    "objectID": "journal/week-template.html#method",
-    "href": "journal/week-template.html#method",
-    "title": "Week NN: ",
-    "section": "Method",
-    "text": "Method\nBriefly name and define the method."
-  },
-  {
-    "objectID": "journal/week-template.html#parametric-equivalent-or-proof-that-there-is-none",
-    "href": "journal/week-template.html#parametric-equivalent-or-proof-that-there-is-none",
-    "title": "Week NN: ",
-    "section": "Parametric equivalent (or proof that there is none)",
-    "text": "Parametric equivalent (or proof that there is none)\nState the parametric counterpart (e.g., t-test for Wilcoxon) or justify none exists."
-  },
-  {
-    "objectID": "journal/week-template.html#hypotheses",
-    "href": "journal/week-template.html#hypotheses",
-    "title": "Week NN: ",
-    "section": "Hypotheses",
-    "text": "Hypotheses\n\n\\(H_0\\):\n\n\\(H_A\\):"
-  },
-  {
-    "objectID": "journal/week-template.html#test-statistic-andor-p-value",
-    "href": "journal/week-template.html#test-statistic-andor-p-value",
-    "title": "Week NN: ",
-    "section": "Test Statistic and/or p-value",
-    "text": "Test Statistic and/or p-value\n\nTest statistic definition (if applicable)\n\nWhat distribution/approximation is used?\n\nHow is the p-value obtained?"
-  },
-  {
-    "objectID": "journal/week-template.html#r-function",
-    "href": "journal/week-template.html#r-function",
-    "title": "Week NN: ",
-    "section": "R function",
-    "text": "R function\nName the primary R function(s) (e.g., wilcox.test, kruskal.test, friedman.test), with key arguments.\n\n# Minimal runnable example (replace with your own)\nset.seed(1)\nx &lt;- rnorm(30, mean = 0, sd = 1)\ny &lt;- rnorm(30, mean = 0.5, sd = 1)\nt.test(x, y, var.equal = TRUE)\n\n\n    Two Sample t-test\n\ndata:  x and y\nt = -2.4722, df = 58, p-value = 0.01638\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -0.9959007 -0.1047322\nsample estimates:\n mean of x  mean of y \n0.08245817 0.63277458"
-  },
-  {
-    "objectID": "journal/index.html",
-    "href": "journal/index.html",
-    "title": "All Weeks",
-    "section": "",
-    "text": "Browse all journal entries here.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 06: Chapter 4.4-4.5\n\n\n\n\n\n\n\n\n\n\n\n2025-10-07\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 05: Chapter 4.1-4.3\n\n\n\n\n\n\n\n\n\n\n\n2025-09-25\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 04: Chapter 3.3-3.5\n\n\n\n\n\n\n\n\n\n\n\n2025-09-21\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 03: Chapter 3.1-3.2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-14\n\n\n\n\n\n\n\n\n\n\n\n\nWeek 01-02: Chapters 1-2\n\n\n\n\n\n\n\n\n\n\n\n2025-09-13\n\n\n\n\n\n\n\n\n\n\n\n\nWeek NN: \n\n\n\n\n\n\n\n\n\n\n\n2025-09-01\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "journal/week05.html#method-1",
