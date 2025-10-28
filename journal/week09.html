@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-10-18">
+<meta name="dcterms.date" content="2025-10-27">
 
-<title>Week 08: Chapter 5.3 – Nonparamtric Methods Journal</title>
+<title>Week 09: Chapter 5.4 – Nonparamtric Methods Journal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -183,21 +183,27 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">5.3</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">5.4</a></li>
   <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
-  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
   <li><a href="#parametric-equivalent-or-proof-that-there-is-none" id="toc-parametric-equivalent-or-proof-that-there-is-none" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</a></li>
   <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
   <li><a href="#rejection-region" id="toc-rejection-region" class="nav-link" data-scroll-target="#rejection-region">Rejection Region</a></li>
   <li><a href="#test-statistic-andor-p-value" id="toc-test-statistic-andor-p-value" class="nav-link" data-scroll-target="#test-statistic-andor-p-value">Test Statistic and/or p-value</a></li>
   <li><a href="#r-function" id="toc-r-function" class="nav-link" data-scroll-target="#r-function">R function</a></li>
   <li><a href="#method-1" id="toc-method-1" class="nav-link" data-scroll-target="#method-1">Method</a></li>
-  <li><a href="#assumptions-1" id="toc-assumptions-1" class="nav-link" data-scroll-target="#assumptions-1">Assumptions</a></li>
   <li><a href="#parametric-equivalent-or-proof-that-there-is-none-1" id="toc-parametric-equivalent-or-proof-that-there-is-none-1" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none-1">Parametric equivalent (or proof that there is none)</a></li>
   <li><a href="#hypotheses-1" id="toc-hypotheses-1" class="nav-link" data-scroll-target="#hypotheses-1">Hypotheses</a></li>
   <li><a href="#rejection-region-1" id="toc-rejection-region-1" class="nav-link" data-scroll-target="#rejection-region-1">Rejection Region</a></li>
   <li><a href="#test-statistic-andor-p-value-1" id="toc-test-statistic-andor-p-value-1" class="nav-link" data-scroll-target="#test-statistic-andor-p-value-1">Test Statistic and/or p-value</a></li>
   <li><a href="#r-function-1" id="toc-r-function-1" class="nav-link" data-scroll-target="#r-function-1">R function</a></li>
+  <li><a href="#method-2" id="toc-method-2" class="nav-link" data-scroll-target="#method-2">Method</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none-2" id="toc-parametric-equivalent-or-proof-that-there-is-none-2" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none-2">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#hypotheses-2" id="toc-hypotheses-2" class="nav-link" data-scroll-target="#hypotheses-2">Hypotheses</a></li>
+  <li><a href="#method-3" id="toc-method-3" class="nav-link" data-scroll-target="#method-3">Method</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none-3" id="toc-parametric-equivalent-or-proof-that-there-is-none-3" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none-3">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#hypotheses-3" id="toc-hypotheses-3" class="nav-link" data-scroll-target="#hypotheses-3">Hypotheses</a></li>
+  <li><a href="#method-4" id="toc-method-4" class="nav-link" data-scroll-target="#method-4">Method</a></li>
   <li><a href="#completed-homework-problem" id="toc-completed-homework-problem" class="nav-link" data-scroll-target="#completed-homework-problem">Completed Homework Problem</a></li>
   </ul>
 </nav>
@@ -207,7 +213,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 08: Chapter 5.3</h1>
+<h1 class="title">Week 09: Chapter 5.4</h1>
 </div>
 
 
@@ -218,7 +224,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-10-18</p>
+      <p class="date">2025-10-27</p>
     </div>
   </div>
   
@@ -231,209 +237,270 @@ window.Quarto = {
 
 
 <section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">5.3</h2>
+<h2 class="anchored" data-anchor-id="section">5.4</h2>
 </section>
 <section id="method" class="level2">
 <h2 class="anchored" data-anchor-id="method">Method</h2>
-<p>The Squared ranks test for variances is used to test for equal variances between groups. The data will consist of two random samples. The random samples of <span class="math inline">\(X_i\)</span>s and <span class="math inline">\(Y_j\)</span>s must be converted to their absolute deviation from the mean using these two formulas: <span class="math display">\[
-U_i = |X_i - \mu_1|, i = 1, ..., n
-\]</span> <span class="math display">\[
-V_J = |Y_J - \mu_2|, j = 1, ..., m
-\]</span></p>
-<p>where <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> are the means from populations 1 and 2. Ranks 1 to <span class="math inline">\(n +m\)</span> are assigned to the combined sample of Us and Vs. If tied, assign the average of the ranks to each.</p>
-</section>
-<section id="assumptions" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
-<ol type="1">
-<li>Both samples are random samples from their respective populations</li>
-<li>Independence within each sample and mutual independence among the two samples</li>
-<li>The measurement scale is at least interval</li>
-</ol>
+<p>Spearman’s rho is a measure of correlation denoted by <span class="math inline">\(\rho\)</span>. It is calculated the same as Pearson’s <span class="math inline">\(r\)</span> computed on the ranks and average ranks. The Spearman rank correlation coefficient is often used to test for independence between two random variables.</p>
 </section>
 <section id="parametric-equivalent-or-proof-that-there-is-none" class="level2">
 <h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</h2>
-<p>The parametric equivalent of the squared ranks test for equal variances is the parametric Levene test. I have previously learned the Levene test, and therefore have extensive notes on it already.</p>
+<p>The parametric equivalent of Spearman rank correlation coefficient test is the Pearson correlation test for linear relationships. It assumes normality in the data without ranking them.</p>
 </section>
 <section id="hypotheses" class="level2">
 <h2 class="anchored" data-anchor-id="hypotheses">Hypotheses</h2>
 <p>Two-tailed:</p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: X and Y are identically distributed, except for possibly different means</li>
-<li><span class="math inline">\(H_A\)</span>: Var(X) <span class="math inline">\(\neq\)</span> Var(Y)</li>
+<li><span class="math inline">\(H_0\)</span>: The <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Y_i\)</span> are mutually independent</li>
+<li><span class="math inline">\(H_A\)</span>: Either, a) there is a tendency for the larger values of X to be paired with the larger values of Y, or b) there is a tendency for the smaller values of X to be paired with the larger values of Y</li>
 </ul>
-<p>Left-tailed:</p>
+<p>Left-tailed (for negative correlation):</p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: X and Y are identically distributed, except for possibly different means</li>
-<li><span class="math inline">\(H_A\)</span>: Var(X) &lt; Var(Y)</li>
+<li><span class="math inline">\(H_0\)</span>: The <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Y_i\)</span> are mutually independent</li>
+<li><span class="math inline">\(H_A\)</span>: There is a tendency for the smaller values of X to be paired with the larger values of Y, and vise versa</li>
 </ul>
-<p>Right-tailed:</p>
+<p>Right-tailed (for positive correlation):</p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: X and Y are identically distributed, except for possibly different means</li>
-<li><span class="math inline">\(H_A\)</span>: Var(X) &gt; Var(Y)</li>
+<li><span class="math inline">\(H_0\)</span>: The <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Y_i\)</span> are mutually independent</li>
+<li><span class="math inline">\(H_A\)</span>: There is a tendency for the larger values of X to be paired with the larger values of Y</li>
 </ul>
 </section>
 <section id="rejection-region" class="level2">
 <h2 class="anchored" data-anchor-id="rejection-region">Rejection Region</h2>
 <p>Two-tailed:</p>
 <ul>
-<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T\)</span> is &gt; or &lt; its <span class="math inline">\(1-\alpha/2\)</span> quantile</li>
+<li>Reject <span class="math inline">\(H_0\)</span> if the absolute value of <span class="math inline">\(\rho\)</span> is greater than its <span class="math inline">\(1-\alpha/2\)</span> quantile obtained from Table A10.</li>
 </ul>
 <p>Left-tailed:</p>
 <ul>
-<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T\)</span> is &lt; its <span class="math inline">\(1-\alpha/2\)</span> quantile</li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(\rho &lt; -w_{1-\alpha}\)</span> found in Table A10</li>
 </ul>
 <p>Right-tailed:</p>
 <ul>
-<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T\)</span> is &gt; its <span class="math inline">\(1-\alpha/2\)</span> quantile</li>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(\rho &gt; -w_{1-\alpha}\)</span> found in Table A10</li>
 </ul>
 </section>
 <section id="test-statistic-andor-p-value" class="level2">
 <h2 class="anchored" data-anchor-id="test-statistic-andor-p-value">Test Statistic and/or p-value</h2>
 <ul>
-<li><p>Test Statistic: If there are no values of <span class="math inline">\(U\)</span> tied with values of <span class="math inline">\(V\)</span>, the sum of the squares of the ranks assigned to population 1 can be used as the test statistic: <span class="math display">\[
-T = \sum_{i=1}^n [R(U_i)]^2
-\]</span> If there are ties, subtract the mean from <span class="math inline">\(T\)</span> and divide by standard deviation to get: <span class="math display">\[
-T_1 = \frac{T-n \overline{R^2}}{[\frac{nm}{N(N-1)} \sum_{i=1}^N R_i^4 - \frac{nm}{N-1} (\overline{R^2})^2]}
-\]</span> where <span class="math inline">\(N = n+m\)</span>, <span class="math inline">\(\overline{R^2}\)</span> represents the average of the squared ranks of both samples combined: <span class="math display">\[
-\overline{R^2} = \frac{1}{N}  \sum_{i=1}^n [R(U_i)]^2 + \sum_{j=1}^m [R(V_j)]^2
-\]</span> and <span class="math inline">\(\sum R_i^4\)</span> represents the sum of the ranks raised to the 4th power: <span class="math display">\[
-\sum_{i=1}^N R_i^4 = \sum_{i=1}^n [R(U_i)]^4 + \sum_{j=1}^m [R(V_j)]^4
+<li><p>Test Statistic: Pearson’s <span class="math inline">\(r\)</span> computed on the ranks and average ranks: <span class="math display">\[
+\rho = \frac{\sum_{i=1}^n R(X_i)R(Y_i)-n(\frac{n+1}{2})^2}{(\sum_{i=1}^n R(X_i)^2-n(\frac{n+1}{2})^2)^{\frac{1}{2}}(\sum_{i=1}^n R(Y_i)^2 -n(\frac{n+1}{2})^2)^{\frac{1}{2}}}
 \]</span></p></li>
-<li><p>Quantiles of exact null distribution of <span class="math inline">\(T\)</span> are in Table A9 for <span class="math inline">\(n\)</span> and <span class="math inline">\(m \leq 10\)</span>. For <span class="math inline">\(n\)</span> and <span class="math inline">\(m &gt; 10\)</span>, use the following approximation based on standard normal quantiles <span class="math inline">\(z_p\)</span> given in Table A_1: <span class="math display">\[
-w_p = \frac{n(N+1)(2N+1)}{6} + z_p \sqrt{\frac{mn(N+1)(2N+1)(8N+11)}{180}}
+<li><p>Exact quantiles of <span class="math inline">\(\rho\)</span> when X and Y are independent are given in Table A10 for <span class="math inline">\(n \leq 30\)</span> and no ties. For larger n, or many ties, the pth quantile of <span class="math inline">\(\rho\)</span> is given approximately by: <span class="math display">\[
+w_p = \frac{z_p}{\sqrt{n-1}}
 \]</span></p></li>
 <li><p>The p-value is obtained differently for the different tests:</p>
 <ul>
-<li>Two-tailed: p-value = 2*(smaller of the one-tailed p values)</li>
-<li>Left-tailed:</li>
+<li>Two-tailed: using table A1</li>
 </ul></li>
 </ul>
 <p><span class="math display">\[
-P(Z \leq \frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}})
+2*P(Z \geq |\rho| \sqrt{n-1})
+\]</span></p>
+<ul>
+<li>Left-tailed:</li>
+</ul>
+<p><span class="math display">\[
+P(Z \leq |\rho| \sqrt{n-1})
 \]</span></p>
 <ul>
 <li>Right-tailed:</li>
 </ul>
 <p><span class="math display">\[
-P(Z \geq \frac{T-n(N+1)(2N+1)/6}{\sqrt{mn(N+1)(2N+1)(8N+11)/180}})
+P(Z \geq |\rho| \sqrt{n-1})
 \]</span></p>
 </section>
 <section id="r-function" class="level2">
 <h2 class="anchored" data-anchor-id="r-function">R function</h2>
-<p>R function for squared ranks test for variance (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/var.test)</p>
-<p>var.test(x, …)</p>
-<p>S3 method for default: var.test(x, y, ratio = 1, alternative = c(“two.sided”, “less”, “greater”), conf.level = 0.95, …)</p>
-<p>S3 method for formula: var.test(formula, data, subset, na.action, …)</p>
+<p>R function for Spearman rank correlation coefficient test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/cor)</p>
+<p>cor(x, y, method = “spearman”)</p>
 </section>
 <section id="method-1" class="level2">
 <h2 class="anchored" data-anchor-id="method-1">Method</h2>
-<p>The modified Squared ranks test for variances is used when there are three or more samples.</p>
-</section>
-<section id="assumptions-1" class="level2">
-<h2 class="anchored" data-anchor-id="assumptions-1">Assumptions</h2>
-<ol type="1">
-<li>Both samples are random samples from their respective populations</li>
-<li>Independence within each sample and mutual independence among the two samples</li>
-<li>The measurement scale is at least interval</li>
-</ol>
-<p>(same as squared ranks)</p>
+<p>Kendall’s tau <span class="math inline">\(\tau\)</span> can be used as a test statistic to test the null hypothesis of independence between X and Y, with possible one-tailed or two-tailed alternatives (similarly described with Spearman’s rho).</p>
 </section>
 <section id="parametric-equivalent-or-proof-that-there-is-none-1" class="level2">
 <h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none-1">Parametric equivalent (or proof that there is none)</h2>
-<p>The parametric equivalent of the squared ranks test for equal variances is the parametric Levene test. I have previously learned the Levene test, and therefore have extensive notes on it already. (same as squared ranks)</p>
+<p>The parametric equivalent of Kendall’s tau test is the Pearson correlation test (again, but with the distinction of using tau instead of rho). It assumes normality in the data without relying on rank coordinance.</p>
 </section>
 <section id="hypotheses-1" class="level2">
 <h2 class="anchored" data-anchor-id="hypotheses-1">Hypotheses</h2>
+<p>Two-tailed:</p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: All <span class="math inline">\(k\)</span> populations are identical, except for possibly different means</li>
-<li><span class="math inline">\(H_A\)</span>: Some of the population variances are not equal to each other</li>
+<li><span class="math inline">\(H_0\)</span>: X and Y are mutually independent</li>
+<li><span class="math inline">\(H_A\)</span>: Pairs of observations either tend to be concordant, or tend to be discordant</li>
+</ul>
+<p>Left-tailed (for negative correlation):</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: X and Y are mutually independent</li>
+<li><span class="math inline">\(H_A\)</span>: Pairs of observations either tend to be discordant</li>
+</ul>
+<p>Right-tailed (for positive correlation):</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: X and Y are mutually independent</li>
+<li><span class="math inline">\(H_A\)</span>: Pairs of observations either tend to be concordant</li>
 </ul>
 </section>
 <section id="rejection-region-1" class="level2">
 <h2 class="anchored" data-anchor-id="rejection-region-1">Rejection Region</h2>
-<p>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(\chi_0^2\)</span> is greater than its <span class="math inline">\(1-\alpha\)</span> quantile from the null distribution.</p>
+<p>Two-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if T or <span class="math inline">\(\tau\)</span> is less than its <span class="math inline">\(\alpha/2\)</span> quantile or greater than its <span class="math inline">\(1-\alpha/2\)</span> quantile in the null distribution</li>
+</ul>
+<p>Left-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if T or <span class="math inline">\(\tau\)</span> is less than its <span class="math inline">\(\alpha\)</span> quantile in the null distribution</li>
+</ul>
+<p>Right-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if T or <span class="math inline">\(\tau\)</span> is greater than its <span class="math inline">\(1-\alpha/2\)</span> quantile in the null distribution</li>
+</ul>
 </section>
 <section id="test-statistic-andor-p-value-1" class="level2">
 <h2 class="anchored" data-anchor-id="test-statistic-andor-p-value-1">Test Statistic and/or p-value</h2>
 <ul>
-<li>Test Statistic:</li>
+<li><p>Test Statistic: Kendall’s tau, where <span class="math inline">\(N_c\)</span> = the number of concordant pairs of observations out of the total <span class="math inline">\(n \choose r\)</span> total possible pairs, and <span class="math inline">\(N_d\)</span> = total number of discordant pairs of observations: <span class="math display">\[
+\tau = T = N_c -N_d
+\]</span></p></li>
+<li><p>Exact upper quantiles of <span class="math inline">\(\tau\)</span> and T when X and Y are independent are given in Table A11 for <span class="math inline">\(n \leq 60\)</span> and no ties. Lower quantiles for are the negative of the upper quantiles in the table. For larger n or many ties, the pth quantile is given by: <span class="math display">\[
+w_p = z_p \frac{\sqrt{2(2n+5)}}{3\sqrt{n(n-1)}}
+\]</span> the pth quantile of T is given by:</p></li>
 </ul>
 <p><span class="math display">\[
-T_2 = \frac{1}{D^2} [\sum_{j=1}^k \frac{S_j^2}{n_j} -N(\overline{S})^2]
-\]</span> where <span class="math inline">\(n_j=\)</span> number of observations in sample <span class="math inline">\(j\)</span>, <span class="math inline">\(N = n_1 + n_2 + ... + n_k\)</span>, <span class="math inline">\(S_j=\)</span> sum of squared ranks in sample <span class="math inline">\(j\)</span>, <span class="math inline">\(\overline{S} = \frac{1}{N} \sum_{j=1}^k S_j\)</span> is the average of all squared ranks, and</p>
-<p><span class="math display">\[
-D^2 = \frac{1}{N-1}[\sum_{i=1}^N R_i^4 -N(\overline{S})^2]
-\]</span> and <span class="math inline">\(\sum R_i^4\)</span> was defined previously in squared ranks.</p>
+w_p = z_p \sqrt{n(n-1)(2n+5)/18}
+\]</span></p>
 <ul>
-<li>The chi squared distribution with <span class="math inline">\(k-1\)</span> degrees of freedom is used as an approximation to the null distribution of <span class="math inline">\(\chi_0^2\)</span>.</li>
-<li>The p-value is approximately the probability of chi squared random variable with <span class="math inline">\(k-1\)</span> degrees of freedom exceeding the observed value of <span class="math inline">\(\chi_0^2\)</span>.</li>
+<li>The p-value is obtained differently for the different tests:
+<ul>
+<li>Two-tailed: left and right tailed p values</li>
+<li>Left-tailed:</li>
+</ul></li>
 </ul>
+<p><span class="math display">\[
+P(Z \leq \frac{(T+1)\sqrt{18}}{\sqrt{n(n-1)(2n+5)}})
+\]</span></p>
+<ul>
+<li>Right-tailed:</li>
+</ul>
+<p><span class="math display">\[
+P(Z \geq \frac{(T-1)\sqrt{18}}{\sqrt{n(n-1)(2n+5)}})
+\]</span></p>
 </section>
 <section id="r-function-1" class="level2">
 <h2 class="anchored" data-anchor-id="r-function-1">R function</h2>
-<p>R function for modified squared ranks test cannot be found.</p>
+<p>R function for Kendall’s tau test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/cor)</p>
+<p>cor.test(x, y, method = “kendall”)</p>
+</section>
+<section id="method-2" class="level2">
+<h2 class="anchored" data-anchor-id="method-2">Method</h2>
+<p>The Daniels test for trend is done by using Spearman’s rho to test for trend by pairing measurements called <span class="math inline">\(X_i\)</span> with the time/order at which measurements were taken.</p>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none-2" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none-2">Parametric equivalent (or proof that there is none)</h2>
+<p>There is no specific parametric equivalent for this test. However, using simple linear regression or Pearson’s correlation coefficient test between the <span class="math inline">\(X_i\)</span> and time might be able to yield similar results.</p>
+</section>
+<section id="assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
+<ol type="1">
+<li>The <span class="math inline">\(X_i\)</span>s are mutually independent</li>
+</ol>
+</section>
+<section id="hypotheses-2" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses-2">Hypotheses</h2>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: The <span class="math inline">\(X_i\)</span>s are identically distributed</li>
+<li><span class="math inline">\(H_A\)</span>: the distribution of the <span class="math inline">\(X_i\)</span>s is related to time so that as time goes on, the X measurements tend to become smaller/larger.</li>
+</ul>
+</section>
+<section id="method-3" class="level2">
+<h2 class="anchored" data-anchor-id="method-3">Method</h2>
+<p>The Jonckheere-Terpstra test use either Kendall’s tau or Spearman’s rho in the case of several independent samples to see if all samples came from the same distribution.</p>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none-3" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none-3">Parametric equivalent (or proof that there is none)</h2>
+<p>There is no direct parametric equivalent for this test.</p>
+</section>
+<section id="hypotheses-3" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses-3">Hypotheses</h2>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(F_1(x) = F_2(x) =...=F_k(x)\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: The distributions differ in a specified direction with at least one inequality: <span class="math inline">\(F_1(x) \geq F_2(x) \geq...\geq F_k(x)\)</span>, also written as <span class="math inline">\(E(Y_1) \leq E(Y_2) \leq ... \leq E(Y_k)\)</span>, where <span class="math inline">\(Y_i\)</span> represent a random variable with the distribution function <span class="math inline">\(F_i(x)\)</span>.</li>
+</ul>
+<p>Note: the same data setup and null hypothesis as in the Kruskall-Wallis test. However, using rho or tau is sensitive against only the ordering specified in the <span class="math inline">\(H_1\)</span> given above, while Kruskall-Wallis is sensitive to any differences in means.</p>
+</section>
+<section id="method-4" class="level2">
+<h2 class="anchored" data-anchor-id="method-4">Method</h2>
+<p>Kendall’s Partial correlation coefficient is used to measure the correlation between two random variables, under the condition that the indirect influence due to other random variables is somehow eliminated/does not exist. An estimate of this partial correlation coefficient between (for example) <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span>, while the indirect correlation due to <span class="math inline">\(X_3, X_4, ..., X_n\)</span> is eliminated, is denoted by <span class="math inline">\(r_{12.34...n}\)</span> (Pearson’s r) or <span class="math inline">\(\tau_{12.34...n}\)</span>.</p>
+<p>When <span class="math inline">\(n=3\)</span>, the partial correlation may be estimated by Pearson’s partial correlation coefficient: <span class="math display">\[
+r_{12.3} = \frac{r_{12} - r_{13}r_{23}}{\sqrt{(1-r_{13}^2)(1-r_{23}^2)}}
+\]</span></p>
+<p>where <span class="math inline">\(r_{ij}\)</span> is Pearson’s r computed between <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span>, and by Kendall’s partial correlation coefficient:</p>
+<p><span class="math display">\[
+\tau_{12.3} = \frac{\tau_{12} - \tau_{13}\tau_{23}}{\sqrt{(1-\tau_{13}^2)(1-\tau_{23}^2)}}
+\]</span></p>
+<p>where <span class="math inline">\(\tau_{ij}\)</span> is Kendalls’s tau computed between <span class="math inline">\(X_i\)</span> and <span class="math inline">\(X_j\)</span>.</p>
 </section>
 <section id="completed-homework-problem" class="level2">
 <h2 class="anchored" data-anchor-id="completed-homework-problem">Completed Homework Problem</h2>
 <ol type="1">
-<li>A blood bank kept a record of the rate of heartbeats for several blood donors. Is the variation among the men significantly greater than the variation among the women?</li>
+<li>A husband and wife who go bowling together kept their scores for 10 lines to see if there was a correlation between their scores. The scores can be seen below.</li>
+</ol>
+<ol type="a">
+<li>Compute <span class="math inline">\(\rho\)</span></li>
+<li>Compute <span class="math inline">\(\tau\)</span></li>
+<li>Test the hypothesis of independence using a two-tailed test based on <span class="math inline">\(\rho\)</span></li>
+<li>Do the same from part c for <span class="math inline">\(\tau\)</span></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>men <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">58</span>, <span class="dv">76</span>, <span class="dv">82</span>, <span class="dv">74</span>, <span class="dv">79</span>, <span class="dv">65</span>, <span class="dv">74</span>, <span class="dv">86</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>women <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">66</span>, <span class="dv">74</span>, <span class="dv">69</span>, <span class="dv">76</span>, <span class="dv">72</span>, <span class="dv">73</span>, <span class="dv">75</span>, <span class="dv">67</span>, <span class="dv">68</span>)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>husband <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">147</span>, <span class="dv">158</span>, <span class="dv">131</span>, <span class="dv">142</span>, <span class="dv">183</span>, <span class="dv">151</span>, <span class="dv">196</span>, <span class="dv">129</span>, <span class="dv">155</span>, <span class="dv">158</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>wife <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">122</span>, <span class="dv">128</span>, <span class="dv">125</span>, <span class="dv">123</span>, <span class="dv">115</span>, <span class="dv">120</span>, <span class="dv">108</span>, <span class="dv">143</span>, <span class="dv">124</span>, <span class="dv">123</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>z <span class="ot">=</span> <span class="fu">c</span>(men, women)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(men)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">length</span>(women)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> n<span class="sc">+</span>m</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ranks with average for ties</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> <span class="fu">rank</span>(z, <span class="at">ties.method =</span> <span class="st">"average"</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># T = sum of squared ranks for men (first n observations)</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>R_u <span class="ot">&lt;-</span> r[<span class="dv">1</span><span class="sc">:</span>n]</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>T <span class="ot">&lt;-</span> <span class="fu">sum</span>(R_u<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>T</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#compute rho, part a</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(husband, wife, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1157.25</code></pre>
+<pre><code>[1] -0.6128049</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p_val <span class="ot">&lt;-</span> <span class="cf">function</span>(T){</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  num <span class="ot">&lt;-</span> T <span class="sc">-</span> n <span class="sc">*</span> ((N<span class="sc">+</span><span class="dv">1</span>) <span class="sc">*</span> (<span class="dv">2</span><span class="sc">*</span>N<span class="sc">+</span><span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">6</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  den <span class="ot">&lt;-</span> <span class="fu">sqrt</span>( m <span class="sc">*</span> n <span class="sc">*</span> (N<span class="sc">+</span><span class="dv">1</span>) <span class="sc">*</span> (<span class="dv">2</span><span class="sc">*</span>N<span class="sc">+</span><span class="dv">1</span>) <span class="sc">*</span> (<span class="dv">8</span><span class="sc">*</span>N<span class="sc">+</span><span class="dv">11</span>) <span class="sc">/</span> <span class="dv">180</span> )</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  z <span class="ot">&lt;-</span> num <span class="sc">/</span> den</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  p_right <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(z)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(<span class="at">T=</span>T, <span class="at">num=</span>num, <span class="at">den=</span>den, <span class="at">z=</span>z, <span class="at">p_right=</span>p_right)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">p_val</span>(T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#compute tau, part b</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(husband, wife, <span class="at">method =</span> <span class="st">"kendall"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>$T
-[1] 1157.25
+<pre><code>[1] -0.5227273</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#part c</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(husband, wife, <span class="at">method =</span> <span class="st">"spearman"</span>, <span class="at">exact =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Spearman's rank correlation rho
 
-$num
-[1] 317.25
+data:  husband and wife
+S = 266.11, p-value = 0.05961
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+       rho 
+-0.6128049 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#part d</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(husband, wife, <span class="at">method =</span> <span class="st">"kendall"</span>, <span class="at">exact =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Kendall's rank correlation tau
 
-$den
-[1] 192.4682
-
-$z
-[1] 1.648324
-
-$p_right
-[1] 0.04964306</code></pre>
+data:  husband and wife
+z = -2.0737, p-value = 0.03811
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+       tau 
+-0.5227273 </code></pre>
 </div>
 </div>
-<p><strong>Hypotheses</strong></p>
+<p><strong>Part C Hypotheses</strong></p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: X and Y are identically distributed, except for possibly different means, where x = men and y = women</li>
-<li><span class="math inline">\(H_A\)</span>: Var(X) &gt; Var(Y)</li>
+<li><span class="math inline">\(H_0\)</span>: The <span class="math inline">\(X_i\)</span> and <span class="math inline">\(Y_i\)</span> are mutually independent, where X = husband’s scores and Y = wife’s scores</li>
+<li><span class="math inline">\(H_A\)</span>: Either, a) there is a tendency for the larger values of X to be paired with the larger values of Y, or b) there is a tendency for the smaller values of X to be paired with the larger values of Y</li>
 </ul>
 <p><strong>Test Statistic and <em>p</em>-Value</strong></p>
 <ul>
-<li><span class="math inline">\(T = 1157.25\)</span></li>
-<li><span class="math inline">\(p = 0.04964306\)</span></li>
+<li><span class="math inline">\(T = 266.11\)</span></li>
+<li><span class="math inline">\(p = 0.05961\)</span></li>
 </ul>
 <p><strong>Rejection Region</strong></p>
 <ul>
@@ -441,8 +508,25 @@ $p_right
 </ul>
 <p><strong>Conclusion/Interpretation</strong></p>
 <ul>
-<li><p>Reject <span class="math inline">\(H_0\)</span>.</p></li>
-<li><p>There is sufficient evidence to suggest that the variation among the men significantly greater than the variation among the women.</p></li>
+<li>Fail to Reject <span class="math inline">\(H_0\)</span>.There is not sufficient evidence to suggest that there is a monotonic association between the husband’s and wife’s bowling scores.</li>
+</ul>
+<p><strong>Part D Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: X and Y are mutually independent, where X = husband’s scores and Y = wife’s scores</li>
+<li><span class="math inline">\(H_A\)</span>: Pairs of observations either tend to be concordant, or tend to be discordant</li>
+</ul>
+<p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><span class="math inline">\(T = -2.0737\)</span></li>
+<li><span class="math inline">\(p = 0.03811\)</span></li>
+</ul>
+<p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span>.</li>
+</ul>
+<p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span>. There is sufficient evidence to suggest that there is a negative association between X and Y. Pairs tend to be discordant, meaning that when the husband’s score is relatively high, the wife’s score tends to be relatively low, and vice versa.</li>
 </ul>
 
 

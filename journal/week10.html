@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-10-27">
 
-<title>All Weeks – Nonparamtric Methods Journal</title>
+<title>Week 10: Chapter 5.5 – Nonparamtric Methods Journal</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,35 +101,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -152,7 +156,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../journal/index.html" aria-current="page"> 
+    <a class="nav-link" href="../journal/index.html"> 
 <span class="menu-text">Weeks</span></a>
   </li>  
   <li class="nav-item">
@@ -174,15 +178,28 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">5.5</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none" id="toc-parametric-equivalent-or-proof-that-there-is-none" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
+  <li><a href="#rejection-region" id="toc-rejection-region" class="nav-link" data-scroll-target="#rejection-region">Rejection Region</a></li>
+  <li><a href="#completed-homework-problem" id="toc-completed-homework-problem" class="nav-link" data-scroll-target="#completed-homework-problem">Completed Homework Problem</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">All Weeks</h1>
+<h1 class="title">Week 10: Chapter 5.5</h1>
 </div>
 
 
@@ -190,6 +207,12 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2025-10-27</p>
+    </div>
+  </div>
   
     
   </div>
@@ -199,271 +222,126 @@ window.Quarto = {
 </header>
 
 
-<p>Browse all journal entries here.</p>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">5.5</h2>
+</section>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">Method</h2>
+<p>We will be discussing nonparametric methods for linear regression, including least squares estimates, testing the slope, and a confidence interval for the slope. The data consists of a random sample <span class="math inline">\((X_1, Y_1), (X_2, Y_2), ..., (X_n, Y_n)\)</span> from some bivariate distribution.</p>
+</section>
+<section id="assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
+<ol type="1">
+<li>The sample is a random sample. The methods described here are valid if the values of X are nonrandom quantities as long as the Ys are independent with identical conditional distributions.</li>
+<li>The regression of Y on X is linear. This implies an interval scale of measurement on both X and Y.</li>
+</ol>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</h2>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<p>The method of least squares furnishes the estimate: <span class="math inline">\(y = a+bx\)</span> of the true regression line <span class="math inline">\(y = \alpha + \beta x\)</span>, where a and b are computed from: <span class="math display">\[
+b = \frac{n\sum_{i=1}^n X_iY_i - (\sum_{i=1}^n  X_i)(\sum_{i=1}^n  Y_i)}{n\sum_{i=1}^n  X_i^2 - (\sum_{i=1}^n X_i)^2}
+\]</span> and $ a= - b$, where <span class="math inline">\(\overline{Y}\)</span> and <span class="math inline">\(\overline{X}\)</span> are the respective sample means.</p>
+<p>The confidence interval for the slope uses assumptions 1, 2, and 3. It is based on Kendall’s tau. For each pair of points <span class="math inline">\((X_i, Y_i)\)</span> and <span class="math inline">\((X_j, Y_j)\)</span> such that <span class="math inline">\(i&lt;j\)</span> and <span class="math inline">\(X_i \neq X_j\)</span>, compute the two point slope: <span class="math display">\[
+S_{ij} = \frac{Y_j -Y_i}{X_j - X_i}
+\]</span> Let N be the number of slopes computed. Order the slopes obtained and let this denote the ordered slopes: <span class="math display">\[
+S^{(1)} \leq S^{(2)} \leq ... \leq S^{(N)}
+\]</span></p>
+<p>For a <span class="math inline">\(1-\alpha\)</span> confidence interval, find <span class="math inline">\(w_{1-\alpha/2}\)</span>, the <span class="math inline">\(1-\alpha/2\)</span> quantile of <span class="math inline">\(T=N_c-N_d\)</span> from Table A11. Let r and s be given by: <span class="math display">\[
+r = \frac{1}{2} (N -w_{1-\alpha/2})
+\]</span> <span class="math display">\[
+s = \frac{1}{2} (N + w_{1-\alpha/2}) + 1 = N + 1 -r
+\]</span> Round r down and s upward to the next integers if they are not already integers. The <span class="math inline">\(1-\alpha\)</span> confidence interval for <span class="math inline">\(\beta\)</span> is given by the interval <span class="math inline">\((S^{(r)}, S^{(s)})\)</span>: <span class="math display">\[
+P(S^{(r)} &lt; \beta &lt; S^{(s)}) \geq 1-\alpha
+\]</span></p>
+</section>
+<section id="hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses">Hypotheses</h2>
+<p>To test the hypothesis concerning the slope, add the following assumption to assumptions 1 and 2. 3. The residual <span class="math inline">\(Y-E(Y|X)\)</span> is independent of X.</p>
+<p>Spearman’s rho may be adapted to test the following hypotheses concerning the slope. Let <span class="math inline">\(\beta_0\)</span> represent some specified number. For each pair of <span class="math inline">\((X_i, Y_i)\)</span>, compute <span class="math inline">\(Y_i-\beta_0X_i = U_i\)</span>. Then find the spearman rank correlation coefficient <span class="math inline">\(\rho\)</span> on the pairs of Xs and Us.</p>
+<p>Two-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\beta = \beta_0\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(\beta \neq \beta_0\)</span></li>
+</ul>
+<p>Left-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\beta = \beta_0\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(\beta &lt; \beta_0\)</span></li>
+</ul>
+<p>Right-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\beta = \beta_0\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(\beta &gt; \beta_0\)</span></li>
+</ul>
+</section>
+<section id="rejection-region" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-region">Rejection Region</h2>
+<p>Two-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(\rho &gt; 1-\alpha/2\)</span> quantile or <span class="math inline">\(&lt; \alpha/2\)</span> quantile as described in Spearman’s rho two-tailed test in section 5.4</li>
+</ul>
+<p>Left-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(\rho &lt; alpha\)</span> quantile as described in Spearman’s rho left-tailed test in section 5.4</li>
+</ul>
+<p>Right-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(\rho &gt; 1-\alpha\)</span> quantile as described in Spearman’s rho right-tailed test in section 5.4</li>
+</ul>
+</section>
+<section id="completed-homework-problem" class="level2">
+<h2 class="anchored" data-anchor-id="completed-homework-problem">Completed Homework Problem</h2>
+<ol start="3" type="1">
+<li>A random sample of applicants for graduate school is examined. Test the null hypothesis that the regression of Verbal GRE Score (Y) on Math GRE Score (X) has a slope of 1.0, against the alternative that the slope is less than 1.0.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>verbal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">540</span>, <span class="dv">580</span>, <span class="dv">500</span>, <span class="dv">570</span>, <span class="dv">630</span>, <span class="dv">630</span>, <span class="dv">520</span>, <span class="dv">610</span>, <span class="dv">510</span>, <span class="dv">500</span>, <span class="dv">680</span>, <span class="dv">600</span>, <span class="dv">550</span>, <span class="dv">500</span>, <span class="dv">510</span>, <span class="dv">570</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>math <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">650</span>, <span class="dv">720</span>, <span class="dv">580</span>, <span class="dv">670</span>, <span class="dv">600</span>, <span class="dv">510</span>, <span class="dv">480</span>, <span class="dv">610</span>, <span class="dv">460</span>, <span class="dv">520</span>, <span class="dv">740</span>, <span class="dv">450</span>, <span class="dv">530</span>, <span class="dv">570</span>, <span class="dv">680</span>, <span class="dv">740</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>U <span class="ot">&lt;-</span> verbal <span class="sc">-</span> <span class="dv">1</span><span class="sc">*</span>math</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(math, U, <span class="at">method =</span> <span class="st">"spearman"</span>, <span class="at">alternative =</span> <span class="st">"less"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in cor.test.default(math, U, method = "spearman", alternative =
+"less"): Cannot compute exact p-value with ties</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Spearman's rank correlation rho
+
+data:  math and U
+S = 1249.3, p-value = 2.606e-05
+alternative hypothesis: true rho is less than 0
+sample estimates:
+       rho 
+-0.8372607 </code></pre>
+</div>
+</div>
+<p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: The regression of Verbal GRE Score (Y) on Math GRE Score (X) has a slope of 1.0</li>
+<li><span class="math inline">\(H_A\)</span>: The slope is &lt; 1.0</li>
+</ul>
+<p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><span class="math inline">\(T = 1249.3\)</span></li>
+<li><span class="math inline">\(p = 2.606e-05\)</span></li>
+</ul>
+<p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span>.</li>
+</ul>
+<p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span>.There is sufficient evidence to suggest that the slope is less than 1.0.</li>
+</ul>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1761541200000" data-listing-file-modified-sort="1761614985178" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1340">
-<div class="thumbnail">
-<p><a href="../journal/week09.html" class="no-external"></a></p><a href="../journal/week09.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week09.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week09.html" class="no-external">Week 09: Chapter 5.4</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week09.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week09.html" class="no-external">Spearman’s rho is a measure of correlation denoted by <span class="math inline">\(\rho\)</span>. It is calculated the same as Pearson’s <span class="math inline">\(r\)</span> computed on the ranks and average ranks. The Spearman rank…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week09.html" class="no-external">
-<div class="listing-date">
-2025-10-27
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1761541200000" data-listing-file-modified-sort="1761617759629" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="596">
-<div class="thumbnail">
-<p><a href="../journal/week10.html" class="no-external"></a></p><a href="../journal/week10.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week10.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week10.html" class="no-external">Week 10: Chapter 5.5</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week10.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week10.html" class="no-external">We will be discussing nonparametric methods for linear regression, including least squares estimates, testing the slope, and a confidence interval for the slope. The data…<span class="math inline"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week10.html" class="no-external">
-<div class="listing-date">
-2025-10-27
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1760763600000" data-listing-file-modified-sort="1761611290166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="929">
-<div class="thumbnail">
-<p><a href="../journal/week08.html" class="no-external"></a></p><a href="../journal/week08.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week08.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week08.html" class="no-external">Week 08: Chapter 5.3</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week08.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week08.html" class="no-external">The Squared ranks test for variances is used to test for equal variances between groups. The data will consist of two random samples. The random samples of <span class="math inline">\(X_i\)</span>s and <span class="math inline">\(Y_j…</span><span class="math display"></span><span class="math display"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week08.html" class="no-external">
-<div class="listing-date">
-2025-10-18
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1760763600000" data-listing-file-modified-sort="1760812119483" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1623">
-<div class="thumbnail">
-<p><a href="../journal/week07.html" class="no-external"></a></p><a href="../journal/week07.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week07.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week07.html" class="no-external">Week 07: Chapter 5.1-5.2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week07.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week07.html" class="no-external">The Mann-Whitney test is also known as the Wilcoxon ranked sum test. It is used to compare two independent random samples. Let <span class="math inline">\(X_1, X_2, ..., X_n\)</span> denote the random…<span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span><span class="math inline"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week07.html" class="no-external">
-<div class="listing-date">
-2025-10-18
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1759813200000" data-listing-file-modified-sort="1759864770008" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1239">
-<div class="thumbnail">
-<p><a href="../journal/week06.html" class="no-external"></a></p><a href="../journal/week06.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week06.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week06.html" class="no-external">Week 06: Chapter 4.4-4.5</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week06.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week06.html" class="no-external">Cramer’s Contingency Coefficient is a way to find the measure of dependence by modifying the <span class="math inline">\(T\)</span> value (found in previous equations in section 4.3) in a way that the…<span class="math inline"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week06.html" class="no-external">
-<div class="listing-date">
-2025-10-07
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-date-sort="1758776400000" data-listing-file-modified-sort="1759023943310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3863">
-<div class="thumbnail">
-<p><a href="../journal/week05.html" class="no-external"></a></p><a href="../journal/week05.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week05.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week05.html" class="no-external">Week 05: Chapter 4.1-4.3</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week05.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week05.html" class="no-external">The Chi-squared Test for difference in probabilities with a 2x2 contingency table is used to test if the probability of an event is the same for both populations that the…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week05.html" class="no-external">
-<div class="listing-date">
-2025-09-25
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-listing-date-sort="1758430800000" data-listing-file-modified-sort="1758515556268" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2901">
-<div class="thumbnail">
-<p><a href="../journal/week04.html" class="no-external"></a></p><a href="../journal/week04.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week04.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week04.html" class="no-external">Week 04: Chapter 3.3-3.5</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week04.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week04.html" class="no-external">Tolerance limits are different from confidence intervals in that they provide an interval within which at least a proportion <span class="math inline">\(q\)</span> of the population lies, within probability <span class="math inline">…</span><span class="math inline"></span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week04.html" class="no-external">
-<div class="listing-date">
-2025-09-21
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-listing-date-sort="1757826000000" data-listing-file-modified-sort="1758211475860" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1786">
-<div class="thumbnail">
-<p><a href="../journal/week03.html" class="no-external"></a></p><a href="../journal/week03.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week03.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week03.html" class="no-external">Week 03: Chapter 3.1-3.2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week03.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week03.html" class="no-external">The binomial test is used when a sample contains the outcomes of <span class="math inline">\(n\)</span> independent trials. Each outcome can either be present in “class 1” or “class 2”, but cannot be…</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week03.html" class="no-external">
-<div class="listing-date">
-2025-09-14
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1757739600000" data-listing-file-modified-sort="1757906937863" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2199">
-<div class="thumbnail">
-<p><a href="../journal/week-01-02.html" class="no-external"></a></p><a href="../journal/week-01-02.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week-01-02.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week-01-02.html" class="no-external">Week 01-02: Chapters 1-2</a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week-01-02.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week-01-02.html" class="no-external"><span class="math display">\[
-\binom{n}{n_1, n_2, \ldots, n_r} = \frac{n!}{n_1! n_2! \cdots n_r!}
-\]</span></a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week-01-02.html" class="no-external">
-<div class="listing-date">
-2025-09-13
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-listing-date-sort="1756702800000" data-listing-file-modified-sort="1756089253703" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="116">
-<div class="thumbnail">
-<p><a href="../journal/week-template.html" class="no-external"></a></p><a href="../journal/week-template.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="../journal/week-template.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="../journal/week-template.html" class="no-external">Week NN: <topic or="" chapter=""></topic></a>
-</h3>
-<div class="listing-subtitle">
-<a href="../journal/week-template.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="../journal/week-template.html" class="no-external"><strong>Week structure</strong>: Copy this file to <code>week-02.qmd</code>, <code>week-03.qmd</code>, etc.<br>
-Keep one method per page.</a>
-</div>
-</div>
-<div class="metadata">
-<a href="../journal/week-template.html" class="no-external">
-<div class="listing-date">
-2025-09-01
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
