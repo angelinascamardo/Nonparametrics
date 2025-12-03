@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-11-17">
+
+<title>Week 12: Chapter 5.7-5.8 – Nonparamtric Methods Journal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Nonparamtric Methods Journal</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../journal/index.html"> 
+<span class="menu-text">Weeks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../rubric.html"> 
+<span class="menu-text">Rubric</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../checklist.html"> 
+<span class="menu-text">Checklist</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section">5.7</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none" id="toc-parametric-equivalent-or-proof-that-there-is-none" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#hypotheses" id="toc-hypotheses" class="nav-link" data-scroll-target="#hypotheses">Hypotheses</a></li>
+  <li><a href="#rejection-region" id="toc-rejection-region" class="nav-link" data-scroll-target="#rejection-region">Rejection Region</a></li>
+  <li><a href="#test-statistic-andor-p-value" id="toc-test-statistic-andor-p-value" class="nav-link" data-scroll-target="#test-statistic-andor-p-value">Test Statistic and/or p-value</a></li>
+  <li><a href="#r-function" id="toc-r-function" class="nav-link" data-scroll-target="#r-function">R Function</a></li>
+  <li><a href="#confidence-interval-for-the-mean-difference" id="toc-confidence-interval-for-the-mean-difference" class="nav-link" data-scroll-target="#confidence-interval-for-the-mean-difference">Confidence Interval for the Mean difference</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#assumptions-1" id="toc-assumptions-1" class="nav-link" data-scroll-target="#assumptions-1">Assumptions</a></li>
+  <li><a href="#methodapproach" id="toc-methodapproach" class="nav-link" data-scroll-target="#methodapproach">Method/Approach</a></li>
+  <li><a href="#completed-homework-problem" id="toc-completed-homework-problem" class="nav-link" data-scroll-target="#completed-homework-problem">Completed Homework Problem</a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">5.8</a></li>
+  <li><a href="#method-1" id="toc-method-1" class="nav-link" data-scroll-target="#method-1">Method</a></li>
+  <li><a href="#assumptions-2" id="toc-assumptions-2" class="nav-link" data-scroll-target="#assumptions-2">Assumptions</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none-1" id="toc-parametric-equivalent-or-proof-that-there-is-none-1" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none-1">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#hypotheses-1" id="toc-hypotheses-1" class="nav-link" data-scroll-target="#hypotheses-1">Hypotheses</a></li>
+  <li><a href="#rejection-region-1" id="toc-rejection-region-1" class="nav-link" data-scroll-target="#rejection-region-1">Rejection Region</a></li>
+  <li><a href="#test-statistic-andor-p-value-1" id="toc-test-statistic-andor-p-value-1" class="nav-link" data-scroll-target="#test-statistic-andor-p-value-1">Test Statistic and/or p-value</a></li>
+  <li><a href="#r-function-1" id="toc-r-function-1" class="nav-link" data-scroll-target="#r-function-1">R Function</a></li>
+  <li><a href="#confidence-interval-for-the-mean-difference-1" id="toc-confidence-interval-for-the-mean-difference-1" class="nav-link" data-scroll-target="#confidence-interval-for-the-mean-difference-1">Confidence Interval for the Mean difference</a></li>
+  <li><a href="#data-1" id="toc-data-1" class="nav-link" data-scroll-target="#data-1">Data</a></li>
+  <li><a href="#assumptions-3" id="toc-assumptions-3" class="nav-link" data-scroll-target="#assumptions-3">Assumptions</a></li>
+  <li><a href="#methodapproach-1" id="toc-methodapproach-1" class="nav-link" data-scroll-target="#methodapproach-1">Method/Approach</a></li>
+  <li><a href="#method-2" id="toc-method-2" class="nav-link" data-scroll-target="#method-2">Method</a></li>
+  <li><a href="#assumptions-4" id="toc-assumptions-4" class="nav-link" data-scroll-target="#assumptions-4">Assumptions</a></li>
+  <li><a href="#parametric-equivalent-or-proof-that-there-is-none-2" id="toc-parametric-equivalent-or-proof-that-there-is-none-2" class="nav-link" data-scroll-target="#parametric-equivalent-or-proof-that-there-is-none-2">Parametric equivalent (or proof that there is none)</a></li>
+  <li><a href="#hypotheses-2" id="toc-hypotheses-2" class="nav-link" data-scroll-target="#hypotheses-2">Hypotheses</a></li>
+  <li><a href="#rejection-region-2" id="toc-rejection-region-2" class="nav-link" data-scroll-target="#rejection-region-2">Rejection Region</a></li>
+  <li><a href="#test-statistic-andor-p-value-2" id="toc-test-statistic-andor-p-value-2" class="nav-link" data-scroll-target="#test-statistic-andor-p-value-2">Test Statistic and/or p-value</a></li>
+  <li><a href="#r-function-2" id="toc-r-function-2" class="nav-link" data-scroll-target="#r-function-2">R Function</a></li>
+  <li><a href="#alternative-method" id="toc-alternative-method" class="nav-link" data-scroll-target="#alternative-method">Alternative Method</a></li>
+  <li><a href="#r-function-3" id="toc-r-function-3" class="nav-link" data-scroll-target="#r-function-3">R Function</a></li>
+  <li><a href="#completed-homework-problem-1" id="toc-completed-homework-problem-1" class="nav-link" data-scroll-target="#completed-homework-problem-1">Completed Homework Problem</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 12: Chapter 5.7-5.8</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2025-11-17</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section">5.7</h2>
+</section>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">Method</h2>
+<p>The Wilcoxon signed rank test is analyzing ranks and the difference between two values. Before ranking, the difference between the paired bivariate observations will be calculated and we will eliminate any 0 differences. The differences are ranked based on the absolute value of the difference. There will be positive and negative ranks.</p>
+</section>
+<section id="assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
+<ol type="1">
+<li>The distribution of each <span class="math inline">\(D_i\)</span> is symmetric</li>
+<li>The <span class="math inline">\(D_i\)</span>s are mutually independent</li>
+<li>The <span class="math inline">\(D_i\)</span>s have the same median</li>
+<li>The measurement scale of the <span class="math inline">\(D_i\)</span>s is at least interval</li>
+</ol>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none">Parametric equivalent (or proof that there is none)</h2>
+<p>The parametric equivalent of the Wilcoxon signed rank test is a paired t-test. If we do not meet the normality assumption for the paired t-test, we will use Wilcoxon signed rank.</p>
+</section>
+<section id="hypotheses" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses">Hypotheses</h2>
+<p>Two-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(M_d = M_0\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(M_d \neq M_0\)</span></li>
+</ul>
+<p>Left-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(M_d \leq M_0\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(M_d &gt; M_0\)</span></li>
+</ul>
+<p>Right-tailed:</p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: <span class="math inline">\(M_d \geq M_0\)</span></li>
+<li><span class="math inline">\(H_A\)</span>: <span class="math inline">\(M_d &lt; M_0\)</span></li>
+</ul>
+</section>
+<section id="rejection-region" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-region">Rejection Region</h2>
+<p>Two-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T^+\)</span> or <span class="math inline">\(T\)</span> is less than its <span class="math inline">\(\alpha/2\)</span> quantile or greater than its <span class="math inline">\(1-\alpha/2\)</span> quantile obtained from table A1</li>
+</ul>
+<p>Left-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T^+\)</span> or <span class="math inline">\(T\)</span> is less than its <span class="math inline">\(\alpha\)</span> quantile from Table A12 for <span class="math inline">\(T^+\)</span> or Table A1 for <span class="math inline">\(T\)</span></li>
+</ul>
+<p>Right-tailed:</p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T^+\)</span> or <span class="math inline">\(T\)</span> is greater than its <span class="math inline">\(\alpha\)</span> quantile from Table A12 for <span class="math inline">\(T^+\)</span> or Table A1 for <span class="math inline">\(T\)</span></li>
+</ul>
+</section>
+<section id="test-statistic-andor-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="test-statistic-andor-p-value">Test Statistic and/or p-value</h2>
+<ul>
+<li><p>Test Statistic: Let <span class="math inline">\(R_i\)</span> (the signed rank) be defined for each pair <span class="math inline">\((X_i, Y_i)\)</span> as follows:</p>
+<p><span class="math inline">\(R_i\)</span> = the rank assigned to <span class="math inline">\((X_i, Y_i)\)</span> if <span class="math inline">\(D_i = Y_i - X_i\)</span> is positive <span class="math inline">\(R_i\)</span> = the negative of the rank assigned to <span class="math inline">\((X_i, Y_i)\)</span> if <span class="math inline">\(D_i\)</span> is negative</p>
+<p>The test statistic is the sum of the positive signed ranks: <span class="math display">\[
+T^+ = \sum (R_i \text{  where }  D_i \text{  is positive})
+\]</span> <span class="math display">\[
+T_0 = \text{min} (T_+, |T_-|) \text{  if two tailed,  } T_0 = T_+ \text{  if left tailed,  } T_0 = |T_-| \text{  if right tailed  }
+\]</span></p></li>
+<li><p>Lower quantiles of exact null distribution of <span class="math inline">\(T\)</span> are in Table A12 where there are no ties and <span class="math inline">\(n\leq50\)</span>. Upper quantiles are found by <span class="math display">\[
+w_p = \frac{n(n+1)}{2} - w_{1-p}
+\]</span></p>
+<p>If there are many ties or if <span class="math inline">\(n &gt; 50\)</span>, the normal approximation should be used. It uses the sum of all signed ranks (positive AND negative) and the test statistic mentioned above. If there are no ties, the test statistic equation can be simplified.</p></li>
+<li><p>The p-value is obtained differently for the different tests:</p>
+<ul>
+<li>Two-tailed: p-value = 2*(smaller of the one-tailed p values)</li>
+<li>Left-tailed:</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[
+P(Z \leq \frac{\sum_{i=1}^n R_i + 1}{\sqrt{\sum_{i=1}^n R_i^2}})
+\]</span></p>
+<ul>
+<li>Right-tailed:</li>
+</ul>
+<p><span class="math display">\[
+P(Z \geq \frac{\sum_{i=1}^n R_i + 1}{\sqrt{\sum_{i=1}^n R_i^2}})
+\]</span></p>
+</section>
+<section id="r-function" class="level2">
+<h2 class="anchored" data-anchor-id="r-function">R Function</h2>
+<p>R function for Wilcoxon signed rank test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test)</p>
+<p>wilcox.test(dataset<span class="math inline">\(variable1, dataset\)</span>variable2, alternative = “hypothesis”, mu = hypothesized_value, paired = TRUE, exact = FALSE)</p>
+</section>
+<section id="confidence-interval-for-the-mean-difference" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval-for-the-mean-difference">Confidence Interval for the Mean difference</h2>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The data consists of n observations on the bivariate random variables. Compute the difference between the bivariate random variables: <span class="math inline">\(D_i = Y_i-X_i\)</span> for each pair and arrange them in order from the smallest to the largest. Or, in a one sample situation, the data consists of <span class="math inline">\(D_1, D_2, ...\)</span> arranged in order. We will find a confidence interval for the <span class="math inline">\(D_i\)</span>s.</p>
+</section>
+<section id="assumptions-1" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-1">Assumptions</h2>
+<ol type="1">
+<li>The distribution of each <span class="math inline">\(D_i\)</span> is symmetric</li>
+<li>The <span class="math inline">\(D_i\)</span>s are mutually independent</li>
+<li>The <span class="math inline">\(D_i\)</span>s have the same median</li>
+<li>The measurement scale of the <span class="math inline">\(D_i\)</span>s is at least interval</li>
+</ol>
+</section>
+<section id="methodapproach" class="level2">
+<h2 class="anchored" data-anchor-id="methodapproach">Method/Approach</h2>
+<p>To obtain <span class="math inline">\(1-\alpha\)</span> CI, obtain the <span class="math inline">\(\alpha/2\)</span> quantile <span class="math inline">\(w_{\alpha/2}\)</span> from Table A12. Note: If <span class="math inline">\(w_{\alpha/2}=0\)</span> no CI may be obtained for that value of alpha. Then consider the <span class="math inline">\(n(n+1)/2\)</span> possible averages <span class="math inline">\((D_i + D_j)/2\)</span> for all <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, including <span class="math inline">\(i=j\)</span>, which is the average of <span class="math inline">\(D_i = D_i\)</span>. The <span class="math inline">\(w_{\alpha/2}\)</span>th largest of these averages and the <span class="math inline">\(w_{\alpha/2}\)</span>th smallest of these averages are the upper and lower bounds for the <span class="math inline">\(1-\alpha\)</span> CI. Note: Only necessary to compute the averages near the largest and the smallest to obtain the CI.</p>
+</section>
+<section id="completed-homework-problem" class="level2">
+<h2 class="anchored" data-anchor-id="completed-homework-problem">Completed Homework Problem</h2>
+<ol type="1">
+<li>A random sample consisting of 20 people who drove automobiles was selected to see if alcohol affected reaction time. Each driver’s reaction time was measured in a lab before and after drinking a specified amount of beverage containing alcohol. The reaction times in seconds were as follows. Does alcohol affect reaction time?</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>before <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.68</span>, <span class="fl">0.64</span>, <span class="fl">0.68</span>, <span class="fl">0.82</span>, <span class="fl">0.58</span>, <span class="fl">0.8</span>, <span class="fl">0.72</span>, <span class="fl">0.65</span>, <span class="fl">0.84</span>, <span class="fl">0.73</span>, <span class="fl">0.65</span>, <span class="fl">0.59</span>, <span class="fl">0.78</span>, <span class="fl">0.67</span>, <span class="fl">0.65</span>, <span class="fl">0.76</span>, <span class="fl">0.61</span>, <span class="fl">0.86</span>, <span class="fl">0.74</span>, <span class="fl">0.88</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>after <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.73</span>, <span class="fl">0.62</span>, <span class="fl">0.66</span>, <span class="fl">0.92</span>, <span class="fl">0.68</span>, <span class="fl">0.87</span>, <span class="fl">0.77</span>, <span class="fl">0.7</span>, <span class="fl">0.88</span>, <span class="fl">0.79</span>, <span class="fl">0.72</span>, <span class="fl">0.6</span>, <span class="fl">0.78</span>, <span class="fl">0.66</span>, <span class="fl">0.68</span>, <span class="fl">0.77</span>, <span class="fl">0.72</span>, <span class="fl">0.86</span>, <span class="fl">0.72</span>, <span class="fl">0.97</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(before, after,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">alternative =</span> <span class="st">"two.sided"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">paired =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">exact =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon signed rank test with continuity correction
+
+data:  before and after
+V = 17, p-value = 0.003024
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
+<ul>
+<li><p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0: M_{d} = 0\)</span></li>
+<li><span class="math inline">\(H_1: M_{d} \neq 0\)</span></li>
+</ul>
+<p>where <span class="math inline">\(d =\)</span> before - after.</p></li>
+<li><p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><p><span class="math inline">\(V_0 = 17\)</span></p></li>
+<li><p><span class="math inline">\(p = 0.003024\)</span></p></li>
+</ul></li>
+<li><p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span></li>
+</ul></li>
+<li><p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span>. There is not sufficient evidence to suggest that the median reaction time in seconds before drinking alcohol is equal to the median reaction time after.</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1">5.8</h2>
+</section>
+<section id="method-1" class="level2">
+<h2 class="anchored" data-anchor-id="method-1">Method</h2>
+<p>The Friedman test depends only on the ranks of the observations within each block, and is therefore considered a two-way analysis of variance (two-way ANOVA) on ranks. The data consists of <span class="math inline">\(b\)</span> mutually independent <span class="math inline">\(k\)</span>-variate random variables called <span class="math inline">\(b\)</span> blocks. The random variable <span class="math inline">\(X_{ij}\)</span> is in block <span class="math inline">\(i\)</span> and associated with treatment <span class="math inline">\(j\)</span>. Rank 1 is assigned to smallest observed value, and so on up to rank <span class="math inline">\(k\)</span> assigned to the largest observation in block <span class="math inline">\(i\)</span>. Ranks are assigned in all blocks. Use average ranks in case of ties. Calculate sum of ranks.</p>
+</section>
+<section id="assumptions-2" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-2">Assumptions</h2>
+<ol type="1">
+<li>The <span class="math inline">\(b\)</span> <span class="math inline">\(k\)</span>-variate random variables are mutually independent (the results in one block do not influence results in another block)</li>
+<li>Within each block the observations may be ranked according to some criterion of interest</li>
+</ol>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none-1" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none-1">Parametric equivalent (or proof that there is none)</h2>
+<p>The parametric equivalent of the Friedman test is two-way ANOVA. If two-way ANOVA assumptions are broken, Friedman will be used.</p>
+</section>
+<section id="hypotheses-1" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses-1">Hypotheses</h2>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: Each ranking of the random variables within a block is equally likely, meaning the treatments have identical effects</li>
+<li><span class="math inline">\(H_A\)</span>: At least one of the treatments tends to yield larger observed values than at least one other treatment</li>
+</ul>
+</section>
+<section id="rejection-region-1" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-region-1">Rejection Region</h2>
+<p>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T_2\)</span> exceeds the <span class="math inline">\(1-\alpha\)</span> quantile of the F distribution given by Table A22 for <span class="math inline">\(k_1 = k-1\)</span> and <span class="math inline">\(k_2 = (b-1)(k-1)\)</span></p>
+<p>Note: The following method can be used for comparing individual treatments if the Friedman test results in the rejection of the null hypothesis. Treatments <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are considered different if the following inequality is satisfied: <span class="math display">\[
+|R_j - R_i| &gt; t_{1-\alpha/2} \left[ \frac{2(bA_1- \sum R_j^2}{(b-1)(k-1)} \right]^{\frac12}
+\]</span></p>
+</section>
+<section id="test-statistic-andor-p-value-1" class="level2">
+<h2 class="anchored" data-anchor-id="test-statistic-andor-p-value-1">Test Statistic and/or p-value</h2>
+<ul>
+<li><p>Test Statistic: The two-way ANOVA statistic computed on the ranks <span class="math inline">\(R(X_{ij})\)</span> which simplifies to: <span class="math display">\[
+T_2 = \frac{(b-1)T_1}{b(k-1)-T_1}
+\]</span> Note: equation for <span class="math inline">\(T_1\)</span> can be found on page 370, if needed.</p></li>
+<li><p>The exact distribution for <span class="math inline">\(T_1\)</span> or <span class="math inline">\(T_2\)</span> is difficult to find. Chi-squared distribution is the approximate distribution of <span class="math inline">\(T_1\)</span> with <span class="math inline">\(k-1\)</span> degrees of freedom. Since <span class="math inline">\(T_1\)</span> is unreliable, the approximate quantiles given by F distribution in Table A22 is used with <span class="math inline">\(T_2\)</span></p></li>
+<li><p>The p-value is estimated from Table A22.</p></li>
+</ul>
+</section>
+<section id="r-function-1" class="level2">
+<h2 class="anchored" data-anchor-id="r-function-1">R Function</h2>
+<p>R function for Friedman test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/friedman.test)</p>
+<p>friedman.test(y, …)</p>
+<p>S3 method for default friedman.test(y, groups, blocks, …)</p>
+<p>S3 method for formula friedman.test(formula, data, subset, na.action, …)</p>
+</section>
+<section id="confidence-interval-for-the-mean-difference-1" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-interval-for-the-mean-difference-1">Confidence Interval for the Mean difference</h2>
+</section>
+<section id="data-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-1">Data</h2>
+<p>The data consists of n observations on the bivariate random variables. Compute the difference between the bivariate random variables: <span class="math inline">\(D_i = Y_i-X_i\)</span> for each pair and arrange them in order from the smallest to the largest. Or, in a one sample situation, the data consists of <span class="math inline">\(D_1, D_2, ...\)</span> arranged in order. We will find a confidence interval for the <span class="math inline">\(D_i\)</span>s.</p>
+</section>
+<section id="assumptions-3" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-3">Assumptions</h2>
+<ol type="1">
+<li>The distribution of each <span class="math inline">\(D_i\)</span> is symmetric</li>
+<li>The <span class="math inline">\(D_i\)</span>s are mutually independent</li>
+<li>The <span class="math inline">\(D_i\)</span>s have the same median</li>
+<li>The measurement scale of the <span class="math inline">\(D_i\)</span>s is at least interval</li>
+</ol>
+</section>
+<section id="methodapproach-1" class="level2">
+<h2 class="anchored" data-anchor-id="methodapproach-1">Method/Approach</h2>
+<p>To obtain <span class="math inline">\(1-\alpha\)</span> CI, obtain the <span class="math inline">\(\alpha/2\)</span> quantile <span class="math inline">\(w_{\alpha/2}\)</span> from Table A12. Note: If <span class="math inline">\(w_{\alpha/2}=0\)</span> no CI may be obtained for that value of alpha. Then consider the <span class="math inline">\(n(n+1)/2\)</span> possible averages <span class="math inline">\((D_i + D_j)/2\)</span> for all <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, including <span class="math inline">\(i=j\)</span>, which is the average of <span class="math inline">\(D_i = D_i\)</span>. The <span class="math inline">\(w_{\alpha/2}\)</span>th largest of these averages and the <span class="math inline">\(w_{\alpha/2}\)</span>th smallest of these averages are the upper and lower bounds for the <span class="math inline">\(1-\alpha\)</span> CI. Note: Only necessary to compute the averages near the largest and the smallest to obtain the CI.</p>
+</section>
+<section id="method-2" class="level2">
+<h2 class="anchored" data-anchor-id="method-2">Method</h2>
+<p>The Quade test also tests the null hypothesis of equal treatment menas in a randomized block design, but it uses information about the range of blocks relative to each other and gives more weight to blocks exhibiting the larger range. It uses the rankings in the blocks like the Friedman test. Find the ranks within blocks just like the Friedman test, then use the original observations <span class="math inline">\(X_{ij}\)</span> to assign ranks similarly to the Friedman test. The sample range within block <span class="math inline">\(i\)</span> is the difference between the largest and smallest observations of that block. There are <span class="math inline">\(b\)</span> sample ranges assigned to each block, rank 1 to the block with the smallest range, and so on. Lastly, the block rank <span class="math inline">\(Q_i\)</span> is multiplied by the difference between the rank within block <span class="math inline">\(i\)</span>, and the average rank within block <span class="math inline">\((k+1)/2\)</span> to get the product <span class="math inline">\(S_{ij}\)</span>, which represents the relative size of each observation within the block. It is adjusted to reflect relative significance of the block in which it appears.</p>
+</section>
+<section id="assumptions-4" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions-4">Assumptions</h2>
+<p>The first two assumptions from the Friedman test hold. 3. The sample range may be determined wihtin each block so that the blocks may be ranked</p>
+</section>
+<section id="parametric-equivalent-or-proof-that-there-is-none-2" class="level2">
+<h2 class="anchored" data-anchor-id="parametric-equivalent-or-proof-that-there-is-none-2">Parametric equivalent (or proof that there is none)</h2>
+<p>The parametric equivalent of the Quade test is also two-way ANOVA, just like the Friedman test.</p>
+</section>
+<section id="hypotheses-2" class="level2">
+<h2 class="anchored" data-anchor-id="hypotheses-2">Hypotheses</h2>
+<p>Same as Friedman test.</p>
+</section>
+<section id="rejection-region-2" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-region-2">Rejection Region</h2>
+<p>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(T_3\)</span> exceeds the <span class="math inline">\(1-\alpha\)</span> quantile of the F distribution given by Table A22 for <span class="math inline">\(k_1 = k-1\)</span> and <span class="math inline">\(k_2 = (b-1)(k-1)\)</span></p>
+<p>Note: The following method can be used for comparing individual treatments if the Quade test results in the rejection of the null hypothesis. Treatments <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are considered different if the following inequality is satisfied: <span class="math display">\[
+|S_i - S_j| &gt; t_{1-\alpha/2} \left[ \frac{2b(A_2- B)}{(b-1)(k-1)} \right]^{\frac12}
+\]</span></p>
+</section>
+<section id="test-statistic-andor-p-value-2" class="level2">
+<h2 class="anchored" data-anchor-id="test-statistic-andor-p-value-2">Test Statistic and/or p-value</h2>
+<ul>
+<li><p>Test Statistic: First calculate <span class="math display">\[
+A_2 = \sum_{i=1}^b \sum_{j=1}^k S_{ij}^2
+\]</span></p>
+<p>This can then be simplified if there are no ties. Next calculate <span class="math display">\[
+B = \frac1b \sum_{j=1}^k S_j^2
+\]</span> which is called the treatment sum of squares. Then the test statistic is: <span class="math display">\[
+T_3=\frac{(b-1)B}{A_2-B}
+\]</span> Note: If <span class="math inline">\(A_2=B\)</span>, consider the point ot be in the critical region and calculate the p-value as <span class="math inline">\((1/k!)^{b-1}\)</span></p></li>
+<li><p>The exact distribution for <span class="math inline">\(T_3\)</span> is difficult to find, soo the approximate quantiles given by F distribution in Table A22 is used</p></li>
+<li><p>The p-value is estimated from Table A22.</p></li>
+</ul>
+</section>
+<section id="r-function-2" class="level2">
+<h2 class="anchored" data-anchor-id="r-function-2">R Function</h2>
+<p>R function for Quade test (obtained from https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/quade.test)</p>
+<p>quade.test(y, …)</p>
+<p>S3 method for default quade.test(y, groups, blocks, …)</p>
+<p>S3 method for formula quade.test(formula, data, subset, na.action, …)</p>
+</section>
+<section id="alternative-method" class="level2">
+<h2 class="anchored" data-anchor-id="alternative-method">Alternative Method</h2>
+<p>The Page test for Ordered Alternatives is used with Spearman’s <span class="math inline">\(\rho\)</span>. In randomized complete block design, rho is used to test for <span class="math inline">\(k\)</span> related samples against the alternative hypothesis of a specified ordering of the treatment effects. The correlation between Friedman within-block rankings and the ordering of the treatments as specified by <span class="math inline">\(H_1\)</span> is used in a Page test. Page uses a simpler statistic because of the many inherent ties in the data. It is a monotonic function of Spearman’s <span class="math inline">\(\rho\)</span> if there is no ties within blocks:</p>
+<p><span class="math display">\[
+T_4 = \sum_{j=1}^k jR_j = R_1 + 2R_2 + ... + kR_k
+\]</span></p>
+<p>where <span class="math inline">\(R_j\)</span> is the treatment rank sum from the Friedman test. Only large sample approximation will be considered. Reject <span class="math inline">\(H_0\)</span> when <span class="math display">\[
+T_5 = \frac{T_4 -bk(k+1)^2/4}{[b(k^3-k)^2/144(k-1)]^{1/2}}
+\]</span> exceeds the <span class="math inline">\(1-\alpha\)</span> quantile from a standard normal distribution from Table A1.</p>
+</section>
+<section id="r-function-3" class="level2">
+<h2 class="anchored" data-anchor-id="r-function-3">R Function</h2>
+<p>R function for Page test (obtained from https://www.rdocumentation.org/packages/cultevo/versions/1.0.2/topics/page.test)</p>
+<p>page.test(data, verbose = TRUE) page.L(data, verbose = TRUE, ties.method = “average”)</p>
+<p>page.compute.exact(k, N, L)</p>
+</section>
+<section id="completed-homework-problem-1" class="level2">
+<h2 class="anchored" data-anchor-id="completed-homework-problem-1">Completed Homework Problem</h2>
+<ol type="1">
+<li>A survey was taken of all seven hospitals in a particular city to obtain the number of babies born over a 12 month period. This time period was divided into four seasons to test the hypothesis that the birth rate is constant over all four seasons.</li>
+</ol>
+<ol type="a">
+<li>Analyze these data using Friedman test.</li>
+<li>Analyze these data using Quade test.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>births <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Hospital =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>, <span class="st">"E"</span>, <span class="st">"F"</span>, <span class="st">"G"</span>)),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Winter =</span> <span class="fu">c</span>(<span class="dv">92</span>, <span class="dv">9</span>, <span class="dv">98</span>, <span class="dv">19</span>, <span class="dv">21</span>, <span class="dv">68</span>, <span class="dv">42</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Spring =</span> <span class="fu">c</span>(<span class="dv">112</span>, <span class="dv">11</span>, <span class="dv">109</span>, <span class="dv">26</span>, <span class="dv">22</span>, <span class="dv">71</span>, <span class="dv">49</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Summer =</span> <span class="fu">c</span>(<span class="dv">94</span>, <span class="dv">10</span>, <span class="dv">92</span>, <span class="dv">19</span>, <span class="dv">23</span>, <span class="dv">51</span>, <span class="dv">44</span>),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Fall =</span> <span class="fu">c</span>(<span class="dv">77</span>, <span class="dv">12</span>, <span class="dv">81</span>, <span class="dv">18</span>, <span class="dv">24</span>, <span class="dv">62</span>, <span class="dv">41</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>births_matrix <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(births[, <span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>])</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># friedman</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">friedman.test</span>(births_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Friedman rank sum test
+
+data:  births_matrix
+Friedman chi-squared = 6.8261, df = 3, p-value = 0.07765</code></pre>
+</div>
+</div>
+<ul>
+<li><p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: Each ranking of the random variables within a block is equally likely, meaning the treatments have identical effects</li>
+<li><span class="math inline">\(H_A\)</span>: At least one of the treatments tends to yield larger observed values than at least one other treatment</li>
+</ul></li>
+<li><p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><p><span class="math inline">\(\chi_0^2 = 6.8261\)</span></p></li>
+<li><p><span class="math inline">\(p = 0.07765\)</span></p></li>
+</ul></li>
+<li><p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span></li>
+</ul></li>
+<li><p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li>Fail to Reject <span class="math inline">\(H_0\)</span>. There is sufficient evidence to suggest that the birth rate is constant over all 4 seasons.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#quade</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">quade.test</span>(births_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Quade test
+
+data:  births_matrix
+Quade F = 5.1871, num df = 3, denom df = 18, p-value = 0.009297</code></pre>
+</div>
+</div>
+<ul>
+<li><p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: Each ranking of the random variables within a block is equally likely, meaning the treatments have identical effects</li>
+<li><span class="math inline">\(H_A\)</span>: At least one of the treatments tends to yield larger observed values than at least one other treatment</li>
+</ul></li>
+<li><p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><p><span class="math inline">\(F_0 = 5.1871\)</span></p></li>
+<li><p><span class="math inline">\(p = 0.009297\)</span></p></li>
+</ul></li>
+<li><p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span></li>
+</ul></li>
+<li><p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span>. There is sufficient evidence to suggest that the birth rate is constant over all 4 seasons.</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/angelinascamardo\.github\.io\/Nonparametrics\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
