@@ -3,9 +3,10 @@
     "listing": "/index.html",
     "items": [
       "/journal/index.html",
+      "/journal/finalexam.html",
       "/journal/week14.html",
-      "/journal/week12.html",
       "/journal/week13.html",
+      "/journal/week12.html",
       "/journal/week11.html",
       "/journal/week09.html",
       "/journal/week10.html",
@@ -22,9 +23,10 @@
   {
     "listing": "/journal/index.html",
     "items": [
+      "/journal/finalexam.html",
       "/journal/week14.html",
-      "/journal/week12.html",
       "/journal/week13.html",
+      "/journal/week12.html",
       "/journal/week11.html",
       "/journal/week09.html",
       "/journal/week10.html",
