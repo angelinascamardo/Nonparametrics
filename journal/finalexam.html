@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-12-08">
+<meta name="dcterms.date" content="2025-12-12">
 
 <title>Final Exam – Nonparamtric Methods Journal</title>
 <style>
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -68,6 +102,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -121,6 +184,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#final-exam" id="toc-final-exam" class="nav-link active" data-scroll-target="#final-exam">Final Exam</a></li>
+  <li><a href="#part-1-conceptual" id="toc-part-1-conceptual" class="nav-link" data-scroll-target="#part-1-conceptual">Part 1 (Conceptual):</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#part-2-applied" id="toc-part-2-applied" class="nav-link" data-scroll-target="#part-2-applied">Part 2 (Applied):</a></li>
   </ul>
 </nav>
     </div>
@@ -140,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">2025-12-08</p>
+      <p class="date">2025-12-12</p>
     </div>
   </div>
   
@@ -154,26 +220,76 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="final-exam" class="level2">
 <h2 class="anchored" data-anchor-id="final-exam">Final Exam</h2>
-<p>Part 1 (Conceptual):</p>
+</section>
+<section id="part-1-conceptual" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-conceptual">Part 1 (Conceptual):</h2>
 <ol type="1">
 <li>What is kernel regression:</li>
 </ol>
 <ol type="a">
-<li>What is kernel regression?</li>
-<li>How is kernel regression different from our usual G(z)LM methods?</li>
-<li>What type of outcome(s) is it appropriate for?</li>
-<li>Are there alternatives to kernel regression?</li>
+<li>What is kernel regression? Kernel regression is a nonparametric regression method. It is used to estimate the nonparametric regression function <span class="math inline">\(f\)</span> using weighted averages of the data in question. The nonparametric regression model can be defined by:</li>
+</ol>
+<p><span class="math display">\[
+y_i = f(x_i) + \varepsilon_i \text{  ,   } a &lt; x_1 &lt; ... &lt; x_n &lt; b
+\]</span> where <span class="math inline">\(f \in C^2 [a,b]\)</span> is an unknown smooth function and is unspecified by the modeler (meaning the shape of the curve is determined by the data). The weights for each observation <span class="math inline">\(y_j\)</span> for predicting at <span class="math inline">\(x_i\)</span> is:</p>
+<p><span class="math display">\[
+w_{ij} = \frac{K(\frac{x_i-x_j}{h})}{\sum_{j=1}^{n}K(\frac{x_i-x_j}{h})} = \frac{K(u)}{\sum_{j=1}^{n}K(u)}
+\]</span> where <span class="math inline">\(K(u)\)</span> is a decreasing function of <span class="math inline">\(u\)</span> and <span class="math inline">\(h&gt;0\)</span> is the bandwidth or smoothing parameter. <span class="math inline">\(K(u)\)</span> is the kernel function, also known as the Gaussian probability density function. The kernel function is typically nonnegative, continuous, twice differentiable, and symmetric about the origin (0), but there are other ways it can be chosen/represented.</p>
+<ol start="2" type="a">
+<li><p>How is kernel regression different from our usual G(z)LM methods? Kernel regression is different from our usual G(z)LM methods in the sense that it is nonparametric - meaning it does not assume any particular underlying distribution shape. G(z)LM methods are parametric, like Poisson, linear, logistic, etc. Kernel regression does not estimate <span class="math inline">\(\beta\)</span>s, while our usual methods do. The shape of the associated function f(x) is entirely determined by the data in nonparametric regression, while for parametric G(z)LMs we assume a specific model function/form.</p></li>
+<li><p>What type of outcome(s) is it appropriate for? Kernel regression is appropriate for continuous outcomes.</p></li>
+<li><p>Are there alternatives to kernel regression? Yes, there are many alternatives to kernel regression. The most prominent one that I was able to find was smoothing spline regression, which estimates the same nonparametric regression model by minimizing the penalized residual sum of squares. Other alternatives of kernel regression include: k-nearest neighbor regression, generalized additive models (GAMs), and locally weighted scatterplot smoothing (LOWESS).</p></li>
 </ol>
 <ol start="2" type="1">
 <li>How do we assess model fit?</li>
 </ol>
 <ol type="a">
-<li>What is the AIC?</li>
-<li>What is the AICc?</li>
-<li>How do we determine the better fitting model using the AICc?</li>
+<li><p>What is the AIC? The AIC is used to compare a set of potential statistical models. It balances goodness of fit (via the maximized likelihood) against model complexity (the number of parameters), penalizing overly complex models to avoid overfitting. The model with the lowest AIC is considered to have the best trade-off between fit and simplicity, meaning it is the best approximating model among those considered.</p></li>
+<li><p>What is the AICc? The AICc is a small-sample correction to AIC. When sample size is limited (relative to the number of parameters), AIC may tend to favor overly complex models. AICc adds an additional penalty for model complexity that depends on sample size, and therefore reduces that bias. For small n (or “medium” sized n), AICc is preferred over AIC. AICc should be used by default unless n is very large.</p></li>
+<li><p>How do we determine the better fitting model using the AICc? We determine the better fitting model using the AICc by first fitting all models onto the same dataset. Next, compute the AICc for each model in the dataset. The model with the lowest AICc is the best model. Next, compute: <span class="math display">\[
+\bigtriangleup \text{AIC}_c = \text{AIC}_{c_i} - \text{AIC}_{c_{min}}
+\]</span> This value will tell us how much worse each model is when compared to the best model (the model with the lowest AICc). Models that have a <span class="math inline">\(\bigtriangleup \text{AIC}_c\)</span> of around 0-2 have strong support, meaning they are likely to be very close to the best model. These values are worth interpreting. Models with <span class="math inline">\(\bigtriangleup \text{AIC}_c\)</span> values of around 4-7 have less support and fit the data noticeably worse when compared to the best model. Models with <span class="math inline">\(\bigtriangleup \text{AIC}_c\)</span> values greater than 10 have little to no support and are very far from the best model. Optionally, we could also calculate the Akaike weights. These weights transform <span class="math inline">\(\bigtriangleup \text{AIC}_c\)</span> into probabilities that each model is the best among the set of models, which would allow us to perform model averaging.</p></li>
 </ol>
-<p>Part 2 (Applied):</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Burnham, K. P., &amp; Anderson, D. R. (2004). Multimodel inference: Understanding AIC and BIC in model selection. Sociological Methods &amp; Research, 33(2), 261–304. https://doi.org/10.1177/0049124104268644</p>
+<p>Aydin, D. (2007). A comparison of the nonparametric regression models using smoothing spline and kernel regression. World Academy of Science, Engineering and Technology, 36, 255–260.</p>
+</section>
+<section id="part-2-applied" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-applied">Part 2 (Applied):</h2>
 <p>Data: https://github.com/rfordatascience/tidytuesday/blob/main/data/2025/2025-08-26/readme.md Data Dictionary: Billboard Hot 100 Number Ones Database</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.2     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>billboard <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-08-26/billboard.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1177 Columns: 105
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (26): song, artist, label, parent_label, cdr_genre, cdr_style, discogs_...
+dbl  (78): weeks_at_number_one, non_consecutive, rating_1, rating_2, rating_...
+dttm  (1): date
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>billboard <span class="ot">&lt;-</span> billboard <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sex =</span> <span class="fu">factor</span>(artist_male, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">0</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Male"</span>,<span class="st">"Female"</span>)),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">date =</span> <span class="fu">as.Date</span>(date),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">year =</span> lubridate<span class="sc">::</span><span class="fu">year</span>(date))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <ol type="1">
 <li>Let’s create a Table 1, split on sex.</li>
 </ol>
@@ -183,6 +299,860 @@ ul.task-list li input[type="checkbox"] {
 <li>In the header, you should fill in the sample sizes and for the sexes, the percent of each sex in the overall sample size.</li>
 <li>For the p-value, use the appropriate nonparametric test(s) to compare males and females.</li>
 </ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># column totals and percentages</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(billboard<span class="sc">$</span>sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  Male Female 
+   720    285 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#weeks at number 1 (weeks_at_number_one)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(billboard<span class="sc">$</span>weeks_at_number_one[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Male"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(billboard<span class="sc">$</span>weeks_at_number_one[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Male"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(billboard<span class="sc">$</span>weeks_at_number_one[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Female"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(billboard<span class="sc">$</span>weeks_at_number_one[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Female"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(weeks_at_number_one <span class="sc">~</span> sex, <span class="at">data=</span>billboard)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  weeks_at_number_one by sex
+W = 96641, p-value = 0.137
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#songwriter (artist_is_a_songwriter)</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>tab_song <span class="ot">&lt;-</span> <span class="fu">table</span>(billboard<span class="sc">$</span>sex, billboard<span class="sc">$</span>artist_is_a_songwriter)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tab_song)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test with Yates' continuity correction
+
+data:  tab_song
+X-squared = 41.649, df = 1, p-value = 1.092e-10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#producer (artist_is_a_producer)</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>tab_prod <span class="ot">&lt;-</span> <span class="fu">table</span>(billboard<span class="sc">$</span>sex, billboard<span class="sc">$</span>artist_is_a_producer)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(tab_prod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test with Yates' continuity correction
+
+data:  tab_prod
+X-squared = 25.517, df = 1, p-value = 4.385e-07</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#beats per min</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(billboard<span class="sc">$</span>bpm[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Male"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 115</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(billboard<span class="sc">$</span>bpm[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Male"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 33</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(billboard<span class="sc">$</span>bpm[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Female"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 117</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(billboard<span class="sc">$</span>bpm[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Female"</span>], <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 32</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(bpm <span class="sc">~</span> sex, <span class="at">data =</span> billboard)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  bpm by sex
+W = 100307, p-value = 0.6648
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#danceability</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(billboard<span class="sc">$</span>danceability[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Male"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 64</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(billboard<span class="sc">$</span>danceability[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Male"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 22</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(billboard<span class="sc">$</span>danceability[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Female"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 66</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(billboard<span class="sc">$</span>danceability[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Female"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(danceability <span class="sc">~</span> sex, <span class="at">data=</span>billboard)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  danceability by sex
+W = 96838, p-value = 0.2031
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co">#happiness</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(billboard<span class="sc">$</span>happiness[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Male"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 68</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(billboard<span class="sc">$</span>happiness[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Male"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 39</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(billboard<span class="sc">$</span>happiness[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Female"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 62</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(billboard<span class="sc">$</span>happiness[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Female"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 45</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(happiness <span class="sc">~</span> sex, <span class="at">data=</span>billboard)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  happiness by sex
+W = 115878, p-value = 0.0008559
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co">#energy</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(billboard<span class="sc">$</span>energy[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Male"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 61</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(billboard<span class="sc">$</span>energy[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Male"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 28</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(billboard<span class="sc">$</span>energy[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Female"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 64</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(billboard<span class="sc">$</span>energy[billboard<span class="sc">$</span>sex <span class="sc">==</span> <span class="st">"Female"</span>], <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 30.25</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(energy <span class="sc">~</span> sex, <span class="at">data=</span>billboard)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  energy by sex
+W = 98462, p-value = 0.3791
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
+<p>|———————————————————————————————————————-| | Characteristic | Category | Total n = 1005 | Males n = 720 (71.64%) | Females n = 285 (28.36%) | p-value | |———————-|———-|—————-|————————-|—————————|————-| | Weeks at Number One | | | 2 (2-2) | 3 (2-3) | 0.137 | |———————-|———-|—————-|————————-|—————————|————-| | Songwriter | Yes | | 513 (71.3%) | 141 (49.5%) | 1.092e-10 | |———————-|———-|—————-|————————-|—————————|————-| | | No | | 207 (28.8%) | 144 (50.5%) | | |———————-|———-|—————-|————————-|—————————|————-| | Producer | Yes | | 270 (37.7%) | 59 (20.8%) | 4.385e-07 | |———————-|———-|—————-|————————-|—————————|————-| | | No | | 447 (62.3%) | 225 (79.2%) | | |———————-|———-|—————-|————————-|—————————|————-| | Beats per minute | | | 115 (33–115) | 117 (32–117) | 0.6648 | |———————-|———-|—————-|————————-|—————————|————-| | Danceability | | | 64 (22–64) | 66 (19–66) | 0.2031 | |———————-|———-|—————-|————————-|—————————|————-| | Happiness | | | 68 (39–68) | 62 (45–62) | 0.0008559 | |———————-|———-|—————-|————————-|—————————|————-| | Energy | | | 61 (28–61) | 64 (30.25–64) | 0.3791 | |———————-|———-|—————-|————————-|—————————|————-|</p>
+<ol start="2" type="1">
+<li>Danceability or beats per minute?</li>
+</ol>
+<ol type="a">
+<li>Model weeks at number one as a function of danceability, sex, and year. i. Create a model summary appropriate for a professional setting (i.e., table form). (See if we can use <code>tidy()</code>?) ii. What is the AICc? -&gt; The AICc for this model is 1811.453.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(np)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Nonparametric Kernel Methods for Mixed Datatypes (version 0.60-18)
+[vignette("np_faq",package="np") provides answers to frequently asked questions]
+[vignette("np",package="np") an overview]
+[vignette("entropy_np",package="np") an overview of entropy-based methods]</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>bw <span class="ot">&lt;-</span> <span class="fu">npregbw</span>(</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> weeks_at_number_one <span class="sc">~</span> danceability <span class="sc">+</span> sex <span class="sc">+</span> year,</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> billboard,</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">bwmethod =</span> <span class="st">"cv.aic"</span></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Multistart 1 of 3 |
+Multistart 1 of 3 |
+Multistart 1 of 3 |
+Multistart 1 of 3 /
+Multistart 1 of 3 -
+Multistart 1 of 3 \
+Multistart 1 of 3 |
+Multistart 1 of 3 |
+Multistart 2 of 3 |
+Multistart 2 of 3 |
+Multistart 2 of 3 /
+Multistart 2 of 3 -
+Multistart 2 of 3 \
+Multistart 2 of 3 |
+Multistart 2 of 3 |
+Multistart 3 of 3 |
+Multistart 3 of 3 |
+Multistart 3 of 3 /
+Multistart 3 of 3 -
+Multistart 3 of 3 \
+Multistart 3 of 3 |
+Multistart 3 of 3 |
+                   </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit kernel regression</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">npreg</span>(<span class="at">bws =</span> bw)</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Regression Data: 1003 training points, in 3 variable(s)
+
+No. Complete Observations:  1003 
+No. Incomplete (NA) Observations:  174 
+Observations omitted or excluded:  7 9 12 18 21 84 85 87 93 100 101 142 159 183 212 214 219 222 225 229 230 239 245 246 248 259 264 273 293 296 308 311 327 330 335 341 351 364 369 370 383 396 397 399 401 410 413 419 427 444 445 450 455 456 463 464 469 482 485 486 496 501 505 508 514 517 523 529 531 536 540 566 584 585 588 591 592 599 601 608 613 615 623 624 625 629 630 632 637 640 644 659 676 686 691 706 712 720 739 747 773 775 787 804 811 817 835 836 853 878 882 883 886 890 895 897 898 907 908 909 912 921 928 930 940 942 946 965 968 973 974 979 981 987 988 991 993 1001 1004 1005 1007 1009 1014 1015 1025 1029 1031 1032 1033 1043 1052 1054 1056 1057 1069 1070 1076 1078 1081 1084 1088 1101 1105 1110 1123 1133 1137 1143 1146 1151 1154 1156 1170 1177 
+              danceability       sex     year
+Bandwidth(s):     22.71547 0.4999999 1.020468
+
+Kernel Regression Estimator: Local-Constant
+Bandwidth Type: Fixed
+Residual standard error: 2.338494
+R-squared: 0.2001665
+
+Continuous Kernel Type: Second-Order Gaussian
+No. Continuous Explanatory Vars.: 2
+
+Unordered Categorical Kernel Type: Aitchison and Aitken
+No. Unordered Categorical Explanatory Vars.: 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute pseudo-AIC approximation</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(billboard)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>RSS <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">residuals</span>(m1)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>edf <span class="ot">&lt;-</span> <span class="fu">sum</span>(m1<span class="sc">$</span>eff.df)  <span class="co"># effective degrees of freedom</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>pseudo_AIC <span class="ot">&lt;-</span> n <span class="sc">*</span> <span class="fu">log</span>(RSS<span class="sc">/</span>n) <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> edf</span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>pseudo_AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1811.451</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Model weeks at number one as a function of beats per minute, sex, and year. i. Create a model summary appropriate for a professional setting (i.e., table form). (See if we can use <code>tidy()</code>?) ii. What is the AICc? -&gt; The AICc for this model is 1593.264 (less than model 1).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>bw <span class="ot">&lt;-</span> <span class="fu">npregbw</span>(</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula =</span> weeks_at_number_one <span class="sc">~</span> bpm <span class="sc">+</span> sex <span class="sc">+</span> year,</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> billboard,</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">bwmethod =</span> <span class="st">"cv.aic"</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Multistart 1 of 3 |
+Multistart 1 of 3 |
+Multistart 1 of 3 |
+Multistart 1 of 3 /
+Multistart 1 of 3 -
+Multistart 1 of 3 \
+Multistart 1 of 3 |
+Multistart 1 of 3 |
+Multistart 1 of 3 |
+Multistart 2 of 3 |
+Multistart 2 of 3 |
+Multistart 2 of 3 /
+Multistart 2 of 3 -
+Multistart 2 of 3 |
+Multistart 2 of 3 |
+Multistart 3 of 3 |
+Multistart 3 of 3 |
+Multistart 3 of 3 /
+Multistart 3 of 3 -
+Multistart 3 of 3 \
+Multistart 3 of 3 |
+Multistart 3 of 3 |
+Multistart 3 of 3 |
+                   </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit kernel regression</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">npreg</span>(<span class="at">bws =</span> bw)</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Regression Data: 1003 training points, in 3 variable(s)
+
+No. Complete Observations:  1003 
+No. Incomplete (NA) Observations:  174 
+Observations omitted or excluded:  7 9 12 18 21 84 85 87 93 100 101 142 159 183 212 214 219 222 225 229 230 239 245 246 248 259 264 273 293 296 308 311 327 330 335 341 351 364 369 370 383 396 397 399 401 410 413 419 427 444 445 450 455 456 463 464 469 482 485 486 496 501 505 508 514 517 523 529 531 536 540 566 584 585 588 591 592 599 601 608 613 615 623 624 625 629 630 632 637 640 644 659 676 686 691 706 712 720 739 747 773 775 787 804 811 817 835 836 853 878 882 883 886 890 895 897 898 907 908 909 912 921 928 930 940 942 946 965 968 973 974 979 981 987 988 991 993 1001 1004 1005 1007 1009 1014 1015 1025 1029 1031 1032 1033 1043 1052 1054 1056 1057 1069 1070 1076 1078 1081 1084 1088 1101 1105 1110 1123 1133 1137 1143 1146 1151 1154 1156 1170 1177 
+                   bpm       sex      year
+Bandwidth(s): 16.08479 0.4063878 0.7829915
+
+Kernel Regression Estimator: Local-Constant
+Bandwidth Type: Fixed
+Residual standard error: 2.131485
+R-squared: 0.3530066
+
+Continuous Kernel Type: Second-Order Gaussian
+No. Continuous Explanatory Vars.: 2
+
+Unordered Categorical Kernel Type: Aitchison and Aitken
+No. Unordered Categorical Explanatory Vars.: 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute pseudo-AIC approximation</span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(billboard)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>RSS <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">residuals</span>(m2)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>edf <span class="ot">&lt;-</span> <span class="fu">sum</span>(m2<span class="sc">$</span>eff.df)  <span class="co"># effective degrees of freedom</span></span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>pseudo_AIC <span class="ot">&lt;-</span> n <span class="sc">*</span> <span class="fu">log</span>(RSS<span class="sc">/</span>n) <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> edf</span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>pseudo_AIC</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1593.263</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li><p>Compare the AICc values from parts a and b. Which model fits the data better? Why? Part a model’s AICc value was 4121.313, and part b model’s AICc was 4120.853. Part b/model 2 fits the data better because it has a lower AICc. Although the difference is slight, the lower AICc value indicates that model 2 has a better trade off between complexity and model fit. Both models are realtively similar in explanatory power (difference is so slight) but model 2 is still technically preferred.</p></li>
+<li><p>Construct the appropriate GzLM for the model specification that fit best (either a or b). i. Create a model summary appropriate for a professional setting. Please take advantage of the <code>tidy()</code> function.</p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use nb regression on model 2 (part b's model)</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">glm.nb</span>(weeks_at_number_one <span class="sc">~</span> bpm <span class="sc">+</span> sex <span class="sc">+</span> year,</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">data =</span> billboard)</span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+MASS::glm.nb(formula = weeks_at_number_one ~ bpm + sex + year, 
+    data = billboard, init.theta = 3.949478724, link = log)
+
+Coefficients:
+              Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -1.974e+01  2.648e+00  -7.453 9.12e-14 ***
+bpm         -9.764e-04  1.000e-03  -0.976    0.329    
+sexFemale   -9.718e-03  5.498e-02  -0.177    0.860    
+year         1.052e-02  1.335e-03   7.877 3.35e-15 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for Negative Binomial(3.9495) family taken to be 1)
+
+    Null deviance: 952.11  on 1002  degrees of freedom
+Residual deviance: 886.89  on  999  degrees of freedom
+  (174 observations deleted due to missingness)
+AIC: 4120.8
+
+Number of Fisher Scoring iterations: 1
+
+              Theta:  3.949 
+          Std. Err.:  0.379 
+
+ 2 x log-likelihood:  -4110.793 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(m3, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), round, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Model 3: Weeks at Number One ~ Beats per min + Sex + Year"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: There was 1 warning in `mutate()`.
+ℹ In argument: `across(where(is.numeric), round, 4)`.
+Caused by warning:
+! The `...` argument of `across()` is deprecated as of dplyr 1.1.0.
+Supply arguments directly to `.fns` through an anonymous function instead.
+
+  # Previously
+  across(a:b, mean, na.rm = TRUE)
+
+  # Now
+  across(a:b, \(x) mean(x, na.rm = TRUE))</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in attr(x, "align"): 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in attr(x, "format"): 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Model 3: Weeks at Number One ~ Beats per min + Sex + Year</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">conf.low</th>
+<th style="text-align: right;">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-19.7353</td>
+<td style="text-align: right;">2.6479</td>
+<td style="text-align: right;">-7.4531</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">-24.8880</td>
+<td style="text-align: right;">-14.5952</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bpm</td>
+<td style="text-align: right;">-0.0010</td>
+<td style="text-align: right;">0.0010</td>
+<td style="text-align: right;">-0.9763</td>
+<td style="text-align: right;">0.3289</td>
+<td style="text-align: right;">-0.0029</td>
+<td style="text-align: right;">0.0009</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sexFemale</td>
+<td style="text-align: right;">-0.0097</td>
+<td style="text-align: right;">0.0550</td>
+<td style="text-align: right;">-0.1767</td>
+<td style="text-align: right;">0.8597</td>
+<td style="text-align: right;">-0.1175</td>
+<td style="text-align: right;">0.0978</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">year</td>
+<td style="text-align: right;">0.0105</td>
+<td style="text-align: right;">0.0013</td>
+<td style="text-align: right;">7.8773</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.0079</td>
+<td style="text-align: right;">0.0131</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol start="5" type="a">
+<li>Construct the following data visualization: i. A scatterplot with number of weeks on the y axis and year on the x-axis. ii. An overlaid line for the kernel regression model (either a or b) that fits the data best (i.e., your chosen model in c). iii. An overlaid line for the GzLM (i.e., the model from d).</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>billboard_cc <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(billboard[, <span class="fu">c</span>(<span class="st">"weeks_at_number_one"</span>, <span class="st">"bpm"</span>, <span class="st">"sex"</span>, <span class="st">"year"</span>)])</span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>billboard_cc<span class="sc">$</span>kernel_fit <span class="ot">&lt;-</span> <span class="fu">fitted</span>(m2)</span>
+<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a>billboard_cc<span class="sc">$</span>glm_fit <span class="ot">&lt;-</span> <span class="fu">predict</span>(m3, <span class="at">newdata =</span> billboard_cc, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-9"><a href="#cb82-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(billboard_cc, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> weeks_at_number_one)) <span class="sc">+</span></span>
+<span id="cb82-10"><a href="#cb82-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb82-11"><a href="#cb82-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> kernel_fit, <span class="at">color =</span> <span class="st">"Kernel Regression"</span>), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb82-12"><a href="#cb82-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> glm_fit, <span class="at">color =</span> <span class="st">"Negative Binomial GzLM"</span>), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb82-13"><a href="#cb82-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Kernel Regression"</span> <span class="ot">=</span> <span class="st">"blue"</span>, <span class="st">"Negative Binomial GzLM"</span> <span class="ot">=</span> <span class="st">"magenta"</span>)) <span class="sc">+</span></span>
+<span id="cb82-14"><a href="#cb82-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb82-15"><a href="#cb82-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Weeks at Number One"</span>, <span class="at">color =</span> <span class="st">"Model"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+ℹ Please use `linewidth` instead.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="finalexam_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="6" type="a">
+<li>Write a very brief summary of your final model. What models did you consider? Which model fit better and why? Of that model, what do the slopes mean in context? What does the y-intercept mean? Are there significant predictors? What can we help the reader understand with the graph? (i.e., can we drive home statements based on numbers – a slope of 5 is stronger than a slope of 0.6, e.g., &amp; will show on the graph).</li>
+</ol>
+<ul>
+<li>Models considered: I compared a nonparametric kernel regression model and a negative binomial generalized linear model (GzLM). With the kernel regression model, we are able to see the nonlinear patterns in the data more. With the NB model, we are able to better interpret coefficients and analyze our data from it.</li>
+<li>Model fit: Based on the pseudo-AIC calculated and interpretability of the model, the NB model fit better. It accounted for the overdispersion in the count outcome (weeks_at_number_one) and provided clear parameter estimates with confidence intervals.</li>
+<li>Slope interpretations: In general, each slope represents the expected change in weeks_at_number_one for a one-unit increase in the predictor, holding other variables constant. More specifically,</li>
+<li>Intercept meaning: The y-intercept represents the expected count of weeks_at_number_one when all predictors are at their baseline (e.g., year = 0, bpm = 0, sex = reference category).</li>
+<li>Significant predictors: The NB model showed that year is a significant predictor of bpm (beats per min). All other variables were not significant predictors of bpm.</li>
+<li>Graph interpretation: The scatterplot with overlaid lines helps us see both the raw data and the fitted trends. The kernel regression line shows the flexible shape of the relationship, while the GzLM line highlights the more parametric trend. We can see that the kernel regression line has some steeper slopes (higher slopes) and more variability in the model, while the NB line stays pretty constant and increasing (low slopes - low variability).</li>
+</ul>
+<ol start="3" type="1">
+<li>Happiness or energy? Model weeks at number one as a function of happiness, energy, the interaction between the two, and year.</li>
+</ol>
+<ol type="a">
+<li>Create a model summary appropriate for a professional setting (i.e., table form). (See if we can use <code>tidy()</code>?)</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">glm</span>(weeks_at_number_one <span class="sc">~</span> happiness <span class="sc">+</span> energy <span class="sc">+</span> happiness<span class="sc">:</span>energy <span class="sc">+</span> year,</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> billboard)</span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(m4, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), round, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb84-6"><a href="#cb84-6" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Model 4: Weeks at Number One ~ Happiness + Energy + Happiness:Energy + Year"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in attr(x, "align"): 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in attr(x, "format"): 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Model 4: Weeks at Number One ~ Happiness + Energy + Happiness:Energy + Year</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 13%">
+<col style="width: 10%">
+<col style="width: 12%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">conf.low</th>
+<th style="text-align: right;">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-70.5776</td>
+<td style="text-align: right;">8.8469</td>
+<td style="text-align: right;">-7.9777</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">-87.9172</td>
+<td style="text-align: right;">-53.2379</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">happiness</td>
+<td style="text-align: right;">0.0001</td>
+<td style="text-align: right;">0.0098</td>
+<td style="text-align: right;">0.0131</td>
+<td style="text-align: right;">0.9895</td>
+<td style="text-align: right;">-0.0191</td>
+<td style="text-align: right;">0.0194</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">energy</td>
+<td style="text-align: right;">-0.0180</td>
+<td style="text-align: right;">0.0108</td>
+<td style="text-align: right;">-1.6628</td>
+<td style="text-align: right;">0.0966</td>
+<td style="text-align: right;">-0.0392</td>
+<td style="text-align: right;">0.0032</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">year</td>
+<td style="text-align: right;">0.0373</td>
+<td style="text-align: right;">0.0045</td>
+<td style="text-align: right;">8.3278</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.0285</td>
+<td style="text-align: right;">0.0461</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">happiness:energy</td>
+<td style="text-align: right;">0.0001</td>
+<td style="text-align: right;">0.0002</td>
+<td style="text-align: right;">0.6649</td>
+<td style="text-align: right;">0.5062</td>
+<td style="text-align: right;">-0.0002</td>
+<td style="text-align: right;">0.0004</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m4)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = weeks_at_number_one ~ happiness + energy + happiness:energy + 
+    year, data = billboard)
+
+Coefficients:
+                   Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)      -7.058e+01  8.847e+00  -7.978 3.53e-15 ***
+happiness         1.291e-04  9.823e-03   0.013   0.9895    
+energy           -1.798e-02  1.081e-02  -1.663   0.0966 .  
+year              3.732e-02  4.481e-03   8.328 2.28e-16 ***
+happiness:energy  1.084e-04  1.631e-04   0.665   0.5062    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for gaussian family taken to be 6.61561)
+
+    Null deviance: 8210.9  on 1174  degrees of freedom
+Residual deviance: 7740.3  on 1170  degrees of freedom
+  (2 observations deleted due to missingness)
+AIC: 5561.6
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Is the interaction significant? NO. p-value &gt; 0.05 for the interaction. i. If yes: construct a graph to help visualize the relationship.
+<ol type="1">
+<li>Pick either happiness or energy to be on the x-axis.</li>
+<li>Plug in for a single year (let’s do 1996 - a great year for music) &amp; a couple of values for the variable not on the x-axis. (e.g., maybe the 25th percentile &amp; 75th percentiles?) By graphing multiple lines it will demonstrate what the interaction means.
+<ol start="2" type="i">
+<li>If no: reconstruct the model without the interaction.</li>
+</ol></li>
+<li>Create a model summary appropriate for a professional setting (i.e., table form). (See if we can use <code>tidy()</code>?)</li>
+</ol></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>m5 <span class="ot">&lt;-</span> <span class="fu">glm</span>(weeks_at_number_one <span class="sc">~</span> happiness <span class="sc">+</span> energy <span class="sc">+</span> year,</span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> billboard)</span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(m5, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), round, <span class="dv">4</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">"Model 5: Weeks at Number One ~ Happiness + Energy + Year"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in attr(x, "align"): 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in attr(x, "format"): 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Model 5: Weeks at Number One ~ Happiness + Energy + Year</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 13%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 11%">
+<col style="width: 13%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+<th style="text-align: right;">conf.low</th>
+<th style="text-align: right;">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">-70.3292</td>
+<td style="text-align: right;">8.8369</td>
+<td style="text-align: right;">-7.9586</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">-87.6492</td>
+<td style="text-align: right;">-53.0091</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">happiness</td>
+<td style="text-align: right;">0.0062</td>
+<td style="text-align: right;">0.0036</td>
+<td style="text-align: right;">1.7111</td>
+<td style="text-align: right;">0.0873</td>
+<td style="text-align: right;">-0.0009</td>
+<td style="text-align: right;">0.0133</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">energy</td>
+<td style="text-align: right;">-0.0115</td>
+<td style="text-align: right;">0.0047</td>
+<td style="text-align: right;">-2.4438</td>
+<td style="text-align: right;">0.0147</td>
+<td style="text-align: right;">-0.0207</td>
+<td style="text-align: right;">-0.0023</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">year</td>
+<td style="text-align: right;">0.0370</td>
+<td style="text-align: right;">0.0045</td>
+<td style="text-align: right;">8.3047</td>
+<td style="text-align: right;">0.0000</td>
+<td style="text-align: right;">0.0283</td>
+<td style="text-align: right;">0.0458</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = weeks_at_number_one ~ happiness + energy + year, 
+    data = billboard)
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -70.329178   8.836912  -7.959 4.08e-15 ***
+happiness     0.006200   0.003623   1.711   0.0873 .  
+energy       -0.011507   0.004708  -2.444   0.0147 *  
+year          0.037025   0.004458   8.305 2.74e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for gaussian family taken to be 6.612458)
+
+    Null deviance: 8210.9  on 1174  degrees of freedom
+Residual deviance: 7743.2  on 1171  degrees of freedom
+  (2 observations deleted due to missingness)
+AIC: 5560
+
+Number of Fisher Scoring iterations: 2</code></pre>
+</div>
+</div>
+<pre><code>  2. Which are significant predictors of weeks at number one?
+  </code></pre>
+<p>Happiness:</p>
+<ul>
+<li><p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0: \beta_{\text{happiness}}  = 0\)</span></li>
+<li><span class="math inline">\(H_1: \beta_{\text{happiness}} \ne 0\)</span></li>
+</ul></li>
+<li><p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><p><span class="math inline">\(t_0 = 1.711\)</span></p></li>
+<li><p><span class="math inline">\(p = 0.0873\)</span></p></li>
+</ul></li>
+<li><p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span></li>
+</ul></li>
+<li><p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li>Fail to Reject <span class="math inline">\(H_0\)</span>. There is sufficient evidence to suggest that happiness does not significantly predict the number of weeks at number one.</li>
+</ul></li>
+</ul>
+<p>Energy:</p>
+<ul>
+<li><p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0: \beta_{\text{energy}}  = 0\)</span></li>
+<li><span class="math inline">\(H_1: \beta_{\text{energy}} \ne 0\)</span></li>
+</ul></li>
+<li><p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><p><span class="math inline">\(t_0 = -2.444\)</span></p></li>
+<li><p><span class="math inline">\(p = 0.0147\)</span></p></li>
+</ul></li>
+<li><p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span></li>
+</ul></li>
+<li><p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span>. There is sufficient evidence to suggest that happiness significantly predict the number of weeks at number one.</li>
+</ul></li>
+</ul>
+<p>Year:</p>
+<ul>
+<li><p><strong>Hypotheses</strong></p>
+<ul>
+<li><span class="math inline">\(H_0: \beta_{\text{year}}  = 0\)</span></li>
+<li><span class="math inline">\(H_1: \beta_{\text{year}} \ne 0\)</span></li>
+</ul></li>
+<li><p><strong>Test Statistic and <em>p</em>-Value</strong></p>
+<ul>
+<li><p><span class="math inline">\(t_0 = 8.305\)</span></p></li>
+<li><p><span class="math inline">\(p &lt; 0.001\)</span></p></li>
+</ul></li>
+<li><p><strong>Rejection Region</strong></p>
+<ul>
+<li>Reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p &lt; \alpha\)</span>; <span class="math inline">\(\alpha=0.05\)</span></li>
+</ul></li>
+<li><p><strong>Conclusion/Interpretation</strong></p>
+<ul>
+<li><p>Reject <span class="math inline">\(H_0\)</span>. There is sufficient evidence to suggest that energy significantly predict the number of weeks at number one.</p>
+<ol start="3" type="1">
+<li>What is the strongest predictor? Why? Interpretations of slopes:</li>
+</ol>
+<ul>
+<li>For a 1‑year increase in release year, the expected count of weeks at number one increases by about 0.37%.</li>
+<li>For a 1‑unit increase in energy, the expected count of weeks at number one decreases by about 0.12%.</li>
+<li>For a 1‑unit increase in happiness, the expected count of weeks at number one increases by about 0.06%.</li>
+</ul>
+<p>We can see from these interpretations that in terms of % change, year is the strongest predictor. It has the smallest p-value of the three predictors, and it also has the largest effect size in %.</p>
+<ol start="4" type="1">
+<li>Construct an appropriate data visualization. Take the same approach as suggested in 3-b-i, but only for one value of whatever is not on the x-axis.</li>
+</ol></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>energy_vals <span class="ot">&lt;-</span> <span class="fu">quantile</span>(billboard<span class="sc">$</span>energy, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a>pred_grid <span class="ot">&lt;-</span> <span class="fu">expand.grid</span>(</span>
+<span id="cb95-4"><a href="#cb95-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">happiness =</span> billboard<span class="sc">$</span>happiness,</span>
+<span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">energy =</span> energy_vals,</span>
+<span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">year =</span> <span class="dv">1996</span></span>
+<span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb95-8"><a href="#cb95-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-9"><a href="#cb95-9" aria-hidden="true" tabindex="-1"></a>pred_grid<span class="sc">$</span>fit <span class="ot">&lt;-</span> <span class="fu">predict</span>(m4, <span class="at">newdata =</span> pred_grid)</span>
+<span id="cb95-10"><a href="#cb95-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-11"><a href="#cb95-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(billboard, <span class="fu">aes</span>(<span class="at">x =</span> happiness, <span class="at">y =</span> weeks_at_number_one)) <span class="sc">+</span></span>
+<span id="cb95-12"><a href="#cb95-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb95-13"><a href="#cb95-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> pred_grid,</span>
+<span id="cb95-14"><a href="#cb95-14" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">x =</span> happiness, <span class="at">y =</span> fit, <span class="at">color =</span> <span class="fu">factor</span>(energy)),</span>
+<span id="cb95-15"><a href="#cb95-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb95-16"><a href="#cb95-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb95-17"><a href="#cb95-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Happiness"</span>, <span class="at">y =</span> <span class="st">"Weeks at Number One"</span>,</span>
+<span id="cb95-18"><a href="#cb95-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Energy (percentile)"</span>,</span>
+<span id="cb95-19"><a href="#cb95-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Effect of Happiness on Weeks at Number One (Year = 1996)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 4 rows containing missing values or values outside the scale range
+(`geom_line()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="finalexam_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Write a very brief summary of your final model. What models did you consider? Which model fit better and why? Of that model, what do the slopes mean in context? What does the y-intercept mean? Are there significant predictors? What can we help the reader understand with the graph? (i.e., can we drive home statements based on numbers – a slope of 5 is stronger than a slope of 0.6, e.g., &amp; will show on the graph). NOTE – if the interaction <em>is</em> significant and needs to stay in the model, take your best shot at including it in your description. We can discuss as needed.</li>
+</ol>
+<ul>
+<li>Models considered: We considered the standard GLM model from part 3b1.</li>
+<li>Slopes in context:
+<ul>
+<li>For a 1-point increase in happiness, the expected number of weeks at number one increases by approximately 0.0062 weeks.</li>
+<li>For a 1-point increase in energy, the expected number of weeks decreases by 0.0115 weeks.</li>
+<li>For a 1-year increase in release year, the expected number of weeks increases by 0.037 weeks.</li>
+</ul></li>
+<li>Significant predictors: Year and energy are siginficant predictors of weeks_at_number_one.</li>
+<li>Intercept interpretation: The intercept −70.33 represents the expected number of weeks at number one when happiness, energy, and year are all zero.</li>
+<li>Graph interpretation: The graph shows how happiness affects music chart success at different energy levels, when we are holding the year constant at 1996. The steeper slope for high-energy songs (75th percentile of energy) suggests that happiness has a stronger positive effect when energy is high. This interaction helps us understand that emotional tone and intensity could influence a song’s overall success.</li>
+</ul>
 
 
 </section>
